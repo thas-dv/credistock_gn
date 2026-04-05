@@ -117,7 +117,7 @@ class Paiements extends Table {
 
 class SyncQueue extends Table {
   TextColumn get id => text().withLength(min: 36, max: 36)();
-  TextColumn get tableName => text()();
+   TextColumn get targetTable => text().named('table_name')();
   TextColumn get recordId => text()();
   TextColumn get operation => text()(); // insert | update | delete
   TextColumn get payload => text()(); // JSON

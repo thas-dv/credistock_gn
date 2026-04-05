@@ -40,7 +40,7 @@ class NotificationService {
 
     // Init plugin local
     await _localNotif.initialize(
-      const InitializationSettings(
+      settings: const InitializationSettings(
         android: AndroidInitializationSettings('@mipmap/ic_launcher'),
         iOS: DarwinInitializationSettings(),
       ),
@@ -63,10 +63,10 @@ class NotificationService {
     if (notif == null) return;
 
     await _localNotif.show(
-      notif.hashCode,
-      notif.title,
-      notif.body,
-      NotificationDetails(
+     id: notif.hashCode,
+      title: notif.title,
+      body: notif.body,
+      notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
           _channelId,
           _channelName,
@@ -91,10 +91,10 @@ class NotificationService {
     required int quantiteRestante,
   }) async {
     await _localNotif.show(
-      produitNom.hashCode,
-      '⚠️ Stock faible — $produitNom',
-      'Seulement $quantiteRestante unité(s) restante(s). Pensez à réapprovisionner.',
-      NotificationDetails(
+     id: produitNom.hashCode,
+      title: '⚠️ Stock faible — $produitNom',
+      body: 'Seulement $quantiteRestante unité(s) restante(s). Pensez à réapprovisionner.',
+      notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
           _channelId,
           _channelName,
@@ -120,10 +120,10 @@ class NotificationService {
         : 'Echéance dans $joursAvantEcheance jour(s) · ${_formatGNF(montantRestant)} GNF';
 
     await _localNotif.show(
-      clientNom.hashCode,
-      titre,
-      corps,
-      NotificationDetails(
+     id: clientNom.hashCode,
+      title: titre,
+      body: corps,
+      notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
           _channelId,
           _channelName,
