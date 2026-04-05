@@ -1,3 +1,4 @@
+import 'package:credistock_gn/widgets/app_badge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -5,11 +6,10 @@ import 'package:intl/intl.dart';
 
 import '../../../core/theme/app_theme.dart';
 import '../../../core/router/app_router.dart';
-import '../../../domain/entities/entities.dart';
+
 import '../../blocs/sync/sync_bloc.dart';
 import '../../blocs/auth/auth_bloc.dart';
-import '../../widgets/common/app_badge.dart';
-import '../../widgets/common/metric_card.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

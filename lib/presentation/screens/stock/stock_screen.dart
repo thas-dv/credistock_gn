@@ -397,7 +397,7 @@ class _EmptyState extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           ElevatedButton.icon(
-            onPressed: () => context.push(AppaRoutes.produitAjouter),
+            onPressed: () => context.push(AppRoutes.produitAjouter),
             icon: const Icon(Icons.add, size: 16),
             label: const Text('Ajouter un produit'),
             style: ElevatedButton.styleFrom(

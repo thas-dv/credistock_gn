@@ -1,3 +1,4 @@
+import 'package:credistock_gn/widgets/app_badge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -7,7 +8,6 @@ import '../../../core/theme/app_theme.dart';
 import '../../../domain/entities/entities.dart';
 import '../../blocs/vente/vente_bloc.dart';
 import '../../blocs/auth/auth_bloc.dart';
-import '../../widgets/common/app_badge.dart';
 
 class VenteScreen extends StatelessWidget {
   const VenteScreen({super.key});
