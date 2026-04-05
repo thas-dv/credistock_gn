@@ -19,14 +19,24 @@ void main() async {
   // Orientation portrait uniquement
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  // Firebase
-  await Firebase.initializeApp();
+ // Firebase (tolérant si config absente en dev)
+  try {
+    await Firebase.initializeApp();
+  } catch (_) {
+    // Ignore en environnement local non configuré.
+  }
  
   // Supabase
-  await Supabase.initialize(
-    url: const String.fromEnvironment('https://gzaekbnodohycalquufi.supabase.co'),
-    anonKey: const String.fromEnvironment('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6YWVrYm5vZG9oeWNhbHF1dWZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxMjIxMTgsImV4cCI6MjA4MDY5ODExOH0.W-8-1PqUHN2FSaGzEWRuwky4ZbExuyB5mlW69gd1qbU'),
+ const supabaseUrl = String.fromEnvironment(
+    'SUPABASE_URL',
+    defaultValue: 'https://gzaekbnodohycalquufi.supabase.co',
   );
+  const supabaseAnonKey = String.fromEnvironment(
+    'SUPABASE_ANON_KEY',
+    defaultValue:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6YWVrYm5vZG9oeWNhbHF1dWZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxMjIxMTgsImV4cCI6MjA4MDY5ODExOH0.W-8-1PqUHN2FSaGzEWRuwky4ZbExuyB5mlW69gd1qbU',
+  );
+  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
 
   // Hive (cache rapide)
   await Hive.initFlutter();
