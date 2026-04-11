@@ -14,8 +14,8 @@ class VenteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => context.read<VenteBloc>(),
+    return BlocProvider.value(
+      value: context.read<VenteBloc>(),
       child: const _VenteView(),
     );
   }

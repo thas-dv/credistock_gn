@@ -19,8 +19,8 @@ class ClientsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => context.read<ClientBloc>()
+     return BlocProvider.value(
+      value: context.read<ClientBloc>()
         ..add(ClientWatchStarted(context.read<AuthBloc>().state.boutiqueId ?? '')),
       child: const _ClientsView(),
     );

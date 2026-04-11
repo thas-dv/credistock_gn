@@ -19,8 +19,8 @@ class DettesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => context.read<DetteBloc>()
+   return BlocProvider.value(
+      value: context.read<DetteBloc>()
         ..add(DetteWatchStarted(context.read<AuthBloc>().state.boutiqueId ?? '')),
       child: const _DettesView(),
     );

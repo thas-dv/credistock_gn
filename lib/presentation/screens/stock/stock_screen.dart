@@ -15,8 +15,8 @@ class StockScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => context.read<StockBloc>()
+    return BlocProvider.value(
+      value: context.read<StockBloc>()
         ..add(StockWatchStarted(context.read<AuthBloc>().state.boutiqueId ?? '')),
       child: const _StockView(),
     );
