@@ -36,14 +36,20 @@ class AuthLoginSubmitted extends AuthEvent {
 class AuthRegisterSubmitted extends AuthEvent {
   final String identifiant;
   final String motDePasse;
+  final String boutiqueId;
+  final String nom;
+  final String role;
 
   const AuthRegisterSubmitted({
     required this.identifiant,
     required this.motDePasse,
+     required this.boutiqueId,
+    required this.nom,
+    required this.role,
   });
 
   @override
-  List<Object?> get props => [identifiant, motDePasse];
+  List<Object?> get props => [identifiant, motDePasse, boutiqueId, nom, role];
 }
 
 class AuthLogout extends AuthEvent {}
@@ -137,6 +143,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await _authRepo.creerCompte(
       identifiant: event.identifiant,
       motDePasse: event.motDePasse,
+       boutiqueId: event.boutiqueId,
+      nom: event.nom,
+      role: event.role,
     );
 
     result.fold(

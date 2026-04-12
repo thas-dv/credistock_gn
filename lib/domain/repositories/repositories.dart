@@ -88,6 +88,9 @@ abstract class AuthRepository {
   Future<Either<Failure, Unit>> creerCompte({
     required String identifiant,
     required String motDePasse,
+     required String boutiqueId,
+    required String nom,
+    required String role,
   });
   Future<Either<Failure, Unit>> seConnecter({
     required String identifiant,

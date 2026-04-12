@@ -5,6 +5,7 @@ import 'package:credistock_gn/presentation/screens/home/home_screen.dart';
 import 'package:credistock_gn/presentation/screens/produit/produit_form_screen.dart';
 import 'package:credistock_gn/presentation/screens/screens.dart'
     hide PaiementScreen, ClientDetailScreen;
+import 'package:credistock_gn/presentation/screens/auth/register_screen.dart';
 import 'package:credistock_gn/presentation/screens/stock/stock_screen.dart';
 import 'package:credistock_gn/presentation/screens/auth/auth_screen.dart';
 import 'package:credistock_gn/presentation/screens/vente/vente_screen.dart';
@@ -15,6 +16,7 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRoutes {
   static const auth = '/auth';
+  static const register = '/register';
   static const home = '/';
   static const stock = '/stock';
   static const produitForm = '/produit-form';
@@ -38,7 +40,8 @@ class AppRouter {
     initialLocation: AppRoutes.auth,
     redirect: (context, state) {
       final estAuth = context.read<AuthBloc>().state.estAuthentifie;
-      final estSurAuth = state.matchedLocation == AppRoutes.auth;
+      final estSurAuth = state.matchedLocation == AppRoutes.auth ||
+          state.matchedLocation == AppRoutes.register;
 
       if (!estAuth && !estSurAuth) return AppRoutes.auth;
       if (estAuth && estSurAuth) return AppRoutes.home;
@@ -52,7 +55,10 @@ class AppRouter {
         path: AppRoutes.auth,
         builder: (_, __) => const AuthScreen(),
       ),
-
+ GoRoute(
+        path: AppRoutes.register,
+        builder: (_, __) => const RegisterScreen(),
+      ),
       // ── Shell avec bottom nav ─────────────────────────────
       ShellRoute(
         navigatorKey: _shellNavigatorKey,

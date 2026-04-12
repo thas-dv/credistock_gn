@@ -366,6 +366,7 @@ class AuthRepositoryImpl implements AuthRepository {
 final Map<String, String> _comptes = {
     'admin': 'admin1234',
   };
+  final Map<String, Map<String, String>> _utilisateurs = {};
   bool _sessionActive = false;
   @override
   Future<Either<Failure, Unit>> changerPin(String boutiqueId, String ancienPin, String nouveauPin) async {
@@ -376,15 +377,32 @@ final Map<String, String> _comptes = {
   Future<Either<Failure, Unit>> creerCompte({
     required String identifiant,
     required String motDePasse,
+    required String boutiqueId,
+    required String nom,
+    required String role,
   }) async {
-    if (identifiant.trim().isEmpty || motDePasse.trim().isEmpty) {
+   if (identifiant.trim().isEmpty ||
+        motDePasse.trim().isEmpty ||
+        boutiqueId.trim().isEmpty ||
+        nom.trim().isEmpty) {
       return const Left(AuthFailure(message: 'Informations invalides'));
+    }
+     if (role != 'admin' && role != 'employe') {
+      return const Left(AuthFailure(message: 'Rôle invalide'));
     }
     if (_comptes.containsKey(identifiant.trim())) {
       return const Left(AuthFailure(message: 'Ce compte existe déjà'));
     }
 
     _comptes[identifiant.trim()] = motDePasse.trim();
+    _utilisateurs[identifiant.trim()] = {
+      'id': identifiant.trim(),
+      'boutique_id': boutiqueId.trim(),
+      'nom': nom.trim(),
+      'role': role,
+      'mot_de_passe': motDePasse.trim(),
+    };
+    _boutiqueId = boutiqueId.trim();
     _sessionActive = true;
     return const Right(unit);
   }
@@ -410,7 +428,7 @@ final Map<String, String> _comptes = {
     _sessionActive = true;
     return const Right(unit);
   }
-  
+
   @override
   Future<Either<Failure, String>> getBoutiqueId() async {
     if (_boutiqueId == null) return const Left(AuthFailure());

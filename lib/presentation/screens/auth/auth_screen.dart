@@ -15,7 +15,7 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   final _identifiantCtrl = TextEditingController();
   final _motDePasseCtrl = TextEditingController();
-  bool _modeInscription = false;
+
 
   @override
   void dispose() {
@@ -30,15 +30,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
     if (identifiant.isEmpty || motDePasse.isEmpty) return;
 
-    if (_modeInscription) {
-      context.read<AuthBloc>().add(
-            AuthRegisterSubmitted(
-              identifiant: identifiant,
-              motDePasse: motDePasse,
-            ),
-          );
-      return;
-    }
+   
 
     context.read<AuthBloc>().add(
           AuthLoginSubmitted(
@@ -85,24 +77,13 @@ class _AuthScreenState extends State<AuthScreen> {
                             style: TextStyle(
                                 fontSize: 22, fontWeight: FontWeight.w600)),
                         const SizedBox(height: 18),
-                        Row(
-                          children: [
-                            _ModeBtn(
-                              active: !_modeInscription,
-                              label: 'Connexion',
-                              onTap: () =>
-                                  setState(() => _modeInscription = false),
-                            ),
-                            const SizedBox(width: 8),
-                            _ModeBtn(
-                              active: _modeInscription,
-                              label: 'Créer un compte',
-                              onTap: () =>
-                                  setState(() => _modeInscription = true),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 16),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: TextButton(
+                            onPressed: () => context.push(AppRoutes.register),
+                            child: const Text('Créer un compte'),
+                          ),),
+                        const SizedBox(height: 8),
                         TextField(
                           controller: _identifiantCtrl,
                           decoration:
@@ -145,9 +126,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                         strokeWidth: 2),
                                   );
                                 }
-                                return Text(_modeInscription
-                                    ? 'Créer mon compte'
-                                    : 'Se connecter');
+                                return const Text('Se connecter');
                               },
                             ),
                           ),
@@ -165,37 +144,3 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 }
 
-class _ModeBtn extends StatelessWidget {
-  final bool active;
-  final String label;
-  final VoidCallback onTap;
-
-  const _ModeBtn(
-      {required this.active, required this.label, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 160),
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          decoration: BoxDecoration(
-            color: active ? AppColors.green : AppColors.gray400,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: active ? Colors.white : AppColors.gray50,
-              fontWeight: FontWeight.w500,
-              fontSize: 12,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
