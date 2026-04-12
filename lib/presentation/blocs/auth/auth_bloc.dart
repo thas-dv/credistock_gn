@@ -34,22 +34,39 @@ class AuthLoginSubmitted extends AuthEvent {
 }
 
 class AuthRegisterSubmitted extends AuthEvent {
-  final String identifiant;
-  final String motDePasse;
-  final String boutiqueId;
+
   final String nom;
   final String role;
+   final String prenom;
+  final String telephone;
+  final String motDePasse;
+  final String boutiqueNom;
+  final String boutiqueAdresse;
+  final String utilisateurId;
 
   const AuthRegisterSubmitted({
-    required this.identifiant,
-    required this.motDePasse,
-     required this.boutiqueId,
+   
     required this.nom,
     required this.role,
+     required this.prenom,
+    required this.telephone,
+    required this.motDePasse,
+    required this.boutiqueNom,
+    required this.boutiqueAdresse,
+    required this.utilisateurId,
   });
 
   @override
-  List<Object?> get props => [identifiant, motDePasse, boutiqueId, nom, role];
+  List<Object?> get props => [
+        nom,
+        prenom,
+        telephone,
+        role,
+        motDePasse,
+        boutiqueNom,
+        boutiqueAdresse,
+        utilisateurId,
+      ];
 }
 
 class AuthLogout extends AuthEvent {}
@@ -141,11 +158,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(status: AuthStatus.checking, errorMessage: null));
 
     final result = await _authRepo.creerCompte(
-      identifiant: event.identifiant,
-      motDePasse: event.motDePasse,
-       boutiqueId: event.boutiqueId,
+     
       nom: event.nom,
       role: event.role,
+      prenom: event.prenom,
+      telephone: event.telephone,
+      motDePasse: event.motDePasse,
+      boutiqueNom: event.boutiqueNom,
+      boutiqueAdresse: event.boutiqueAdresse,
+      utilisateurId: event.utilisateurId,
     );
 
     result.fold(

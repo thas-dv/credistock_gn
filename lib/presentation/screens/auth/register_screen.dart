@@ -2,6 +2,7 @@ import 'package:credistock_gn/core/router/app_router.dart';
 import 'package:credistock_gn/core/theme/app_theme.dart';
 import 'package:credistock_gn/presentation/blocs/auth/auth_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -14,19 +15,27 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _boutiqueIdCtrl = TextEditingController();
+
   final _nomCtrl = TextEditingController();
+  final _prenomCtrl = TextEditingController();
+  final _telephoneCtrl = TextEditingController();
   final _motDePasseCtrl = TextEditingController();
   final _confirmationCtrl = TextEditingController();
 
   String _role = 'employe';
-
+  final _boutiqueNomCtrl = TextEditingController();
+  final _boutiqueAdresseCtrl = TextEditingController();
+  final _utilisateurIdCtrl = TextEditingController();
   @override
   void dispose() {
-    _boutiqueIdCtrl.dispose();
     _nomCtrl.dispose();
+    _prenomCtrl.dispose();
+    _telephoneCtrl.dispose();
     _motDePasseCtrl.dispose();
     _confirmationCtrl.dispose();
+    _boutiqueNomCtrl.dispose();
+    _boutiqueAdresseCtrl.dispose();
+    _utilisateurIdCtrl.dispose();
     super.dispose();
   }
 
@@ -36,11 +45,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     context.read<AuthBloc>().add(
           AuthRegisterSubmitted(
-            identifiant: _nomCtrl.text.trim(),
-            motDePasse: _motDePasseCtrl.text.trim(),
-            boutiqueId: _boutiqueIdCtrl.text.trim(),
             nom: _nomCtrl.text.trim(),
             role: _role,
+            prenom: _prenomCtrl.text.trim(),
+            telephone: _telephoneCtrl.text.trim(),
+            motDePasse: _motDePasseCtrl.text.trim(),
+            boutiqueNom: _boutiqueNomCtrl.text.trim(),
+            boutiqueAdresse: _boutiqueAdresseCtrl.text.trim(),
+            utilisateurId: _utilisateurIdCtrl.text.trim(),
           ),
         );
   }
@@ -74,72 +86,61 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           const Text(
-                            'Structure utilisateur',
+                            'Utilisateur',
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.w600),
                           ),
-                          const SizedBox(height: 12),
-                          TextFormField(
-                            controller: _boutiqueIdCtrl,
-                            decoration:
-                                const InputDecoration(labelText: 'boutique_id'),
-                            validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'boutique_id est requis';
-                              }
-                              return null;
-                            },
-                          ),
-                          const SizedBox(height: 12),
-                          TextFormField(
+                          const SizedBox(height: 10),
+                          _simpleField(
                             controller: _nomCtrl,
-                            decoration: const InputDecoration(labelText: 'nom'),
-                            validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'nom est requis';
-                              }
-                              return null;
-                            },
+                            label: 'Nom',
+                            validatorMsg: 'Le nom est requis',
                           ),
-                          const SizedBox(height: 12),
-                          DropdownButtonFormField<String>(
-                            value: _role,
-                            decoration:
-                                const InputDecoration(labelText: 'role'),
-                            items: const [
-                              DropdownMenuItem(
-                                  value: 'admin', child: Text('admin')),
-                              DropdownMenuItem(
-                                  value: 'employe', child: Text('employe')),
-                            ],
-                            onChanged: (value) {
-                              if (value != null) {
-                                setState(() => _role = value);
-                              }
-                            },
+                          const SizedBox(height: 10),
+                          _simpleField(
+                            controller: _prenomCtrl,
+                            label: 'Prénom',
+                            validatorMsg: 'Le prénom est requis',
                           ),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 10),
+                          _simpleField(
+                            controller: _telephoneCtrl,
+                            label: 'Téléphone',
+                            keyboardType: TextInputType.phone,
+                            validatorMsg: 'Le téléphone est requis',
+                          ),
+                          const SizedBox(height: 10),
                           TextFormField(
                             controller: _motDePasseCtrl,
                             obscureText: true,
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
-                                labelText: 'mot_de_passe'),
+                              labelText: 'Mot de passe (4 chiffres)',
+                            ),
                             validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'mot_de_passe est requis';
-                              }
-                              if (value.trim().length < 6) {
-                                return 'Minimum 6 caractères';
+                              final v = value?.trim() ?? '';
+                              if (v.isEmpty)
+                                return 'Le mot de passe est requis';
+                              if (v.length != 4) {
+                                return 'Le mot de passe doit avoir 4 chiffres';
                               }
                               return null;
                             },
                           ),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 10),
                           TextFormField(
                             controller: _confirmationCtrl,
                             obscureText: true,
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
-                                labelText: 'confirmation mot_de_passe'),
+                              labelText: 'Confirme mot de passe',
+                            ),
                             validator: (value) {
                               if (value?.trim() !=
                                   _motDePasseCtrl.text.trim()) {
@@ -147,6 +148,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               }
                               return null;
                             },
+                          ),
+                          const SizedBox(height: 20),
+                          const Divider(),
+                          const SizedBox(height: 12),
+                          const Text(
+                            'Boutique',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w700),
+                          ),
+                          const SizedBox(height: 10),
+                          _simpleField(
+                            controller: _boutiqueNomCtrl,
+                            label: 'Nom de la boutique',
+                            validatorMsg: 'Le nom de la boutique est requis',
+                          ),
+                          const SizedBox(height: 10),
+                          _simpleField(
+                            controller: _boutiqueAdresseCtrl,
+                            label: 'Adresse',
+                            validatorMsg: 'L\'adresse est requise',
+                          ),
+                          const SizedBox(height: 10),
+                          _simpleField(
+                            controller: _utilisateurIdCtrl,
+                            label: 'utilisateur_id',
+                            validatorMsg: 'utilisateur_id est requis',
                           ),
                           const SizedBox(height: 18),
                           BlocBuilder<AuthBloc, AuthState>(
@@ -194,4 +221,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
     );
   }
+}
+
+Widget _simpleField({
+  required TextEditingController controller,
+  required String label,
+  required String validatorMsg,
+  TextInputType? keyboardType,
+}) {
+  return TextFormField(
+    controller: controller,
+    keyboardType: keyboardType,
+    decoration: InputDecoration(labelText: label),
+    validator: (value) {
+      if (value == null || value.trim().isEmpty) {
+        return validatorMsg;
+      }
+      return null;
+    },
+  );
 }

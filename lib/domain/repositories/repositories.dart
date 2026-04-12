@@ -86,11 +86,15 @@ abstract class AuthRepository {
   Future<Either<Failure, String>> getBoutiqueId();
   Future<bool> estConnecte();
   Future<Either<Failure, Unit>> creerCompte({
-    required String identifiant,
-    required String motDePasse,
-     required String boutiqueId,
+
     required String nom,
     required String role,
+    required String prenom,
+    required String telephone,
+    required String motDePasse,
+    required String boutiqueNom,
+    required String boutiqueAdresse,
+    required String utilisateurId,
   });
   Future<Either<Failure, Unit>> seConnecter({
     required String identifiant,

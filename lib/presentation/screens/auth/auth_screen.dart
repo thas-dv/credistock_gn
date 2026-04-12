@@ -13,31 +13,25 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  final _identifiantCtrl = TextEditingController();
-  final _motDePasseCtrl = TextEditingController();
+   static const _pinLength = 4;
+  String _pin = '';
 
+void _onTapDigit(String digit) {
+    if (_pin.length >= _pinLength) return;
 
-  @override
-  void dispose() {
-    _identifiantCtrl.dispose();
-    _motDePasseCtrl.dispose();
-    super.dispose();
+  setState(() => _pin += digit);
+
+    if (_pin.length == _pinLength) {
+      Future.delayed(const Duration(milliseconds: 100), () {
+        context.read<AuthBloc>().add(AuthPinSubmitted(_pin));
+        setState(() => _pin = '');
+      });
+    }
   }
 
-  void _submit() {
-    final identifiant = _identifiantCtrl.text.trim();
-    final motDePasse = _motDePasseCtrl.text.trim();
-
-    if (identifiant.isEmpty || motDePasse.isEmpty) return;
-
-   
-
-    context.read<AuthBloc>().add(
-          AuthLoginSubmitted(
-            identifiant: identifiant,
-            motDePasse: motDePasse,
-          ),
-        );
+    void _onDelete() {
+    if (_pin.isEmpty) return;
+    setState(() => _pin = _pin.substring(0, _pin.length - 1));
   }
 
   @override
@@ -63,8 +57,8 @@ class _AuthScreenState extends State<AuthScreen> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Container(
-                          width: 64,
-                          height: 64,
+                          width: 72,
+                          height: 72,
                           decoration: BoxDecoration(
                             color: AppColors.green,
                             borderRadius: BorderRadius.circular(18),
@@ -72,64 +66,89 @@ class _AuthScreenState extends State<AuthScreen> {
                           child: const Icon(Icons.storefront,
                               color: Colors.white, size: 30),
                         ),
-                        const SizedBox(height: 12),
-                        const Text('CrédiStock GN',
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w600)),
-                        const SizedBox(height: 18),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: () => context.push(AppRoutes.register),
-                            child: const Text('Créer un compte'),
-                          ),),
-                        const SizedBox(height: 8),
-                        TextField(
-                          controller: _identifiantCtrl,
-                          decoration:
-                              const InputDecoration(labelText: 'Identifiant'),
+                         const SizedBox(height: 16),
+                        const Text(
+                          'CrédiStock GN',
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w600),
                         ),
-                        const SizedBox(height: 12),
-                        TextField(
-                          controller: _motDePasseCtrl,
-                          obscureText: true,
-                          decoration:
-                              const InputDecoration(labelText: 'Mot de passe'),
+                       const SizedBox(height: 8),
+                        const Text(
+                          'Entrez votre code PIN (4 chiffres)',
+                          style:
+                              TextStyle(fontSize: 14, color: AppColors.gray400),
+                          textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 16),
+                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(_pinLength, (i) {
+                            final filled = i < _pin.length;
+                            return AnimatedContainer(
+                              duration: const Duration(milliseconds: 150),
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 7),
+                              width: 14,
+                              height: 14,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color:
+                                    filled ? AppColors.green : Colors.transparent,
+                                border: Border.all(
+                                    color: AppColors.green, width: 1.5),
+                              ),
+                            );
+                          }),
+                        ),
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (_, state) {
                             if (state.status == AuthStatus.error) {
                               return Padding(
-                                padding: const EdgeInsets.only(bottom: 10),
+                                padding: const EdgeInsets.only(top: 12),
                                 child: Text(
-                                  state.errorMessage ?? 'Erreur de connexion',
+                                  state.errorMessage ?? 'PIN incorrect',
                                   style: const TextStyle(
-                                      color: AppColors.red, fontSize: 12),
+                                      fontSize: 12, color: AppColors.red),
                                 ),
                               );
                             }
-                            return const SizedBox.shrink();
+                            return const SizedBox(height: 28);
                           },
                         ),
+                         SizedBox(
+                          width: 240,
+                          child: GridView.count(
+                            crossAxisCount: 3,
+                            shrinkWrap: true,
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 10,
+                            childAspectRatio: 1.4,
+                            children: [
+                              ...['1', '2', '3', '4', '5', '6', '7', '8', '9']
+                                  .map((d) => _PinBtn(
+                                      label: d,
+                                      onTap: () => _onTapDigit(d))),
+                              const SizedBox(),
+                              _PinBtn(label: '0', onTap: () => _onTapDigit('0')),
+                              _PinBtn(
+                                  label: '⌫', onTap: _onDelete, isDelete: true),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 16),
                         SizedBox(
                           width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: _submit,
-                            child: BlocBuilder<AuthBloc, AuthState>(
-                              builder: (_, state) {
-                                if (state.status == AuthStatus.checking) {
-                                  return const SizedBox(
-                                    width: 18,
-                                    height: 18,
-                                    child: CircularProgressIndicator(
-                                        strokeWidth: 2),
-                                  );
-                                }
-                                return const Text('Se connecter');
-                              },
-                            ),
+                          child: OutlinedButton.icon(
+                            onPressed: () => context.push(AppRoutes.register),
+                            icon: const Icon(Icons.person_add_alt_1),
+                            label: const Text('Créer un compte'),
                           ),
+                        ),
+                         const SizedBox(height: 10),
+                        const Text(
+                          'Simple et rapide pour tous les commerçants.',
+                          style: TextStyle(fontSize: 12, color: AppColors.gray400),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -144,3 +163,38 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 }
 
+class _PinBtn extends StatelessWidget {
+  final String label;
+  final VoidCallback onTap;
+  final bool isDelete;
+
+  const _PinBtn({
+    required this.label,
+    required this.onTap,
+    this.isDelete = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(14),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: onTap,
+        child: Center(
+          child: isDelete
+              ? const Icon(Icons.backspace_outlined, color: AppColors.gray200)
+              : Text(
+                  label,
+                  style: const TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.gray900,
+                  ),
+                ),
+        ),
+      ),
+    );
+  }
+}

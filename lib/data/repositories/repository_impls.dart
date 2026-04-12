@@ -112,16 +112,19 @@ class ProduitRepositoryImpl implements ProduitRepository {
   @override
   Future<Either<Failure, Produit>> modifierProduit(Produit produit) async {
     final index = _store.produits.indexWhere((p) => p.id == produit.id);
-    if (index == -1) return const Left(DatabaseFailure(message: 'Produit introuvable'));
+    if (index == -1)
+      return const Left(DatabaseFailure(message: 'Produit introuvable'));
     _store.produits[index] = produit;
     _store.emitAll();
     return Right(produit);
   }
 
   @override
-  Future<Either<Failure, Unit>> mettreAJourStock(String produitId, int deltaQuantite) async {
+  Future<Either<Failure, Unit>> mettreAJourStock(
+      String produitId, int deltaQuantite) async {
     final index = _store.produits.indexWhere((p) => p.id == produitId);
-    if (index == -1) return const Left(DatabaseFailure(message: 'Produit introuvable'));
+    if (index == -1)
+      return const Left(DatabaseFailure(message: 'Produit introuvable'));
     final produit = _store.produits[index];
     _store.produits[index] = produit.copyWith(
       quantite: (produit.quantite + deltaQuantite).clamp(0, 1 << 31),
@@ -132,7 +135,8 @@ class ProduitRepositoryImpl implements ProduitRepository {
   }
 
   @override
-  Future<Either<Failure, List<Produit>>> searchProduits(String boutiqueId, String query) async {
+  Future<Either<Failure, List<Produit>>> searchProduits(
+      String boutiqueId, String query) async {
     final q = query.toLowerCase();
     return Right(
       _store.produits
@@ -190,7 +194,8 @@ class ClientRepositoryImpl implements ClientRepository {
   @override
   Future<Either<Failure, Client>> modifierClient(Client client) async {
     final index = _store.clients.indexWhere((c) => c.id == client.id);
-    if (index == -1) return const Left(DatabaseFailure(message: 'Client introuvable'));
+    if (index == -1)
+      return const Left(DatabaseFailure(message: 'Client introuvable'));
     _store.clients[index] = client;
     _store.emitAll();
     return Right(client);
@@ -202,12 +207,15 @@ class ClientRepositoryImpl implements ClientRepository {
   }
 
   @override
-  Future<Either<Failure, List<Client>>> searchClients(String boutiqueId, String query) async {
+  Future<Either<Failure, List<Client>>> searchClients(
+      String boutiqueId, String query) async {
     final q = query.toLowerCase();
     return Right(
       _store.clients
           .where((c) => c.boutiqueId == boutiqueId)
-          .where((c) => c.nom.toLowerCase().contains(q) || (c.telephone?.contains(query) ?? false))
+          .where((c) =>
+              c.nom.toLowerCase().contains(q) ||
+              (c.telephone?.contains(query) ?? false))
           .toList(),
     );
   }
@@ -240,22 +248,30 @@ class VenteRepositoryImpl implements VenteRepository {
     final today = DateTime.now();
     final total = _store.ventes
         .where((v) => v.boutiqueId == boutiqueId)
-        .where((v) => v.date.year == today.year && v.date.month == today.month && v.date.day == today.day)
+        .where((v) =>
+            v.date.year == today.year &&
+            v.date.month == today.month &&
+            v.date.day == today.day)
         .fold<int>(0, (sum, v) => sum + v.montantTotal);
     return Right(total);
   }
 
   @override
-  Future<Either<Failure, List<Vente>>> getVentesParJour(String boutiqueId, DateTime date) async {
+  Future<Either<Failure, List<Vente>>> getVentesParJour(
+      String boutiqueId, DateTime date) async {
     final ventes = _store.ventes
         .where((v) => v.boutiqueId == boutiqueId)
-        .where((v) => v.date.year == date.year && v.date.month == date.month && v.date.day == date.day)
+        .where((v) =>
+            v.date.year == date.year &&
+            v.date.month == date.month &&
+            v.date.day == date.day)
         .toList();
     return Right(ventes);
   }
 
   @override
-  Future<Either<Failure, List<Vente>>> getVentesParPeriode(String boutiqueId, DateTime debut, DateTime fin) async {
+  Future<Either<Failure, List<Vente>>> getVentesParPeriode(
+      String boutiqueId, DateTime debut, DateTime fin) async {
     final ventes = _store.ventes
         .where((v) => v.boutiqueId == boutiqueId)
         .where((v) => !v.date.isBefore(debut) && !v.date.isAfter(fin))
@@ -287,12 +303,17 @@ class DetteRepositoryImpl implements DetteRepository {
   }
 
   @override
-  Future<Either<Failure, Dette>> enregistrerPaiement({required String detteId, required int montant, required String modePaiement}) async {
+  Future<Either<Failure, Dette>> enregistrerPaiement(
+      {required String detteId,
+      required int montant,
+      required String modePaiement}) async {
     final index = _store.dettes.indexWhere((d) => d.id == detteId);
-    if (index == -1) return const Left(DatabaseFailure(message: 'Dette introuvable'));
+    if (index == -1)
+      return const Left(DatabaseFailure(message: 'Dette introuvable'));
 
     final current = _store.dettes[index];
-    final nouveauPaye = (current.montantPaye + montant).clamp(0, current.montant);
+    final nouveauPaye =
+        (current.montantPaye + montant).clamp(0, current.montant);
     final statut = switch (nouveauPaye) {
       0 => StatutDette.nonPaye,
       _ when nouveauPaye >= current.montant => StatutDette.paye,
@@ -329,16 +350,20 @@ class DetteRepositoryImpl implements DetteRepository {
   }
 
   @override
-  Future<Either<Failure, List<Dette>>> getDettesEchues(String boutiqueId) async {
+  Future<Either<Failure, List<Dette>>> getDettesEchues(
+      String boutiqueId) async {
     return Right(
-      _store.dettes.where((d) => d.boutiqueId == boutiqueId && d.estEchue).toList(),
+      _store.dettes
+          .where((d) => d.boutiqueId == boutiqueId && d.estEchue)
+          .toList(),
     );
   }
 
   @override
   Future<Either<Failure, int>> getTotalDettesActives(String boutiqueId) async {
     final total = _store.dettes
-        .where((d) => d.boutiqueId == boutiqueId && d.statut != StatutDette.paye)
+        .where(
+            (d) => d.boutiqueId == boutiqueId && d.statut != StatutDette.paye)
         .fold<int>(0, (sum, d) => sum + d.montantRestant);
     return Right(total);
   }
@@ -361,48 +386,64 @@ class DetteRepositoryImpl implements DetteRepository {
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   String? _boutiqueId = 'demo-boutique';
-  static const _pin = '0000';
+  String _pin = '0000';
 
-final Map<String, String> _comptes = {
+  final Map<String, String> _comptes = {
     'admin': 'admin1234',
   };
   final Map<String, Map<String, String>> _utilisateurs = {};
   bool _sessionActive = false;
   @override
-  Future<Either<Failure, Unit>> changerPin(String boutiqueId, String ancienPin, String nouveauPin) async {
+  Future<Either<Failure, Unit>> changerPin(
+      String boutiqueId, String ancienPin, String nouveauPin) async {
     return const Right(unit);
   }
 
   @override
   Future<Either<Failure, Unit>> creerCompte({
-    required String identifiant,
-    required String motDePasse,
-    required String boutiqueId,
     required String nom,
     required String role,
+    required String prenom,
+    required String telephone,
+    required String motDePasse,
+    required String boutiqueNom,
+    required String boutiqueAdresse,
+    required String utilisateurId,
   }) async {
-   if (identifiant.trim().isEmpty ||
+    if (nom.trim().isEmpty ||
+        prenom.trim().isEmpty ||
+        telephone.trim().isEmpty ||
         motDePasse.trim().isEmpty ||
-        boutiqueId.trim().isEmpty ||
-        nom.trim().isEmpty) {
+        boutiqueNom.trim().isEmpty ||
+        boutiqueAdresse.trim().isEmpty ||
+        utilisateurId.trim().isEmpty) {
       return const Left(AuthFailure(message: 'Informations invalides'));
     }
-     if (role != 'admin' && role != 'employe') {
+    if (role != 'admin' && role != 'employe') {
       return const Left(AuthFailure(message: 'Rôle invalide'));
     }
-    if (_comptes.containsKey(identifiant.trim())) {
+    if (motDePasse.trim().length != 4) {
+      return const Left(
+          AuthFailure(message: 'Le code PIN doit avoir 4 chiffres'));
+    }
+
+    if (_comptes.containsKey(utilisateurId.trim())) {
       return const Left(AuthFailure(message: 'Ce compte existe déjà'));
     }
 
-    _comptes[identifiant.trim()] = motDePasse.trim();
-    _utilisateurs[identifiant.trim()] = {
-      'id': identifiant.trim(),
-      'boutique_id': boutiqueId.trim(),
+     _comptes[utilisateurId.trim()] = motDePasse.trim();
+    _utilisateurs[utilisateurId.trim()] = {
+      'id': utilisateurId.trim(),
       'nom': nom.trim(),
+      'prenom': prenom.trim(),
+      'telephone': telephone.trim(),
+      'boutique_nom': boutiqueNom.trim(),
+      'boutique_adresse': boutiqueAdresse.trim(),
       'role': role,
       'mot_de_passe': motDePasse.trim(),
     };
-    _boutiqueId = boutiqueId.trim();
+     _pin = motDePasse.trim();
+    _boutiqueId = utilisateurId.trim();
     _sessionActive = true;
     return const Right(unit);
   }
@@ -415,7 +456,7 @@ final Map<String, String> _comptes = {
   @override
   Future<bool> estConnecte() async => _sessionActive;
 
- @override
+  @override
   Future<Either<Failure, Unit>> seConnecter({
     required String identifiant,
     required String motDePasse,
@@ -436,8 +477,10 @@ final Map<String, String> _comptes = {
   }
 
   @override
-  Future<Either<Failure, bool>> verifierPin(String boutiqueId, String pin) async {
-    if (boutiqueId != _boutiqueId) return const Left(AuthFailure(message: 'Boutique inconnue'));
+  Future<Either<Failure, bool>> verifierPin(
+      String boutiqueId, String pin) async {
+    if (boutiqueId != _boutiqueId)
+      return const Left(AuthFailure(message: 'Boutique inconnue'));
     return Right(pin == _pin);
   }
 }
@@ -480,7 +523,10 @@ class AbonnementRepositoryImpl implements AbonnementRepository {
   }
 
   @override
-  Future<Either<Failure, Abonnement>> souscrire({required String boutiqueId, required PlanAbonnement plan, required ModePaiementAbonnement modePaiement}) async {
+  Future<Either<Failure, Abonnement>> souscrire(
+      {required String boutiqueId,
+      required PlanAbonnement plan,
+      required ModePaiementAbonnement modePaiement}) async {
     return Right(
       Abonnement(
         id: 'abonnement-${DateTime.now().millisecondsSinceEpoch}',
@@ -495,7 +541,8 @@ class AbonnementRepositoryImpl implements AbonnementRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> verifierLimites({required String boutiqueId, required String typeRessource}) async {
+  Future<Either<Failure, bool>> verifierLimites(
+      {required String boutiqueId, required String typeRessource}) async {
     return const Right(true);
   }
 }
