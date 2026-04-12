@@ -51,7 +51,7 @@ class CrediStockApp extends StatelessWidget {
         BlocProvider<VenteBloc>(create: (_) => getIt<VenteBloc>()),
       ],
       child: MaterialApp.router(
-        title: 'CrédiStock GN',
+        title: 'CrédiStock ',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light,
         routerConfig: AppRouter.router

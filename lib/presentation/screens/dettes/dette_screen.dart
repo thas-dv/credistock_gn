@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/theme/app_theme.dart';
+import '../../../core/router/app_router.dart';
 import '../../../domain/entities/entities.dart';
 import '../../blocs/dette/dette_bloc.dart';
 import '../../blocs/auth/auth_bloc.dart';
@@ -339,7 +340,7 @@ class _DetteCard extends StatelessWidget {
                   // Payer
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () => context.push('/dettes/${dette.id}/payer'),
+                      onPressed: () => context.push('${AppRoutes.paiement}?detteId=${dette.id}'),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(0, 36),
                         padding: const EdgeInsets.symmetric(horizontal: 12),

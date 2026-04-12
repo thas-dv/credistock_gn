@@ -2,7 +2,9 @@ import 'package:credistock_gn/widgets/app_badge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import '../../../core/theme/app_theme.dart';
 
+import '../../../core/router/app_router.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../domain/entities/entities.dart';
 import '../../blocs/client/client_bloc.dart';
@@ -277,7 +279,7 @@ class _ClientTile extends StatelessWidget {
     final scoreColorLight = client.score.name.scoreCouleurLight;
 
     return GestureDetector(
-      onTap: () => context.push('/clients/${client.id}'),
+       onTap: () => context.push('${AppRoutes.clientDetail}?clientId=${client.id}'),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,

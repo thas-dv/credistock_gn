@@ -9,7 +9,6 @@ import '../../../domain/entities/entities.dart';
 import '../../blocs/stock/stock_bloc.dart';
 import '../../blocs/auth/auth_bloc.dart';
 
-
 class StockScreen extends StatelessWidget {
   const StockScreen({super.key});
 
@@ -17,7 +16,8 @@ class StockScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider.value(
       value: context.read<StockBloc>()
-        ..add(StockWatchStarted(context.read<AuthBloc>().state.boutiqueId ?? '')),
+        ..add(
+            StockWatchStarted(context.read<AuthBloc>().state.boutiqueId ?? '')),
       child: const _StockView(),
     );
   }
@@ -62,7 +62,8 @@ class _StockHeader extends StatelessWidget {
               builder: (_, state) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Stock', style: Theme.of(context).textTheme.headlineSmall),
+                  Text('Stock',
+                      style: Theme.of(context).textTheme.headlineSmall),
                   Text(
                     '${state.totalProduits} produits · ${state.nombreAlertes} alertes',
                     style: Theme.of(context).textTheme.bodyMedium,
@@ -72,7 +73,7 @@ class _StockHeader extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () => context.push(AppRoutes.produitAjouter),
+            onPressed: () => context.push(AppRoutes.produitForm),
             icon: const Icon(Icons.add_circle_outline),
             color: AppColors.green,
           ),
@@ -134,12 +135,15 @@ class _CategorieFilter extends StatelessWidget {
                       .add(StockCategorieChanged(value)),
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
                     decoration: BoxDecoration(
                       color: selected ? AppColors.greenLight : AppColors.gray50,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: selected ? AppColors.green : AppColors.gray200.withOpacity(0.5),
+                        color: selected
+                            ? AppColors.green
+                            : AppColors.gray200.withOpacity(0.5),
                         width: selected ? 1 : 0.5,
                       ),
                     ),
@@ -147,8 +151,10 @@ class _CategorieFilter extends StatelessWidget {
                       label,
                       style: TextStyle(
                         fontSize: 12,
-                        color: selected ? AppColors.greenDark : AppColors.gray600,
-                        fontWeight: selected ? FontWeight.w500 : FontWeight.w400,
+                        color:
+                            selected ? AppColors.greenDark : AppColors.gray600,
+                        fontWeight:
+                            selected ? FontWeight.w500 : FontWeight.w400,
                       ),
                     ),
                   ),
@@ -184,9 +190,8 @@ class _ProduitList extends StatelessWidget {
         final enAlerte = state.produitsEnAlerte
             .where((p) => state.produitsFiltres.contains(p))
             .toList();
-        final normaux = state.produitsFiltres
-            .where((p) => !p.estEnAlerteStock)
-            .toList();
+        final normaux =
+            state.produitsFiltres.where((p) => !p.estEnAlerteStock).toList();
 
         return ListView(
           padding: const EdgeInsets.all(16),
@@ -263,7 +268,8 @@ class _SectionTitle extends StatelessWidget {
           ),
           child: Text(
             '$count',
-            style: TextStyle(fontSize: 10, color: color, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                fontSize: 10, color: color, fontWeight: FontWeight.w600),
           ),
         ),
       ],
@@ -287,7 +293,8 @@ class _ProduitCard extends StatelessWidget {
         : 1.0;
 
     return GestureDetector(
-      onTap: () => context.push('/stock/${produit.id}'),
+      onTap: () =>
+          context.push('${AppRoutes.produitForm}?produitId=${produit.id}'),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(12),
@@ -361,7 +368,8 @@ class _ProduitCard extends StatelessWidget {
                   children: [
                     Text(
                       'Seuil d\'alerte: ${produit.seuilAlerte} unités',
-                      style: const TextStyle(fontSize: 10, color: AppColors.gray400),
+                      style: const TextStyle(
+                          fontSize: 10, color: AppColors.gray400),
                     ),
                     Text(
                       '${(ratio * 100).round()}%',
@@ -397,7 +405,7 @@ class _EmptyState extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           ElevatedButton.icon(
-            onPressed: () => context.push(AppRoutes.produitAjouter),
+            onPressed: () => context.push(AppRoutes.produitForm),
             icon: const Icon(Icons.add, size: 16),
             label: const Text('Ajouter un produit'),
             style: ElevatedButton.styleFrom(

@@ -363,14 +363,54 @@ class AuthRepositoryImpl implements AuthRepository {
   String? _boutiqueId = 'demo-boutique';
   static const _pin = '0000';
 
+final Map<String, String> _comptes = {
+    'admin': 'admin1234',
+  };
+  bool _sessionActive = false;
   @override
   Future<Either<Failure, Unit>> changerPin(String boutiqueId, String ancienPin, String nouveauPin) async {
     return const Right(unit);
   }
 
   @override
-  Future<bool> estConnecte() async => true;
+  Future<Either<Failure, Unit>> creerCompte({
+    required String identifiant,
+    required String motDePasse,
+  }) async {
+    if (identifiant.trim().isEmpty || motDePasse.trim().isEmpty) {
+      return const Left(AuthFailure(message: 'Informations invalides'));
+    }
+    if (_comptes.containsKey(identifiant.trim())) {
+      return const Left(AuthFailure(message: 'Ce compte existe déjà'));
+    }
 
+    _comptes[identifiant.trim()] = motDePasse.trim();
+    _sessionActive = true;
+    return const Right(unit);
+  }
+
+  @override
+  Future<void> deconnecter() async {
+    _sessionActive = false;
+  }
+
+  @override
+  Future<bool> estConnecte() async => _sessionActive;
+
+ @override
+  Future<Either<Failure, Unit>> seConnecter({
+    required String identifiant,
+    required String motDePasse,
+  }) async {
+    final existing = _comptes[identifiant.trim()];
+    if (existing == null || existing != motDePasse.trim()) {
+      return const Left(AuthFailure(message: 'Identifiants invalides'));
+    }
+
+    _sessionActive = true;
+    return const Right(unit);
+  }
+  
   @override
   Future<Either<Failure, String>> getBoutiqueId() async {
     if (_boutiqueId == null) return const Left(AuthFailure());

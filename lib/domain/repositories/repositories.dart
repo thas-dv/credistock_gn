@@ -85,6 +85,15 @@ abstract class AuthRepository {
   Future<Either<Failure, Unit>> changerPin(String boutiqueId, String ancienPin, String nouveauPin);
   Future<Either<Failure, String>> getBoutiqueId();
   Future<bool> estConnecte();
+  Future<Either<Failure, Unit>> creerCompte({
+    required String identifiant,
+    required String motDePasse,
+  });
+  Future<Either<Failure, Unit>> seConnecter({
+    required String identifiant,
+    required String motDePasse,
+  });
+  Future<void> deconnecter();
 }
 
 // ============================================================

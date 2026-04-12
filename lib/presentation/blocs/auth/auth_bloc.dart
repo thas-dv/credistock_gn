@@ -20,6 +20,32 @@ class AuthPinSubmitted extends AuthEvent {
   List<Object?> get props => [pin];
 }
 
+class AuthLoginSubmitted extends AuthEvent {
+  final String identifiant;
+  final String motDePasse;
+
+  const AuthLoginSubmitted({
+    required this.identifiant,
+    required this.motDePasse,
+  });
+
+  @override
+  List<Object?> get props => [identifiant, motDePasse];
+}
+
+class AuthRegisterSubmitted extends AuthEvent {
+  final String identifiant;
+  final String motDePasse;
+
+  const AuthRegisterSubmitted({
+    required this.identifiant,
+    required this.motDePasse,
+  });
+
+  @override
+  List<Object?> get props => [identifiant, motDePasse];
+}
+
 class AuthLogout extends AuthEvent {}
 
 // ============================================================
@@ -65,33 +91,64 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this._authRepo) : super(const AuthState()) {
     on<AuthCheckRequested>(_onCheck);
     on<AuthPinSubmitted>(_onPinSubmitted);
+    on<AuthLoginSubmitted>(_onLoginSubmitted);
+    on<AuthRegisterSubmitted>(_onRegisterSubmitted);
     on<AuthLogout>(_onLogout);
   }
 
   // 🔍 Vérifie si boutique existe localement
-  Future<void> _onCheck(
-      AuthCheckRequested event, Emitter<AuthState> emit) async {
+  Future<void> _onCheck(AuthCheckRequested event, Emitter<AuthState> emit) async {
     emit(state.copyWith(status: AuthStatus.checking));
 
     final boutiqueIdResult = await _authRepo.getBoutiqueId();
+    final estConnecte = await _authRepo.estConnecte();
 
     boutiqueIdResult.fold(
-      (failure) {
-        emit(state.copyWith(status: AuthStatus.unauthenticated));
-      },
-      (id) {
-        print("Boutique ID récupéré: $id"); // DEBUG
-        emit(state.copyWith(
-          status: AuthStatus.unauthenticated,
-          boutiqueId: id,
-        ));
-      },
+      (_) => emit(state.copyWith(status: AuthStatus.unauthenticated)),
+      (id) => emit(state.copyWith(
+        status: estConnecte ? AuthStatus.authenticated : AuthStatus.unauthenticated,
+        boutiqueId: id,
+        errorMessage: null,
+      )),
     );
   }
 
   // 🔐 Vérification PIN
-  Future<void> _onPinSubmitted(
-      AuthPinSubmitted event, Emitter<AuthState> emit) async {
+  Future<void> _onLoginSubmitted(AuthLoginSubmitted event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(status: AuthStatus.checking, errorMessage: null));
+
+    final result = await _authRepo.seConnecter(
+      identifiant: event.identifiant,
+      motDePasse: event.motDePasse,
+    );
+
+    result.fold(
+      (failure) => emit(state.copyWith(
+        status: AuthStatus.error,
+        errorMessage: failure.message,
+      )),
+      (_) => emit(state.copyWith(status: AuthStatus.authenticated, errorMessage: null)),
+    );
+  }
+
+  Future<void> _onRegisterSubmitted(AuthRegisterSubmitted event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(status: AuthStatus.checking, errorMessage: null));
+
+    final result = await _authRepo.creerCompte(
+      identifiant: event.identifiant,
+      motDePasse: event.motDePasse,
+    );
+
+    result.fold(
+      (failure) => emit(state.copyWith(
+        status: AuthStatus.error,
+        errorMessage: failure.message,
+      )),
+      (_) => emit(state.copyWith(status: AuthStatus.authenticated, errorMessage: null)),
+    );
+  }
+
+  Future<void> _onPinSubmitted(AuthPinSubmitted event, Emitter<AuthState> emit) async {
     if (state.boutiqueId == null) {
       emit(state.copyWith(
         status: AuthStatus.error,
@@ -102,39 +159,27 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     emit(state.copyWith(status: AuthStatus.checking));
 
-    final inputPin = event.pin.trim(); // 🔥 IMPORTANT
-
-    print("PIN saisi: $inputPin"); // DEBUG
-    print("Boutique ID: ${state.boutiqueId}");
-
-    final result = await _authRepo.verifierPin(state.boutiqueId!, inputPin);
+    final result = await _authRepo.verifierPin(state.boutiqueId!, event.pin.trim());
 
     result.fold(
-      (failure) {
-        emit(state.copyWith(
-          status: AuthStatus.error,
-          errorMessage: "Erreur serveur",
-        ));
-      },
+       (_) => emit(state.copyWith(
+        status: AuthStatus.error,
+        errorMessage: 'Erreur serveur',
+      )),
       (valide) {
-        print("PIN valide ? $valide"); // DEBUG
+        
 
         if (valide) {
-          emit(state.copyWith(
-            status: AuthStatus.authenticated,
-            errorMessage: null,
-          ));
+          emit(state.copyWith(status: AuthStatus.authenticated, errorMessage: null));
         } else {
-          emit(state.copyWith(
-            status: AuthStatus.error,
-            errorMessage: "PIN incorrect",
-          ));
+         emit(state.copyWith(status: AuthStatus.error, errorMessage: 'PIN incorrect'));
         }
       },
     );
   }
 
-  void _onLogout(AuthLogout event, Emitter<AuthState> emit) {
+  Future<void> _onLogout(AuthLogout event, Emitter<AuthState> emit) async {
+    await _authRepo.deconnecter();
     emit(state.copyWith(
       status: AuthStatus.unauthenticated,
       errorMessage: null,

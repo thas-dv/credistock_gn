@@ -1317,7 +1317,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       if (_page < pages.length - 1) {
                         setState(() => _page++);
                       } else {
-                        context.go(AppRoutes.pin);
+                        context.go(AppRoutes.auth);
                       }
                     },
                     child: Text(_page < pages.length - 1 ? 'Suivant →' : 'Commencer'),
@@ -1325,7 +1325,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   if (_page < pages.length - 1) ...[
                     const SizedBox(height: 10),
                     TextButton(
-                      onPressed: () => context.go(AppRoutes.pin),
+                      onPressed: () => context.go(AppRoutes.auth),
                       child: const Text('Passer', style: TextStyle(fontSize: 13, color: AppColors.gray400)),
                     ),
                   ],
