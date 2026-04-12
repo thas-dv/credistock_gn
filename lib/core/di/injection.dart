@@ -33,7 +33,7 @@ getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
     () => AuthRepositoryImpl(getIt<AppDatabase>(), getIt<SyncRepository>()),
   );
   getIt.registerLazySingleton<ProduitRepository>(
-    () => ProduitRepositoryImpl(getIt<InMemoryStore>()),
+    () => ProduitRepositoryImpl(getIt<AppDatabase>()),
   );
   getIt.registerLazySingleton<ClientRepository>(
     () => ClientRepositoryImpl(getIt<InMemoryStore>()),

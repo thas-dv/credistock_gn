@@ -7,7 +7,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../core/errors/failures.dart';
 import '../../core/services/supabase_sync_service.dart';
-import '../local/database/app_database.dart' hide Produit, Client, Dette, Vente, Abonnement;
+import '../local/database/app_database.dart'
+    hide Produit, Client, Dette, Vente, Abonnement;
 import '../../domain/entities/entities.dart';
 import '../../domain/repositories/repositories.dart';
 import 'package:uuid/uuid.dart';
@@ -71,6 +72,7 @@ class InMemoryStore {
     ventesCtrl.add(List.unmodifiable(ventes));
     dettesCtrl.add(List.unmodifiable(dettes));
   }
+
   Stream<List<T>> withInitial<T>(
     List<T> current,
     Stream<List<T>> source,
@@ -82,59 +84,121 @@ class InMemoryStore {
 
 @LazySingleton(as: ProduitRepository)
 class ProduitRepositoryImpl implements ProduitRepository {
-  final InMemoryStore _store;
+  final AppDatabase _db;
 
-  ProduitRepositoryImpl(this._store) {
-    _store.seedIfNeeded();
+  ProduitRepositoryImpl(this._db);
+
+  Produit _toEntity(dynamic row) {
+    return Produit(
+      id: row.id,
+      boutiqueId: row.boutiqueId,
+      nom: row.nom,
+      categorie: CategorieProduit.values.firstWhere(
+        (c) => c.name == row.categorie,
+        orElse: () => CategorieProduit.general,
+      ),
+      prixVente: row.prixVente,
+      prixAchat: row.prixAchat,
+      quantite: row.quantite,
+      seuilAlerte: row.seuilAlerte,
+      synced: row.synced,
+      updatedAt: row.updatedAt,
+    );
   }
 
   @override
   Future<Either<Failure, Produit>> ajouterProduit(Produit produit) async {
-    _store.produits.add(produit);
-    _store.emitAll();
-    return Right(produit);
+    try {
+      await _db.into(_db.produits).insert(
+            ProduitsCompanion.insert(
+              id: produit.id,
+              boutiqueId: produit.boutiqueId,
+              nom: produit.nom,
+              categorie: Value(produit.categorie.name),
+              prixVente: produit.prixVente,
+              prixAchat: Value(produit.prixAchat),
+              quantite: Value(produit.quantite),
+              seuilAlerte: Value(produit.seuilAlerte),
+              synced: Value(produit.synced),
+              updatedAt: Value(produit.updatedAt),
+            ),
+          );
+      return Right(produit);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur ajout produit: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, Produit>> getProduitById(String id) async {
     try {
-      return Right(_store.produits.firstWhere((p) => p.id == id));
-    } catch (_) {
-      return const Left(DatabaseFailure(message: 'Produit introuvable'));
+      final row = await (_db.select(_db.produits)
+            ..where((p) => p.id.equals(id)))
+          .getSingleOrNull();
+      if (row == null) {
+        return const Left(DatabaseFailure(message: 'Produit introuvable'));
+      }
+      return Right(_toEntity(row));
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur lecture produit: $e'));
     }
   }
 
   @override
   Future<Either<Failure, Produit>> modifierProduit(Produit produit) async {
-    final i = _store.produits.indexWhere((p) => p.id == produit.id);
-    if (i == -1) return const Left(DatabaseFailure(message: 'Produit introuvable'));
-
-    _store.produits[i] = produit;
-    _store.emitAll();
-    return Right(produit);
+    try {
+      final count = await (_db.update(_db.produits)
+            ..where((p) => p.id.equals(produit.id)))
+          .write(
+        ProduitsCompanion(
+          nom: Value(produit.nom),
+          categorie: Value(produit.categorie.name),
+          prixVente: Value(produit.prixVente),
+          prixAchat: Value(produit.prixAchat),
+          quantite: Value(produit.quantite),
+          seuilAlerte: Value(produit.seuilAlerte),
+          synced: Value(produit.synced),
+          updatedAt: Value(produit.updatedAt),
+        ),
+      );
+      if (count == 0) {
+        return const Left(DatabaseFailure(message: 'Produit introuvable'));
+      }
+      return Right(produit);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur modification produit: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, Unit>> mettreAJourStock(String id, int delta) async {
-    final i = _store.produits.indexWhere((p) => p.id == id);
-    if (i == -1) return const Left(DatabaseFailure(message: 'Produit introuvable'));
-
-    final p = _store.produits[i];
-
-    _store.produits[i] = p.copyWith(
-      quantite: (p.quantite + delta).clamp(0, 999999999),
-      synced: false,
-    );
-
-    _store.emitAll();
-    return const Right(unit);
+    try {
+      final row = await (_db.select(_db.produits)
+            ..where((p) => p.id.equals(id)))
+          .getSingleOrNull();
+      if (row == null) {
+        return const Left(DatabaseFailure(message: 'Produit introuvable'));
+      }
+      final nouvelleQuantite = (row.quantite + delta).clamp(0, 999999999);
+      await (_db.update(_db.produits)..where((p) => p.id.equals(id))).write(
+        ProduitsCompanion(
+          quantite: Value(nouvelleQuantite),
+          synced: const Value(false),
+          updatedAt: Value(DateTime.now()),
+        ),
+      );
+      return const Right(unit);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur mise à jour stock: $e'));
+    }
   }
 
   @override
   Stream<List<Produit>> watchProduits(String boutiqueId) {
-     return _store.withInitial(_store.produits, _store.produitsCtrl.stream).map(
-          (list) => list.where((p) => p.boutiqueId == boutiqueId).toList(),
-        );
+    final query = (_db.select(_db.produits)
+      ..where((p) => p.boutiqueId.equals(boutiqueId))
+      ..orderBy([(p) => OrderingTerm.asc(p.nom)]));
+    return query.watch().map((rows) => rows.map(_toEntity).toList());
   }
 
   @override
@@ -146,20 +210,30 @@ class ProduitRepositoryImpl implements ProduitRepository {
 
   @override
   Future<Either<Failure, Unit>> supprimerProduit(String id) async {
-    _store.produits.removeWhere((p) => p.id == id);
-    _store.emitAll();
-    return const Right(unit);
+    try {
+      await (_db.delete(_db.produits)..where((p) => p.id.equals(id))).go();
+      return const Right(unit);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur suppression produit: $e'));
+    }
   }
 
   @override
-  Future<Either<Failure, List<Produit>>> searchProduits(String bId, String q) async {
-    final query = q.toLowerCase();
-    return Right(
-      _store.produits
-          .where((p) => p.boutiqueId == bId)
+  Future<Either<Failure, List<Produit>>> searchProduits(
+      String bId, String q) async {
+    final query = q.toLowerCase().trim();
+    try {
+      final rows = await (_db.select(_db.produits)
+            ..where((p) => p.boutiqueId.equals(bId)))
+          .get();
+      final items = rows
+          .map(_toEntity)
           .where((p) => p.nom.toLowerCase().contains(query))
-          .toList(),
-    );
+          .toList();
+      return Right(items);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur recherche produit: $e'));
+    }
   }
 }
 
@@ -382,9 +456,9 @@ class DetteRepositoryImpl implements DetteRepository {
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   final AppDatabase _db;
- final SyncRepository _syncRepository;
+  final SyncRepository _syncRepository;
 
- AuthRepositoryImpl(this._db, this._syncRepository);
+  AuthRepositoryImpl(this._db, this._syncRepository);
 
   bool _sessionActive = false;
   String? _activeBoutiqueId;
@@ -460,7 +534,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<void> deconnecter() async {
     _sessionActive = false;
-     _activeBoutiqueId = null;
+    _activeBoutiqueId = null;
   }
 
   @override
@@ -477,8 +551,7 @@ class AuthRepositoryImpl implements AuthRepository {
             ..limit(1))
           .getSingleOrNull();
 
-      if (utilisateur == null ||
-          utilisateur.motDePasse != motDePasse.trim()) {
+      if (utilisateur == null || utilisateur.motDePasse != motDePasse.trim()) {
         return const Left(AuthFailure(message: 'Identifiants invalides'));
       }
 
@@ -503,8 +576,7 @@ class AuthRepositoryImpl implements AuthRepository {
           .getSingleOrNull();
 
       if (boutique == null) {
-        return const Left(
-            AuthFailure(message: 'Aucune boutique enregistrée'));
+        return const Left(AuthFailure(message: 'Aucune boutique enregistrée'));
       }
 
       return Right(boutique.id);
@@ -535,7 +607,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
 @LazySingleton(as: SyncRepository)
 class SyncRepositoryImpl implements SyncRepository {
-   final AppDatabase _db;
+  final AppDatabase _db;
   final SupabaseSyncService _supabaseSyncService;
 
   SyncRepositoryImpl(this._db, this._supabaseSyncService);
@@ -544,34 +616,70 @@ class SyncRepositoryImpl implements SyncRepository {
       StreamController<SyncStatus>.broadcast();
 
   @override
-   Future<int> getNombreElementsNonSynces() async {
-    final produits = await (_db.select(_db.produits)..where((t) => t.synced.equals(false))).get();
-    final clients = await (_db.select(_db.clients)..where((t) => t.synced.equals(false))).get();
-    final ventes = await (_db.select(_db.ventes)..where((t) => t.synced.equals(false))).get();
-    final dettes = await (_db.select(_db.dettes)..where((t) => t.synced.equals(false))).get();
-    final paiements = await (_db.select(_db.paiements)..where((t) => t.synced.equals(false))).get();
-    _pending = produits.length + clients.length + ventes.length + dettes.length + paiements.length;
+  Future<int> getNombreElementsNonSynces() async {
+    final produits = await (_db.select(_db.produits)
+          ..where((t) => t.synced.equals(false)))
+        .get();
+    final clients = await (_db.select(_db.clients)
+          ..where((t) => t.synced.equals(false)))
+        .get();
+    final ventes = await (_db.select(_db.ventes)
+          ..where((t) => t.synced.equals(false)))
+        .get();
+    final dettes = await (_db.select(_db.dettes)
+          ..where((t) => t.synced.equals(false)))
+        .get();
+    final paiements = await (_db.select(_db.paiements)
+          ..where((t) => t.synced.equals(false)))
+        .get();
+    _pending = produits.length +
+        clients.length +
+        ventes.length +
+        dettes.length +
+        paiements.length;
     return _pending;
   }
 
   @override
   Future<Either<Failure, Unit>> synchroniser(String boutiqueId) async {
-      try {
+    try {
       _statusCtrl.add(SyncStatus.syncing);
 
-      final boutiques = await (_db.select(_db.boutiques)..where((b) => b.id.equals(boutiqueId))).get();
-      final utilisateurs = await (_db.select(_db.utilisateurs)..where((u) => u.boutiqueId.equals(boutiqueId))).get();
-      final produits = await (_db.select(_db.produits)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
-      final clients = await (_db.select(_db.clients)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
-      final ventes = await (_db.select(_db.ventes)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
-      final dettes = await (_db.select(_db.dettes)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
-      final paiements = await (_db.select(_db.paiements)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
-      final abonnements = await (_db.select(_db.abonnements)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
+      final boutiques = await (_db.select(_db.boutiques)
+            ..where((b) => b.id.equals(boutiqueId)))
+          .get();
+      final utilisateurs = await (_db.select(_db.utilisateurs)
+            ..where((u) => u.boutiqueId.equals(boutiqueId)))
+          .get();
+      final produits = await (_db.select(_db.produits)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .get();
+      final clients = await (_db.select(_db.clients)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .get();
+      final ventes = await (_db.select(_db.ventes)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .get();
+      final dettes = await (_db.select(_db.dettes)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .get();
+      final paiements = await (_db.select(_db.paiements)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .get();
+      final abonnements = await (_db.select(_db.abonnements)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .get();
 
       await _supabaseSyncService.upsertBatch(
         table: 'boutiques',
         rows: boutiques
-            .map((b) => {'id': b.id, 'nom': b.nom, 'adresse': b.adresse, 'telephone': b.telephone, 'created_at': b.createdAt.toIso8601String()})
+            .map((b) => {
+                  'id': b.id,
+                  'nom': b.nom,
+                  'adresse': b.adresse,
+                  'telephone': b.telephone,
+                  'created_at': b.createdAt.toIso8601String()
+                })
             .toList(),
       );
       await _supabaseSyncService.upsertBatch(
@@ -693,15 +801,20 @@ class SyncRepositoryImpl implements SyncRepository {
             .toList(),
       );
 
-      await (_db.update(_db.produits)..where((t) => t.boutiqueId.equals(boutiqueId)))
+      await (_db.update(_db.produits)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
           .write(const ProduitsCompanion(synced: Value(true)));
-      await (_db.update(_db.clients)..where((t) => t.boutiqueId.equals(boutiqueId)))
+      await (_db.update(_db.clients)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
           .write(const ClientsCompanion(synced: Value(true)));
-      await (_db.update(_db.ventes)..where((t) => t.boutiqueId.equals(boutiqueId)))
+      await (_db.update(_db.ventes)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
           .write(const VentesCompanion(synced: Value(true)));
-      await (_db.update(_db.dettes)..where((t) => t.boutiqueId.equals(boutiqueId)))
+      await (_db.update(_db.dettes)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
           .write(const DettesCompanion(synced: Value(true)));
-      await (_db.update(_db.paiements)..where((t) => t.boutiqueId.equals(boutiqueId)))
+      await (_db.update(_db.paiements)
+            ..where((t) => t.boutiqueId.equals(boutiqueId)))
           .write(const PaiementsCompanion(synced: Value(true)));
 
       _pending = await getNombreElementsNonSynces();
