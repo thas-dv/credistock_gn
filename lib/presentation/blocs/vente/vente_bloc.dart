@@ -56,7 +56,11 @@ class VenteEnregistrer extends VenteEvent {
 }
 
 class VenteDemarrerEcouteVocale extends VenteEvent {
-  const VenteDemarrerEcouteVocale();
+ final String boutiqueId;
+  const VenteDemarrerEcouteVocale(this.boutiqueId);
+
+  @override
+  List<Object?> get props => [boutiqueId];
 }
 
 class VenteArreterEcouteVocale extends VenteEvent {
@@ -157,6 +161,7 @@ class VenteBloc extends Bloc<VenteEvent, VenteState> {
   final EnregistrerVenteUseCase _enregistrerVente;
   final ParseCommandeVocaleUseCase _parseCommande;
   final SpeechToText _speechToText = SpeechToText();
+  String? _boutiqueIdForVoice;
 
   VenteBloc(this._enregistrerVente, this._parseCommande)
       : super(const VenteState()) {
@@ -220,6 +225,7 @@ class VenteBloc extends Bloc<VenteEvent, VenteState> {
     VenteDemarrerEcouteVocale event,
     Emitter<VenteState> emit,
   ) async {
+    _boutiqueIdForVoice = event.boutiqueId;
     final available = await _speechToText.initialize(
       onError: (_) => add(const VenteArreterEcouteVocale()),
     );
@@ -238,6 +244,12 @@ class VenteBloc extends Bloc<VenteEvent, VenteState> {
       onResult: (result) {
         if (result.finalResult) {
           // Sera traité via VenteTexteVocalRecu
+           final texte = result.recognizedWords.trim();
+          final boutiqueId = _boutiqueIdForVoice;
+          if (texte.isNotEmpty && boutiqueId != null) {
+            add(VenteTexteVocalRecu(texte, boutiqueId));
+          }
+          add(const VenteArreterEcouteVocale());
         }
       },
       localeId: 'fr_FR',

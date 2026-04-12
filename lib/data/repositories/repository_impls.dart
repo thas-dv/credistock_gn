@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:dartz/dartz.dart';
 import 'package:drift/drift.dart';
 import 'package:injectable/injectable.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../core/errors/failures.dart';
+import '../../core/services/supabase_sync_service.dart';
 import '../local/database/app_database.dart' hide Produit, Client, Dette, Vente, Abonnement;
 import '../../domain/entities/entities.dart';
 import '../../domain/repositories/repositories.dart';
@@ -373,8 +375,9 @@ class DetteRepositoryImpl implements DetteRepository {
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   final AppDatabase _db;
+ final SyncRepository _syncRepository;
 
-  AuthRepositoryImpl(this._db);
+ AuthRepositoryImpl(this._db, this._syncRepository);
 
   bool _sessionActive = false;
 
@@ -437,7 +440,7 @@ class AuthRepositoryImpl implements AuthRepository {
               ),
             );
       });
-
+      await _syncRepository.synchroniser(boutiqueId);
       _sessionActive = true;
       return const Right(unit);
     } catch (e) {
@@ -517,19 +520,185 @@ class AuthRepositoryImpl implements AuthRepository {
 
 @LazySingleton(as: SyncRepository)
 class SyncRepositoryImpl implements SyncRepository {
+   final AppDatabase _db;
+  final SupabaseSyncService _supabaseSyncService;
+
+  SyncRepositoryImpl(this._db, this._supabaseSyncService);
   int _pending = 0;
   final StreamController<SyncStatus> _statusCtrl =
       StreamController<SyncStatus>.broadcast();
 
   @override
-  Future<int> getNombreElementsNonSynces() async => _pending;
+   Future<int> getNombreElementsNonSynces() async {
+    final produits = await (_db.select(_db.produits)..where((t) => t.synced.equals(false))).get();
+    final clients = await (_db.select(_db.clients)..where((t) => t.synced.equals(false))).get();
+    final ventes = await (_db.select(_db.ventes)..where((t) => t.synced.equals(false))).get();
+    final dettes = await (_db.select(_db.dettes)..where((t) => t.synced.equals(false))).get();
+    final paiements = await (_db.select(_db.paiements)..where((t) => t.synced.equals(false))).get();
+    _pending = produits.length + clients.length + ventes.length + dettes.length + paiements.length;
+    return _pending;
+  }
 
   @override
   Future<Either<Failure, Unit>> synchroniser(String boutiqueId) async {
-    _statusCtrl.add(SyncStatus.syncing);
-    _pending = 0;
-    _statusCtrl.add(SyncStatus.success);
-    return const Right(unit);
+      try {
+      _statusCtrl.add(SyncStatus.syncing);
+
+      final boutiques = await (_db.select(_db.boutiques)..where((b) => b.id.equals(boutiqueId))).get();
+      final utilisateurs = await (_db.select(_db.utilisateurs)..where((u) => u.boutiqueId.equals(boutiqueId))).get();
+      final produits = await (_db.select(_db.produits)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
+      final clients = await (_db.select(_db.clients)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
+      final ventes = await (_db.select(_db.ventes)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
+      final dettes = await (_db.select(_db.dettes)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
+      final paiements = await (_db.select(_db.paiements)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
+      final abonnements = await (_db.select(_db.abonnements)..where((t) => t.boutiqueId.equals(boutiqueId))).get();
+
+      await _supabaseSyncService.upsertBatch(
+        table: 'boutiques',
+        rows: boutiques
+            .map((b) => {'id': b.id, 'nom': b.nom, 'adresse': b.adresse, 'telephone': b.telephone, 'created_at': b.createdAt.toIso8601String()})
+            .toList(),
+      );
+      await _supabaseSyncService.upsertBatch(
+        table: 'utilisateurs',
+        rows: utilisateurs
+            .map((u) => {
+                  'id': u.id,
+                  'boutique_id': u.boutiqueId,
+                  'nom': u.nom,
+                  'role': u.role,
+                  'mot_de_passe': u.motDePasse,
+                  'pin_hash': u.pinHash,
+                  'created_at': u.createdAt.toIso8601String(),
+                })
+            .toList(),
+      );
+      await _supabaseSyncService.upsertBatch(
+        table: 'produits',
+        rows: produits
+            .map((p) => {
+                  'id': p.id,
+                  'boutique_id': p.boutiqueId,
+                  'nom': p.nom,
+                  'categorie': p.categorie,
+                  'prix_vente': p.prixVente,
+                  'prix_achat': p.prixAchat,
+                  'quantite': p.quantite,
+                  'seuil_alerte': p.seuilAlerte,
+                  'synced': true,
+                  'updated_at': p.updatedAt.toIso8601String(),
+                })
+            .toList(),
+      );
+      await _supabaseSyncService.upsertBatch(
+        table: 'clients',
+        rows: clients
+            .map((c) => {
+                  'id': c.id,
+                  'boutique_id': c.boutiqueId,
+                  'nom': c.nom,
+                  'telephone': c.telephone,
+                  'score': c.score,
+                  'total_du': c.totalDu,
+                  'nombre_dettes': c.nombreDettes,
+                  'nombres_remboursements': c.nombresRemboursements,
+                  'synced': true,
+                  'created_at': c.createdAt.toIso8601String(),
+                })
+            .toList(),
+      );
+      await _supabaseSyncService.upsertBatch(
+        table: 'ventes',
+        rows: ventes
+            .map((v) => {
+                  'id': v.id,
+                  'boutique_id': v.boutiqueId,
+                  'produit_id': v.produitId,
+                  'client_id': v.clientId,
+                  'utilisateur_id': v.utilisateurId,
+                  'quantite': v.quantite,
+                  'prix_unitaire': v.prixUnitaire,
+                  'montant_total': v.montantTotal,
+                  'type_paiement': v.typePaiement,
+                  'source': v.source,
+                  'synced': true,
+                  'date': v.date.toIso8601String(),
+                })
+            .toList(),
+      );
+      await _supabaseSyncService.upsertBatch(
+        table: 'dettes',
+        rows: dettes
+            .map((d) => {
+                  'id': d.id,
+                  'client_id': d.clientId,
+                  'vente_id': d.venteId,
+                  'boutique_id': d.boutiqueId,
+                  'montant': d.montant,
+                  'montant_paye': d.montantPaye,
+                  'statut': d.statut,
+                  'date_echeance': d.dateEcheance?.toIso8601String(),
+                  'rappel1_jour_envoye': d.rappel1JourEnvoye,
+                  'rappel3_jours_envoye': d.rappel3JoursEnvoye,
+                  'rappel7_jours_envoye': d.rappel7JoursEnvoye,
+                  'synced': true,
+                  'created_at': d.createdAt.toIso8601String(),
+                  'updated_at': d.updatedAt.toIso8601String(),
+                })
+            .toList(),
+      );
+      await _supabaseSyncService.upsertBatch(
+        table: 'paiements',
+        rows: paiements
+            .map((p) => {
+                  'id': p.id,
+                  'dette_id': p.detteId,
+                  'boutique_id': p.boutiqueId,
+                  'montant': p.montant,
+                  'mode_paiement': p.modePaiement,
+                  'synced': true,
+                  'date': p.date.toIso8601String(),
+                })
+            .toList(),
+      );
+      await _supabaseSyncService.upsertBatch(
+        table: 'abonnements',
+        rows: abonnements
+            .map((a) => {
+                  'id': a.id,
+                  'boutique_id': a.boutiqueId,
+                  'plan': a.plan,
+                  'statut': a.statut,
+                  'mode_paiement': a.modePaiement,
+                  'montant': a.montant,
+                  'date_debut': a.dateDebut.toIso8601String(),
+                  'date_fin': a.dateFin?.toIso8601String(),
+                  'synced': true,
+                })
+            .toList(),
+      );
+
+      await (_db.update(_db.produits)..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .write(const ProduitsCompanion(synced: Value(true)));
+      await (_db.update(_db.clients)..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .write(const ClientsCompanion(synced: Value(true)));
+      await (_db.update(_db.ventes)..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .write(const VentesCompanion(synced: Value(true)));
+      await (_db.update(_db.dettes)..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .write(const DettesCompanion(synced: Value(true)));
+      await (_db.update(_db.paiements)..where((t) => t.boutiqueId.equals(boutiqueId)))
+          .write(const PaiementsCompanion(synced: Value(true)));
+
+      _pending = await getNombreElementsNonSynces();
+      _statusCtrl.add(SyncStatus.success);
+      return const Right(unit);
+    } on PostgrestException catch (e) {
+      _statusCtrl.add(SyncStatus.error);
+      return Left(SyncFailure(message: e.message));
+    } catch (e) {
+      _statusCtrl.add(SyncStatus.error);
+      return Left(SyncFailure(message: e.toString()));
+    }
   }
 
   @override

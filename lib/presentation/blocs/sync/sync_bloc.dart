@@ -28,6 +28,8 @@ class _ConnectivityChanged extends SyncEvent {
   List<Object?> get props => [estConnecte];
 }
 
+class _AutoSyncTick extends SyncEvent {}
+
 // ============================================================
 // STATE
 // ============================================================
@@ -77,14 +79,16 @@ class SyncState extends Equatable {
 @injectable
 class SyncBloc extends Bloc<SyncEvent, SyncState> {
   final SyncRepository _syncRepo;
+  final AuthRepository _authRepository;
   final Connectivity _connectivity = Connectivity();
   StreamSubscription? _connectivitySub;
   Timer? _syncTimer;
 
-  SyncBloc(this._syncRepo) : super(const SyncState()) {
+   SyncBloc(this._syncRepo, this._authRepository) : super(const SyncState()) {
     on<SyncStartWatching>(_onStartWatching);
     on<SyncManuel>(_onManuel);
     on<_ConnectivityChanged>(_onConnectivityChanged);
+    on<_AutoSyncTick>(_onAutoSyncTick);
   }
 
   Future<void> _onStartWatching(SyncStartWatching event, Emitter<SyncState> emit) async {
@@ -103,12 +107,22 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
       if (state.estConnecte && state.aSynchroniser) {
         // Le boutiqueId sera injecté depuis le contexte
         // add(SyncManuel(boutiqueId));
+        add(_AutoSyncTick());
       }
     });
 
     // Compter les éléments en attente
     final count = await _syncRepo.getNombreElementsNonSynces();
     emit(state.copyWith(elementsEnAttente: count));
+
+    await _synchroniserSiPossible(emit);
+  }
+
+  Future<void> _onAutoSyncTick(
+    _AutoSyncTick event,
+    Emitter<SyncState> emit,
+  ) async {
+    await _synchroniserSiPossible(emit);
   }
 
   Future<void> _onConnectivityChanged(
@@ -121,6 +135,7 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
     if (event.estConnecte && state.aSynchroniser) {
       emit(state.copyWith(status: SyncStatus.syncing));
       // Sync déclenchée — boutiqueId depuis les prefs
+      await _synchroniserSiPossible(emit);
     }
   }
 
@@ -146,6 +161,31 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
     );
   }
 
+ Future<void> _synchroniserSiPossible(Emitter<SyncState> emit) async {
+    if (!state.estConnecte) return;
+
+    final boutiqueIdResult = await _authRepository.getBoutiqueId();
+    await boutiqueIdResult.fold(
+      (_) async {},
+      (boutiqueId) async {
+        final result = await _syncRepo.synchroniser(boutiqueId);
+        result.fold(
+          (failure) => emit(state.copyWith(
+            status: SyncStatus.error,
+            errorMessage: failure.message,
+          )),
+          (_) async {
+            final count = await _syncRepo.getNombreElementsNonSynces();
+            emit(state.copyWith(
+              status: SyncStatus.success,
+              elementsEnAttente: count,
+              derniereSyncReussie: DateTime.now(),
+            ));
+          },
+        );
+      },
+    );
+  }
   @override
   Future<void> close() {
     _connectivitySub?.cancel();

@@ -1,6 +1,8 @@
 import 'package:get_it/get_it.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../data/local/database/app_database.dart';
 import '../../data/repositories/repository_impls.dart';
+import '../services/supabase_sync_service.dart';
 import '../../domain/repositories/repositories.dart';
 import '../../domain/usecases/usecases.dart';
 import '../../presentation/blocs/auth/auth_bloc.dart';
@@ -17,9 +19,18 @@ Future<void> configureDependencies() async {
 
   getIt.registerLazySingleton<InMemoryStore>(() => InMemoryStore());
 getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
+  getIt.registerLazySingleton<SupabaseSyncService>(
+    () => SupabaseSyncService(Supabase.instance.client),
+  );
 
- getIt.registerLazySingleton<AuthRepository>(
-    () => AuthRepositoryImpl(getIt<AppDatabase>()),
+ getIt.registerLazySingleton<SyncRepository>(
+    () => SyncRepositoryImpl(
+      getIt<AppDatabase>(),
+      getIt<SupabaseSyncService>(),
+    ),
+  );
+  getIt.registerLazySingleton<AuthRepository>(
+    () => AuthRepositoryImpl(getIt<AppDatabase>(), getIt<SyncRepository>()),
   );
   getIt.registerLazySingleton<ProduitRepository>(
     () => ProduitRepositoryImpl(getIt<InMemoryStore>()),
@@ -33,7 +44,7 @@ getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
   getIt.registerLazySingleton<DetteRepository>(
     () => DetteRepositoryImpl(getIt<InMemoryStore>()),
   );
-  getIt.registerLazySingleton<SyncRepository>(() => SyncRepositoryImpl());
+ 
   getIt.registerLazySingleton<AbonnementRepository>(() => AbonnementRepositoryImpl());
 
   getIt.registerFactory(
@@ -65,7 +76,9 @@ getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
   );
 
   getIt.registerFactory(() => AuthBloc(getIt<AuthRepository>()));
-  getIt.registerFactory(() => SyncBloc(getIt<SyncRepository>()));
+ getIt.registerFactory(
+    () => SyncBloc(getIt<SyncRepository>(), getIt<AuthRepository>()),
+  );
   getIt.registerFactory(() => StockBloc(getIt<ProduitRepository>()));
   getIt.registerFactory(() => ClientBloc(getIt<ClientRepository>()));
   getIt.registerFactory(

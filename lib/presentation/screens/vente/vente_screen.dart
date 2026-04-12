@@ -35,7 +35,8 @@ class _VenteView extends StatelessWidget {
               content: const Text('Vente enregistrée ✓'),
               backgroundColor: AppColors.green,
               behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
             ),
           );
           context.pop();
@@ -46,7 +47,8 @@ class _VenteView extends StatelessWidget {
               content: Text(state.errorMessage ?? 'Erreur'),
               backgroundColor: AppColors.red,
               behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
             ),
           );
         }
@@ -131,7 +133,8 @@ class _Chip extends StatelessWidget {
   final bool selected;
   final VoidCallback onTap;
 
-  const _Chip({required this.label, required this.selected, required this.onTap});
+  const _Chip(
+      {required this.label, required this.selected, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -167,17 +170,23 @@ class _VocalSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<VenteBloc, VenteState>(
-      buildWhen: (p, c) => p.ecouteStatus != c.ecouteStatus || p.texteVocal != c.texteVocal,
+      buildWhen: (p, c) =>
+          p.ecouteStatus != c.ecouteStatus || p.texteVocal != c.texteVocal,
       builder: (context, state) {
         final isListening = state.ecouteStatus == EcouteVocaleStatus.listening;
-        final isProcessing = state.ecouteStatus == EcouteVocaleStatus.processing;
+        final isProcessing =
+            state.ecouteStatus == EcouteVocaleStatus.processing;
 
         return GestureDetector(
           onTap: () {
             if (isListening) {
               context.read<VenteBloc>().add(const VenteArreterEcouteVocale());
             } else {
-              context.read<VenteBloc>().add(const VenteDemarrerEcouteVocale());
+              final boutiqueId = context.read<AuthBloc>().state.boutiqueId;
+              if (boutiqueId == null) return;
+              context
+                  .read<VenteBloc>()
+                  .add(VenteDemarrerEcouteVocale(boutiqueId));
             }
           },
           child: AnimatedContainer(
@@ -213,7 +222,8 @@ class _VocalSection extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
-                        color: isListening ? AppColors.green : AppColors.gray400,
+                        color:
+                            isListening ? AppColors.green : AppColors.gray400,
                       ),
                     ),
                   ],
@@ -257,9 +267,7 @@ class _WaveAnimation extends StatelessWidget {
             color: AppColors.green,
             borderRadius: BorderRadius.circular(2),
           ),
-        )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scaleY(
+        ).animate(onPlay: (c) => c.repeat(reverse: true)).scaleY(
               begin: 1,
               end: 5,
               delay: Duration(milliseconds: i * 100),
@@ -322,16 +330,20 @@ class _ProduitCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(produit.nom, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+                  Text(produit.nom,
+                      style: const TextStyle(
+                          fontSize: 14, fontWeight: FontWeight.w500)),
                   Text(
                     '${produit.quantite} en stock · ${_formatGNF(produit.prixVente)} GNF',
-                    style: const TextStyle(fontSize: 11, color: AppColors.gray400),
+                    style:
+                        const TextStyle(fontSize: 11, color: AppColors.gray400),
                   ),
                 ],
               ),
             ),
             IconButton(
-              onPressed: () => context.read<VenteBloc>().add(const VenteReinitialiser()),
+              onPressed: () =>
+                  context.read<VenteBloc>().add(const VenteReinitialiser()),
               icon: const Icon(Icons.close, size: 16, color: AppColors.gray400),
             ),
           ],
@@ -382,7 +394,8 @@ class _QuantiteSection extends StatelessWidget {
                   child: Text(
                     '${state.quantite}',
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.w500),
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -430,9 +443,12 @@ class _ClientSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<VenteBloc, VenteState>(
-      buildWhen: (p, c) => p.typePaiement != c.typePaiement || p.clientSelectionne != c.clientSelectionne,
+      buildWhen: (p, c) =>
+          p.typePaiement != c.typePaiement ||
+          p.clientSelectionne != c.clientSelectionne,
       builder: (context, state) {
-        if (state.typePaiement != TypePaiement.credit) return const SizedBox.shrink();
+        if (state.typePaiement != TypePaiement.credit)
+          return const SizedBox.shrink();
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -475,7 +491,10 @@ class _ClientChip extends StatelessWidget {
           Expanded(
             child: Text(
               client.nom,
-              style: const TextStyle(fontSize: 13, color: AppColors.blue, fontWeight: FontWeight.w500),
+              style: const TextStyle(
+                  fontSize: 13,
+                  color: AppColors.blue,
+                  fontWeight: FontWeight.w500),
             ),
           ),
           AppBadge(label: client.score.name, type: client.score.name),
@@ -492,7 +511,8 @@ class _RecapSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<VenteBloc, VenteState>(
       buildWhen: (p, c) =>
-          p.montantTotal != c.montantTotal || p.produitSelectionne != c.produitSelectionne,
+          p.montantTotal != c.montantTotal ||
+          p.produitSelectionne != c.produitSelectionne,
       builder: (context, state) {
         if (state.produitSelectionne == null) return const SizedBox.shrink();
 
@@ -508,10 +528,13 @@ class _RecapSection extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Produit', style: TextStyle(fontSize: 13, color: AppColors.greenDark)),
+                  const Text('Produit',
+                      style:
+                          TextStyle(fontSize: 13, color: AppColors.greenDark)),
                   Text(
                     '${state.produitSelectionne!.nom} × ${state.quantite}',
-                    style: const TextStyle(fontSize: 13, color: AppColors.greenDark),
+                    style: const TextStyle(
+                        fontSize: 13, color: AppColors.greenDark),
                   ),
                 ],
               ),
@@ -521,7 +544,10 @@ class _RecapSection extends StatelessWidget {
                 children: [
                   const Text(
                     'Total',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.greenDark),
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.greenDark),
                   ),
                   Text(
                     '${_formatGNF(state.montantTotal)} GNF',
