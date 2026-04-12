@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import '../../../domain/entities/entities.dart';
 import '../../../domain/usecases/usecases.dart';
@@ -56,7 +57,7 @@ class VenteEnregistrer extends VenteEvent {
 }
 
 class VenteDemarrerEcouteVocale extends VenteEvent {
- final String boutiqueId;
+  final String boutiqueId;
   const VenteDemarrerEcouteVocale(this.boutiqueId);
 
   @override
@@ -84,6 +85,7 @@ class VenteReinitialiser extends VenteEvent {
 // ============================================================
 
 enum VenteStatus { initial, loading, success, error }
+
 enum EcouteVocaleStatus { inactive, listening, processing, recognized }
 
 class VenteState extends Equatable {
@@ -176,26 +178,31 @@ class VenteBloc extends Bloc<VenteEvent, VenteState> {
     on<VenteReinitialiser>(_onReinitialiser);
   }
 
-  void _onSelectionnerProduit(VenteSelectionnerProduit event, Emitter<VenteState> emit) {
+  void _onSelectionnerProduit(
+      VenteSelectionnerProduit event, Emitter<VenteState> emit) {
     emit(state.copyWith(produitSelectionne: event.produit));
   }
 
-  void _onChangerQuantite(VenteChangerQuantite event, Emitter<VenteState> emit) {
+  void _onChangerQuantite(
+      VenteChangerQuantite event, Emitter<VenteState> emit) {
     if (event.quantite < 1) return;
     final maxStock = state.produitSelectionne?.quantite ?? 999;
     final quantite = event.quantite.clamp(1, maxStock);
     emit(state.copyWith(quantite: quantite));
   }
 
-  void _onChangerTypePaiement(VenteChangerTypePaiement event, Emitter<VenteState> emit) {
+  void _onChangerTypePaiement(
+      VenteChangerTypePaiement event, Emitter<VenteState> emit) {
     emit(state.copyWith(typePaiement: event.type));
   }
 
-  void _onSelectionnerClient(VenteSelectionnerClient event, Emitter<VenteState> emit) {
+  void _onSelectionnerClient(
+      VenteSelectionnerClient event, Emitter<VenteState> emit) {
     emit(state.copyWith(clientSelectionne: event.client));
   }
 
-  Future<void> _onEnregistrer(VenteEnregistrer event, Emitter<VenteState> emit) async {
+  Future<void> _onEnregistrer(
+      VenteEnregistrer event, Emitter<VenteState> emit) async {
     if (!state.peutEnregistrer) return;
     emit(state.copyWith(status: VenteStatus.loading));
 
@@ -226,6 +233,15 @@ class VenteBloc extends Bloc<VenteEvent, VenteState> {
     Emitter<VenteState> emit,
   ) async {
     _boutiqueIdForVoice = event.boutiqueId;
+    final permissionStatus = await Permission.microphone.request();
+    if (!permissionStatus.isGranted) {
+      emit(state.copyWith(
+        errorMessage: 'Permission micro refusée',
+        status: VenteStatus.error,
+        ecouteStatus: EcouteVocaleStatus.inactive,
+      ));
+      return;
+    }
     final available = await _speechToText.initialize(
       onError: (_) => add(const VenteArreterEcouteVocale()),
     );
@@ -244,7 +260,7 @@ class VenteBloc extends Bloc<VenteEvent, VenteState> {
       onResult: (result) {
         if (result.finalResult) {
           // Sera traité via VenteTexteVocalRecu
-           final texte = result.recognizedWords.trim();
+          final texte = result.recognizedWords.trim();
           final boutiqueId = _boutiqueIdForVoice;
           if (texte.isNotEmpty && boutiqueId != null) {
             add(VenteTexteVocalRecu(texte, boutiqueId));

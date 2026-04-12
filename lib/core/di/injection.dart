@@ -17,13 +17,12 @@ final getIt = GetIt.instance;
 Future<void> configureDependencies() async {
   if (getIt.isRegistered<AuthBloc>()) return;
 
-  getIt.registerLazySingleton<InMemoryStore>(() => InMemoryStore());
-getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
+  getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
   getIt.registerLazySingleton<SupabaseSyncService>(
     () => SupabaseSyncService(Supabase.instance.client),
   );
 
- getIt.registerLazySingleton<SyncRepository>(
+  getIt.registerLazySingleton<SyncRepository>(
     () => SyncRepositoryImpl(
       getIt<AppDatabase>(),
       getIt<SupabaseSyncService>(),
@@ -36,16 +35,17 @@ getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
     () => ProduitRepositoryImpl(getIt<AppDatabase>()),
   );
   getIt.registerLazySingleton<ClientRepository>(
-    () => ClientRepositoryImpl(getIt<InMemoryStore>()),
+    () => ClientRepositoryImpl(getIt<AppDatabase>()),
   );
   getIt.registerLazySingleton<VenteRepository>(
-    () => VenteRepositoryImpl(getIt<InMemoryStore>()),
+    () => VenteRepositoryImpl(getIt<AppDatabase>()),
   );
   getIt.registerLazySingleton<DetteRepository>(
-    () => DetteRepositoryImpl(getIt<InMemoryStore>()),
+    () => DetteRepositoryImpl(getIt<AppDatabase>()),
   );
- 
-  getIt.registerLazySingleton<AbonnementRepository>(() => AbonnementRepositoryImpl());
+
+  getIt.registerLazySingleton<AbonnementRepository>(
+      () => AbonnementRepositoryImpl());
 
   getIt.registerFactory(
     () => EnregistrerVenteUseCase(
@@ -76,13 +76,14 @@ getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
   );
 
   getIt.registerFactory(() => AuthBloc(getIt<AuthRepository>()));
- getIt.registerFactory(
+  getIt.registerFactory(
     () => SyncBloc(getIt<SyncRepository>(), getIt<AuthRepository>()),
   );
   getIt.registerFactory(() => StockBloc(getIt<ProduitRepository>()));
   getIt.registerFactory(() => ClientBloc(getIt<ClientRepository>()));
   getIt.registerFactory(
-    () => DetteBloc(getIt<DetteRepository>(), getIt<EnregistrerPaiementUseCase>()),
+    () => DetteBloc(
+        getIt<DetteRepository>(), getIt<EnregistrerPaiementUseCase>()),
   );
   getIt.registerFactory(
     () => VenteBloc(

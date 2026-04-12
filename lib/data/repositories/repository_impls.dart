@@ -15,73 +15,6 @@ import 'package:uuid/uuid.dart';
 
 const _uuid = Uuid();
 
-@lazySingleton
-class InMemoryStore {
-  final List<Produit> produits = [];
-  final List<Client> clients = [];
-  final List<Vente> ventes = [];
-  final List<Dette> dettes = [];
-
-  final produitsCtrl = StreamController<List<Produit>>.broadcast();
-  final clientsCtrl = StreamController<List<Client>>.broadcast();
-  final ventesCtrl = StreamController<List<Vente>>.broadcast();
-  final dettesCtrl = StreamController<List<Dette>>.broadcast();
-
-  void seedIfNeeded() {
-    if (produits.isNotEmpty) return;
-
-    final now = DateTime.now();
-    const boutiqueId = 'demo-boutique';
-
-    produits.addAll([
-      Produit(
-        id: 'p1',
-        boutiqueId: boutiqueId,
-        nom: 'Riz 25kg',
-        categorie: CategorieProduit.alimentaire,
-        prixVente: 230000,
-        prixAchat: 205000,
-        quantite: 12,
-        seuilAlerte: 5,
-        synced: true,
-        updatedAt: now,
-      ),
-    ]);
-
-    clients.add(
-      Client(
-        id: 'c1',
-        boutiqueId: boutiqueId,
-        nom: 'Mamadou Barry',
-        telephone: '+224620000000',
-        score: ScoreClient.bon,
-        totalDu: 0,
-        nombreDettes: 0,
-        nombresRemboursements: 0,
-        synced: true,
-        createdAt: now,
-      ),
-    );
-
-    emitAll();
-  }
-
-  void emitAll() {
-    produitsCtrl.add(List.unmodifiable(produits));
-    clientsCtrl.add(List.unmodifiable(clients));
-    ventesCtrl.add(List.unmodifiable(ventes));
-    dettesCtrl.add(List.unmodifiable(dettes));
-  }
-
-  Stream<List<T>> withInitial<T>(
-    List<T> current,
-    Stream<List<T>> source,
-  ) async* {
-    yield List.unmodifiable(current);
-    yield* source;
-  }
-}
-
 @LazySingleton(as: ProduitRepository)
 class ProduitRepositoryImpl implements ProduitRepository {
   final AppDatabase _db;
@@ -239,137 +172,377 @@ class ProduitRepositoryImpl implements ProduitRepository {
 
 @LazySingleton(as: ClientRepository)
 class ClientRepositoryImpl implements ClientRepository {
-  final InMemoryStore _store;
+  final AppDatabase _db;
 
-  ClientRepositoryImpl(this._store) {
-    _store.seedIfNeeded();
+  ClientRepositoryImpl(this._db);
+
+  Client _toEntity(dynamic row) {
+    return Client(
+      id: row.id,
+      boutiqueId: row.boutiqueId,
+      nom: row.nom,
+      telephone: row.telephone,
+      score: ScoreClient.values.firstWhere(
+        (s) => s.name == row.score,
+        orElse: () => ScoreClient.bon,
+      ),
+      totalDu: row.totalDu,
+      nombreDettes: row.nombreDettes,
+      nombresRemboursements: row.nombresRemboursements,
+      synced: row.synced,
+      createdAt: row.createdAt,
+    );
   }
 
   @override
   Future<Either<Failure, Client>> ajouterClient(Client client) async {
-    _store.clients.add(client);
-    _store.emitAll();
-    return Right(client);
+    try {
+      await _db.into(_db.clients).insert(
+            ClientsCompanion.insert(
+              id: client.id,
+              boutiqueId: client.boutiqueId,
+              nom: client.nom,
+              telephone: Value(client.telephone),
+              score: Value(client.score.name),
+              totalDu: Value(client.totalDu),
+              nombreDettes: Value(client.nombreDettes),
+              nombresRemboursements: Value(client.nombresRemboursements),
+              synced: Value(client.synced),
+              createdAt: Value(client.createdAt),
+            ),
+          );
+      return Right(client);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur ajout client: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, Client>> getClientById(String id) async {
     try {
-      return Right(_store.clients.firstWhere((c) => c.id == id));
-    } catch (_) {
-      return const Left(DatabaseFailure(message: 'Client introuvable'));
+      final row = await (_db.select(_db.clients)..where((c) => c.id.equals(id)))
+          .getSingleOrNull();
+      if (row == null) {
+        return const Left(DatabaseFailure(message: 'Client introuvable'));
+      }
+      return Right(_toEntity(row));
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur lecture client: $e'));
     }
   }
 
   @override
   Future<Either<Failure, Client>> modifierClient(Client client) async {
-    final index = _store.clients.indexWhere((c) => c.id == client.id);
-    if (index == -1)
-      return const Left(DatabaseFailure(message: 'Client introuvable'));
-    _store.clients[index] = client;
-    _store.emitAll();
-    return Right(client);
+    try {
+      final count = await (_db.update(_db.clients)
+            ..where((c) => c.id.equals(client.id)))
+          .write(
+        ClientsCompanion(
+          nom: Value(client.nom),
+          telephone: Value(client.telephone),
+          score: Value(client.score.name),
+          totalDu: Value(client.totalDu),
+          nombreDettes: Value(client.nombreDettes),
+          nombresRemboursements: Value(client.nombresRemboursements),
+          synced: Value(client.synced),
+        ),
+      );
+      if (count == 0) {
+        return const Left(DatabaseFailure(message: 'Client introuvable'));
+      }
+      return Right(client);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur modification client: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, Unit>> recalculerScore(String clientId) async {
-    return const Right(unit);
+    try {
+      final clientRow = await (_db.select(_db.clients)
+            ..where((c) => c.id.equals(clientId)))
+          .getSingleOrNull();
+      if (clientRow == null) {
+        return const Left(DatabaseFailure(message: 'Client introuvable'));
+      }
+
+      final dettesRows = await (_db.select(_db.dettes)
+            ..where((d) => d.clientId.equals(clientId)))
+          .get();
+
+      final nombreDettes = dettesRows.length;
+      final totalDu = dettesRows.fold<int>(0, (sum, d) {
+        final restant = (d.montant - d.montantPaye).clamp(0, d.montant);
+        return sum + restant;
+      });
+      final remboursements = dettesRows.where((d) => d.statut == 'paye').length;
+
+      ScoreClient score;
+      if (totalDu == 0) {
+        score = ScoreClient.bon;
+      } else if (nombreDettes <= 2) {
+        score = ScoreClient.moyen;
+      } else {
+        score = ScoreClient.mauvais;
+      }
+
+      await (_db.update(_db.clients)..where((c) => c.id.equals(clientId)))
+          .write(
+        ClientsCompanion(
+          totalDu: Value(totalDu),
+          nombreDettes: Value(nombreDettes),
+          nombresRemboursements: Value(remboursements),
+          score: Value(score.name),
+          synced: const Value(false),
+        ),
+      );
+      return const Right(unit);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur score client: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, List<Client>>> searchClients(
       String boutiqueId, String query) async {
-    final q = query.toLowerCase();
-    return Right(
-      _store.clients
-          .where((c) => c.boutiqueId == boutiqueId)
+    final q = query.toLowerCase().trim();
+    try {
+      final rows = await (_db.select(_db.clients)
+            ..where((c) => c.boutiqueId.equals(boutiqueId)))
+          .get();
+      final items = rows
+          .map(_toEntity)
           .where((c) =>
               c.nom.toLowerCase().contains(q) ||
               (c.telephone?.contains(query) ?? false))
-          .toList(),
-    );
+          .toList();
+      return Right(items);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur recherche client: $e'));
+    }
   }
 
   @override
   Stream<List<Client>> watchClients(String boutiqueId) {
-    return _store.withInitial(_store.clients, _store.clientsCtrl.stream).map(
-          (items) => items.where((c) => c.boutiqueId == boutiqueId).toList(),
-        );
+    final query = (_db.select(_db.clients)
+      ..where((c) => c.boutiqueId.equals(boutiqueId))
+      ..orderBy([(c) => OrderingTerm.asc(c.nom)]));
+    return query.watch().map((rows) => rows.map(_toEntity).toList());
   }
 }
 
 @LazySingleton(as: VenteRepository)
 class VenteRepositoryImpl implements VenteRepository {
-  final InMemoryStore _store;
+  final AppDatabase _db;
 
-  VenteRepositoryImpl(this._store) {
-    _store.seedIfNeeded();
+  VenteRepositoryImpl(this._db);
+
+  TypePaiement _toTypePaiement(String value) {
+    return TypePaiement.values.firstWhere(
+      (t) => t.name == value,
+      orElse: () => TypePaiement.cash,
+    );
+  }
+
+  SourceVente _toSource(String value) {
+    return SourceVente.values.firstWhere(
+      (s) => s.name == value,
+      orElse: () => SourceVente.manuel,
+    );
+  }
+
+  Vente _toEntity(dynamic row, {required String nomProduit}) {
+    return Vente(
+      id: row.id,
+      boutiqueId: row.boutiqueId,
+      produitId: row.produitId,
+      clientId: row.clientId,
+      utilisateurId: row.utilisateurId,
+      nomProduit: nomProduit,
+      quantite: row.quantite,
+      prixUnitaire: row.prixUnitaire,
+      montantTotal: row.montantTotal,
+      typePaiement: _toTypePaiement(row.typePaiement),
+      source: _toSource(row.source),
+      synced: row.synced,
+      date: row.date,
+    );
   }
 
   @override
   Future<Either<Failure, Vente>> enregistrerVente(Vente vente) async {
-    _store.ventes.add(vente);
-    _store.emitAll();
-    return Right(vente);
+    try {
+      await _db.into(_db.ventes).insert(
+            VentesCompanion.insert(
+              id: vente.id,
+              boutiqueId: vente.boutiqueId,
+              produitId: vente.produitId,
+              clientId: Value(vente.clientId),
+              utilisateurId: vente.utilisateurId,
+              quantite: vente.quantite,
+              prixUnitaire: vente.prixUnitaire,
+              montantTotal: vente.montantTotal,
+              typePaiement: vente.typePaiement.name,
+              source: Value(vente.source.name),
+              synced: Value(vente.synced),
+              date: Value(vente.date),
+            ),
+          );
+      return Right(vente);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur enregistrement vente: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, int>> getTotalVentesJour(String boutiqueId) async {
-    final today = DateTime.now();
-    final total = _store.ventes
-        .where((v) => v.boutiqueId == boutiqueId)
-        .where((v) =>
-            v.date.year == today.year &&
-            v.date.month == today.month &&
-            v.date.day == today.day)
-        .fold<int>(0, (sum, v) => sum + v.montantTotal);
-    return Right(total);
+    try {
+      final today = DateTime.now();
+      final ventes = await getVentesParJour(boutiqueId, today);
+      return ventes.fold((l) => Left(l), (list) {
+        final total = list.fold<int>(0, (sum, v) => sum + v.montantTotal);
+        return Right(total);
+      });
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur total ventes jour: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, List<Vente>>> getVentesParJour(
       String boutiqueId, DateTime date) async {
-    final ventes = _store.ventes
-        .where((v) => v.boutiqueId == boutiqueId)
-        .where((v) =>
-            v.date.year == date.year &&
-            v.date.month == date.month &&
-            v.date.day == date.day)
-        .toList();
-    return Right(ventes);
+    try {
+      final start = DateTime(date.year, date.month, date.day);
+      final end = start.add(const Duration(days: 1));
+      return _getVentesBetween(boutiqueId, start, end);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur ventes du jour: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, List<Vente>>> getVentesParPeriode(
       String boutiqueId, DateTime debut, DateTime fin) async {
-    final ventes = _store.ventes
-        .where((v) => v.boutiqueId == boutiqueId)
-        .where((v) => !v.date.isBefore(debut) && !v.date.isAfter(fin))
-        .toList();
-    return Right(ventes);
+    try {
+      return _getVentesBetween(
+        boutiqueId,
+        debut,
+        fin.add(const Duration(milliseconds: 1)),
+      );
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur ventes période: $e'));
+    }
   }
 
   @override
   Stream<List<Vente>> watchVentes(String boutiqueId) {
-    return _store.withInitial(_store.ventes, _store.ventesCtrl.stream).map(
-          (items) => items.where((v) => v.boutiqueId == boutiqueId).toList(),
+    final joined = (_db.select(_db.ventes).join([
+      leftOuterJoin(
+          _db.produits, _db.produits.id.equalsExp(_db.ventes.produitId)),
+    ])
+      ..where(_db.ventes.boutiqueId.equals(boutiqueId))
+      ..orderBy([OrderingTerm.desc(_db.ventes.date)]));
+
+    return joined.watch().map((rows) {
+      return rows.map((row) {
+        final vente = row.readTable(_db.ventes);
+        final produit = row.readTableOrNull(_db.produits);
+        return _toEntity(
+          vente,
+          nomProduit: produit?.nom ?? vente.produitId,
         );
+      }).toList();
+    });
+  }
+
+  Future<Either<Failure, List<Vente>>> _getVentesBetween(
+    String boutiqueId,
+    DateTime start,
+    DateTime endExclusive,
+  ) async {
+    final joined = (_db.select(_db.ventes).join([
+      leftOuterJoin(
+          _db.produits, _db.produits.id.equalsExp(_db.ventes.produitId)),
+    ])
+      ..where(_db.ventes.boutiqueId.equals(boutiqueId))
+      ..where(_db.ventes.date.isBiggerOrEqualValue(start))
+      ..where(_db.ventes.date.isSmallerThanValue(endExclusive))
+      ..orderBy([OrderingTerm.desc(_db.ventes.date)]));
+
+    final rows = await joined.get();
+    return Right(rows.map((row) {
+      final vente = row.readTable(_db.ventes);
+      final produit = row.readTableOrNull(_db.produits);
+      return _toEntity(
+        vente,
+        nomProduit: produit?.nom ?? vente.produitId,
+      );
+    }).toList());
   }
 }
 
 @LazySingleton(as: DetteRepository)
 class DetteRepositoryImpl implements DetteRepository {
-  final InMemoryStore _store;
+  final AppDatabase _db;
 
-  DetteRepositoryImpl(this._store) {
-    _store.seedIfNeeded();
+  DetteRepositoryImpl(this._db);
+
+  StatutDette _toStatut(String value) {
+    if (value == 'non_paye') return StatutDette.nonPaye;
+    if (value == 'partiel') return StatutDette.partiel;
+    return StatutDette.paye;
+  }
+
+  String _fromStatut(StatutDette statut) {
+    switch (statut) {
+      case StatutDette.nonPaye:
+        return 'non_paye';
+      case StatutDette.partiel:
+        return 'partiel';
+      case StatutDette.paye:
+        return 'paye';
+    }
+  }
+
+  Dette _toEntity(dynamic row, {required String nomClient}) {
+    return Dette(
+      id: row.id,
+      clientId: row.clientId,
+      venteId: row.venteId,
+      boutiqueId: row.boutiqueId,
+      nomClient: nomClient,
+      montant: row.montant,
+      montantPaye: row.montantPaye,
+      statut: _toStatut(row.statut),
+      dateEcheance: row.dateEcheance,
+      synced: row.synced,
+      createdAt: row.createdAt,
+      updatedAt: row.updatedAt,
+    );
   }
 
   @override
   Future<Either<Failure, Dette>> enregistrerDette(Dette dette) async {
-    _store.dettes.add(dette);
-    _store.emitAll();
-    return Right(dette);
+    try {
+      await _db.into(_db.dettes).insert(
+            DettesCompanion.insert(
+              id: dette.id,
+              clientId: dette.clientId,
+              venteId: dette.venteId,
+              boutiqueId: dette.boutiqueId,
+              montant: dette.montant,
+              montantPaye: Value(dette.montantPaye),
+              statut: Value(_fromStatut(dette.statut)),
+              dateEcheance: Value(dette.dateEcheance),
+              synced: Value(dette.synced),
+              createdAt: Value(dette.createdAt),
+              updatedAt: Value(dette.updatedAt),
+            ),
+          );
+      return Right(dette);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur enregistrement dette: $e'));
+    }
   }
 
   @override
@@ -377,79 +550,158 @@ class DetteRepositoryImpl implements DetteRepository {
       {required String detteId,
       required int montant,
       required String modePaiement}) async {
-    final index = _store.dettes.indexWhere((d) => d.id == detteId);
-    if (index == -1)
-      return const Left(DatabaseFailure(message: 'Dette introuvable'));
+    try {
+      final currentRow = await (_db.select(_db.dettes)
+            ..where((d) => d.id.equals(detteId)))
+          .getSingleOrNull();
+      if (currentRow == null) {
+        return const Left(DatabaseFailure(message: 'Dette introuvable'));
+      }
 
-    final current = _store.dettes[index];
-    final nouveauPaye =
-        (current.montantPaye + montant).clamp(0, current.montant);
-    final statut = switch (nouveauPaye) {
-      0 => StatutDette.nonPaye,
-      _ when nouveauPaye >= current.montant => StatutDette.paye,
-      _ => StatutDette.partiel,
-    };
+      final nouveauPaye =
+          (currentRow.montantPaye + montant).clamp(0, currentRow.montant);
+      final statut = switch (nouveauPaye) {
+        0 => StatutDette.nonPaye,
+        _ when nouveauPaye >= currentRow.montant => StatutDette.paye,
+        _ => StatutDette.partiel,
+      };
 
-    final updated = Dette(
-      id: current.id,
-      clientId: current.clientId,
-      venteId: current.venteId,
-      boutiqueId: current.boutiqueId,
-      nomClient: current.nomClient,
-      montant: current.montant,
-      montantPaye: nouveauPaye,
-      statut: statut,
-      dateEcheance: current.dateEcheance,
-      synced: false,
-      createdAt: current.createdAt,
-      updatedAt: DateTime.now(),
-    );
+      await (_db.update(_db.dettes)..where((d) => d.id.equals(detteId))).write(
+        DettesCompanion(
+          montantPaye: Value(nouveauPaye),
+          statut: Value(_fromStatut(statut)),
+          synced: const Value(false),
+          updatedAt: Value(DateTime.now()),
+        ),
+      );
 
-    _store.dettes[index] = updated;
-    _store.emitAll();
-    return Right(updated);
+      await _db.into(_db.paiements).insert(
+            PaiementsCompanion.insert(
+              id: _uuid.v4(),
+              detteId: detteId,
+              boutiqueId: currentRow.boutiqueId,
+              montant: montant,
+              modePaiement: Value(modePaiement),
+              synced: const Value(false),
+              date: Value(DateTime.now()),
+            ),
+          );
+
+      final clientRow = await (_db.select(_db.clients)
+            ..where((c) => c.id.equals(currentRow.clientId)))
+          .getSingleOrNull();
+
+      final updated = _toEntity(
+        currentRow.copyWith(
+          montantPaye: nouveauPaye,
+          statut: _fromStatut(statut),
+          synced: false,
+          updatedAt: DateTime.now(),
+        ),
+        nomClient: clientRow?.nom ?? currentRow.clientId,
+      );
+      return Right(updated);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur paiement dette: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, Dette>> getDetteById(String id) async {
     try {
-      return Right(_store.dettes.firstWhere((d) => d.id == id));
-    } catch (_) {
-      return const Left(DatabaseFailure(message: 'Dette introuvable'));
+      final joined = _db.select(_db.dettes).join([
+        leftOuterJoin(
+            _db.clients, _db.clients.id.equalsExp(_db.dettes.clientId)),
+      ])
+        ..where(_db.dettes.id.equals(id))
+        ..limit(1);
+
+      final row = await joined.getSingleOrNull();
+      if (row == null) {
+        return const Left(DatabaseFailure(message: 'Dette introuvable'));
+      }
+      final dette = row.readTable(_db.dettes);
+      final client = row.readTableOrNull(_db.clients);
+      return Right(_toEntity(dette, nomClient: client?.nom ?? dette.clientId));
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur lecture dette: $e'));
     }
   }
 
   @override
   Future<Either<Failure, List<Dette>>> getDettesEchues(
       String boutiqueId) async {
-    return Right(
-      _store.dettes
-          .where((d) => d.boutiqueId == boutiqueId && d.estEchue)
-          .toList(),
-    );
+    try {
+      final now = DateTime.now();
+      final joined = (_db.select(_db.dettes).join([
+        leftOuterJoin(
+            _db.clients, _db.clients.id.equalsExp(_db.dettes.clientId)),
+      ])
+        ..where(_db.dettes.boutiqueId.equals(boutiqueId))
+        ..where(_db.dettes.dateEcheance.isSmallerThanValue(now))
+        ..where(_db.dettes.statut.isNotValue('paye'))
+        ..orderBy([OrderingTerm.desc(_db.dettes.updatedAt)]));
+
+      final rows = await joined.get();
+      return Right(rows.map((row) {
+        final dette = row.readTable(_db.dettes);
+        final client = row.readTableOrNull(_db.clients);
+        return _toEntity(dette, nomClient: client?.nom ?? dette.clientId);
+      }).toList());
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur dettes échues: $e'));
+    }
   }
 
   @override
   Future<Either<Failure, int>> getTotalDettesActives(String boutiqueId) async {
-    final total = _store.dettes
-        .where(
-            (d) => d.boutiqueId == boutiqueId && d.statut != StatutDette.paye)
-        .fold<int>(0, (sum, d) => sum + d.montantRestant);
-    return Right(total);
+    try {
+      final rows = await (_db.select(_db.dettes)
+            ..where((d) => d.boutiqueId.equals(boutiqueId))
+            ..where((d) => d.statut.isNotValue('paye')))
+          .get();
+      final total = rows.fold<int>(
+        0,
+        (sum, d) => sum + (d.montant - d.montantPaye).clamp(0, d.montant),
+      );
+      return Right(total);
+    } catch (e) {
+      return Left(DatabaseFailure(message: 'Erreur total dettes: $e'));
+    }
   }
 
   @override
   Stream<List<Dette>> watchDettes(String boutiqueId) {
-    return _store.withInitial(_store.dettes, _store.dettesCtrl.stream).map(
-          (items) => items.where((d) => d.boutiqueId == boutiqueId).toList(),
-        );
+    final joined = (_db.select(_db.dettes).join([
+      leftOuterJoin(_db.clients, _db.clients.id.equalsExp(_db.dettes.clientId)),
+    ])
+      ..where(_db.dettes.boutiqueId.equals(boutiqueId))
+      ..orderBy([OrderingTerm.desc(_db.dettes.updatedAt)]));
+
+    return joined.watch().map((rows) {
+      return rows.map((row) {
+        final dette = row.readTable(_db.dettes);
+        final client = row.readTableOrNull(_db.clients);
+        return _toEntity(dette, nomClient: client?.nom ?? dette.clientId);
+      }).toList();
+    });
   }
 
   @override
   Stream<List<Dette>> watchDettesClient(String clientId) {
-    return _store.withInitial(_store.dettes, _store.dettesCtrl.stream).map(
-          (items) => items.where((d) => d.clientId == clientId).toList(),
-        );
+    final joined = (_db.select(_db.dettes).join([
+      leftOuterJoin(_db.clients, _db.clients.id.equalsExp(_db.dettes.clientId)),
+    ])
+      ..where(_db.dettes.clientId.equals(clientId))
+      ..orderBy([OrderingTerm.desc(_db.dettes.updatedAt)]));
+
+    return joined.watch().map((rows) {
+      return rows.map((row) {
+        final dette = row.readTable(_db.dettes);
+        final client = row.readTableOrNull(_db.clients);
+        return _toEntity(dette, nomClient: client?.nom ?? dette.clientId);
+      }).toList();
+    });
   }
 }
 
