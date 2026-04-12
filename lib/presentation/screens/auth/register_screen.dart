@@ -25,7 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String _role = 'employe';
   final _boutiqueNomCtrl = TextEditingController();
   final _boutiqueAdresseCtrl = TextEditingController();
-  final _utilisateurIdCtrl = TextEditingController();
+
   @override
   void dispose() {
     _nomCtrl.dispose();
@@ -35,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _confirmationCtrl.dispose();
     _boutiqueNomCtrl.dispose();
     _boutiqueAdresseCtrl.dispose();
-    _utilisateurIdCtrl.dispose();
+
     super.dispose();
   }
 
@@ -52,7 +52,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             motDePasse: _motDePasseCtrl.text.trim(),
             boutiqueNom: _boutiqueNomCtrl.text.trim(),
             boutiqueAdresse: _boutiqueAdresseCtrl.text.trim(),
-            utilisateurId: _utilisateurIdCtrl.text.trim(),
           ),
         );
   }
@@ -108,6 +107,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             label: 'Téléphone',
                             keyboardType: TextInputType.phone,
                             validatorMsg: 'Le téléphone est requis',
+                          ),
+                          const SizedBox(height: 10),
+                          DropdownButtonFormField<String>(
+                            value: _role,
+                            decoration: const InputDecoration(
+                              labelText: 'Rôle',
+                            ),
+                            items: const [
+                              DropdownMenuItem(
+                                value: 'admin',
+                                child: Text('Admin'),
+                              ),
+                              DropdownMenuItem(
+                                value: 'employe',
+                                child: Text('Employé'),
+                              ),
+                            ],
+                            onChanged: (value) {
+                              if (value == null) return;
+                              setState(() => _role = value);
+                            },
                           ),
                           const SizedBox(height: 10),
                           TextFormField(
@@ -168,12 +188,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: _boutiqueAdresseCtrl,
                             label: 'Adresse',
                             validatorMsg: 'L\'adresse est requise',
-                          ),
-                          const SizedBox(height: 10),
-                          _simpleField(
-                            controller: _utilisateurIdCtrl,
-                            label: 'utilisateur_id',
-                            validatorMsg: 'utilisateur_id est requis',
                           ),
                           const SizedBox(height: 18),
                           BlocBuilder<AuthBloc, AuthState>(

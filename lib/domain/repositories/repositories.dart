@@ -94,7 +94,7 @@ abstract class AuthRepository {
     required String motDePasse,
     required String boutiqueNom,
     required String boutiqueAdresse,
-    required String utilisateurId,
+
   });
   Future<Either<Failure, Unit>> seConnecter({
     required String identifiant,

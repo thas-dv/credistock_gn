@@ -13,13 +13,13 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-   static const _pinLength = 4;
+  static const _pinLength = 4;
   String _pin = '';
 
-void _onTapDigit(String digit) {
+  void _onTapDigit(String digit) {
     if (_pin.length >= _pinLength) return;
 
-  setState(() => _pin += digit);
+    setState(() => _pin += digit);
 
     if (_pin.length == _pinLength) {
       Future.delayed(const Duration(milliseconds: 100), () {
@@ -29,7 +29,7 @@ void _onTapDigit(String digit) {
     }
   }
 
-    void _onDelete() {
+  void _onDelete() {
     if (_pin.isEmpty) return;
     setState(() => _pin = _pin.substring(0, _pin.length - 1));
   }
@@ -66,13 +66,13 @@ void _onTapDigit(String digit) {
                           child: const Icon(Icons.storefront,
                               color: Colors.white, size: 30),
                         ),
-                         const SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         const Text(
                           'CrédiStock GN',
                           style: TextStyle(
                               fontSize: 24, fontWeight: FontWeight.w600),
                         ),
-                       const SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         const Text(
                           'Entrez votre code PIN (4 chiffres)',
                           style:
@@ -80,20 +80,20 @@ void _onTapDigit(String digit) {
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 16),
-                         Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: List.generate(_pinLength, (i) {
                             final filled = i < _pin.length;
                             return AnimatedContainer(
                               duration: const Duration(milliseconds: 150),
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 7),
+                              margin: const EdgeInsets.symmetric(horizontal: 7),
                               width: 14,
                               height: 14,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color:
-                                    filled ? AppColors.green : Colors.transparent,
+                                color: filled
+                                    ? AppColors.green
+                                    : Colors.transparent,
                                 border: Border.all(
                                     color: AppColors.green, width: 1.5),
                               ),
@@ -115,7 +115,7 @@ void _onTapDigit(String digit) {
                             return const SizedBox(height: 28);
                           },
                         ),
-                         SizedBox(
+                        SizedBox(
                           width: 240,
                           child: GridView.count(
                             crossAxisCount: 3,
@@ -126,12 +126,14 @@ void _onTapDigit(String digit) {
                             children: [
                               ...['1', '2', '3', '4', '5', '6', '7', '8', '9']
                                   .map((d) => _PinBtn(
-                                      label: d,
-                                      onTap: () => _onTapDigit(d))),
+                                      label: d, onTap: () => _onTapDigit(d))),
                               const SizedBox(),
-                              _PinBtn(label: '0', onTap: () => _onTapDigit('0')),
                               _PinBtn(
-                                  label: '⌫', onTap: _onDelete, isDelete: true),
+                                  label: '0', onTap: () => _onTapDigit('0')),
+                              _PinBtn(
+                                  label: '⌫ supprimer',
+                                  onTap: _onDelete,
+                                  isDelete: true),
                             ],
                           ),
                         ),
@@ -144,10 +146,11 @@ void _onTapDigit(String digit) {
                             label: const Text('Créer un compte'),
                           ),
                         ),
-                         const SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         const Text(
                           'Simple et rapide pour tous les commerçants.',
-                          style: TextStyle(fontSize: 12, color: AppColors.gray400),
+                          style:
+                              TextStyle(fontSize: 12, color: AppColors.gray400),
                           textAlign: TextAlign.center,
                         ),
                       ],

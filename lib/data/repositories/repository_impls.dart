@@ -6,6 +6,9 @@ import 'package:injectable/injectable.dart';
 import '../../core/errors/failures.dart';
 import '../../domain/entities/entities.dart';
 import '../../domain/repositories/repositories.dart';
+import 'package:uuid/uuid.dart';
+
+const _uuid = Uuid();
 
 @lazySingleton
 class InMemoryStore {
@@ -392,6 +395,7 @@ class AuthRepositoryImpl implements AuthRepository {
     'admin': 'admin1234',
   };
   final Map<String, Map<String, String>> _utilisateurs = {};
+   final Map<String, Map<String, String>> _boutiques = {};
   bool _sessionActive = false;
   @override
   Future<Either<Failure, Unit>> changerPin(
@@ -408,15 +412,14 @@ class AuthRepositoryImpl implements AuthRepository {
     required String motDePasse,
     required String boutiqueNom,
     required String boutiqueAdresse,
-    required String utilisateurId,
+    
   }) async {
     if (nom.trim().isEmpty ||
         prenom.trim().isEmpty ||
         telephone.trim().isEmpty ||
         motDePasse.trim().isEmpty ||
         boutiqueNom.trim().isEmpty ||
-        boutiqueAdresse.trim().isEmpty ||
-        utilisateurId.trim().isEmpty) {
+         boutiqueAdresse.trim().isEmpty) {
       return const Left(AuthFailure(message: 'Informations invalides'));
     }
     if (role != 'admin' && role != 'employe') {
@@ -427,23 +430,34 @@ class AuthRepositoryImpl implements AuthRepository {
           AuthFailure(message: 'Le code PIN doit avoir 4 chiffres'));
     }
 
-    if (_comptes.containsKey(utilisateurId.trim())) {
+    final utilisateurId = _uuid.v4();
+    final boutiqueId = _uuid.v4();
+
+    if (_comptes.containsKey(utilisateurId)) {
       return const Left(AuthFailure(message: 'Ce compte existe déjà'));
     }
 
-     _comptes[utilisateurId.trim()] = motDePasse.trim();
-    _utilisateurs[utilisateurId.trim()] = {
-      'id': utilisateurId.trim(),
+      _comptes[utilisateurId] = motDePasse.trim();
+    _utilisateurs[utilisateurId] = {
+      'id': utilisateurId,
       'nom': nom.trim(),
       'prenom': prenom.trim(),
       'telephone': telephone.trim(),
-      'boutique_nom': boutiqueNom.trim(),
-      'boutique_adresse': boutiqueAdresse.trim(),
+      
       'role': role,
       'mot_de_passe': motDePasse.trim(),
     };
-     _pin = motDePasse.trim();
-    _boutiqueId = utilisateurId.trim();
+     
+    _boutiques[boutiqueId] = {
+      'id': boutiqueId,
+      'nom': boutiqueNom.trim(),
+      'adresse': boutiqueAdresse.trim(),
+      'telephone': telephone.trim(),
+      'utilisateur_id': utilisateurId,
+    };
+
+    _pin = motDePasse.trim();
+    _boutiqueId = boutiqueId;
     _sessionActive = true;
     return const Right(unit);
   }

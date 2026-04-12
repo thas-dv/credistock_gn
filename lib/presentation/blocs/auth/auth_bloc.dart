@@ -42,7 +42,7 @@ class AuthRegisterSubmitted extends AuthEvent {
   final String motDePasse;
   final String boutiqueNom;
   final String boutiqueAdresse;
-  final String utilisateurId;
+ 
 
   const AuthRegisterSubmitted({
    
@@ -53,7 +53,7 @@ class AuthRegisterSubmitted extends AuthEvent {
     required this.motDePasse,
     required this.boutiqueNom,
     required this.boutiqueAdresse,
-    required this.utilisateurId,
+
   });
 
   @override
@@ -65,7 +65,7 @@ class AuthRegisterSubmitted extends AuthEvent {
         motDePasse,
         boutiqueNom,
         boutiqueAdresse,
-        utilisateurId,
+
       ];
 }
 
@@ -166,7 +166,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       motDePasse: event.motDePasse,
       boutiqueNom: event.boutiqueNom,
       boutiqueAdresse: event.boutiqueAdresse,
-      utilisateurId: event.utilisateurId,
+
     );
 
     result.fold(
