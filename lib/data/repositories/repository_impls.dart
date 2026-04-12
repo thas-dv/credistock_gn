@@ -71,6 +71,13 @@ class InMemoryStore {
     ventesCtrl.add(List.unmodifiable(ventes));
     dettesCtrl.add(List.unmodifiable(dettes));
   }
+  Stream<List<T>> withInitial<T>(
+    List<T> current,
+    Stream<List<T>> source,
+  ) async* {
+    yield List.unmodifiable(current);
+    yield* source;
+  }
 }
 
 @LazySingleton(as: ProduitRepository)
@@ -125,9 +132,9 @@ class ProduitRepositoryImpl implements ProduitRepository {
 
   @override
   Stream<List<Produit>> watchProduits(String boutiqueId) {
-    return _store.produitsCtrl.stream.map(
-      (list) => list.where((p) => p.boutiqueId == boutiqueId).toList(),
-    );
+     return _store.withInitial(_store.produits, _store.produitsCtrl.stream).map(
+          (list) => list.where((p) => p.boutiqueId == boutiqueId).toList(),
+        );
   }
 
   @override
@@ -211,9 +218,9 @@ class ClientRepositoryImpl implements ClientRepository {
 
   @override
   Stream<List<Client>> watchClients(String boutiqueId) {
-    return _store.clientsCtrl.stream.map(
-      (items) => items.where((c) => c.boutiqueId == boutiqueId).toList(),
-    );
+    return _store.withInitial(_store.clients, _store.clientsCtrl.stream).map(
+          (items) => items.where((c) => c.boutiqueId == boutiqueId).toList(),
+        );
   }
 }
 
@@ -270,9 +277,9 @@ class VenteRepositoryImpl implements VenteRepository {
 
   @override
   Stream<List<Vente>> watchVentes(String boutiqueId) {
-    return _store.ventesCtrl.stream.map(
-      (items) => items.where((v) => v.boutiqueId == boutiqueId).toList(),
-    );
+    return _store.withInitial(_store.ventes, _store.ventesCtrl.stream).map(
+          (items) => items.where((v) => v.boutiqueId == boutiqueId).toList(),
+        );
   }
 }
 
@@ -359,16 +366,16 @@ class DetteRepositoryImpl implements DetteRepository {
 
   @override
   Stream<List<Dette>> watchDettes(String boutiqueId) {
-    return _store.dettesCtrl.stream.map(
-      (items) => items.where((d) => d.boutiqueId == boutiqueId).toList(),
-    );
+    return _store.withInitial(_store.dettes, _store.dettesCtrl.stream).map(
+          (items) => items.where((d) => d.boutiqueId == boutiqueId).toList(),
+        );
   }
 
   @override
   Stream<List<Dette>> watchDettesClient(String clientId) {
-    return _store.dettesCtrl.stream.map(
-      (items) => items.where((d) => d.clientId == clientId).toList(),
-    );
+    return _store.withInitial(_store.dettes, _store.dettesCtrl.stream).map(
+          (items) => items.where((d) => d.clientId == clientId).toList(),
+        );
   }
 }
 
@@ -380,6 +387,7 @@ class AuthRepositoryImpl implements AuthRepository {
  AuthRepositoryImpl(this._db, this._syncRepository);
 
   bool _sessionActive = false;
+  String? _activeBoutiqueId;
 
   @override
   Future<Either<Failure, Unit>> changerPin(
@@ -442,6 +450,7 @@ class AuthRepositoryImpl implements AuthRepository {
       });
       await _syncRepository.synchroniser(boutiqueId);
       _sessionActive = true;
+      _activeBoutiqueId = boutiqueId;
       return const Right(unit);
     } catch (e) {
       return Left(AuthFailure(message: 'Erreur: ${e.toString()}'));
@@ -451,6 +460,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<void> deconnecter() async {
     _sessionActive = false;
+     _activeBoutiqueId = null;
   }
 
   @override
@@ -473,6 +483,7 @@ class AuthRepositoryImpl implements AuthRepository {
       }
 
       _sessionActive = true;
+      _activeBoutiqueId = utilisateur.boutiqueId;
       return const Right(unit);
     } catch (e) {
       return Left(AuthFailure(message: 'Erreur: ${e.toString()}'));
@@ -481,6 +492,10 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<Either<Failure, String>> getBoutiqueId() async {
+    if (_activeBoutiqueId != null && _activeBoutiqueId!.isNotEmpty) {
+      return Right(_activeBoutiqueId!);
+    }
+
     try {
       final boutique = await (_db.select(_db.boutiques)
             ..orderBy([(b) => OrderingTerm.desc(b.createdAt)])

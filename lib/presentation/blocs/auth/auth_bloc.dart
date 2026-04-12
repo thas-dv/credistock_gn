@@ -34,26 +34,22 @@ class AuthLoginSubmitted extends AuthEvent {
 }
 
 class AuthRegisterSubmitted extends AuthEvent {
-
   final String nom;
   final String role;
-   final String prenom;
+  final String prenom;
   final String telephone;
   final String motDePasse;
   final String boutiqueNom;
   final String boutiqueAdresse;
- 
 
   const AuthRegisterSubmitted({
-   
     required this.nom,
     required this.role,
-     required this.prenom,
+    required this.prenom,
     required this.telephone,
     required this.motDePasse,
     required this.boutiqueNom,
     required this.boutiqueAdresse,
-
   });
 
   @override
@@ -65,7 +61,6 @@ class AuthRegisterSubmitted extends AuthEvent {
         motDePasse,
         boutiqueNom,
         boutiqueAdresse,
-
       ];
 }
 
@@ -120,7 +115,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   // 🔍 Vérifie si boutique existe localement
-  Future<void> _onCheck(AuthCheckRequested event, Emitter<AuthState> emit) async {
+  Future<void> _onCheck(
+      AuthCheckRequested event, Emitter<AuthState> emit) async {
     emit(state.copyWith(status: AuthStatus.checking));
 
     final boutiqueIdResult = await _authRepo.getBoutiqueId();
@@ -129,7 +125,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     boutiqueIdResult.fold(
       (_) => emit(state.copyWith(status: AuthStatus.unauthenticated)),
       (id) => emit(state.copyWith(
-        status: estConnecte ? AuthStatus.authenticated : AuthStatus.unauthenticated,
+        status:
+            estConnecte ? AuthStatus.authenticated : AuthStatus.unauthenticated,
         boutiqueId: id,
         errorMessage: null,
       )),
@@ -137,7 +134,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   // 🔐 Vérification PIN
-  Future<void> _onLoginSubmitted(AuthLoginSubmitted event, Emitter<AuthState> emit) async {
+  Future<void> _onLoginSubmitted(
+      AuthLoginSubmitted event, Emitter<AuthState> emit) async {
     emit(state.copyWith(status: AuthStatus.checking, errorMessage: null));
 
     final result = await _authRepo.seConnecter(
@@ -145,20 +143,37 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       motDePasse: event.motDePasse,
     );
 
-    result.fold(
-      (failure) => emit(state.copyWith(
+    await result.fold(
+      (failure) async => emit(state.copyWith(
         status: AuthStatus.error,
         errorMessage: failure.message,
       )),
-      (_) => emit(state.copyWith(status: AuthStatus.authenticated, errorMessage: null)),
+      (_) async {
+        final boutiqueIdResult = await _authRepo.getBoutiqueId();
+        boutiqueIdResult.fold(
+          (_) => emit(
+            state.copyWith(
+              status: AuthStatus.error,
+              errorMessage: 'Boutique introuvable',
+            ),
+          ),
+          (boutiqueId) => emit(
+            state.copyWith(
+              status: AuthStatus.authenticated,
+              boutiqueId: boutiqueId,
+              errorMessage: null,
+            ),
+          ),
+        );
+      },
     );
   }
 
-  Future<void> _onRegisterSubmitted(AuthRegisterSubmitted event, Emitter<AuthState> emit) async {
+  Future<void> _onRegisterSubmitted(
+      AuthRegisterSubmitted event, Emitter<AuthState> emit) async {
     emit(state.copyWith(status: AuthStatus.checking, errorMessage: null));
 
     final result = await _authRepo.creerCompte(
-     
       nom: event.nom,
       role: event.role,
       prenom: event.prenom,
@@ -166,7 +181,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       motDePasse: event.motDePasse,
       boutiqueNom: event.boutiqueNom,
       boutiqueAdresse: event.boutiqueAdresse,
-
     );
 
     await result.fold(
@@ -193,7 +207,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
   }
 
-  Future<void> _onPinSubmitted(AuthPinSubmitted event, Emitter<AuthState> emit) async {
+  Future<void> _onPinSubmitted(
+      AuthPinSubmitted event, Emitter<AuthState> emit) async {
     if (state.boutiqueId == null) {
       emit(state.copyWith(
         status: AuthStatus.error,
@@ -204,20 +219,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     emit(state.copyWith(status: AuthStatus.checking));
 
-    final result = await _authRepo.verifierPin(state.boutiqueId!, event.pin.trim());
+    final result =
+        await _authRepo.verifierPin(state.boutiqueId!, event.pin.trim());
 
     result.fold(
-       (_) => emit(state.copyWith(
+      (_) => emit(state.copyWith(
         status: AuthStatus.error,
         errorMessage: 'Erreur serveur',
       )),
       (valide) {
-        
-
         if (valide) {
-          emit(state.copyWith(status: AuthStatus.authenticated, errorMessage: null));
+          emit(state.copyWith(
+              status: AuthStatus.authenticated, errorMessage: null));
         } else {
-         emit(state.copyWith(status: AuthStatus.error, errorMessage: 'PIN incorrect'));
+          emit(state.copyWith(
+              status: AuthStatus.error, errorMessage: 'PIN incorrect'));
         }
       },
     );
