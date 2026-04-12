@@ -4,13 +4,13 @@ import 'package:injectable/injectable.dart';
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await NotificationService.instance.showLocalNotification(message);
+  final service = NotificationService();
+  await service.showLocalNotification(message);
 }
 
-@singleton
+@lazySingleton
 class NotificationService {
-  static final NotificationService instance = NotificationService._();
-  NotificationService._();
+  NotificationService();
 
   final _fcm = FirebaseMessaging.instance;
   final _localNotif = FlutterLocalNotificationsPlugin();

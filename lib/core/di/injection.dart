@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import '../../data/local/database/app_database.dart';
 import '../../data/repositories/repository_impls.dart';
 import '../../domain/repositories/repositories.dart';
 import '../../domain/usecases/usecases.dart';
@@ -15,8 +16,11 @@ Future<void> configureDependencies() async {
   if (getIt.isRegistered<AuthBloc>()) return;
 
   getIt.registerLazySingleton<InMemoryStore>(() => InMemoryStore());
+getIt.registerLazySingleton<AppDatabase>(() => AppDatabase());
 
-  getIt.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl());
+ getIt.registerLazySingleton<AuthRepository>(
+    () => AuthRepositoryImpl(getIt<AppDatabase>()),
+  );
   getIt.registerLazySingleton<ProduitRepository>(
     () => ProduitRepositoryImpl(getIt<InMemoryStore>()),
   );

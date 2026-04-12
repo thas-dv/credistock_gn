@@ -10,7 +10,6 @@ import '../../../domain/entities/entities.dart';
 import '../../blocs/dette/dette_bloc.dart';
 import '../../blocs/auth/auth_bloc.dart';
 
-
 // ============================================================
 // DETTES SCREEN
 // ============================================================
@@ -20,9 +19,10 @@ class DettesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return BlocProvider.value(
+    return BlocProvider.value(
       value: context.read<DetteBloc>()
-        ..add(DetteWatchStarted(context.read<AuthBloc>().state.boutiqueId ?? '')),
+        ..add(
+            DetteWatchStarted(context.read<AuthBloc>().state.boutiqueId ?? '')),
       child: const _DettesView(),
     );
   }
@@ -34,7 +34,9 @@ class _DettesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<DetteBloc, DetteState>(
-      listenWhen: (p, c) => p.successMessage != c.successMessage || p.errorMessage != c.errorMessage,
+      listenWhen: (p, c) =>
+          p.successMessage != c.successMessage ||
+          p.errorMessage != c.errorMessage,
       listener: (context, state) {
         if (state.successMessage != null) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -42,7 +44,8 @@ class _DettesView extends StatelessWidget {
               content: Text(state.successMessage!),
               backgroundColor: AppColors.green,
               behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
             ),
           );
         }
@@ -52,7 +55,8 @@ class _DettesView extends StatelessWidget {
               content: Text(state.errorMessage!),
               backgroundColor: AppColors.red,
               behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
             ),
           );
         }
@@ -85,11 +89,14 @@ class _DettesHeader extends StatelessWidget {
         children: [
           Expanded(
             child: BlocBuilder<DetteBloc, DetteState>(
-              buildWhen: (p, c) => p.totalDu != c.totalDu || p.nombreDettesActives != c.nombreDettesActives,
+              buildWhen: (p, c) =>
+                  p.totalDu != c.totalDu ||
+                  p.nombreDettesActives != c.nombreDettesActives,
               builder: (_, state) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Dettes', style: Theme.of(context).textTheme.headlineSmall),
+                  Text('Dettes',
+                      style: Theme.of(context).textTheme.headlineSmall),
                   Text(
                     '${_formatGNF(state.totalDu)} GNF à récupérer · ${state.nombreDettesActives} actives',
                     style: Theme.of(context).textTheme.bodyMedium,
@@ -136,15 +143,20 @@ class _StatutFilter extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: GestureDetector(
-                  onTap: () => context.read<DetteBloc>().add(DetteStatutFiltered(statut)),
+                  onTap: () => context
+                      .read<DetteBloc>()
+                      .add(DetteStatutFiltered(statut)),
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
                     decoration: BoxDecoration(
                       color: selected ? AppColors.greenLight : AppColors.gray50,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: selected ? AppColors.green : AppColors.gray200.withOpacity(0.5),
+                        color: selected
+                            ? AppColors.green
+                            : AppColors.gray200.withOpacity(0.5),
                         width: selected ? 1 : 0.5,
                       ),
                     ),
@@ -152,8 +164,10 @@ class _StatutFilter extends StatelessWidget {
                       label,
                       style: TextStyle(
                         fontSize: 12,
-                        color: selected ? AppColors.greenDark : AppColors.gray600,
-                        fontWeight: selected ? FontWeight.w500 : FontWeight.w400,
+                        color:
+                            selected ? AppColors.greenDark : AppColors.gray600,
+                        fontWeight:
+                            selected ? FontWeight.w500 : FontWeight.w400,
                       ),
                     ),
                   ),
@@ -173,7 +187,8 @@ class _DettesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<DetteBloc, DetteState>(
-      buildWhen: (p, c) => p.dettesFiltrees != c.dettesFiltrees || p.status != c.status,
+      buildWhen: (p, c) =>
+          p.dettesFiltrees != c.dettesFiltrees || p.status != c.status,
       builder: (_, state) {
         if (state.status == DetteStatus.loading) {
           return const Center(child: CircularProgressIndicator());
@@ -247,11 +262,13 @@ class _DetteCard extends StatelessWidget {
                     children: [
                       Text(
                         dette.nomClient,
-                        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                        style: const TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w500),
                       ),
                       Text(
                         _dateLabel(),
-                        style: const TextStyle(fontSize: 11, color: AppColors.gray400),
+                        style: const TextStyle(
+                            fontSize: 11, color: AppColors.gray400),
                       ),
                     ],
                   ),
@@ -288,7 +305,8 @@ class _DetteCard extends StatelessWidget {
                 children: [
                   Text(
                     'Payé: ${_formatGNF(dette.montantPaye)} / ${_formatGNF(dette.montant)} GNF',
-                    style: const TextStyle(fontSize: 10, color: AppColors.gray400),
+                    style:
+                        const TextStyle(fontSize: 10, color: AppColors.gray400),
                   ),
                   Text(
                     '${dette.tauxRemboursement.round()}%',
@@ -331,7 +349,8 @@ class _DetteCard extends StatelessWidget {
                     icon: const Icon(Icons.message_outlined, size: 14),
                     label: const Text('WA', style: TextStyle(fontSize: 12)),
                     style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 6),
                       minimumSize: Size.zero,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
@@ -340,7 +359,8 @@ class _DetteCard extends StatelessWidget {
                   // Payer
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () => context.push('${AppRoutes.paiement}?detteId=${dette.id}'),
+                      onPressed: () => context
+                          .push('${AppRoutes.paiement}?detteId=${dette.id}'),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(0, 36),
                         padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -380,7 +400,8 @@ class _EmptyDettes extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.account_balance_wallet_outlined, size: 48, color: AppColors.gray200),
+          Icon(Icons.account_balance_wallet_outlined,
+              size: 48, color: AppColors.gray200),
           const SizedBox(height: 12),
           Text(
             'Aucune dette trouvée',
@@ -427,15 +448,30 @@ class _PaiementScreenState extends State<PaiementScreen> {
 
   void _submit(Dette dette) {
     final montant = int.tryParse(_montantCtrl.text.replaceAll(' ', ''));
-    if (montant == null || montant <= 0) return;
-    if (montant > dette.montantRestant) return;
 
-    context.read<DetteBloc>().add(DettePaiementEnregistre(
-      detteId: dette.id,
-      clientId: dette.clientId,
-      montant: montant,
-      modePaiement: _modePaiement,
-    ));
+    if (montant == null || montant <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Montant invalide')),
+      );
+      return;
+    }
+
+    if (montant > dette.montantRestant) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Montant supérieur au reste à payer')),
+      );
+      return;
+    }
+
+    context.read<DetteBloc>().add(
+          DettePaiementEnregistre(
+            detteId: dette.id,
+            clientId: dette.clientId,
+            montant: montant,
+            modePaiement: _modePaiement,
+          ),
+        );
+
     context.pop();
   }
 
@@ -443,14 +479,20 @@ class _PaiementScreenState extends State<PaiementScreen> {
   Widget build(BuildContext context) {
     return BlocBuilder<DetteBloc, DetteState>(
       builder: (context, state) {
-        final dette = state.dettes.where((d) => d.id == widget.detteId).firstOrNull;
-        if (dette == null) return const Scaffold(body: Center(child: CircularProgressIndicator()));
+        final dette =
+            state.dettes.where((d) => d.id == widget.detteId).isNotEmpty
+                ? state.dettes.firstWhere((d) => d.id == widget.detteId)
+                : null;
+        if (dette == null)
+          return const Scaffold(
+              body: Center(child: CircularProgressIndicator()));
 
         return Scaffold(
           backgroundColor: AppColors.gray50,
           appBar: AppBar(
             title: const Text('Enregistrer un paiement'),
-            leading: IconButton(onPressed: () => context.pop(), icon: const Icon(Icons.close)),
+            leading: IconButton(
+                onPressed: () => context.pop(), icon: const Icon(Icons.close)),
           ),
           body: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
@@ -466,15 +508,19 @@ class _PaiementScreenState extends State<PaiementScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Client', style: Theme.of(context).textTheme.bodyMedium),
-                            Text(dette.nomClient, style: const TextStyle(fontWeight: FontWeight.w500)),
+                            Text('Client',
+                                style: Theme.of(context).textTheme.bodyMedium),
+                            Text(dette.nomClient,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w500)),
                           ],
                         ),
                         const SizedBox(height: 6),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Montant total', style: Theme.of(context).textTheme.bodyMedium),
+                            Text('Montant total',
+                                style: Theme.of(context).textTheme.bodyMedium),
                             Text('${_formatGNF(dette.montant)} GNF'),
                           ],
                         ),
@@ -482,15 +528,18 @@ class _PaiementScreenState extends State<PaiementScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Déjà payé', style: Theme.of(context).textTheme.bodyMedium),
-                            Text('${_formatGNF(dette.montantPaye)} GNF', style: const TextStyle(color: AppColors.green)),
+                            Text('Déjà payé',
+                                style: Theme.of(context).textTheme.bodyMedium),
+                            Text('${_formatGNF(dette.montantPaye)} GNF',
+                                style: const TextStyle(color: AppColors.green)),
                           ],
                         ),
                         const Divider(height: 16),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Reste à payer', style: TextStyle(fontWeight: FontWeight.w600)),
+                            const Text('Reste à payer',
+                                style: TextStyle(fontWeight: FontWeight.w600)),
                             Text(
                               '${_formatGNF(dette.montantRestant)} GNF',
                               style: const TextStyle(
@@ -515,7 +564,9 @@ class _PaiementScreenState extends State<PaiementScreen> {
                 const SizedBox(height: 20),
 
                 // Montant à payer
-                const Text('Montant reçu (GNF)', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
+                const Text('Montant reçu (GNF)',
+                    style:
+                        TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
                 const SizedBox(height: 8),
                 Row(
                   children: [
@@ -523,8 +574,11 @@ class _PaiementScreenState extends State<PaiementScreen> {
                       child: TextField(
                         controller: _montantCtrl,
                         keyboardType: TextInputType.number,
-                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w500),
                         decoration: const InputDecoration(
                           hintText: '0',
                           suffixText: 'GNF',
@@ -534,7 +588,8 @@ class _PaiementScreenState extends State<PaiementScreen> {
                     const SizedBox(width: 8),
                     // Bouton "Tout payer"
                     OutlinedButton(
-                      onPressed: () => _montantCtrl.text = '${dette.montantRestant}',
+                      onPressed: () =>
+                          _montantCtrl.text = '${dette.montantRestant}',
                       child: const Text('Tout', style: TextStyle(fontSize: 12)),
                     ),
                   ],
@@ -543,7 +598,9 @@ class _PaiementScreenState extends State<PaiementScreen> {
                 const SizedBox(height: 20),
 
                 // Mode paiement
-                const Text('Mode de paiement', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
+                const Text('Mode de paiement',
+                    style:
+                        TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
                 const SizedBox(height: 8),
                 ...modesPaiement.map((m) {
                   final (value, label, icon) = m;
@@ -553,9 +610,12 @@ class _PaiementScreenState extends State<PaiementScreen> {
                       onTap: () => setState(() => _modePaiement = value),
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 150),
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 14, vertical: 12),
                         decoration: BoxDecoration(
-                          color: _modePaiement == value ? AppColors.greenLight : Colors.white,
+                          color: _modePaiement == value
+                              ? AppColors.greenLight
+                              : Colors.white,
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(
                             color: _modePaiement == value
@@ -566,19 +626,28 @@ class _PaiementScreenState extends State<PaiementScreen> {
                         ),
                         child: Row(
                           children: [
-                            Icon(icon, size: 18, color: _modePaiement == value ? AppColors.green : AppColors.gray400),
+                            Icon(icon,
+                                size: 18,
+                                color: _modePaiement == value
+                                    ? AppColors.green
+                                    : AppColors.gray400),
                             const SizedBox(width: 10),
                             Text(
                               label,
                               style: TextStyle(
                                 fontSize: 13,
-                                fontWeight: _modePaiement == value ? FontWeight.w500 : FontWeight.w400,
-                                color: _modePaiement == value ? AppColors.greenDark : AppColors.gray600,
+                                fontWeight: _modePaiement == value
+                                    ? FontWeight.w500
+                                    : FontWeight.w400,
+                                color: _modePaiement == value
+                                    ? AppColors.greenDark
+                                    : AppColors.gray600,
                               ),
                             ),
                             const Spacer(),
                             if (_modePaiement == value)
-                              const Icon(Icons.check_circle, size: 16, color: AppColors.green),
+                              const Icon(Icons.check_circle,
+                                  size: 16, color: AppColors.green),
                           ],
                         ),
                       ),

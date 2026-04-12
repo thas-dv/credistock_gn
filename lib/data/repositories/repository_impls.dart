@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
+import 'package:drift/drift.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../core/errors/failures.dart';
+import '../local/database/app_database.dart' hide Produit, Client, Dette, Vente, Abonnement;
 import '../../domain/entities/entities.dart';
 import '../../domain/repositories/repositories.dart';
 import 'package:uuid/uuid.dart';
@@ -17,20 +19,16 @@ class InMemoryStore {
   final List<Vente> ventes = [];
   final List<Dette> dettes = [];
 
-  final StreamController<List<Produit>> produitsCtrl =
-      StreamController<List<Produit>>.broadcast();
-  final StreamController<List<Client>> clientsCtrl =
-      StreamController<List<Client>>.broadcast();
-  final StreamController<List<Vente>> ventesCtrl =
-      StreamController<List<Vente>>.broadcast();
-  final StreamController<List<Dette>> dettesCtrl =
-      StreamController<List<Dette>>.broadcast();
+  final produitsCtrl = StreamController<List<Produit>>.broadcast();
+  final clientsCtrl = StreamController<List<Client>>.broadcast();
+  final ventesCtrl = StreamController<List<Vente>>.broadcast();
+  final dettesCtrl = StreamController<List<Dette>>.broadcast();
 
   void seedIfNeeded() {
     if (produits.isNotEmpty) return;
 
     final now = DateTime.now();
-    final boutiqueId = 'demo-boutique';
+    const boutiqueId = 'demo-boutique';
 
     produits.addAll([
       Produit(
@@ -42,18 +40,6 @@ class InMemoryStore {
         prixAchat: 205000,
         quantite: 12,
         seuilAlerte: 5,
-        synced: true,
-        updatedAt: now,
-      ),
-      Produit(
-        id: 'p2',
-        boutiqueId: boutiqueId,
-        nom: 'Huile 5L',
-        categorie: CategorieProduit.alimentaire,
-        prixVente: 185000,
-        prixAchat: 160000,
-        quantite: 7,
-        seuilAlerte: 4,
         synced: true,
         updatedAt: now,
       ),
@@ -74,10 +60,7 @@ class InMemoryStore {
       ),
     );
 
-    produitsCtrl.add(List.unmodifiable(produits));
-    clientsCtrl.add(List.unmodifiable(clients));
-    ventesCtrl.add(List.unmodifiable(ventes));
-    dettesCtrl.add(List.unmodifiable(dettes));
+    emitAll();
   }
 
   void emitAll() {
@@ -114,38 +97,41 @@ class ProduitRepositoryImpl implements ProduitRepository {
 
   @override
   Future<Either<Failure, Produit>> modifierProduit(Produit produit) async {
-    final index = _store.produits.indexWhere((p) => p.id == produit.id);
-    if (index == -1)
-      return const Left(DatabaseFailure(message: 'Produit introuvable'));
-    _store.produits[index] = produit;
+    final i = _store.produits.indexWhere((p) => p.id == produit.id);
+    if (i == -1) return const Left(DatabaseFailure(message: 'Produit introuvable'));
+
+    _store.produits[i] = produit;
     _store.emitAll();
     return Right(produit);
   }
 
   @override
-  Future<Either<Failure, Unit>> mettreAJourStock(
-      String produitId, int deltaQuantite) async {
-    final index = _store.produits.indexWhere((p) => p.id == produitId);
-    if (index == -1)
-      return const Left(DatabaseFailure(message: 'Produit introuvable'));
-    final produit = _store.produits[index];
-    _store.produits[index] = produit.copyWith(
-      quantite: (produit.quantite + deltaQuantite).clamp(0, 1 << 31),
+  Future<Either<Failure, Unit>> mettreAJourStock(String id, int delta) async {
+    final i = _store.produits.indexWhere((p) => p.id == id);
+    if (i == -1) return const Left(DatabaseFailure(message: 'Produit introuvable'));
+
+    final p = _store.produits[i];
+
+    _store.produits[i] = p.copyWith(
+      quantite: (p.quantite + delta).clamp(0, 999999999),
       synced: false,
     );
+
     _store.emitAll();
     return const Right(unit);
   }
 
   @override
-  Future<Either<Failure, List<Produit>>> searchProduits(
-      String boutiqueId, String query) async {
-    final q = query.toLowerCase();
-    return Right(
-      _store.produits
-          .where((p) => p.boutiqueId == boutiqueId)
-          .where((p) => p.nom.toLowerCase().contains(q))
-          .toList(),
+  Stream<List<Produit>> watchProduits(String boutiqueId) {
+    return _store.produitsCtrl.stream.map(
+      (list) => list.where((p) => p.boutiqueId == boutiqueId).toList(),
+    );
+  }
+
+  @override
+  Stream<List<Produit>> watchProduitsEnAlerte(String boutiqueId) {
+    return watchProduits(boutiqueId).map(
+      (list) => list.where((p) => p.quantite <= p.seuilAlerte).toList(),
     );
   }
 
@@ -157,16 +143,14 @@ class ProduitRepositoryImpl implements ProduitRepository {
   }
 
   @override
-  Stream<List<Produit>> watchProduits(String boutiqueId) {
-    return _store.produitsCtrl.stream.map(
-      (items) => items.where((p) => p.boutiqueId == boutiqueId).toList(),
+  Future<Either<Failure, List<Produit>>> searchProduits(String bId, String q) async {
+    final query = q.toLowerCase();
+    return Right(
+      _store.produits
+          .where((p) => p.boutiqueId == bId)
+          .where((p) => p.nom.toLowerCase().contains(query))
+          .toList(),
     );
-  }
-
-  @override
-  Stream<List<Produit>> watchProduitsEnAlerte(String boutiqueId) {
-    return watchProduits(boutiqueId)
-        .map((produits) => produits.where((p) => p.estEnAlerteStock).toList());
   }
 }
 
@@ -388,15 +372,12 @@ class DetteRepositoryImpl implements DetteRepository {
 
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
-  String? _boutiqueId = 'demo-boutique';
-  String _pin = '0000';
+  final AppDatabase _db;
 
-  final Map<String, String> _comptes = {
-    'admin': 'admin1234',
-  };
-  final Map<String, Map<String, String>> _utilisateurs = {};
-   final Map<String, Map<String, String>> _boutiques = {};
+  AuthRepositoryImpl(this._db);
+
   bool _sessionActive = false;
+
   @override
   Future<Either<Failure, Unit>> changerPin(
       String boutiqueId, String ancienPin, String nouveauPin) async {
@@ -412,54 +393,56 @@ class AuthRepositoryImpl implements AuthRepository {
     required String motDePasse,
     required String boutiqueNom,
     required String boutiqueAdresse,
-    
   }) async {
     if (nom.trim().isEmpty ||
         prenom.trim().isEmpty ||
         telephone.trim().isEmpty ||
         motDePasse.trim().isEmpty ||
         boutiqueNom.trim().isEmpty ||
-         boutiqueAdresse.trim().isEmpty) {
+        boutiqueAdresse.trim().isEmpty) {
       return const Left(AuthFailure(message: 'Informations invalides'));
     }
+
     if (role != 'admin' && role != 'employe') {
       return const Left(AuthFailure(message: 'Rôle invalide'));
     }
+
     if (motDePasse.trim().length != 4) {
       return const Left(
           AuthFailure(message: 'Le code PIN doit avoir 4 chiffres'));
     }
 
-    final utilisateurId = _uuid.v4();
-    final boutiqueId = _uuid.v4();
+    try {
+      final utilisateurId = _uuid.v4();
+      final boutiqueId = _uuid.v4();
 
-    if (_comptes.containsKey(utilisateurId)) {
-      return const Left(AuthFailure(message: 'Ce compte existe déjà'));
+      await _db.transaction(() async {
+        await _db.into(_db.boutiques).insert(
+              BoutiquesCompanion.insert(
+                id: boutiqueId,
+                nom: boutiqueNom.trim(),
+                adresse: Value(boutiqueAdresse.trim()),
+                telephone: telephone.trim(),
+              ),
+            );
+
+        await _db.into(_db.utilisateurs).insert(
+              UtilisateursCompanion.insert(
+                id: utilisateurId,
+                boutiqueId: boutiqueId,
+                nom: '${nom.trim()} ${prenom.trim()}',
+                role: Value(role),
+                motDePasse: motDePasse.trim(),
+                pinHash: Value(motDePasse.trim()),
+              ),
+            );
+      });
+
+      _sessionActive = true;
+      return const Right(unit);
+    } catch (e) {
+      return Left(AuthFailure(message: 'Erreur: ${e.toString()}'));
     }
-
-      _comptes[utilisateurId] = motDePasse.trim();
-    _utilisateurs[utilisateurId] = {
-      'id': utilisateurId,
-      'nom': nom.trim(),
-      'prenom': prenom.trim(),
-      'telephone': telephone.trim(),
-      
-      'role': role,
-      'mot_de_passe': motDePasse.trim(),
-    };
-     
-    _boutiques[boutiqueId] = {
-      'id': boutiqueId,
-      'nom': boutiqueNom.trim(),
-      'adresse': boutiqueAdresse.trim(),
-      'telephone': telephone.trim(),
-      'utilisateur_id': utilisateurId,
-    };
-
-    _pin = motDePasse.trim();
-    _boutiqueId = boutiqueId;
-    _sessionActive = true;
-    return const Right(unit);
   }
 
   @override
@@ -475,27 +458,60 @@ class AuthRepositoryImpl implements AuthRepository {
     required String identifiant,
     required String motDePasse,
   }) async {
-    final existing = _comptes[identifiant.trim()];
-    if (existing == null || existing != motDePasse.trim()) {
-      return const Left(AuthFailure(message: 'Identifiants invalides'));
-    }
+    try {
+      final utilisateur = await (_db.select(_db.utilisateurs)
+            ..where((u) => u.nom.equals(identifiant.trim()))
+            ..limit(1))
+          .getSingleOrNull();
 
-    _sessionActive = true;
-    return const Right(unit);
+      if (utilisateur == null ||
+          utilisateur.motDePasse != motDePasse.trim()) {
+        return const Left(AuthFailure(message: 'Identifiants invalides'));
+      }
+
+      _sessionActive = true;
+      return const Right(unit);
+    } catch (e) {
+      return Left(AuthFailure(message: 'Erreur: ${e.toString()}'));
+    }
   }
 
   @override
   Future<Either<Failure, String>> getBoutiqueId() async {
-    if (_boutiqueId == null) return const Left(AuthFailure());
-    return Right(_boutiqueId!);
+    try {
+      final boutique = await (_db.select(_db.boutiques)
+            ..orderBy([(b) => OrderingTerm.desc(b.createdAt)])
+            ..limit(1))
+          .getSingleOrNull();
+
+      if (boutique == null) {
+        return const Left(
+            AuthFailure(message: 'Aucune boutique enregistrée'));
+      }
+
+      return Right(boutique.id);
+    } catch (e) {
+      return Left(AuthFailure(message: 'Erreur: ${e.toString()}'));
+    }
   }
 
   @override
   Future<Either<Failure, bool>> verifierPin(
       String boutiqueId, String pin) async {
-    if (boutiqueId != _boutiqueId)
-      return const Left(AuthFailure(message: 'Boutique inconnue'));
-    return Right(pin == _pin);
+    try {
+      final utilisateur = await (_db.select(_db.utilisateurs)
+            ..where((u) => u.boutiqueId.equals(boutiqueId))
+            ..limit(1))
+          .getSingleOrNull();
+
+      if (utilisateur == null) {
+        return const Left(AuthFailure(message: 'Boutique inconnue'));
+      }
+
+      return Right(utilisateur.pinHash == pin.trim());
+    } catch (e) {
+      return Left(AuthFailure(message: 'Erreur: ${e.toString()}'));
+    }
   }
 }
 

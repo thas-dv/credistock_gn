@@ -9,12 +9,14 @@ import 'package:credistock_gn/presentation/blocs/stock/stock_bloc.dart';
 import 'package:credistock_gn/presentation/blocs/sync/sync_bloc.dart';
 import 'package:credistock_gn/presentation/blocs/vente/vente_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppBlocObserver();
+   await initializeDateFormatting('fr_FR');
   // // Supabase
   // const supabaseUrl = String.fromEnvironment(
   //   'SUPABASE_URL',
@@ -25,7 +27,7 @@ Future<void> main() async {
   //   defaultValue:
   //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6YWVrYm5vZG9oeWNhbHF1dWZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxMjIxMTgsImV4cCI6MjA4MDY5ODExOH0.W-8-1PqUHN2FSaGzEWRuwky4ZbExuyB5mlW69gd1qbU',
   // );
-   await configureDependencies();
+    await configureDependencies();
 
   runApp(const CrediStockApp());
 }

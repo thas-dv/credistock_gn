@@ -33,28 +33,30 @@ class Produit extends Equatable {
 
   bool get estEnAlerteStock => quantite <= seuilAlerte;
   bool get estEnRuptureStock => quantite == 0;
-  int get margeGNF => prixVente - prixAchat;
-  double get margePourcent => prixAchat > 0 ? (margeGNF / prixAchat) * 100 : 0;
 
   Produit copyWith({
+    String? id,
+    String? boutiqueId,
     String? nom,
+    CategorieProduit? categorie,
     int? prixVente,
     int? prixAchat,
     int? quantite,
     int? seuilAlerte,
     bool? synced,
+    DateTime? updatedAt,
   }) {
     return Produit(
-      id: id,
-      boutiqueId: boutiqueId,
+      id: id ?? this.id,
+      boutiqueId: boutiqueId ?? this.boutiqueId,
       nom: nom ?? this.nom,
-      categorie: categorie,
+      categorie: categorie ?? this.categorie,
       prixVente: prixVente ?? this.prixVente,
       prixAchat: prixAchat ?? this.prixAchat,
       quantite: quantite ?? this.quantite,
       seuilAlerte: seuilAlerte ?? this.seuilAlerte,
       synced: synced ?? this.synced,
-      updatedAt: DateTime.now(),
+      updatedAt: updatedAt ?? DateTime.now(),
     );
   }
 
@@ -67,27 +69,6 @@ class Produit extends Equatable {
 // ============================================================
 
 enum ScoreClient { bon, moyen, mauvais }
-
-extension ScoreClientExt on ScoreClient {
-  String get label => switch (this) {
-    ScoreClient.bon => 'Bon payeur',
-    ScoreClient.moyen => 'Payeur moyen',
-    ScoreClient.mauvais => 'Mauvais payeur',
-  };
-
-  // Score calculé automatiquement selon le comportement
-  static ScoreClient calculer({
-    required int nombreDettes,
-    required int nombreRemboursements,
-    required int joursRetardMoyen,
-  }) {
-    if (nombreDettes == 0) return ScoreClient.bon;
-    final tauxRemboursement = nombreRemboursements / nombreDettes;
-    if (tauxRemboursement >= 0.8 && joursRetardMoyen <= 7) return ScoreClient.bon;
-    if (tauxRemboursement >= 0.5 && joursRetardMoyen <= 30) return ScoreClient.moyen;
-    return ScoreClient.mauvais;
-  }
-}
 
 class Client extends Equatable {
   final String id;
@@ -115,9 +96,30 @@ class Client extends Equatable {
   });
 
   bool get aDesDetteEnCours => totalDu > 0;
-  String? get whatsappUrl => telephone != null
-      ? 'https://wa.me/${telephone!.replaceAll(RegExp(r'[^0-9]'), '')}'
-      : null;
+
+  Client copyWith({
+    String? nom,
+    String? telephone,
+    ScoreClient? score,
+    int? totalDu,
+    int? nombreDettes,
+    int? nombresRemboursements,
+    bool? synced,
+  }) {
+    return Client(
+      id: id,
+      boutiqueId: boutiqueId,
+      nom: nom ?? this.nom,
+      telephone: telephone ?? this.telephone,
+      score: score ?? this.score,
+      totalDu: totalDu ?? this.totalDu,
+      nombreDettes: nombreDettes ?? this.nombreDettes,
+      nombresRemboursements:
+          nombresRemboursements ?? this.nombresRemboursements,
+      synced: synced ?? this.synced,
+      createdAt: createdAt,
+    );
+  }
 
   @override
   List<Object?> get props => [id, nom, score, totalDu];
@@ -136,7 +138,7 @@ class Vente extends Equatable {
   final String produitId;
   final String? clientId;
   final String utilisateurId;
-  final String nomProduit; // snapshot
+  final String nomProduit;
   final int quantite;
   final int prixUnitaire;
   final int montantTotal;
@@ -173,20 +175,12 @@ class Vente extends Equatable {
 
 enum StatutDette { nonPaye, partiel, paye }
 
-extension StatutDetteExt on StatutDette {
-  String get label => switch (this) {
-    StatutDette.nonPaye => 'Non payé',
-    StatutDette.partiel => 'Partiel',
-    StatutDette.paye => 'Payé',
-  };
-}
-
 class Dette extends Equatable {
   final String id;
   final String clientId;
   final String venteId;
   final String boutiqueId;
-  final String nomClient; // dénormalisé pour affichage rapide
+  final String nomClient;
   final int montant;
   final int montantPaye;
   final StatutDette statut;
@@ -211,9 +205,41 @@ class Dette extends Equatable {
   });
 
   int get montantRestant => montant - montantPaye;
-  double get tauxRemboursement => montant > 0 ? (montantPaye / montant) * 100 : 0;
-  bool get estEchue => dateEcheance != null && DateTime.now().isAfter(dateEcheance!) && statut != StatutDette.paye;
-  int get joursDeRetard => estEchue ? DateTime.now().difference(dateEcheance!).inDays : 0;
+
+  bool get estEchue =>
+      dateEcheance != null &&
+      DateTime.now().isAfter(dateEcheance!) &&
+      statut != StatutDette.paye;
+
+double get tauxRemboursement =>
+    montant > 0 ? (montantPaye / montant) * 100 : 0;
+
+int get joursDeRetard {
+  if (dateEcheance == null) return 0;
+  final diff = DateTime.now().difference(dateEcheance!).inDays;
+  return diff > 0 ? diff : 0;
+}
+  Dette copyWith({
+    int? montantPaye,
+    StatutDette? statut,
+    bool? synced,
+    DateTime? updatedAt,
+  }) {
+    return Dette(
+      id: id,
+      clientId: clientId,
+      venteId: venteId,
+      boutiqueId: boutiqueId,
+      nomClient: nomClient,
+      montant: montant,
+      montantPaye: montantPaye ?? this.montantPaye,
+      statut: statut ?? this.statut,
+      dateEcheance: dateEcheance,
+      synced: synced ?? this.synced,
+      createdAt: createdAt,
+      updatedAt: updatedAt ?? DateTime.now(),
+    );
+  }
 
   @override
   List<Object?> get props => [id, montantRestant, statut, synced];
@@ -249,38 +275,7 @@ class Abonnement extends Equatable {
   });
 
   bool get estActif => statut == StatutAbonnement.actif;
-  bool get estPremium => plan == PlanAbonnement.premium && estActif;
-
-  // Limites selon le plan
-  int? get maxDettes => plan == PlanAbonnement.gratuit ? 10 : null;
-  int? get maxClients => plan == PlanAbonnement.gratuit ? 20 : null;
-  bool get multiUtilisateurs => plan == PlanAbonnement.premium;
-  bool get alertesIntelligentes => plan == PlanAbonnement.premium;
-  bool get sauvegardeCloud => plan == PlanAbonnement.premium;
 
   @override
   List<Object?> get props => [id, plan, statut];
-}
-
-// ============================================================
-// STATISTIQUES (value objects)
-// ============================================================
-
-class StatJour extends Equatable {
-  final DateTime date;
-  final int totalVentes;
-  final int nombreVentes;
-  final int totalCredit;
-  final int totalCash;
-
-  const StatJour({
-    required this.date,
-    required this.totalVentes,
-    required this.nombreVentes,
-    required this.totalCredit,
-    required this.totalCash,
-  });
-
-  @override
-  List<Object?> get props => [date, totalVentes];
 }
