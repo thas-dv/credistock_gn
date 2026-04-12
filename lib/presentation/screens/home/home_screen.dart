@@ -1,3 +1,6 @@
+import 'package:credistock_gn/core/di/injection.dart';
+import 'package:credistock_gn/domain/repositories/repositories.dart';
+
 import 'package:credistock_gn/widgets/app_badge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,13 +9,37 @@ import 'package:intl/intl.dart';
 
 import '../../../core/theme/app_theme.dart';
 import '../../../core/router/app_router.dart';
+import '../../../domain/entities/entities.dart';
 
-import '../../blocs/sync/sync_bloc.dart';
 import '../../blocs/auth/auth_bloc.dart';
+import '../../blocs/client/client_bloc.dart';
+import '../../blocs/dette/dette_bloc.dart';
+import '../../blocs/stock/stock_bloc.dart';
+import '../../blocs/sync/sync_bloc.dart';
 
-
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late final VenteRepository _venteRepository;
+
+  @override
+  void initState() {
+    super.initState();
+    _venteRepository = getIt<VenteRepository>();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final boutiqueId = context.read<AuthBloc>().state.boutiqueId;
+      if (boutiqueId == null || boutiqueId.isEmpty) return;
+      context.read<StockBloc>().add(StockWatchStarted(boutiqueId));
+      context.read<ClientBloc>().add(ClientWatchStarted(boutiqueId));
+      context.read<DetteBloc>().add(DetteWatchStarted(boutiqueId));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,22 +48,30 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.gray50,
       body: SafeArea(
+        top: true,
+        bottom: false,
         child: CustomScrollView(
           slivers: [
-            // ── Header ──────────────────────────────────────
-            SliverToBoxAdapter(
-              child: _Header(boutiqueId: boutiqueId),
-            ),
-            // ── Sync banner ─────────────────────────────────
+            // // ── Header ──────────────────────────────────────
+            // SliverToBoxAdapter(
+            //   child: _Header(boutiqueId: boutiqueId),
+            // ),
+            // // ── Sync banner ─────────────────────────────────
+            SliverToBoxAdapter(child: _Header(boutiqueId: boutiqueId)),
             SliverToBoxAdapter(
               child: BlocBuilder<SyncBloc, SyncState>(
                 buildWhen: (prev, curr) =>
                     prev.elementsEnAttente != curr.elementsEnAttente ||
                     prev.estConnecte != curr.estConnecte,
                 builder: (_, state) {
-                  if (!state.estConnecte) return _OfflineBanner(count: state.elementsEnAttente);
+                  if (!state.estConnecte) {
+                    return _OfflineBanner(count: state.elementsEnAttente);
+                  }
                   if (state.aSynchroniser && state.estConnecte) {
-                    return _SyncBanner(count: state.elementsEnAttente, boutiqueId: boutiqueId);
+                    return _SyncBanner(
+                      count: state.elementsEnAttente,
+                      boutiqueId: boutiqueId,
+                    );
                   }
                   return const SizedBox.shrink();
                 },
@@ -46,7 +81,10 @@ class HomeScreen extends StatelessWidget {
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
               sliver: SliverToBoxAdapter(
-                child: _MetriquesGrid(boutiqueId: boutiqueId),
+                child: _MetriquesGrid(
+                  boutiqueId: boutiqueId,
+                  venteRepository: _venteRepository,
+                ),
               ),
             ),
             // ── Activité récente ────────────────────────────
@@ -89,15 +127,10 @@ class _Header extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Bonjour 👋',
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
+                Text('Bonjour 👋',
+                    style: Theme.of(context).textTheme.headlineSmall),
                 const SizedBox(height: 2),
-                Text(
-                  now,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
+                Text(now, style: Theme.of(context).textTheme.bodyMedium),
               ],
             ),
           ),
@@ -168,16 +201,16 @@ class _SyncBanner extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Icon(Icons.cloud_upload_outlined, color: AppColors.blue, size: 16),
+          const Icon(Icons.cloud_upload_outlined,
+              color: AppColors.blue, size: 16),
           const SizedBox(width: 8),
           Expanded(
-            child: Text(
-              '$count élément(s) à synchroniser',
-              style: const TextStyle(fontSize: 12, color: AppColors.blue),
-            ),
+            child: Text('$count élément(s) à synchroniser',
+                style: const TextStyle(fontSize: 12, color: AppColors.blue)),
           ),
           TextButton(
-            onPressed: () => context.read<SyncBloc>().add(SyncManuel(boutiqueId)),
+            onPressed: () =>
+                context.read<SyncBloc>().add(SyncManuel(boutiqueId)),
             style: TextButton.styleFrom(
               foregroundColor: AppColors.blue,
               padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -196,65 +229,94 @@ class _SyncBanner extends StatelessWidget {
 
 class _MetriquesGrid extends StatelessWidget {
   final String boutiqueId;
-  const _MetriquesGrid({required this.boutiqueId});
+  final VenteRepository venteRepository;
+
+  const _MetriquesGrid(
+      {required this.boutiqueId, required this.venteRepository});
+
+  String _fmt(int v) =>
+      NumberFormat.decimalPattern('fr_FR').format(v).replaceAll(',', ' ');
 
   @override
   Widget build(BuildContext context) {
     // En prod: connecter à StockBloc + DetteBloc via BlocBuilder
-    return const Column(
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: MetricCard(
-                label: 'Ventes du jour',
-                value: '485 000',
-                unit: 'GNF',
-                trend: '+12%',
-                trendPositive: true,
-                color: AppColors.green,
-              ),
-            ),
-            SizedBox(width: 10),
-            Expanded(
-              child: MetricCard(
-                label: 'Dettes actives',
-                value: '1 240 000',
-                unit: 'GNF',
-                trend: '8 clients',
-                trendPositive: false,
-                color: AppColors.red,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 10),
-        Row(
-          children: [
-            Expanded(
-              child: MetricCard(
-                label: 'Produits en stock',
-                value: '47',
-                unit: '',
-                trend: '3 alertes',
-                trendPositive: false,
-                color: AppColors.amber,
-              ),
-            ),
-            SizedBox(width: 10),
-            Expanded(
-              child: MetricCard(
-                label: 'Non synchronisés',
-                value: '5',
-                unit: '',
-                trend: 'offline',
-                trendPositive: null,
-                color: AppColors.gray400,
-              ),
-            ),
-          ],
-        ),
-      ],
+    return BlocBuilder<StockBloc, StockState>(
+      builder: (context, stockState) {
+        return BlocBuilder<DetteBloc, DetteState>(
+          builder: (context, detteState) {
+            return BlocBuilder<SyncBloc, SyncState>(
+              builder: (context, syncState) {
+                return FutureBuilder(
+                  future: venteRepository.getTotalVentesJour(boutiqueId),
+                  builder: (context, snapshot) {
+                    final totalVentes =
+                        snapshot.data?.fold((_) => 0, (v) => v) ?? 0;
+
+                    return Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: MetricCard(
+                                label: 'Ventes du jour',
+                                value: _fmt(totalVentes),
+                                unit: 'GNF',
+                                trend: '${detteState.dettes.length} opérations',
+                                trendPositive: totalVentes > 0,
+                                color: AppColors.green,
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: MetricCard(
+                                label: 'Dettes actives',
+                                value: _fmt(detteState.totalDu),
+                                unit: 'GNF',
+                                trend:
+                                    '${detteState.nombreDettesActives} clients',
+                                trendPositive: false,
+                                color: AppColors.red,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: MetricCard(
+                                label: 'Produits en stock',
+                                value: '${stockState.totalProduits}',
+                                unit: '',
+                                trend: '${stockState.nombreAlertes} alertes',
+                                trendPositive: stockState.nombreAlertes == 0,
+                                color: AppColors.amber,
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: MetricCard(
+                                label: 'Non synchronisés',
+                                value: '${syncState.elementsEnAttente}',
+                                unit: '',
+                                trend: syncState.estConnecte
+                                    ? 'en ligne'
+                                    : 'offline',
+                                trendPositive: syncState.estConnecte,
+                                color: AppColors.gray400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+            );
+          },
+        );
+      },
     );
   }
 }
@@ -265,59 +327,79 @@ class _ActiviteRecente extends StatelessWidget {
   final String boutiqueId;
   const _ActiviteRecente({required this.boutiqueId});
 
+  String _fmtMontant(int value) =>
+      '${NumberFormat.decimalPattern('fr_FR').format(value).replaceAll(',', ' ')} GNF';
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return BlocBuilder<DetteBloc, DetteState>(
+      builder: (context, state) {
+        final recent = [...state.dettes]
+          ..sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
+        final items = recent.take(3).toList();
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Activité récente', style: Theme.of(context).textTheme.labelLarge),
-            TextButton(
-              onPressed: () => context.go(AppRoutes.dettes),
-              child: Text('Tout voir', style: TextStyle(fontSize: 12, color: AppColors.green)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Activité récente',
+                    style: Theme.of(context).textTheme.labelLarge),
+                TextButton(
+                  onPressed: () => context.go(AppRoutes.dettes),
+                  child: const Text('Tout voir',
+                      style: TextStyle(fontSize: 12, color: AppColors.green)),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Card(
+              child: items.isEmpty
+                  ? const Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Text('Aucune activité récente'),
+                    )
+                  : Column(
+                      children: [
+                        for (int i = 0; i < items.length; i++) ...[
+                          _ActiviteItem(
+                            initiales: _initiales(items[i].nomClient),
+                            nom: items[i].nomClient,
+                            detail: items[i].statut.name,
+                            montant: _fmtMontant(items[i].montantRestant),
+                            temps: _tempsRelatif(items[i].updatedAt),
+                            couleur: items[i].statut == StatutDette.paye
+                                ? AppColors.green
+                                : AppColors.red,
+                            estPositif: items[i].statut == StatutDette.paye,
+                          ),
+                          if (i < items.length - 1)
+                            const Divider(height: 1, thickness: 0.5),
+                        ]
+                      ],
+                    ),
             ),
           ],
-        ),
-        const SizedBox(height: 8),
-        Card(
-          child: Column(
-            children: [
-              _ActiviteItem(
-                initiales: 'FA',
-                nom: 'Fatou Diallo',
-                detail: 'Riz 25kg · Crédit',
-                montant: '75 000 GNF',
-                temps: 'il y a 12min',
-                couleur: AppColors.green,
-                estPositif: false,
-              ),
-              const Divider(height: 1, thickness: 0.5),
-              _ActiviteItem(
-                initiales: 'AL',
-                nom: 'Alpha Camara',
-                detail: 'Huile 5L · Cash',
-                montant: '45 000 GNF',
-                temps: 'il y a 31min',
-                couleur: AppColors.blue,
-                estPositif: false,
-              ),
-              const Divider(height: 1, thickness: 0.5),
-              _ActiviteItem(
-                initiales: 'MB',
-                nom: 'Mamadou Barry',
-                detail: 'Paiement partiel',
-                montant: '+30 000 GNF',
-                temps: 'il y a 1h',
-                couleur: AppColors.red,
-                estPositif: true,
-              ),
-            ],
-          ),
-        ),
-      ],
+        );
+      },
     );
+  }
+
+  String _initiales(String nom) {
+    final parts = nom.trim().split(RegExp(r'\s+'));
+    return parts
+        .take(2)
+        .map((p) => p.isNotEmpty ? p[0].toUpperCase() : '')
+        .join();
+  }
+
+  String _tempsRelatif(DateTime date) {
+    final diff = DateTime.now().difference(date);
+    if (diff.inMinutes < 1) return 'à l\'instant';
+    if (diff.inMinutes < 60) return 'il y a ${diff.inMinutes} min';
+    if (diff.inHours < 24) return 'il y a ${diff.inHours} h';
+    return 'il y a ${diff.inDays} j';
   }
 }
 
@@ -349,22 +431,21 @@ class _ActiviteItem extends StatelessWidget {
           CircleAvatar(
             radius: 18,
             backgroundColor: couleur.withOpacity(0.1),
-            child: Text(
-              initiales,
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w500,
-                color: couleur,
-              ),
-            ),
+            child: Text(initiales,
+                style: TextStyle(
+                    fontSize: 11, fontWeight: FontWeight.w500, color: couleur)),
           ),
           const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(nom, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
-                Text(detail, style: const TextStyle(fontSize: 11, color: AppColors.gray400)),
+                Text(nom,
+                    style: const TextStyle(
+                        fontSize: 13, fontWeight: FontWeight.w500)),
+                Text(detail,
+                    style: const TextStyle(
+                        fontSize: 11, color: AppColors.gray400)),
               ],
             ),
           ),
@@ -379,7 +460,9 @@ class _ActiviteItem extends StatelessWidget {
                   color: estPositif ? AppColors.green : AppColors.gray900,
                 ),
               ),
-              Text(temps, style: const TextStyle(fontSize: 11, color: AppColors.gray400)),
+              Text(temps,
+                  style:
+                      const TextStyle(fontSize: 11, color: AppColors.gray400)),
             ],
           ),
         ],
@@ -396,27 +479,51 @@ class _AlertesStock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('Alertes', style: Theme.of(context).textTheme.labelLarge),
-        const SizedBox(height: 8),
-        _AlerteCard(
-          icon: Icons.warning_amber_rounded,
-          titre: 'Stock faible — Sucre 1kg',
-          detail: 'Seulement 3 unités restantes',
-          couleur: AppColors.red,
-          couleurLight: AppColors.redLight,
-        ),
-        const SizedBox(height: 8),
-        _AlerteCard(
-          icon: Icons.access_time,
-          titre: 'Rappel — Fatoumata Bah',
-          detail: 'Echéance dans 2 jours · 120 000 GNF',
-          couleur: AppColors.amber,
-          couleurLight: AppColors.amberLight,
-        ),
-      ],
+    return BlocBuilder<StockBloc, StockState>(
+      builder: (context, stockState) {
+        return BlocBuilder<DetteBloc, DetteState>(
+          builder: (context, detteState) {
+            final lowStock = stockState.produitsEnAlerte.take(1).toList();
+            final detteEchue = [...detteState.dettesEchues]
+              ..sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
+
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Alertes', style: Theme.of(context).textTheme.labelLarge),
+                const SizedBox(height: 8),
+                if (lowStock.isNotEmpty)
+                  _AlerteCard(
+                    icon: Icons.warning_amber_rounded,
+                    titre: 'Stock faible — ${lowStock.first.nom}',
+                    detail:
+                        'Seulement ${lowStock.first.quantite} unité(s) restantes',
+                    couleur: AppColors.red,
+                    couleurLight: AppColors.redLight,
+                  ),
+                if (detteEchue.isNotEmpty) ...[
+                  const SizedBox(height: 8),
+                  _AlerteCard(
+                    icon: Icons.access_time,
+                    titre: 'Rappel — ${detteEchue.first.nomClient}',
+                    detail:
+                        'Échéance dépassée · ${detteEchue.first.montantRestant} GNF',
+                    couleur: AppColors.amber,
+                    couleurLight: AppColors.amberLight,
+                  ),
+                ],
+                if (lowStock.isEmpty && detteEchue.isEmpty)
+                  const Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(14),
+                      child: Text('Aucune alerte active'),
+                    ),
+                  ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }
@@ -453,14 +560,14 @@ class _AlerteCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  titre,
-                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: couleur),
-                ),
-                Text(
-                  detail,
-                  style: TextStyle(fontSize: 12, color: couleur.withOpacity(0.8)),
-                ),
+                Text(titre,
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: couleur)),
+                Text(detail,
+                    style: TextStyle(
+                        fontSize: 12, color: couleur.withOpacity(0.8))),
               ],
             ),
           ),

@@ -9,6 +9,7 @@ import 'package:credistock_gn/presentation/blocs/stock/stock_bloc.dart';
 import 'package:credistock_gn/presentation/blocs/sync/sync_bloc.dart';
 import 'package:credistock_gn/presentation/blocs/vente/vente_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppBlocObserver();
    await initializeDateFormatting('fr_FR');
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.white,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ),
+  );
   // // Supabase
   // const supabaseUrl = String.fromEnvironment(
   //   'SUPABASE_URL',

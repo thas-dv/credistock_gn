@@ -205,3 +205,5 @@ dev_dependencies:
 #           weight: 500
 #         - asset: assets/fonts/Inter-SemiBold.ttf
 #           weight: 600
+flutter:
+  uses-material-design: true

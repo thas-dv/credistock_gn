@@ -169,12 +169,27 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     );
 
-    result.fold(
-      (failure) => emit(state.copyWith(
-        status: AuthStatus.error,
-        errorMessage: failure.message,
-      )),
-      (_) => emit(state.copyWith(status: AuthStatus.authenticated, errorMessage: null)),
+    await result.fold(
+      (failure) async {
+        emit(state.copyWith(
+          status: AuthStatus.error,
+          errorMessage: failure.message,
+        ));
+      },
+      (_) async {
+        final boutiqueIdResult = await _authRepo.getBoutiqueId();
+        boutiqueIdResult.fold(
+          (_) => emit(state.copyWith(
+            status: AuthStatus.unauthenticated,
+            errorMessage: null,
+          )),
+          (boutiqueId) => emit(state.copyWith(
+            status: AuthStatus.unauthenticated,
+            boutiqueId: boutiqueId,
+            errorMessage: null,
+          )),
+        );
+      },
     );
   }
 

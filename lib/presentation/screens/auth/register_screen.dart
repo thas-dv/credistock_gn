@@ -59,9 +59,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
+       listenWhen: (previous, current) =>
+          previous.status == AuthStatus.checking &&
+          current.status == AuthStatus.unauthenticated,
       listener: (context, state) {
-        if (state.status == AuthStatus.authenticated) {
-          context.go(AppRoutes.home);
+       if (state.status == AuthStatus.unauthenticated) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Compte créé. Connectez-vous avec votre PIN.'),
+            ),
+          );
+          context.go(AppRoutes.auth);
         }
       },
       child: Scaffold(
