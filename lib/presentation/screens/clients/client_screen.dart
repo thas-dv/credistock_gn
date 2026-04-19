@@ -5,12 +5,11 @@ import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_theme.dart';
 
 import '../../../core/router/app_router.dart';
-import '../../../core/theme/app_theme.dart';
+
 import '../../../domain/entities/entities.dart';
 import '../../blocs/client/client_bloc.dart';
 import '../../blocs/dette/dette_bloc.dart';
 import '../../blocs/auth/auth_bloc.dart';
-
 
 // ============================================================
 // CLIENTS SCREEN
@@ -21,9 +20,10 @@ class ClientsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return BlocProvider.value(
+    return BlocProvider.value(
       value: context.read<ClientBloc>()
-        ..add(ClientWatchStarted(context.read<AuthBloc>().state.boutiqueId ?? '')),
+        ..add(ClientWatchStarted(
+            context.read<AuthBloc>().state.boutiqueId ?? '')),
       child: const _ClientsView(),
     );
   }
@@ -34,16 +34,28 @@ class _ClientsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.gray50,
-      body: SafeArea(
-        child: Column(
-          children: [
-            _ClientsHeader(),
-            _SearchField(),
-            _ScoreFilter(),
-            Expanded(child: _ClientsList()),
-          ],
+    return BlocListener<ClientBloc, ClientState>(
+      listenWhen: (previous, current) =>
+          previous.status != current.status &&
+          current.status == ClientStatus.error,
+      listener: (context, state) {
+        final msg =
+            state.errorMessage ?? 'Erreur lors de l\'enregistrement du client';
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(msg)),
+        );
+      },
+      child: Scaffold(
+        backgroundColor: AppColors.gray50,
+        body: SafeArea(
+          child: Column(
+            children: [
+              _ClientsHeader(),
+              _SearchField(),
+              _ScoreFilter(),
+              Expanded(child: _ClientsList()),
+            ],
+          ),
         ),
       ),
     );
@@ -64,7 +76,8 @@ class _ClientsHeader extends StatelessWidget {
               builder: (_, state) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Clients', style: Theme.of(context).textTheme.headlineSmall),
+                  Text('Clients',
+                      style: Theme.of(context).textTheme.headlineSmall),
                   Text(
                     '${state.totalClients} enregistrés · ${state.clientsAvecDettes} avec dettes',
                     style: Theme.of(context).textTheme.bodyMedium,
@@ -117,7 +130,8 @@ class _ClientsHeader extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Text('Nouveau client', style: Theme.of(context).textTheme.headlineSmall),
+            Text('Nouveau client',
+                style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 16),
             TextField(
               controller: nomCtrl,
@@ -141,10 +155,12 @@ class _ClientsHeader extends StatelessWidget {
               onPressed: () {
                 if (nomCtrl.text.trim().isNotEmpty) {
                   context.read<ClientBloc>().add(ClientAjoute(
-                    nom: nomCtrl.text.trim(),
-                    telephone: telCtrl.text.trim().isEmpty ? null : telCtrl.text.trim(),
-                    boutiqueId: boutiqueId,
-                  ));
+                        nom: nomCtrl.text.trim(),
+                        telephone: telCtrl.text.trim().isEmpty
+                            ? null
+                            : telCtrl.text.trim(),
+                        boutiqueId: boutiqueId,
+                      ));
                   Navigator.pop(context);
                 }
               },
@@ -164,7 +180,8 @@ class _SearchField extends StatelessWidget {
       color: Colors.white,
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
       child: TextField(
-        onChanged: (v) => context.read<ClientBloc>().add(ClientSearchChanged(v)),
+        onChanged: (v) =>
+            context.read<ClientBloc>().add(ClientSearchChanged(v)),
         decoration: const InputDecoration(
           hintText: 'Rechercher un client...',
           prefixIcon: Icon(Icons.search, size: 18),
@@ -199,15 +216,20 @@ class _ScoreFilter extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: GestureDetector(
-                  onTap: () => context.read<ClientBloc>().add(ClientScoreFiltered(score)),
+                  onTap: () => context
+                      .read<ClientBloc>()
+                      .add(ClientScoreFiltered(score)),
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
                     decoration: BoxDecoration(
                       color: selected ? AppColors.greenLight : AppColors.gray50,
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: selected ? AppColors.green : AppColors.gray200.withOpacity(0.5),
+                        color: selected
+                            ? AppColors.green
+                            : AppColors.gray200.withOpacity(0.5),
                         width: selected ? 1 : 0.5,
                       ),
                     ),
@@ -215,8 +237,10 @@ class _ScoreFilter extends StatelessWidget {
                       label,
                       style: TextStyle(
                         fontSize: 12,
-                        color: selected ? AppColors.greenDark : AppColors.gray600,
-                        fontWeight: selected ? FontWeight.w500 : FontWeight.w400,
+                        color:
+                            selected ? AppColors.greenDark : AppColors.gray600,
+                        fontWeight:
+                            selected ? FontWeight.w500 : FontWeight.w400,
                       ),
                     ),
                   ),
@@ -234,7 +258,8 @@ class _ClientsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ClientBloc, ClientState>(
-      buildWhen: (p, c) => p.clientsFiltres != c.clientsFiltres || p.status != c.status,
+      buildWhen: (p, c) =>
+          p.clientsFiltres != c.clientsFiltres || p.status != c.status,
       builder: (_, state) {
         if (state.status == ClientStatus.loading) {
           return const Center(child: CircularProgressIndicator());
@@ -246,7 +271,8 @@ class _ClientsList extends StatelessWidget {
               children: [
                 Icon(Icons.people_outline, size: 48, color: AppColors.gray200),
                 const SizedBox(height: 12),
-                Text('Aucun client', style: Theme.of(context).textTheme.bodyMedium),
+                Text('Aucun client',
+                    style: Theme.of(context).textTheme.bodyMedium),
               ],
             ),
           );
@@ -258,7 +284,10 @@ class _ClientsList extends StatelessWidget {
           separatorBuilder: (_, __) => const SizedBox(height: 1),
           itemBuilder: (_, i) {
             final client = state.clientsFiltres[i];
-            return _ClientTile(client: client, isFirst: i == 0, isLast: i == state.clientsFiltres.length - 1);
+            return _ClientTile(
+                client: client,
+                isFirst: i == 0,
+                isLast: i == state.clientsFiltres.length - 1);
           },
         );
       },
@@ -271,7 +300,8 @@ class _ClientTile extends StatelessWidget {
   final bool isFirst;
   final bool isLast;
 
-  const _ClientTile({required this.client, required this.isFirst, required this.isLast});
+  const _ClientTile(
+      {required this.client, required this.isFirst, required this.isLast});
 
   @override
   Widget build(BuildContext context) {
@@ -279,7 +309,8 @@ class _ClientTile extends StatelessWidget {
     final scoreColorLight = client.score.name.scoreCouleurLight;
 
     return GestureDetector(
-       onTap: () => context.push('${AppRoutes.clientDetail}?clientId=${client.id}'),
+      onTap: () =>
+          context.push('${AppRoutes.clientDetail}?clientId=${client.id}'),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -289,9 +320,13 @@ class _ClientTile extends StatelessWidget {
           ),
           border: Border(
             left: BorderSide(color: Colors.black.withOpacity(0.06), width: 0.5),
-            right: BorderSide(color: Colors.black.withOpacity(0.06), width: 0.5),
-            top: isFirst ? BorderSide(color: Colors.black.withOpacity(0.06), width: 0.5) : BorderSide.none,
-            bottom: BorderSide(color: Colors.black.withOpacity(0.06), width: 0.5),
+            right:
+                BorderSide(color: Colors.black.withOpacity(0.06), width: 0.5),
+            top: isFirst
+                ? BorderSide(color: Colors.black.withOpacity(0.06), width: 0.5)
+                : BorderSide.none,
+            bottom:
+                BorderSide(color: Colors.black.withOpacity(0.06), width: 0.5),
           ),
         ),
         child: Padding(
@@ -317,12 +352,14 @@ class _ClientTile extends StatelessWidget {
                   children: [
                     Text(
                       client.nom,
-                      style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                      style: const TextStyle(
+                          fontSize: 14, fontWeight: FontWeight.w500),
                     ),
                     if (client.telephone != null)
                       Text(
                         client.telephone!,
-                        style: const TextStyle(fontSize: 11, color: AppColors.gray400),
+                        style: const TextStyle(
+                            fontSize: 11, color: AppColors.gray400),
                       ),
                   ],
                 ),
@@ -338,13 +375,16 @@ class _ClientTile extends StatelessWidget {
                         : 'Aucune dette',
                     style: TextStyle(
                       fontSize: 11,
-                      color: client.aDesDetteEnCours ? AppColors.red : AppColors.gray400,
+                      color: client.aDesDetteEnCours
+                          ? AppColors.red
+                          : AppColors.gray400,
                     ),
                   ),
                 ],
               ),
               const SizedBox(width: 4),
-              const Icon(Icons.chevron_right, size: 16, color: AppColors.gray200),
+              const Icon(Icons.chevron_right,
+                  size: 16, color: AppColors.gray200),
             ],
           ),
         ),
@@ -410,13 +450,16 @@ class ClientDetailScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text(client.nom, style: Theme.of(context).textTheme.headlineSmall),
+                      Text(client.nom,
+                          style: Theme.of(context).textTheme.headlineSmall),
                       if (client.telephone != null) ...[
                         const SizedBox(height: 4),
-                        Text(client.telephone!, style: Theme.of(context).textTheme.bodyMedium),
+                        Text(client.telephone!,
+                            style: Theme.of(context).textTheme.bodyMedium),
                       ],
                       const SizedBox(height: 12),
-                      AppBadge(label: client.score.name, type: client.score.name),
+                      AppBadge(
+                          label: client.score.name, type: client.score.name),
                     ],
                   ),
                 ),
@@ -430,7 +473,8 @@ class ClientDetailScreen extends StatelessWidget {
                     child: _StatCard(
                       label: 'Total dû',
                       value: '${_formatGNF(client.totalDu)} GNF',
-                      color: client.totalDu > 0 ? AppColors.red : AppColors.green,
+                      color:
+                          client.totalDu > 0 ? AppColors.red : AppColors.green,
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -454,7 +498,8 @@ class ClientDetailScreen extends StatelessWidget {
               const SizedBox(height: 20),
 
               // Historique dettes
-              Text('Historique des dettes', style: Theme.of(context).textTheme.labelLarge),
+              Text('Historique des dettes',
+                  style: Theme.of(context).textTheme.labelLarge),
               const SizedBox(height: 8),
               BlocBuilder<DetteBloc, DetteState>(
                 builder: (_, detteState) {
@@ -490,7 +535,8 @@ class ClientDetailScreen extends StatelessWidget {
                           children: [
                             if (i > 0) const Divider(height: 1, thickness: 0.5),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 14, vertical: 10),
                               child: Row(
                                 children: [
                                   Container(
@@ -504,15 +550,20 @@ class ClientDetailScreen extends StatelessWidget {
                                   const SizedBox(width: 10),
                                   Expanded(
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           '${_formatGNF(d.montant)} GNF',
-                                          style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
+                                          style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w500),
                                         ),
                                         Text(
                                           '${d.createdAt.day}/${d.createdAt.month}/${d.createdAt.year}',
-                                          style: const TextStyle(fontSize: 11, color: AppColors.gray400),
+                                          style: const TextStyle(
+                                              fontSize: 11,
+                                              color: AppColors.gray400),
                                         ),
                                       ],
                                     ),
@@ -549,7 +600,8 @@ class _StatCard extends StatelessWidget {
   final String value;
   final Color color;
 
-  const _StatCard({required this.label, required this.value, required this.color});
+  const _StatCard(
+      {required this.label, required this.value, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -563,10 +615,12 @@ class _StatCard extends StatelessWidget {
         children: [
           Text(
             value,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: color),
+            style: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.w600, color: color),
           ),
           const SizedBox(height: 2),
-          Text(label, style: const TextStyle(fontSize: 10, color: AppColors.gray400)),
+          Text(label,
+              style: const TextStyle(fontSize: 10, color: AppColors.gray400)),
         ],
       ),
     );
@@ -585,16 +639,16 @@ String _formatGNF(int montant) {
 
 extension on ScoreClient {
   String get label => switch (this) {
-    ScoreClient.bon => 'Bon payeur',
-    ScoreClient.moyen => 'Payeur moyen',
-    ScoreClient.mauvais => 'Mauvais payeur',
-  };
+        ScoreClient.bon => 'Bon payeur',
+        ScoreClient.moyen => 'Payeur moyen',
+        ScoreClient.mauvais => 'Mauvais payeur',
+      };
 }
 
 extension on StatutDette {
   String get label => switch (this) {
-    StatutDette.nonPaye => 'Non payé',
-    StatutDette.partiel => 'Partiel',
-    StatutDette.paye => 'Payé',
-  };
+        StatutDette.nonPaye => 'Non payé',
+        StatutDette.partiel => 'Partiel',
+        StatutDette.paye => 'Payé',
+      };
 }

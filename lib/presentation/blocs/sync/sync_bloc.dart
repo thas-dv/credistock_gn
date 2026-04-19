@@ -5,6 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../domain/repositories/repositories.dart';
+import '../../../core/services/app_settings_service.dart';
 
 // ============================================================
 // EVENTS
@@ -17,10 +18,12 @@ abstract class SyncEvent extends Equatable {
 }
 
 class SyncStartWatching extends SyncEvent {}
+
 class SyncManuel extends SyncEvent {
   final String boutiqueId;
   const SyncManuel(this.boutiqueId);
 }
+
 class _ConnectivityChanged extends SyncEvent {
   final bool estConnecte;
   const _ConnectivityChanged(this.estConnecte);
@@ -80,18 +83,21 @@ class SyncState extends Equatable {
 class SyncBloc extends Bloc<SyncEvent, SyncState> {
   final SyncRepository _syncRepo;
   final AuthRepository _authRepository;
+  final AppSettingsService _settingsService;
   final Connectivity _connectivity = Connectivity();
   StreamSubscription? _connectivitySub;
   Timer? _syncTimer;
 
-   SyncBloc(this._syncRepo, this._authRepository) : super(const SyncState()) {
+  SyncBloc(this._syncRepo, this._authRepository, this._settingsService)
+      : super(const SyncState()) {
     on<SyncStartWatching>(_onStartWatching);
     on<SyncManuel>(_onManuel);
     on<_ConnectivityChanged>(_onConnectivityChanged);
     on<_AutoSyncTick>(_onAutoSyncTick);
   }
 
-  Future<void> _onStartWatching(SyncStartWatching event, Emitter<SyncState> emit) async {
+  Future<void> _onStartWatching(
+      SyncStartWatching event, Emitter<SyncState> emit) async {
     // Vérifier l'état initial
     final result = await _connectivity.checkConnectivity();
     final estConnecte = !result.contains(ConnectivityResult.none);
@@ -140,10 +146,27 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
   }
 
   Future<void> _onManuel(SyncManuel event, Emitter<SyncState> emit) async {
-    if (!state.estConnecte) return;
+    if (!state.estConnecte ||
+        !_settingsService.settings.value.autoSync ||
+        !_settingsService.settings.value.cloudBackup) return;
     emit(state.copyWith(status: SyncStatus.syncing));
 
-    final result = await _syncRepo.synchroniser(event.boutiqueId);
+    var boutiqueId = event.boutiqueId.trim();
+    if (boutiqueId.isEmpty) {
+      final idResult = await _authRepository.getBoutiqueId();
+      boutiqueId = idResult.fold((_) => '', (id) => id);
+    }
+
+    if (boutiqueId.isEmpty) {
+      emit(state.copyWith(
+        status: SyncStatus.error,
+        errorMessage:
+            'Impossible de synchroniser: boutique introuvable. Reconnectez-vous.',
+      ));
+      return;
+    }
+
+    final result = await _syncRepo.synchroniser(boutiqueId);
 
     result.fold(
       (failure) => emit(state.copyWith(
@@ -161,8 +184,10 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
     );
   }
 
- Future<void> _synchroniserSiPossible(Emitter<SyncState> emit) async {
-    if (!state.estConnecte) return;
+  Future<void> _synchroniserSiPossible(Emitter<SyncState> emit) async {
+    if (!state.estConnecte ||
+        !_settingsService.settings.value.autoSync ||
+        !_settingsService.settings.value.cloudBackup) return;
 
     final boutiqueIdResult = await _authRepository.getBoutiqueId();
     await boutiqueIdResult.fold(
@@ -186,6 +211,7 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
       },
     );
   }
+
   @override
   Future<void> close() {
     _connectivitySub?.cancel();

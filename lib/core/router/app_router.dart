@@ -3,8 +3,9 @@ import 'package:credistock_gn/presentation/screens/clients/client_screen.dart';
 import 'package:credistock_gn/presentation/screens/dettes/dette_screen.dart';
 import 'package:credistock_gn/presentation/screens/home/home_screen.dart';
 import 'package:credistock_gn/presentation/screens/produit/produit_form_screen.dart';
-import 'package:credistock_gn/presentation/screens/screens.dart'
-    hide PaiementScreen, ClientDetailScreen;
+import 'package:credistock_gn/presentation/screens/screens.dart' hide PaiementScreen, ClientDetailScreen, AlertesScreen, SettingsScreen;
+import 'package:credistock_gn/presentation/screens/alertes/alertes_screen.dart';
+import 'package:credistock_gn/presentation/screens/settings/settings_screen.dart';
 import 'package:credistock_gn/presentation/screens/auth/register_screen.dart';
 import 'package:credistock_gn/presentation/screens/stock/stock_screen.dart';
 import 'package:credistock_gn/presentation/screens/auth/auth_screen.dart';

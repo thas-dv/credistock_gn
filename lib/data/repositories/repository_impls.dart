@@ -5,6 +5,7 @@ import 'package:drift/drift.dart';
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'package:hive_flutter/hive_flutter.dart';
 import '../../core/errors/failures.dart';
 import '../../core/services/supabase_sync_service.dart';
 import '../local/database/app_database.dart'
@@ -14,6 +15,9 @@ import '../../domain/repositories/repositories.dart';
 import 'package:uuid/uuid.dart';
 
 const _uuid = Uuid();
+const _sessionBoxName = 'auth_session';
+const _kSessionActive = 'active';
+const _kBoutiqueId = 'boutique_id';
 
 @LazySingleton(as: ProduitRepository)
 class ProduitRepositoryImpl implements ProduitRepository {
@@ -715,6 +719,8 @@ class AuthRepositoryImpl implements AuthRepository {
   bool _sessionActive = false;
   String? _activeBoutiqueId;
 
+  Future<Box<dynamic>> _sessionBox() => Hive.openBox<dynamic>(_sessionBoxName);
+
   @override
   Future<Either<Failure, Unit>> changerPin(
       String boutiqueId, String ancienPin, String nouveauPin) async {
@@ -777,6 +783,9 @@ class AuthRepositoryImpl implements AuthRepository {
       await _syncRepository.synchroniser(boutiqueId);
       _sessionActive = true;
       _activeBoutiqueId = boutiqueId;
+      final box = await _sessionBox();
+      await box.put(_kSessionActive, true);
+      await box.put(_kBoutiqueId, boutiqueId);
       return const Right(unit);
     } catch (e) {
       return Left(AuthFailure(message: 'Erreur: ${e.toString()}'));
@@ -787,10 +796,20 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<void> deconnecter() async {
     _sessionActive = false;
     _activeBoutiqueId = null;
+    final box = await _sessionBox();
+    await box.put(_kSessionActive, false);
+    await box.delete(_kBoutiqueId);
   }
 
   @override
-  Future<bool> estConnecte() async => _sessionActive;
+  Future<bool> estConnecte() async {
+    if (_sessionActive) return true;
+    final box = await _sessionBox();
+    final active = box.get(_kSessionActive) as bool? ?? false;
+    _sessionActive = active;
+    _activeBoutiqueId = box.get(_kBoutiqueId) as String? ?? _activeBoutiqueId;
+    return active;
+  }
 
   @override
   Future<Either<Failure, Unit>> seConnecter({
@@ -809,6 +828,9 @@ class AuthRepositoryImpl implements AuthRepository {
 
       _sessionActive = true;
       _activeBoutiqueId = utilisateur.boutiqueId;
+      final box = await _sessionBox();
+      await box.put(_kSessionActive, true);
+      await box.put(_kBoutiqueId, utilisateur.boutiqueId);
       return const Right(unit);
     } catch (e) {
       return Left(AuthFailure(message: 'Erreur: ${e.toString()}'));
@@ -819,6 +841,13 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<Failure, String>> getBoutiqueId() async {
     if (_activeBoutiqueId != null && _activeBoutiqueId!.isNotEmpty) {
       return Right(_activeBoutiqueId!);
+    }
+
+    final box = await _sessionBox();
+    final cachedBoutiqueId = box.get(_kBoutiqueId) as String?;
+    if (cachedBoutiqueId != null && cachedBoutiqueId.isNotEmpty) {
+      _activeBoutiqueId = cachedBoutiqueId;
+      return Right(cachedBoutiqueId);
     }
 
     try {
@@ -923,13 +952,12 @@ class SyncRepositoryImpl implements SyncRepository {
           .get();
 
       await _supabaseSyncService.upsertBatch(
-        table: 'boutiques',
+        table: 'creditstock_boutiques',
         rows: boutiques
             .map((b) => {
                   'id': b.id,
                   'nom': b.nom,
                   'adresse': b.adresse,
-                  'telephone': b.telephone,
                   'created_at': b.createdAt.toIso8601String()
                 })
             .toList(),
@@ -1075,9 +1103,6 @@ class SyncRepositoryImpl implements SyncRepository {
     } on PostgrestException catch (e) {
       _statusCtrl.add(SyncStatus.error);
       return Left(SyncFailure(message: e.message));
-    } catch (e) {
-      _statusCtrl.add(SyncStatus.error);
-      return Left(SyncFailure(message: e.toString()));
     }
   }
 

@@ -5,6 +5,7 @@ import '../../data/repositories/repository_impls.dart';
 import '../services/supabase_sync_service.dart';
 import '../../domain/repositories/repositories.dart';
 import '../../domain/usecases/usecases.dart';
+import '../services/app_settings_service.dart';
 import '../../presentation/blocs/auth/auth_bloc.dart';
 import '../../presentation/blocs/client/client_bloc.dart';
 import '../../presentation/blocs/dette/dette_bloc.dart';
@@ -22,6 +23,7 @@ Future<void> configureDependencies() async {
     () => SupabaseSyncService(Supabase.instance.client),
   );
 
+  getIt.registerLazySingleton<AppSettingsService>(() => AppSettingsService());
   getIt.registerLazySingleton<SyncRepository>(
     () => SyncRepositoryImpl(
       getIt<AppDatabase>(),
@@ -77,7 +79,7 @@ Future<void> configureDependencies() async {
 
   getIt.registerFactory(() => AuthBloc(getIt<AuthRepository>()));
   getIt.registerFactory(
-    () => SyncBloc(getIt<SyncRepository>(), getIt<AuthRepository>()),
+     () => SyncBloc(getIt<SyncRepository>(), getIt<AuthRepository>(), getIt<AppSettingsService>()),
   );
   getIt.registerFactory(() => StockBloc(getIt<ProduitRepository>()));
   getIt.registerFactory(() => ClientBloc(getIt<ClientRepository>()));

@@ -199,7 +199,7 @@ class Boutique extends DataClass implements Insertable<Boutique> {
 
   @override
   String toString() {
-    return (StringBuffer('Boutique(')
+    return (StringBuffer('outique(')
           ..write('id: $id, ')
           ..write('nom: $nom, ')
           ..write('adresse: $adresse, ')

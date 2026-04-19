@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../../domain/entities/entities.dart';
 import '../../../domain/repositories/repositories.dart';
@@ -41,7 +42,8 @@ class ClientAjoute extends ClientEvent {
   final String nom;
   final String? telephone;
   final String boutiqueId;
-  const ClientAjoute({required this.nom, this.telephone, required this.boutiqueId});
+  const ClientAjoute(
+      {required this.nom, this.telephone, required this.boutiqueId});
   @override
   List<Object?> get props => [nom, telephone];
 }
@@ -98,7 +100,8 @@ class ClientState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [clients, clientsFiltres, status, query, filtreScore];
+  List<Object?> get props =>
+      [clients, clientsFiltres, status, query, filtreScore];
 }
 
 // ============================================================
@@ -109,7 +112,7 @@ class ClientState extends Equatable {
 class ClientBloc extends Bloc<ClientEvent, ClientState> {
   final ClientRepository _clientRepo;
   StreamSubscription<List<Client>>? _clientsSubscription;
-
+  static const _uuid = Uuid();
   ClientBloc(this._clientRepo) : super(const ClientState()) {
     on<ClientWatchStarted>(_onWatchStarted);
     on<ClientSearchChanged>(_onSearch);
@@ -118,7 +121,8 @@ class ClientBloc extends Bloc<ClientEvent, ClientState> {
     on<_ClientsUpdated>(_onClientsUpdated);
   }
 
-  Future<void> _onWatchStarted(ClientWatchStarted event, Emitter<ClientState> emit) async {
+  Future<void> _onWatchStarted(
+      ClientWatchStarted event, Emitter<ClientState> emit) async {
     emit(state.copyWith(status: ClientStatus.loading));
     await _clientsSubscription?.cancel();
     _clientsSubscription = _clientRepo
@@ -129,7 +133,8 @@ class ClientBloc extends Bloc<ClientEvent, ClientState> {
   void _onClientsUpdated(_ClientsUpdated event, Emitter<ClientState> emit) {
     emit(state.copyWith(
       clients: event.clients,
-      clientsFiltres: _appliquerFiltres(event.clients, state.query, state.filtreScore),
+      clientsFiltres:
+          _appliquerFiltres(event.clients, state.query, state.filtreScore),
       status: ClientStatus.loaded,
     ));
   }
@@ -137,25 +142,36 @@ class ClientBloc extends Bloc<ClientEvent, ClientState> {
   void _onSearch(ClientSearchChanged event, Emitter<ClientState> emit) {
     emit(state.copyWith(
       query: event.query,
-      clientsFiltres: _appliquerFiltres(state.clients, event.query, state.filtreScore),
+      clientsFiltres:
+          _appliquerFiltres(state.clients, event.query, state.filtreScore),
     ));
   }
 
   void _onFiltrer(ClientScoreFiltered event, Emitter<ClientState> emit) {
     emit(state.copyWith(
       filtreScore: event.score,
-      clientsFiltres: _appliquerFiltres(state.clients, state.query, event.score),
+      clientsFiltres:
+          _appliquerFiltres(state.clients, state.query, event.score),
     ));
   }
 
   Future<void> _onAjouter(ClientAjoute event, Emitter<ClientState> emit) async {
+    if (event.boutiqueId.trim().isEmpty) {
+      emit(state.copyWith(
+        status: ClientStatus.error,
+        errorMessage: 'Boutique introuvable. Veuillez vous reconnecter.',
+      ));
+      return;
+    }
     emit(state.copyWith(status: ClientStatus.saving));
 
     final client = Client(
-      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      id: _uuid.v4(),
       boutiqueId: event.boutiqueId,
       nom: event.nom,
-      telephone: event.telephone,
+      telephone: event.telephone?.trim().isEmpty == true
+          ? null
+          : event.telephone?.trim(),
       score: ScoreClient.bon,
       totalDu: 0,
       nombreDettes: 0,

@@ -10,6 +10,6 @@ class SupabaseSyncService {
     required List<Map<String, dynamic>> rows,
   }) async {
     if (rows.isEmpty) return;
-    await _client.from(table).upsert(rows);
+     await _client.from(table).upsert(rows, onConflict: 'id');
   }
 }

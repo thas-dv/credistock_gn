@@ -116,7 +116,8 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final now = DateFormat('EEEE d MMMM', 'fr_FR').format(DateTime.now());
+    final locale = Localizations.localeOf(context).toLanguageTag();
+    final now = DateFormat('EEEE d MMMM', locale).format(DateTime.now());
 
     return Container(
       color: Colors.white,
