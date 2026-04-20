@@ -1,92 +1,246 @@
-import 'package:credistock_gn/core/di/injection.dart';
-import 'package:credistock_gn/core/observers/app_bloc_observer.dart';
-import 'package:credistock_gn/core/router/app_router.dart';
-import 'package:credistock_gn/core/theme/app_theme.dart';
-import 'package:credistock_gn/core/services/app_settings_service.dart';
-import 'package:credistock_gn/presentation/blocs/auth/auth_bloc.dart';
-import 'package:credistock_gn/presentation/blocs/client/client_bloc.dart';
-import 'package:credistock_gn/presentation/blocs/dette/dette_bloc.dart';
-import 'package:credistock_gn/presentation/blocs/stock/stock_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:credistock_gn/presentation/blocs/sync/sync_bloc.dart';
-import 'package:credistock_gn/presentation/blocs/vente/vente_bloc.dart';
+// lib/main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'core/theme/app_theme.dart';
+import 'core/constants/app_constants.dart';
+import 'presentation/providers/app_providers.dart';
+import 'presentation/auth/login_page.dart';
+import 'presentation/auth/register_page.dart';
+import 'presentation/home/home_page.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Bloc.observer = AppBlocObserver();
-  await initializeDateFormatting('fr_FR');
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.dark,
-      systemNavigationBarColor: Colors.white,
-      systemNavigationBarIconBrightness: Brightness.dark,
+
+  // Orientation portrait uniquement (app mobile commerce)
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  // SharedPreferences
+  final prefs = await SharedPreferences.getInstance();
+
+  // Supabase
+  await Supabase.initialize(
+    url: AppConstants.supabaseUrl,
+    anonKey: AppConstants.supabaseAnonKey,
+    authOptions: const FlutterAuthClientOptions(
+      autoRefreshToken: true,
+      persistSession: true,
     ),
   );
-  // // Supabase
-  const supabaseUrl = String.fromEnvironment(
-    'SUPABASE_URL',
-    defaultValue: 'https://gzaekbnodohycalquufi.supabase.co',
-  );
-  const supabaseAnonKey = String.fromEnvironment(
-    'SUPABASE_ANON_KEY',
-    defaultValue:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6YWVrYm5vZG9oeWNhbHF1dWZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxMjIxMTgsImV4cCI6MjA4MDY5ODExOH0.W-8-1PqUHN2FSaGzEWRuwky4ZbExuyB5mlW69gd1qbU',
-  );
 
-  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
-  await configureDependencies();
-  await Hive.initFlutter();
-  await getIt<AppSettingsService>().init();
-
-  runApp(const CrediStockApp());
+  runApp(
+    ProviderScope(
+      overrides: [
+        sharedPrefsProvider.overrideWithValue(prefs),
+      ],
+      child: const CreditStockApp(),
+    ),
+  );
 }
 
-class CrediStockApp extends StatelessWidget {
-  const CrediStockApp({super.key});
+class CreditStockApp extends ConsumerWidget {
+  const CreditStockApp({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeProvider);
+    final locale = ref.watch(localeProvider);
+
+    return MaterialApp(
+      title: 'CrédiStock GN',
+      debugShowCheckedModeBanner: false,
+
+      // Thèmes
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: themeMode,
+
+      // Localisation (FR / EN / AR)
+      locale: locale,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('fr'),
+        Locale('en'),
+        Locale('ar'),
+      ],
+
+      // Routes
+      initialRoute: '/',
+      routes: {
+        '/': (_) => const _SplashRouter(),
+        '/login': (_) => const LoginPage(),
+        '/register': (_) => const RegisterPage(),
+        '/home': (_) => const MainShell(),
+        '/nouvelle-vente': (_) =>
+            const Placeholder(child: Center(child: Text('Vente'))),
+        '/stock': (_) => const Placeholder(child: Center(child: Text('Stock'))),
+        '/clients': (_) =>
+            const Placeholder(child: Center(child: Text('Clients'))),
+        '/dettes': (_) =>
+            const Placeholder(child: Center(child: Text('Dettes'))),
+        '/parametres': (_) =>
+            const Placeholder(child: Center(child: Text('Paramètres'))),
+        '/alertes': (_) =>
+            const Placeholder(child: Center(child: Text('Alertes'))),
+      },
+    );
+  }
+}
+
+// ── Splash / Router ────────────────────────────────────────
+
+class _SplashRouter extends ConsumerWidget {
+  const _SplashRouter();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final session = ref.watch(sessionProvider);
+    final colors = Theme.of(context).extension<CreditStockColors>()!;
+
+    // Si session active → home, sinon → login
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!context.mounted) return;
+      Navigator.pushReplacementNamed(
+        context,
+        session.isLoggedIn ? '/home' : '/login',
+      );
+    });
+
+    // Écran de démarrage
+    return Scaffold(
+      backgroundColor: colors.green,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.15),
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child:
+                  const Icon(Icons.storefront, color: Colors.white, size: 56),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              'CrédiStock GN',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Cairo',
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Gestion simple pour commerçants',
+              style: TextStyle(
+                color: Colors.white.withOpacity(0.8),
+                fontSize: 14,
+                fontFamily: 'Cairo',
+              ),
+            ),
+            const SizedBox(height: 40),
+            const CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation(Colors.white),
+              strokeWidth: 2,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ── Shell principal avec Bottom Navigation ─────────────────
+
+class MainShell extends ConsumerStatefulWidget {
+  const MainShell({super.key});
+  @override
+  ConsumerState<MainShell> createState() => _MainShellState();
+}
+
+class _MainShellState extends ConsumerState<MainShell> {
+  int _selectedIndex = 0;
+
+  final _pages = const [
+    HomePage(),
+    Placeholder(child: Center(child: Text('Stock'))), // StockPage()
+    Placeholder(child: Center(child: Text('Clients'))), // ClientsPage()
+    Placeholder(child: Center(child: Text('Dettes'))), // DettesPage()
+    Placeholder(child: Center(child: Text('Paramètres'))), // SettingsPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<AuthBloc>(
-          create: (_) => getIt<AuthBloc>()..add(AuthCheckRequested()),
-        ),
-        BlocProvider<SyncBloc>(
-          create: (_) => getIt<SyncBloc>()..add(SyncStartWatching()),
-        ),
-        BlocProvider<StockBloc>(create: (_) => getIt<StockBloc>()),
-        BlocProvider<ClientBloc>(create: (_) => getIt<ClientBloc>()),
-        BlocProvider<DetteBloc>(create: (_) => getIt<DetteBloc>()),
-        BlocProvider<VenteBloc>(create: (_) => getIt<VenteBloc>()),
-      ],
-      child: ValueListenableBuilder<AppSettings>(
-        valueListenable: getIt<AppSettingsService>().settings,
-        builder: (context, settings, _) {
-          return MaterialApp.router(
-            title: 'CrédiStock ',
-            debugShowCheckedModeBanner: false,
-            theme: AppTheme.light,
-            darkTheme: AppTheme.dark,
-            themeMode: ThemeMode.system,
-            locale: settings.locale,
-            supportedLocales: const [Locale('fr'), Locale('en'), Locale('ar')],
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            routerConfig: AppRouter.router,
-          );
-        },
+    final colors = Theme.of(context).extension<CreditStockColors>()!;
+    final alertes = ref.watch(alertesNonLuesProvider);
+
+    return Scaffold(
+      body: _pages[_selectedIndex],
+      floatingActionButton: _selectedIndex == 0
+          ? FloatingActionButton.extended(
+              onPressed: () => Navigator.pushNamed(context, '/nouvelle-vente'),
+              backgroundColor: colors.green,
+              foregroundColor: Colors.white,
+              icon: const Icon(Icons.add_shopping_cart),
+              label: const Text('Vente',
+                  style: TextStyle(fontWeight: FontWeight.w600)),
+            )
+          : null,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: (i) => setState(() => _selectedIndex = i),
+        items: [
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              activeIcon: Icon(Icons.home),
+              label: 'Accueil'),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.inventory_2_outlined),
+              activeIcon: Icon(Icons.inventory_2),
+              label: 'Stock'),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.people_outline),
+              activeIcon: Icon(Icons.people),
+              label: 'Clients'),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet_outlined),
+              activeIcon: Icon(Icons.account_balance_wallet),
+              label: 'Dettes'),
+          BottomNavigationBarItem(
+            icon: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                const Icon(Icons.settings_outlined),
+                if ((alertes.value ?? 0) > 0)
+                  Positioned(
+                    right: -4,
+                    top: -4,
+                    child: Container(
+                      width: 10,
+                      height: 10,
+                      decoration: BoxDecoration(
+                          color: colors.red, shape: BoxShape.circle),
+                    ),
+                  ),
+              ],
+            ),
+            activeIcon: const Icon(Icons.settings),
+            label: 'Paramètres',
+          ),
+        ],
       ),
     );
   }
