@@ -12,8 +12,11 @@ import 'presentation/auth/login_page.dart';
 import 'presentation/auth/register_page.dart';
 import 'presentation/home/home_page.dart';
 import 'presentation/stock/stock_page.dart';
+import 'presentation/stock/nouveau_produit_page.dart';
 import 'presentation/clients/clients_page.dart';
+import 'presentation/clients/nouveau_client_page.dart';
 import 'presentation/dettes/dettes_page.dart';
+import 'presentation/dettes/nouvelle_dette_page.dart';
 import 'presentation/settings/settings_page.dart';
 import 'presentation/sales/nouvelle_vente_page.dart';
 import 'presentation/sales/ventes_page.dart';
@@ -95,6 +98,9 @@ class CreditStockApp extends ConsumerWidget {
         '/dettes': (_) => const DettesPage(),
         '/parametres': (_) => const SettingsPage(),
         '/alertes': (_) => const AlertesPage(),
+        '/nouveau-produit': (_) => const NouveauProduitPage(),
+        '/nouveau-client': (_) => const NouveauClientPage(),
+        '/nouvelle-dette': (_) => const NouvelleDettePage(),
       },
     );
   }

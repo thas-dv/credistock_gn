@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:drift/drift.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
@@ -25,6 +26,11 @@ class DettesPage extends ConsumerWidget {
     final fmt = NumberFormat('#,###', 'fr_FR');
 
     return Scaffold(
+          floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.pushNamed(context, '/nouvelle-dette'),
+        icon: const Icon(Icons.note_add_outlined),
+        label: const Text('Dette'),
+      ),
       appBar: AppBar(title: const Text('Dettes')),
       body: dettesAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),

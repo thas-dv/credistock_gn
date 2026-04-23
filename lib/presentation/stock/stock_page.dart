@@ -7,13 +7,15 @@ import '../../core/theme/app_theme.dart';
 import '../../data/local/database/app_database.dart';
 import '../providers/app_providers.dart';
 
-final produitsProvider = StreamProvider.autoDispose<List<CreditStockProduit>>((ref) {
+final produitsProvider =
+    StreamProvider.autoDispose<List<CreditStockProduit>>((ref) {
   final session = ref.watch(sessionProvider);
   if (!session.isLoggedIn) return Stream.value(const []);
 
   final db = ref.watch(appDatabaseProvider);
   return (db.select(db.creditStockProduits)
-        ..where((p) => p.boutiqueId.equals(session.boutiqueId!) & p.actif.isValue(true))
+        ..where((p) =>
+            p.boutiqueId.equals(session.boutiqueId!) & p.actif.isValue(true))
         ..orderBy([(p) => OrderingTerm.asc(p.nom)]))
       .watch();
 });
@@ -28,12 +30,19 @@ class StockPage extends ConsumerWidget {
     final fmt = NumberFormat('#,###', 'fr_FR');
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.pushNamed(context, '/nouveau-produit'),
+        icon: const Icon(Icons.add_box_outlined),
+        label: const Text('Produit'),
+      ),
       appBar: AppBar(title: const Text('Stock')),
       body: produitsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, __) => const Center(child: Text('Erreur de chargement du stock')),
+        error: (_, __) =>
+            const Center(child: Text('Erreur de chargement du stock')),
         data: (produits) {
-          if (produits.isEmpty) return const _EmptyState(label: 'Aucun produit ajouté');
+          if (produits.isEmpty)
+            return const _EmptyState(label: 'Aucun produit ajouté');
 
           return ListView.separated(
             padding: const EdgeInsets.all(16),
@@ -43,10 +52,13 @@ class StockPage extends ConsumerWidget {
               final p = produits[i];
               final faible = p.quantite <= p.seuilAlerte;
               return ListTile(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
                 tileColor: Colors.white,
-                title: Text(p.nom, style: const TextStyle(fontWeight: FontWeight.w600)),
-                subtitle: Text('${fmt.format(p.prixVente)} GNF • ${p.quantite} ${p.unite}'),
+                title: Text(p.nom,
+                    style: const TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text(
+                    '${fmt.format(p.prixVente)} GNF • ${p.quantite} ${p.unite}'),
                 trailing: faible
                     ? Icon(Icons.warning_amber_rounded, color: colors.amber)
                     : Icon(Icons.check_circle_outline, color: colors.green),

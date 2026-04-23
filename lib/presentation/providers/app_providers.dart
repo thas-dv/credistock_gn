@@ -1,6 +1,7 @@
 // lib/presentation/providers/app_providers.dart
 import 'dart:async';
 import 'dart:convert';
+import 'package:drift/drift.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -245,7 +246,7 @@ class SyncNotifier extends Notifier<SyncStatus> {
           ..where((q) => q.id.equals(item.id))
         ).write(
           CreditStockSyncQueueCompanion(
-            statut:    const Value('synced'),
+            statut:   Value('synced'),
             syncedAt:  Value(DateTime.now()),
           ),
         );
