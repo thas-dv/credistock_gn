@@ -71,6 +71,24 @@ class LocaleNotifier extends Notifier<Locale> {
 final localeProvider = NotifierProvider<LocaleNotifier, Locale>(
   LocaleNotifier.new,
 );
+// ── Synchronisation auto ────────────────────────────────────
+
+class AutoSyncNotifier extends Notifier<bool> {
+  @override
+  bool build() {
+    final prefs = ref.read(sharedPrefsProvider);
+    return prefs.getBool('auto_sync_enabled') ?? true;
+  }
+
+  Future<void> setEnabled(bool value) async {
+    state = value;
+    await ref.read(sharedPrefsProvider).setBool('auto_sync_enabled', value);
+  }
+}
+
+final autoSyncEnabledProvider = NotifierProvider<AutoSyncNotifier, bool>(
+  AutoSyncNotifier.new,
+);
 
 // ── Connectivité ─────────────────────────────────────────────
 

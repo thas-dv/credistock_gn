@@ -10,7 +10,7 @@ class SettingsPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeProvider);
     final locale = ref.watch(localeProvider);
-
+    final autoSyncEnabled = ref.watch(autoSyncEnabledProvider);
     return Scaffold(
       appBar: AppBar(title: const Text('Paramètres')),
       body: ListView(
@@ -21,12 +21,14 @@ class SettingsPage extends ConsumerWidget {
             trailing: DropdownButton<ThemeMode>(
               value: themeMode,
               items: const [
-                DropdownMenuItem(value: ThemeMode.system, child: Text('Système')),
+                DropdownMenuItem(
+                    value: ThemeMode.system, child: Text('Système')),
                 DropdownMenuItem(value: ThemeMode.light, child: Text('Clair')),
                 DropdownMenuItem(value: ThemeMode.dark, child: Text('Sombre')),
               ],
               onChanged: (value) {
-                if (value != null) ref.read(themeProvider.notifier).setTheme(value);
+                if (value != null)
+                  ref.read(themeProvider.notifier).setTheme(value);
               },
             ),
           ),
@@ -41,9 +43,20 @@ class SettingsPage extends ConsumerWidget {
                 DropdownMenuItem(value: 'ar', child: Text('AR')),
               ],
               onChanged: (value) {
-                if (value != null) ref.read(localeProvider.notifier).setLocale(value);
+                if (value != null)
+                  ref.read(localeProvider.notifier).setLocale(value);
               },
             ),
+          ),
+          SwitchListTile(
+            title: const Text('Synchronisation automatique'),
+            subtitle: const Text(
+              'Synchroniser dès que la connexion revient',
+            ),
+            value: autoSyncEnabled,
+            onChanged: (value) {
+              ref.read(autoSyncEnabledProvider.notifier).setEnabled(value);
+            },
           ),
           ListTile(
             title: const Text('Déconnexion'),
@@ -51,7 +64,8 @@ class SettingsPage extends ConsumerWidget {
             onTap: () async {
               await ref.read(sessionProvider.notifier).clearSession();
               if (context.mounted) {
-                Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/login', (_) => false);
               }
             },
           ),

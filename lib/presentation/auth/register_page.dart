@@ -129,17 +129,10 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
       if (isOnline) {
         final supabase = Supabase.instance.client;
 
-        // Identifiant technique (email/mdp) dérivé du téléphone + PIN.
-        // L'utilisateur ne le voit jamais : il se connecte avec téléphone + PIN.
-        final fakeEmail = '${_normalizePhoneForLogin(_telephoneCtrl.text.trim())}@credistock.local';
-        final fakePassword = _pin + boutiqueId.substring(0, 8);
-        String? authId;
+        
         try {
           
-              final authResponse = await supabase.auth.signUp(
-            email: fakeEmail,
-            password: fakePassword,
-          );
+          
 
           await supabase.from('credistock_boutiques').upsert({
             'id':           boutiqueId,
@@ -150,10 +143,10 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
             'abonnement':   'gratuit',
           });
 
-          final authUser = supabase.auth.currentUser;
+     
           await supabase.from('credistock_utilisateurs').upsert({
             'id':          utilisateurId,
-            'auth_id':     authUser?.id,
+     
             'boutique_id': boutiqueId,
             'nom':         _nomProprietaireCtrl.text.trim(),
             'telephone':   _telephoneCtrl.text.trim(),
@@ -162,20 +155,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
             'actif':       true,
           });
 
-        } on AuthException catch (e) {
-          // signUp a échoué côté Supabase Auth.
-          final msg = e.message.toLowerCase();
-          final alreadyExists = msg.contains('already registered') ||
-              msg.contains('already exists') ||
-              msg.contains('user already');
-
-          await _rollbackLocal(db, boutiqueId, utilisateurId);
-
-          if (!mounted) return;
-          setState(() => _error = alreadyExists
-              ? 'Ce numéro est déjà utilisé. Connectez-vous avec votre PIN existant.'
-              : 'Erreur d\'authentification : ${e.message}');
-          return;
+        
 
         } on PostgrestException catch (e) {
           // Contrainte d'unicité (téléphone) ou RLS refusée côté base.

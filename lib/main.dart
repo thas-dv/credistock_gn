@@ -1,4 +1,5 @@
 // lib/main.dart
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -182,7 +183,7 @@ class MainShell extends ConsumerStatefulWidget {
 
 class _MainShellState extends ConsumerState<MainShell> {
   int _selectedIndex = 0;
-
+ ProviderSubscription<AsyncValue<bool>>? _connectivitySub;
   final _pages = const [
     HomePage(),
     StockPage(),
@@ -190,6 +191,31 @@ class _MainShellState extends ConsumerState<MainShell> {
     DettesPage(),
     SettingsPage(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _connectivitySub = ref.listenManual<AsyncValue<bool>>(
+      connectivityProvider,
+      (previous, next) {
+        final wasOnline = previous?.valueOrNull ?? false;
+        final isOnline = next.valueOrNull ?? false;
+        if (wasOnline || !isOnline) return;
+
+        final autoSyncEnabled = ref.read(autoSyncEnabledProvider);
+        final session = ref.read(sessionProvider);
+        if (autoSyncEnabled && session.isLoggedIn) {
+          unawaited(ref.read(syncProvider.notifier).syncAll());
+        }
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    _connectivitySub?.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

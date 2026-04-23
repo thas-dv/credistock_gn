@@ -70,8 +70,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
           // Tenter sync en arrière-plan si connecté
           final isOnline = ref.read(isOnlineProvider);
-          if (isOnline) unawaited(ref.read(syncProvider.notifier).syncAll());
-
+          final autoSyncEnabled = ref.read(autoSyncEnabledProvider);
+          if (isOnline && autoSyncEnabled) {
+            unawaited(ref.read(syncProvider.notifier).syncAll());
+          }
           if (mounted) Navigator.pushReplacementNamed(context, '/home');
           return;
         }
@@ -139,9 +141,11 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         abonnement:      boutiqueData['abonnement'] ?? 'gratuit',
       );
 
-      // Déclencher sync complète
-      unawaited(ref.read(syncProvider.notifier).syncAll());
-
+     
+      // Déclencher sync complète si option activée
+      if (ref.read(autoSyncEnabledProvider)) {
+        unawaited(ref.read(syncProvider.notifier).syncAll());
+      }
       if (mounted) Navigator.pushReplacementNamed(context, '/home');
 
     } catch (e) {
