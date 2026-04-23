@@ -1,11 +1,12 @@
 // lib/presentation/auth/login_page.dart
+import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:crypto/crypto.dart';
-import 'dart:convert';
 import '../providers/app_providers.dart';
 import '../../data/local/database/app_database.dart';
 import '../../core/theme/app_theme.dart';
@@ -351,5 +352,3 @@ class _PinKey extends StatelessWidget {
     );
   }
 }
-
-void unawaited(Future<void> _) {}

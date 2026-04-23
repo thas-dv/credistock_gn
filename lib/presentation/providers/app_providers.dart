@@ -1,5 +1,6 @@
 // lib/presentation/providers/app_providers.dart
 import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -228,13 +229,11 @@ class SyncNotifier extends Notifier<SyncStatus> {
     for (final item in queue) {
       try {
         final payload = Map<String, dynamic>.from(
-          // Parse JSON payload
-          {}, // À remplacer par json.decode(item.payload)
+          json.decode(item.payload) as Map,
         );
 
         switch (item.operation) {
           case 'INSERT':
-            await supabase.from(tableName).upsert(payload);
           case 'UPDATE':
             await supabase.from(tableName).upsert(payload);
           case 'DELETE':

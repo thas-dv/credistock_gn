@@ -11,6 +11,13 @@ import 'presentation/providers/app_providers.dart';
 import 'presentation/auth/login_page.dart';
 import 'presentation/auth/register_page.dart';
 import 'presentation/home/home_page.dart';
+import 'presentation/stock/stock_page.dart';
+import 'presentation/clients/clients_page.dart';
+import 'presentation/dettes/dettes_page.dart';
+import 'presentation/settings/settings_page.dart';
+import 'presentation/sales/nouvelle_vente_page.dart';
+import 'presentation/sales/ventes_page.dart';
+import 'presentation/alertes/alertes_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +37,7 @@ void main() async {
     anonKey: AppConstants.supabaseAnonKey,
     authOptions: const FlutterAuthClientOptions(
       autoRefreshToken: true,
-      persistSession: true,
+      // persistSession: true,
     ),
   );
 
@@ -81,17 +88,13 @@ class CreditStockApp extends ConsumerWidget {
         '/login': (_) => const LoginPage(),
         '/register': (_) => const RegisterPage(),
         '/home': (_) => const MainShell(),
-        '/nouvelle-vente': (_) =>
-            const Placeholder(child: Center(child: Text('Vente'))),
-        '/stock': (_) => const Placeholder(child: Center(child: Text('Stock'))),
-        '/clients': (_) =>
-            const Placeholder(child: Center(child: Text('Clients'))),
-        '/dettes': (_) =>
-            const Placeholder(child: Center(child: Text('Dettes'))),
-        '/parametres': (_) =>
-            const Placeholder(child: Center(child: Text('Paramètres'))),
-        '/alertes': (_) =>
-            const Placeholder(child: Center(child: Text('Alertes'))),
+        '/nouvelle-vente': (_) => const NouvelleVentePage(),
+        '/ventes': (_) => const VentesPage(),
+        '/stock': (_) => const StockPage(),
+        '/clients': (_) => const ClientsPage(),
+        '/dettes': (_) => const DettesPage(),
+        '/parametres': (_) => const SettingsPage(),
+        '/alertes': (_) => const AlertesPage(),
       },
     );
   }
@@ -176,10 +179,10 @@ class _MainShellState extends ConsumerState<MainShell> {
 
   final _pages = const [
     HomePage(),
-    Placeholder(child: Center(child: Text('Stock'))), // StockPage()
-    Placeholder(child: Center(child: Text('Clients'))), // ClientsPage()
-    Placeholder(child: Center(child: Text('Dettes'))), // DettesPage()
-    Placeholder(child: Center(child: Text('Paramètres'))), // SettingsPage()
+    StockPage(),
+    ClientsPage(),
+    DettesPage(),
+    SettingsPage(),
   ];
 
   @override

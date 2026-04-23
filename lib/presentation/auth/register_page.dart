@@ -94,42 +94,78 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
       if (isOnline) {
         final supabase = Supabase.instance.client;
 
-        // Créer un compte Supabase Auth avec email généré (invisible pour l'utilisateur)
-        // Le vrai identifiant est le téléphone + PIN
+        // Identifiant technique (email/mdp) dérivé du téléphone + PIN.
+        // L'utilisateur ne le voit jamais : il se connecte avec téléphone + PIN.
         final fakeEmail = '${_telephoneCtrl.text.trim().replaceAll(RegExp(r'\D'), '')}@credistock.local';
-        final fakePassword = _pin + boutiqueId.substring(0, 8); // mot de passe technique
+        final fakePassword = _pin + boutiqueId.substring(0, 8);
 
         try {
           await supabase.auth.signUp(
             email:    fakeEmail,
             password: fakePassword,
           );
-        } catch (_) {
-          // Si l'auth Supabase échoue, on reste en local uniquement
+
+          await supabase.from('credistock_boutiques').upsert({
+            'id':           boutiqueId,
+            'nom':          _nomBoutiqueCtrl.text.trim(),
+            'telephone':    _telephoneCtrl.text.trim(),
+            'type_boutique': _typeBoutique,
+            'pin_hash':     pinHash,
+            'abonnement':   'gratuit',
+          });
+
+          final authUser = supabase.auth.currentUser;
+          await supabase.from('credistock_utilisateurs').upsert({
+            'id':          utilisateurId,
+            'auth_id':     authUser?.id,
+            'boutique_id': boutiqueId,
+            'nom':         _nomProprietaireCtrl.text.trim(),
+            'telephone':   _telephoneCtrl.text.trim(),
+            'role':        'admin',
+            'pin_hash':    pinHash,
+            'actif':       true,
+          });
+
+        } on AuthException catch (e) {
+          // signUp a échoué côté Supabase Auth.
+          final msg = e.message.toLowerCase();
+          final alreadyExists = msg.contains('already registered') ||
+              msg.contains('already exists') ||
+              msg.contains('user already');
+
+          await _rollbackLocal(db, boutiqueId, utilisateurId);
+
+          if (!mounted) return;
+          setState(() => _error = alreadyExists
+              ? 'Ce numéro est déjà utilisé. Connectez-vous avec votre PIN existant.'
+              : 'Erreur d\'authentification : ${e.message}');
+          return;
+
+        } on PostgrestException catch (e) {
+          // Contrainte d'unicité (téléphone) ou RLS refusée côté base.
+          final isUnique = e.code == '23505';
+
+          await _rollbackLocal(db, boutiqueId, utilisateurId);
+
+          if (!mounted) return;
+          setState(() => _error = isUnique
+              ? 'Ce numéro est déjà utilisé. Connectez-vous avec votre PIN existant.'
+              : 'Erreur serveur : ${e.message}');
+          return;
+
+        } catch (e) {
+          // Erreur réseau / timeout : on garde le compte local,
+          // la sync se fera via la queue à la prochaine connexion.
+          debugPrint('Sync Supabase échouée (non bloquant): $e');
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Compte créé localement. Synchronisation à la prochaine connexion.'),
+                duration: Duration(seconds: 3),
+              ),
+            );
+          }
         }
-
-        // Insérer la boutique
-        await supabase.from('credistock_boutiques').upsert({
-          'id':           boutiqueId,
-          'nom':          _nomBoutiqueCtrl.text.trim(),
-          'telephone':    _telephoneCtrl.text.trim(),
-          'type_boutique': _typeBoutique,
-          'pin_hash':     pinHash,
-          'abonnement':   'gratuit',
-        });
-
-        // Insérer l'utilisateur
-        final authUser = supabase.auth.currentUser;
-        await supabase.from('credistock_utilisateurs').upsert({
-          'id':          utilisateurId,
-          'auth_id':     authUser?.id,
-          'boutique_id': boutiqueId,
-          'nom':         _nomProprietaireCtrl.text.trim(),
-          'telephone':   _telephoneCtrl.text.trim(),
-          'role':        'admin',
-          'pin_hash':    pinHash,
-          'actif':       true,
-        });
       }
 
       // 3. Ouvrir la session
@@ -146,11 +182,29 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
       }
 
     } catch (e) {
-      setState(() => _error = 'Erreur lors de la création du compte');
+      if (mounted) {
+        setState(() => _error = 'Erreur lors de la création du compte : $e');
+      }
       debugPrint('Register error: $e');
     } finally {
       if (mounted) setState(() => _loading = false);
     }
+  }
+
+  // Rollback des insertions locales quand le serveur refuse le compte
+  // (numéro déjà utilisé, etc.) — évite de laisser un compte orphelin
+  // qui ne pourrait jamais se synchroniser.
+  Future<void> _rollbackLocal(
+    AppDatabase db,
+    String boutiqueId,
+    String utilisateurId,
+  ) async {
+    await (db.delete(db.creditStockUtilisateurs)
+      ..where((u) => u.id.equals(utilisateurId))
+    ).go();
+    await (db.delete(db.creditStockBoutiques)
+      ..where((b) => b.id.equals(boutiqueId))
+    ).go();
   }
 
   @override
