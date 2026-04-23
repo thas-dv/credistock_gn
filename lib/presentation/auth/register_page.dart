@@ -41,6 +41,40 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   String _hashPin(String pin) =>
       sha256.convert(utf8.encode(pin)).toString();
 
+ String _normalizePhoneForLogin(String value) {
+    final digits = value.replaceAll(RegExp(r'\D'), '');
+    if (digits.startsWith('224')) return digits;
+    return '224$digits';
+  }
+
+  String _friendlySupabaseError(Object error) {
+    if (error is AuthException) {
+      final message = error.message.toLowerCase();
+      if (message.contains('already registered') ||
+          message.contains('already been registered')) {
+        return 'Ce numéro est déjà utilisé sur un autre compte.';
+      }
+      if (message.contains('invalid') && message.contains('email')) {
+        return 'Impossible de créer le compte en ligne pour le moment.';
+      }
+      return 'Erreur d’authentification Supabase: ${error.message}';
+    }
+    if (error is PostgrestException) {
+      return 'Erreur de synchronisation des données: ${error.message}';
+    }
+    return 'Erreur Supabase inattendue: $error';
+  }
+
+  void _showErrorToUser(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: Theme.of(context).extension<CreditStockColors>()?.red,
+      ),
+    );
+  }
+
   Future<void> _creerCompte() async {
     if (_pin.length != 4) {
       setState(() => _error = 'Le PIN doit contenir 4 chiffres');
@@ -96,12 +130,13 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
 
         // Identifiant technique (email/mdp) dérivé du téléphone + PIN.
         // L'utilisateur ne le voit jamais : il se connecte avec téléphone + PIN.
-        final fakeEmail = '${_telephoneCtrl.text.trim().replaceAll(RegExp(r'\D'), '')}@credistock.local';
+        final fakeEmail = '${_normalizePhoneForLogin(_telephoneCtrl.text.trim())}@credistock.local';
         final fakePassword = _pin + boutiqueId.substring(0, 8);
-
+        String? authId;
         try {
-          await supabase.auth.signUp(
-            email:    fakeEmail,
+          
+              final authResponse = await supabase.auth.signUp(
+            email: fakeEmail,
             password: fakePassword,
           );
 
@@ -182,9 +217,9 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
       }
 
     } catch (e) {
-      if (mounted) {
-        setState(() => _error = 'Erreur lors de la création du compte : $e');
-      }
+        final friendlyMessage = 'Erreur lors de la création du compte: $e';
+      setState(() => _error = friendlyMessage);
+      _showErrorToUser(friendlyMessage);
       debugPrint('Register error: $e');
     } finally {
       if (mounted) setState(() => _loading = false);
