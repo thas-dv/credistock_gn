@@ -1,0 +1,9 @@
+voix.mp3
+words.json
+story.json
+mix.wav
+video_brut.mp4
+sortie/
+render.log
+timing_voix.json
+__pycache__/

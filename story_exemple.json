@@ -1,0 +1,37 @@
+{
+ "date": "2026-10-25",
+ "theme": "Les murs qu'on construit soi-même (peur, excuses, demain)",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Le plus grand mensonge sur la réussite…\n\nC'est que tu attends ta chance.\n\n[chuckles] Réveille-toi. Personne n'a jamais réussi assis sur une chaise.\n\nRegarde ces murs autour de toi.\n\nTu sais de quoi ils sont faits ? De ta peur. De tes excuses. De ton « demain ».\n\nEt le pire… c'est toi qui les as construits. Brique par brique.\n\nAlors arrête de les regarder… [shouting] et DÉMOLIS-LES !\n\nUne action par jour. Un mur à la fois. Sans excuse.\n\nEt un matin… plus rien entre toi et ton potentiel.\n\n[intense] Maintenant, réponds-moi en commentaire : quel mur tu détruis CETTE semaine ? Si tu ne l'écris pas… c'est que tu as déjà abandonné.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Quel mur tu détruis CETTE semaine ? 👇 Écris-le. #mindset #motivation #discipline #mindset24 #changetavie",
+ "pinned_comment": "Moi je commence : je détruis ma procrastination. Et toi ? 👇",
+ "scenes": [
+  {"type": "stairs",   "at": ["Le", 1]},
+  {"type": "dice",     "at": ["C'est", 1]},
+  {"type": "chair",    "at": ["Réveille-toi", 1]},
+  {"type": "room",     "at": ["Regarde", 1]},
+  {"type": "words",    "at": ["sais", 1]},
+  {"type": "build",    "at": ["pire", 1]},
+  {"type": "explode",  "at": ["Alors", 1]},
+  {"type": "gates",    "at": ["action", 1]},
+  {"type": "sunrise",  "at": ["matin", 1]},
+  {"type": "question", "at": ["Maintenant", 1]},
+  {"type": "logo",     "at": ["Mindset", 1]}
+ ],
+ "roles": {
+  "hook": ["mensonge", 1],
+  "build_start": ["construits", 1], "build_end": ["Brique", 1],
+  "boom": ["DÉMOLIS-LES", 1],
+  "gate1": ["mur", 2], "gate2": ["excuse", 1],
+  "sunrise": ["matin", 1], "arms_up": ["potentiel", 1],
+  "q_line1": ["quel", 1], "q_line2": ["CETTE", 1], "q_cta": ["l'écris", 1], "q_end": ["abandonné", 1],
+  "brand": ["Mindset", 1], "slogan1": ["Change", 1], "slogan2": ["Change", 2]
+ },
+ "words3d": [["PEUR", ["peur", 1]], ["EXCUSES", ["excuses", 1]], ["DEMAIN", ["demain", 1]]],
+ "q_pulses": [["commentaire", 1], ["quel", 1], ["CETTE", 1], ["l'écris", 1]],
+ "punches": [["mensonge", 1], ["chance", 1], ["Réveille-toi", 1], ["murs", 1], ["construits", 1], ["Brique", 1],
+             ["action", 1], ["potentiel", 1], ["commentaire", 1], ["quel", 1], ["CETTE", 1], ["Mindset", 1]],
+ "keywords": ["mensonge", "chance", "Réveille-toi", "assis", "chaise", "murs", "peur", "excuses", "demain", "construits",
+              "brique", "DÉMOLIS-LES", "action", "mur", "excuse", "potentiel", "commentaire", "abandonné", "CETTE", "semaine"],
+ "question": {"lines": ["QUEL MUR", "TU DÉTRUIS"], "highlight": "CETTE SEMAINE ?", "cta": "ÉCRIS-LE EN COMMENTAIRE"}
+}
