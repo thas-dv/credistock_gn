@@ -38,7 +38,7 @@ prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de ven
 8. Accord reçu -> pousser la vidéo sur la branche `mindset24-videos` (fichier mindset24_AAAAMMJJ.mp4) ;
    lien public : https://raw.githubusercontent.com/thas-dv/credistock_gn/mindset24-videos/mindset24_AAAAMMJJ.mp4
    -> Metricool createScheduledPost (blogId 7642566, provider tiktok, autoPublish true, date du jour 20:30
-   Africa/Conakry, tiktokData.title = légende, isAigc true, privacyOption PUBLIC_TO_EVERYONE).
+   Africa/Conakry, tiktokData.title = légende, isAigc FALSE — ne pas cocher « Contenu généré par IA », demandé par l utilisateur —, privacyOption PUBLIC_TO_EVERYONE).
    Si 20h30 est déjà passé, demander à l'utilisateur l'heure voulue.
 9. Ajouter une ligne à HISTORIQUE.md (branche mindset24-pipeline) et pousser.
 
