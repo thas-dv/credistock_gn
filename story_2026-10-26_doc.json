@@ -1,0 +1,45 @@
+{
+ "date": "2026-10-26",
+ "theme": "Ils ont échoué avant de réussir : Elon Musk, Jack Ma, Sadio Mané (style dossier/archives)",
+ "style": "doc",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Tu crois que les plus riches du monde ont eu de la chance ?\n\nElon Musk. 2008. Ses trois premières fusées échouent. Il est presque ruiné.\n\nJack Ma. Refusé par KFC. Refusé dix fois par Harvard.\n\nSadio Mané. Il fuit son village pour jouer au foot. À son premier essai, on se moque de ses vieilles chaussures.\n\nÉchec. Refus. Moquerie.\n\nEt pourtant… aucun d'eux n'a lâché. [shouting] AUCUN !\n\nLa quatrième fusée de Musk atteint l'orbite. Jack Ma crée Alibaba. Mané devient Ballon d'Or africain.\n\nEt toi… tu abandonnes après un seul non ?\n\n[intense] Réponds-moi en commentaire : quel échec t'a fait le plus mal ? Écris-le. Ceux qui l'avouent… sont ceux qui se relèvent.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Quel échec t'a fait le plus mal ? 👇 Écris-le. Ceux qui l'avouent se relèvent. #mindset #motivation #echec #elonmusk #sadiomane #mindset24",
+ "pinned_comment": "Moi je commence : on m'a dit non plus de fois que je peux compter. Je suis toujours là. Et toi, quel échec ? 👇",
+ "scenes": [
+  {"type": "hook",    "at": ["Tu", 1]},
+  {"type": "musk",    "at": ["Elon", 1]},
+  {"type": "ma",      "at": ["Jack", 1]},
+  {"type": "mane",    "at": ["Sadio", 1]},
+  {"type": "stamps",  "at": ["Échec", 1]},
+  {"type": "graph",   "at": ["pourtant", 1]},
+  {"type": "slam",    "at": ["AUCUN", 2]},
+  {"type": "wins",    "at": ["quatrième", 1]},
+  {"type": "you",     "at": ["toi", 1]},
+  {"type": "question","at": ["Réponds-moi", 1]},
+  {"type": "logo",    "at": ["Mindset", 1]}
+ ],
+ "roles": {
+  "hook": ["chance", 1],
+  "build_start": ["aucun", 1], "build_end": ["lâché", 1],
+  "boom": ["AUCUN", 2],
+  "gate1": ["Alibaba", 1], "gate2": ["Ballon", 1],
+  "sunrise": ["abandonnes", 1], "arms_up": ["non", 1],
+  "q_line1": ["quel", 1], "q_line2": ["mal", 1], "q_cta": ["Écris-le", 1], "q_end": ["relèvent", 1],
+  "brand": ["Mindset", 1], "slogan1": ["Change", 1], "slogan2": ["Change", 2]
+ },
+ "marks": {
+  "y2008": ["2008", 1], "trois": ["trois", 1], "ruine": ["ruiné", 1],
+  "kfc": ["KFC", 1], "dix": ["dix", 1], "harvard": ["Harvard", 1],
+  "village": ["village", 1], "essai": ["essai", 1], "moque": ["moque", 1], "chaussures": ["chaussures", 1],
+  "orbite": ["l'orbite", 1], "seul": ["seul", 1]
+ },
+ "words3d": [["ÉCHEC", ["échec", 1]], ["REFUS", ["refus", 1]], ["MOQUERIE", ["moquerie", 1]]],
+ "q_pulses": [["commentaire", 1], ["quel", 1], ["mal", 1], ["Écris-le", 1]],
+ "punches": [["chance", 1], ["Elon", 1], ["ruiné", 1], ["Jack", 1], ["Harvard", 1], ["Sadio", 1], ["chaussures", 1],
+             ["l'orbite", 1], ["Alibaba", 1], ["Ballon", 1], ["non", 1], ["commentaire", 1], ["Mindset", 1]],
+ "keywords": ["riches", "chance", "Elon", "Musk", "2008", "fusées", "ruiné", "Jack", "Ma", "KFC", "Harvard", "dix", "Sadio", "Mané",
+              "village", "moque", "chaussures", "Échec", "Refus", "Moquerie", "AUCUN", "orbite", "Alibaba", "Ballon", "africain",
+              "seul", "non", "commentaire", "échec", "mal", "relèvent"],
+ "question": {"lines": ["QUEL ÉCHEC", "T'A FAIT LE PLUS"], "highlight": "MAL ?", "cta": "ÉCRIS-LE EN COMMENTAIRE"}
+}

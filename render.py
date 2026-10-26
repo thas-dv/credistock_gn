@@ -5,7 +5,13 @@ import numpy as np, cv2
 from PIL import Image, ImageDraw, ImageFont
 from engine import *
 from body import Body, draw_body, draw_stars
-import scenes as S
+_STYLE = json.load(open("timing_voix.json")).get("style", "holo")
+if _STYLE == "city":
+    import scenes_city as S
+    COLORS.update(S.COLORS)
+else:
+    import scenes as S
+LAYER_KEYS = getattr(S, "LAYERS", ("g", "o"))
 
 FPS = 30
 FONT = "/usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf"
@@ -125,7 +131,7 @@ def main(timing, out, t_from=0.0, t_to=None, every=1):
     t0 = time.time()
     for n, fi in enumerate(frames):
         tg = fi / FPS
-        layers = {"g": Layer(), "o": Layer()}
+        layers = {k: Layer() for k in LAYER_KEYS}
         flash = 0.0; fade = 1.0
         for i, s in enumerate(sc):
             a0, a1 = s["start"], s["end"]
@@ -140,7 +146,7 @@ def main(timing, out, t_from=0.0, t_to=None, every=1):
             for mesh, col, kw in R["meshes"]:
                 kw = dict(kw); kw["alpha"] = kw.get("alpha", 1.0) * wgt
                 if isinstance(mesh, Body):
-                    draw_body(layers[col], mesh, R["cam"], kw["alpha"])
+                    draw_body(layers[col], mesh, R["cam"], kw["alpha"], **kw.get("body", {}))
                 else:
                     draw_mesh(layers[col], mesh, R["cam"], **kw)
             if "dust" in R:

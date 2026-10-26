@@ -12,6 +12,9 @@ t = np.arange(N) / SR
 rng = np.random.default_rng(5)
 K = T["K"]
 SC = {x["type"]: x["start"] for x in T["scenes"]}
+# alias par position (structure fixe en 11 temps) pour les autres styles de scènes
+for _n, _x in zip(["stairs", "dice", "chair", "room", "words", "build", "explode", "gates", "sunrise", "question", "logo"], T["scenes"]):
+    SC.setdefault(_n, _x["start"])
 
 def lp(x, fc, order=2):
     b, a = signal.butter(order, fc / (SR / 2), "low"); return signal.lfilter(b, a, x)

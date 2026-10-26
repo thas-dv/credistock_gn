@@ -56,8 +56,9 @@ starts = [0.0] + [max(0.0, T(s["at"]) - 0.15) for s in story["scenes"][1:]]
 scenes = [{"type": s["type"], "start": a, "end": b} for s, a, b in zip(story["scenes"], starts, starts[1:] + [end])]
 K = {r: T(spec) for r, spec in story["roles"].items()}
 K["end"] = end
-out = {"duration": end, "scenes": scenes, "subs": subs, "K": K,
+out = {"style": story.get("style", "holo"), "duration": end, "scenes": scenes, "subs": subs, "K": K,
        "words3d": [[txt, T(spec)] for txt, spec in story["words3d"]],
+       "marks": {k: T(v) for k, v in story.get("marks", {}).items()},
        "q_pulses": [T(s) for s in story.get("q_pulses", [])],
        "punches": [T(s) for s in story.get("punches", [])],
        "keywords": story.get("keywords", []),

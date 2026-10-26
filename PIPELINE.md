@@ -41,3 +41,13 @@ prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de ven
    Africa/Conakry, tiktokData.title = légende, isAigc true, privacyOption PUBLIC_TO_EVERYONE).
    Si 20h30 est déjà passé, demander à l'utilisateur l'heure voulue.
 9. Ajouter une ligne à HISTORIQUE.md (branche mindset24-pipeline) et pousser.
+
+## Styles visuels (champ "style" de story.json)
+- "holo" (défaut, scenes.py + render.py) : hologramme blanc — utilisé le 25/10. Jugé trop répétitif par l'utilisateur.
+- "city" (scenes_city.py) : ville néon de nuit bleu/rouge, mannequin blanc. Types : skyline loading busstop eye neon chains snap lasers dawn phoneq logo.
+- "doc" (render_doc.py, 2D) : dossiers/archives, tampons rouges, or, grain — VALIDÉ le 26/10 (exemple : story_2026-10-26_doc.json).
+  Types : hook musk ma mane stamps graph slam wins you question logo ; "marks" = temps de mots nommés utilisés par les scènes.
+  Les scènes musk/ma/mane sont propres à cette histoire : pour un autre sujet, écrire de nouvelles fonctions de scène.
+Retour utilisateur (26/10) : changer d'ENVIRONNEMENT et d'ANGLE à chaque vidéo (ne pas refaire la même ambiance que la veille) ;
+il aime les EXEMPLES CONCRETS de vraies personnes qui ont échoué puis réussi, pour que le spectateur se reconnaisse dans la situation.
+Vérifier les faits sur les personnes réelles avant d'écrire le texte.
