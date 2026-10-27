@@ -1,0 +1,339 @@
+{
+ "date": "2026-10-27",
+ "theme": "« Trop tard pour moi » : Didier Drogba, pro à 21 ans seulement, champion d'Europe à 34 ans — style « stade » (stade de nuit, joueur n°11)",
+ "style": "stade",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Tu crois qu'il est trop tard pour toi ?\n\nDidier Drogba. À cinq ans, il quitte sa famille à Abidjan pour la France.\n\nAu Mans, c'est blessure sur blessure. Premier contrat pro ? À vingt et un ans seulement.\n\nBlessé. En retard. Sous-estimé.\n\nIl aurait pu tout lâcher. [shouting] IL A REFUSÉ !\n\nGuingamp. Puis Marseille. Il explose.\n\nÀ vingt-six ans, Chelsea paie vingt-quatre millions de livres.\n\nEt en 2012, en finale de la Ligue des champions, il égalise à la quatre-vingt-huitième minute… et marque le tir au but de la victoire.\n\nEt toi… tu dis encore qu'il est trop tard ?\n\n[intense] Réponds-moi en commentaire : à quel âge tu as cru qu'il était trop tard ? Écris ton âge. Ceux qui l'écrivent… recommencent aujourd'hui.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Pro à 21 ans seulement. Champion d'Europe à 34. 🏆 Et toi, à quel âge tu as cru qu'il était trop tard ? 👇 #mindset #motivation #drogba #jamaistroptard #mindset24 #changetavie",
+ "pinned_comment": "Moi je commence : à 25 ans je me disais que c'était trop tard. J'ai recommencé quand même. Et toi, quel âge ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "exil",
+   "at": [
+    "Didier",
+    1
+   ]
+  },
+  {
+   "type": "lemans",
+   "at": [
+    "Au",
+    1
+   ]
+  },
+  {
+   "type": "stamps",
+   "at": [
+    "Blessé",
+    1
+   ]
+  },
+  {
+   "type": "slam",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "rise",
+   "at": [
+    "Guingamp",
+    1
+   ]
+  },
+  {
+   "type": "chelsea",
+   "at": [
+    "vingt-six",
+    1
+   ]
+  },
+  {
+   "type": "final",
+   "at": [
+    "2012",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    2
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "tard",
+   1
+  ],
+  "build_start": [
+   "tout",
+   1
+  ],
+  "build_end": [
+   "lâcher",
+   1
+  ],
+  "boom": [
+   "REFUSÉ",
+   1
+  ],
+  "gate1": [
+   "Marseille",
+   1
+  ],
+  "gate2": [
+   "explose",
+   1
+  ],
+  "sunrise": [
+   "dis",
+   1
+  ],
+  "arms_up": [
+   "tard",
+   2
+  ],
+  "q_line1": [
+   "quel",
+   1
+  ],
+  "q_line2": [
+   "tard",
+   3
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "aujourd'hui",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "cinq": [
+   "cinq",
+   1
+  ],
+  "abidjan": [
+   "Abidjan",
+   1
+  ],
+  "france": [
+   "France",
+   1
+  ],
+  "mans": [
+   "Mans",
+   1
+  ],
+  "blessure": [
+   "blessure",
+   1
+  ],
+  "blessure2": [
+   "blessure",
+   2
+  ],
+  "contrat": [
+   "contrat",
+   1
+  ],
+  "vingtetun": [
+   "seulement",
+   1
+  ],
+  "guingamp": [
+   "Guingamp",
+   1
+  ],
+  "millions": [
+   "millions",
+   1
+  ],
+  "finale": [
+   "finale",
+   1
+  ],
+  "egalise": [
+   "égalise",
+   1
+  ],
+  "tir": [
+   "tir",
+   1
+  ],
+  "victoire": [
+   "victoire",
+   1
+  ]
+ },
+ "words3d": [
+  [
+   "BLESSÉ",
+   [
+    "Blessé",
+    1
+   ]
+  ],
+  [
+   "EN RETARD",
+   [
+    "retard",
+    1
+   ]
+  ],
+  [
+   "SOUS-ESTIMÉ",
+   [
+    "Sous-estimé",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "quel",
+   1
+  ],
+  [
+   "tard",
+   3
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "tard",
+   1
+  ],
+  [
+   "Didier",
+   1
+  ],
+  [
+   "Abidjan",
+   1
+  ],
+  [
+   "blessure",
+   1
+  ],
+  [
+   "seulement",
+   1
+  ],
+  [
+   "Guingamp",
+   1
+  ],
+  [
+   "Marseille",
+   1
+  ],
+  [
+   "millions",
+   1
+  ],
+  [
+   "égalise",
+   1
+  ],
+  [
+   "victoire",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "tard",
+  "Didier",
+  "Drogba",
+  "cinq",
+  "Abidjan",
+  "France",
+  "Mans",
+  "blessure",
+  "contrat",
+  "vingt",
+  "seulement",
+  "Blessé",
+  "retard",
+  "Sous-estimé",
+  "lâcher",
+  "REFUSÉ",
+  "Guingamp",
+  "Marseille",
+  "Chelsea",
+  "millions",
+  "2012",
+  "finale",
+  "champions",
+  "égalise",
+  "victoire",
+  "commentaire",
+  "âge",
+  "recommencent",
+  "aujourd'hui",
+  "explose"
+ ],
+ "question": {
+  "lines": [
+   "À QUEL ÂGE TU AS CRU",
+   "QU'IL ÉTAIT"
+  ],
+  "highlight": "TROP TARD ?",
+  "cta": "ÉCRIS TON ÂGE"
+ }
+}

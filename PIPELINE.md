@@ -51,3 +51,11 @@ prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de ven
 Retour utilisateur (26/10) : changer d'ENVIRONNEMENT et d'ANGLE à chaque vidéo (ne pas refaire la même ambiance que la veille) ;
 il aime les EXEMPLES CONCRETS de vraies personnes qui ont échoué puis réussi, pour que le spectateur se reconnaisse dans la situation.
 Vérifier les faits sur les personnes réelles avant d'écrire le texte.
+- "stade" (render_stade.py, 2D) : stade de nuit, joueur n°11 en silhouette (maillot orange), orange/blanc/vert — VALIDÉ le 27/10
+  (exemple : story_2026-10-27_stade.json, histoire de Didier Drogba). Types : hook exil lemans stamps slam rise chelsea final you question logo.
+  Les scènes exil/lemans/rise/chelsea/final sont propres à cette histoire : pour un autre sportif, écrire de nouvelles fonctions de scène.
+Retour utilisateur (27/10) : raconter une VRAIE histoire d'une célébrité très connue, du début à la fin (situation bloquée -> refus d'abandonner -> réussite),
+et CHANGER DE PERSONNAGE à chaque vidéo (le mannequin hologramme a été jugé trop répétitif).
+Voix sans crédits ElevenLabs : si le compte ElevenLabs est à court, générer la voix Sid via Speko audio_synthesize
+(voice V8kvppYJoYqSL61Tr8Dn, model eleven_v4, allowedProviders elevenlabs ; le modèle servi peut être eleven_v3_conversational),
+puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) et corriger le texte des mots (chiffres écrits en lettres) dans words.json.
