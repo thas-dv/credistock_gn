@@ -21,6 +21,9 @@ Durée visée : 38–45 s. Changer CHAQUE JOUR le sujet (voir HISTORIQUE.md pour
 les 3 mots, la question et la légende. Niche : réveiller son potentiel, identifier ce qui bloque,
 prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de vente du PDF.
 
+## Conformité TikTok
+Lire et appliquer CONFORMITE.md à chaque vidéo (sujet, texte, légende, hashtags) — compte monétisé.
+
 ## Étapes
 1. `git clone --depth 1 -b mindset24-pipeline https://github.com/thas-dv/credistock_gn pipeline` (demander l'accès push
    avec l'outil add_repo owner=thas-dv repo=credistock_gn access=push).
