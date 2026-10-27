@@ -6,8 +6,13 @@ communauté ». Nos légendes du 26/10 et du 27/10 contenaient des noms de cél�
 Référence : https://www.tiktok.com/community-guidelines (à consulter avec WebFetch en cas de doute).
 
 ## 1. Avant d'écrire le texte (choix du sujet)
-- AUCUNE personne réelle : pas de célébrité, sportif, entrepreneur, politique, influenceur — ni nom, ni histoire
-  vraie, ni ressemblance visuelle, ni fausse citation. On parle de « toi », « quelqu'un », des personnages anonymes.
+- Personnes réelles (l'utilisateur aime les vraies histoires de célébrités) : AUTORISÉ seulement si
+  • faits vérifiés par recherche web (dates, chiffres, clubs) — aucun fait inventé ni exagéré ;
+  • aucune fausse citation, on ne fait jamais « parler » la personne ; la voix Sid est un narrateur, jamais une imitation ;
+  • aucune ressemblance visuelle réaliste (silhouette/mannequin stylisé seulement), pas de photo, logo ou image de match ;
+  • rien de dénigrant, de privé ou de polémique sur la personne (santé, famille, affaires judiciaires…) ;
+  • pas de politiciens ni de personnes controversées ; pas de mineurs.
+  Son NOM peut figurer dans le texte prononcé et la légende, mais JAMAIS en hashtag.
 - Pas de marques, clubs, équipes, logos, œuvres protégées (musique, films, personnages).
 - Santé mentale (anxiété, stress, déprime…) : ton bienveillant, aucune promesse de guérison, aucun conseil médical
   ou thérapeutique ; ne jamais banaliser. Jamais : suicide, automutilation, troubles alimentaires, drogues, alcool.
@@ -18,8 +23,8 @@ Référence : https://www.tiktok.com/community-guidelines (à consulter avec Web
 - Pas de chiffres ou faits inventés présentés comme vrais.
 
 ## 2. Avant le rendu (texte final)
-Relire voice_prompt ligne par ligne avec la grille ci-dessus. Les mots 3D doivent être des notions
-(PEUR, DOUTE, PARESSE…), jamais des noms propres.
+Relire voice_prompt ligne par ligne avec la grille ci-dessus. Les mots 3D / tampons doivent être des notions
+(PEUR, DOUTE, BLESSÉ, REFUSÉ…), jamais des noms propres ni des marques/clubs.
 
 ## 3. Avant de programmer (légende + hashtags)
 - Hashtags autorisés UNIQUEMENT (choisir 4 à 6) :
