@@ -55,7 +55,7 @@ Retour utilisateur (26/10) : changer d'ENVIRONNEMENT et d'ANGLE à chaque vidéo
 il aime les EXEMPLES CONCRETS de vraies personnes qui ont échoué puis réussi, pour que le spectateur se reconnaisse dans la situation.
 Vérifier les faits sur les personnes réelles avant d'écrire le texte.
 - "stade" (render_stade.py, 2D) : stade de nuit, joueur n°11 en silhouette (maillot orange), orange/blanc/vert — VALIDÉ le 27/10
-  (exemple : story_2026-10-27_stade.json, histoire de Didier Drogba). Types : hook exil lemans stamps slam rise chelsea final you question logo.
+  (exemple technique : story_2026-10-27_stade.json — ATTENTION : son sujet (Didier Drogba, personne réelle) et ses hashtags sont désormais INTERDITS par CONFORMITE.md ; réutiliser seulement la mise en scène avec un personnage anonyme). Types : hook exil lemans stamps slam rise chelsea final you question logo.
   Les scènes exil/lemans/rise/chelsea/final sont propres à cette histoire : pour un autre sportif, écrire de nouvelles fonctions de scène.
 Retour utilisateur (27/10) : raconter une VRAIE histoire d'une célébrité très connue, du début à la fin (situation bloquée -> refus d'abandonner -> réussite),
 et CHANGER DE PERSONNAGE à chaque vidéo (le mannequin hologramme a été jugé trop répétitif).
