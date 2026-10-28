@@ -6,6 +6,11 @@ Les chiffres Metricool peuvent avoir 1 à 2 jours de retard : si une vidéo réc
 Indicateurs clés : taux de like = likes / vues (> 5 % = bon), commentaires (objectif : la question fait répondre),
 enregistrements et partages (signal fort), % vues complètes.
 
+## Objectif monétisation (Programme de récompenses des créateurs TikTok)
+Conditions (écran TikTok du 28/10/2026) : 18 ans ✅ · 10 000 followers (actuel : 330) · 100 000 vues sur 30 jours (actuel : 8 599).
+Récompenses uniquement pour les vidéos de PLUS d'1 minute -> toutes les vidéos font 61–75 s.
+Priorité actuelle : CROISSANCE (followers + vues). Suivre chaque jour l'évolution vers ces deux seuils dans le bilan.
+
 ## Tableau
 | Date | Style / sujet | Vues | Likes | Taux like | Comm. | Enreg. | Partages | Remarque |
 |---|---|---|---|---|---|---|---|---|

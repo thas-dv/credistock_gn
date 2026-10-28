@@ -17,7 +17,7 @@ logo MINDSET 24 doré. Vidéo publiée à 20h30 (Africa/Conakry) sur TikTok @min
 9. sunrise  : la percée (« Et un matin… … ton potentiel »)                      sunrise, arms_up
 10. question: [intense] question en commentaire + menace d'abandon             q_line1, q_line2, q_cta, q_end
 11. logo    : [serious] Mindset 24. Change ton mental. Change ta vie.           brand, slogan1, slogan2
-Durée visée : 38–45 s. Changer CHAQUE JOUR le sujet (voir HISTORIQUE.md pour ne pas répéter),
+Durée visée : 61–75 s (PLUS d'1 minute : seules ces vidéos comptent pour le Programme de récompenses des créateurs TikTok ; accroche forte dans les 3 premières secondes pour garder la rétention). Si la voix fait < 61 s, ajouter une phrase à l'histoire plutôt que ralentir. Changer CHAQUE JOUR le sujet (voir HISTORIQUE.md pour ne pas répéter),
 les 3 mots, la question et la légende. Niche : réveiller son potentiel, identifier ce qui bloque,
 prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de vente du PDF.
 
