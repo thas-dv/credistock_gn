@@ -1,0 +1,44 @@
+{
+ "date": "2026-10-28",
+ "theme": "« Un refus, c'est la fin ? » : l'histoire vraie de Stephen King (lettres de refus plantées sur un clou, caravane, roman jeté à la poubelle puis fini) — style « écrivain » (bureau de nuit, machine à écrire, lampe ambrée)",
+ "style": "ecrivain",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Tu crois qu'un refus, c'est la fin ?\n\nStephen King. Jeune, il envoie ses histoires aux magazines. Refus. Refus. Refus.\n\nIl plante chaque lettre de refus sur un clou. Le clou ne tient plus. Il prend un pic… et continue d'écrire.\n\nEn mille neuf cent soixante-treize, il vit dans une caravane. Prof le jour. L'été, ouvrier dans une blanchisserie.\n\nFauché. Épuisé. Refusé.\n\nUn soir, il jette le début de son roman à la poubelle. Sa femme le ressort.\n\nIl aurait pu tout arrêter. [shouting] IL L'A FINI !\n\nUn éditeur dit oui. Deux mille cinq cents dollars.\n\nPuis les droits en poche partent pour quatre cent mille dollars.\n\nAujourd'hui, c'est l'un des écrivains les plus lus au monde.\n\nEt toi… tu abandonnes après combien de non ?\n\n[intense] Réponds-moi en commentaire : combien de fois on t'a dit non ? Écris le chiffre. Ceux qui l'écrivent… n'abandonnent plus.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Refusé. Refusé. Refusé. Il a planté chaque lettre sur un clou… et il a continué d'écrire. ✍️ Et toi, combien de fois on t'a dit non ? 👇 #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie",
+ "pinned_comment": "Je commence : on m'a dit non plus de 10 fois avant que j'ose recommencer. Et toi, ton chiffre ? 👇",
+ "scenes": [
+  {"type": "hook", "at": ["Tu", 1]},
+  {"type": "letters", "at": ["Stephen", 1]},
+  {"type": "nail", "at": ["plante", 1]},
+  {"type": "trailer", "at": ["En", 1]},
+  {"type": "stamps", "at": ["Fauché", 1]},
+  {"type": "trash", "at": ["soir", 1]},
+  {"type": "slam", "at": ["aurait", 1]},
+  {"type": "deal", "at": ["éditeur", 1]},
+  {"type": "books", "at": ["Aujourd'hui", 1]},
+  {"type": "you", "at": ["toi", 1]},
+  {"type": "question", "at": ["Réponds-moi", 1]},
+  {"type": "logo", "at": ["Mindset", 1]}
+ ],
+ "roles": {
+  "hook": ["refus", 1], "build_start": ["tout", 1], "build_end": ["arrêter", 1], "boom": ["FINI", 1],
+  "gate1": ["oui", 1], "gate2": ["400 000", 1], "sunrise": ["abandonnes", 1], "arms_up": ["non", 1],
+  "q_line1": ["combien", 2], "q_line2": ["non", 2], "q_cta": ["Écris", 1], "q_end": ["n'abandonnent", 1],
+  "brand": ["Mindset", 1], "slogan1": ["Change", 1], "slogan2": ["Change", 2]
+ },
+ "marks": {
+  "magazines": ["magazines", 1], "refus2": ["Refus", 2], "refus3": ["Refus", 3], "refus4": ["Refus", 4],
+  "clou": ["clou", 1], "clou2": ["clou", 2], "pic": ["pic", 1], "continue": ["continue", 1],
+  "caravane": ["caravane", 1], "prof": ["Prof", 1], "blanch": ["blanchisserie", 1],
+  "jette": ["jette", 1], "poubelle": ["poubelle", 1], "femme": ["femme", 1], "ressort": ["ressort", 1],
+  "d2500": ["2 500", 1], "puis": ["Puis", 1], "monde": ["monde", 1], "lus": ["lus", 1]
+ },
+ "words3d": [["FAUCHÉ", ["Fauché", 1]], ["ÉPUISÉ", ["Épuisé", 1]], ["REFUSÉ", ["Refusé", 1]]],
+ "q_pulses": [["commentaire", 1], ["combien", 2], ["non", 2], ["Écris", 1]],
+ "punches": [["refus", 1], ["Stephen", 1], ["magazines", 1], ["clou", 2], ["pic", 1], ["caravane", 1], ["blanchisserie", 1],
+             ["poubelle", 1], ["ressort", 1], ["oui", 1], ["400 000", 1], ["monde", 1], ["commentaire", 1], ["Mindset", 1]],
+ "keywords": ["refus", "Refus", "magazines", "clou", "pic", "continue", "d'écrire", "1973", "caravane", "Prof", "blanchisserie",
+              "Fauché", "Épuisé", "Refusé", "poubelle", "ressort", "arrêter", "FINI", "oui", "500", "000", "dollars",
+              "monde", "lus", "abandonnes", "non", "commentaire", "chiffre", "n'abandonnent"],
+ "question": {"lines": ["COMBIEN DE FOIS", "ON T'A DIT"], "highlight": "NON ?", "cta": "ÉCRIS TON CHIFFRE"}
+}

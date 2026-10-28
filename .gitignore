@@ -7,3 +7,5 @@ sortie/
 render.log
 timing_voix.json
 __pycache__/
+voix_raw
+mk.log

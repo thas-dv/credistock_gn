@@ -59,6 +59,9 @@ Vérifier les faits sur les personnes réelles avant d'écrire le texte.
   Les scènes exil/lemans/rise/chelsea/final sont propres à cette histoire : pour un autre sportif, écrire de nouvelles fonctions de scène.
 Retour utilisateur (27/10) : raconter une VRAIE histoire d'une célébrité très connue, du début à la fin (situation bloquée -> refus d'abandonner -> réussite),
 et CHANGER DE PERSONNAGE à chaque vidéo (le mannequin hologramme a été jugé trop répétitif).
+- "ecrivain" (render_ecrivain.py, 2D) : bureau de caravane la nuit, lampe ambrée, machine à écrire, lettres de refus, écrivain en silhouette générique — 28/10
+  (exemple : story_2026-10-28_ecrivain.json, histoire de Stephen King). Types : hook letters nail trailer stamps trash slam deal books you question logo.
+  Les scènes letters/nail/trailer/trash/deal/books sont propres à cette histoire.
 Voix sans crédits ElevenLabs : si le compte ElevenLabs est à court, générer la voix Sid via Speko audio_synthesize
 (voice V8kvppYJoYqSL61Tr8Dn, model eleven_v4, allowedProviders elevenlabs ; le modèle servi peut être eleven_v3_conversational),
 puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) et corriger le texte des mots (chiffres écrits en lettres) dans words.json.
