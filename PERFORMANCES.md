@@ -25,7 +25,7 @@ Priorité actuelle : CROISSANCE (followers + vues). Suivre chaque jour l'évolut
 | 2026-10-26 | Style « doc » — échecs de célébrités | 277 | 25 | 9,0 % | 0 | ? | 2 | Metricool 29/10. 0 commentaire (question « quel échec » trop intime ?). Hashtags #elonmusk #sadiomane → hashtag supprimé par TikTok |
 | 2026-10-27 | Style « stade » — vraie histoire d'un footballeur | 808 | 76 | 9,4 % | 6 | 7 | 3 | MEILLEURE VIDÉO (Metricool 29/10). ×2,9 la doc du 26/10, ×3,3 le 25/10, ×5,8 la moyenne 18–24/10. Hashtag #drogba à éviter |
 
-| 2026-10-28 | Style « écrivain » — vraie histoire d'un écrivain (refus) | ? | ? | ? | ? | ? | ? | Absente de Metricool au 29/10 (retard) — à relever le 30/10 |
+| 2026-10-28 | Style « écrivain » — vraie histoire d'un écrivain (refus) | 753 (12 h) | 56 | 7,4 % | 1 | 9 | ? | Capture utilisateur 29/10 (absente de Metricool). Vues ≈ 27/10 à 12 h (788) → les vraies histoires tiennent ; RECORD d'enregistrements (9) mais 1 seul comm. (question « combien de fois on t'a dit non » trop personnelle ?) |
 
 Relevé du 2026-10-29 : la vidéo du 28/10 n'apparaît pas encore dans Metricool ; TKPO13/15/16 toujours vides. Les vidéos 25–27/10 ont été rattrapées
 (25/10 : 51 → 245 vues ; 27/10 : 788 → 808). Progression vers 100 000 vues/30 j : 8 599 au 28/10 (à re-vérifier dans l'app).
@@ -41,6 +41,7 @@ le signal fort est ailleurs : 6 commentaires (record) et 7 enregistrements.
 5. Jamais de nom propre en hashtag (voir CONFORMITE.md).
 6. Thème général + décor abstrait (hologramme du 25/10) = pire score. Phrase sans question (21/10) = 0 commentaire.
 7. (29/10) UN seul personnage raconté du début à la fin (27/10 : 808 vues) bat la compilation de 3 célébrités (26/10 : 277 vues, 0 comm.) : ×2,9.
+9. (29/10) Stephen King (753 vues/12 h) ≈ Drogba (788/12 h) : une vraie histoire marche même hors football. Mais 1 comm. vs 6 : la question doit être FACILE et pas gênante à avouer (âge, heures, un mot) plutôt qu'un aveu d'échec/refus.
 8. (29/10) Un FOOTBALLEUR AFRICAIN très connu reste le meilleur pari pour le public guinéen ; la question intime « quel échec t'a fait mal » = 0 comm., la question chiffrée/âge = 6 comm.
 
 ## Contrôle des vidéos suivantes
