@@ -1,9 +1,9 @@
 {
  "date": "2026-10-29",
- "theme": "« Ton chemin est trop long ? » : l'histoire vraie de Mohamed Salah (près de 10 h de bus par jour à 14 ans, le banc en Angleterre, prêté en Italie, retour en 2017 : 32 buts, la plus grande coupe d'Europe, le championnat) — style « route » (route de nuit, bus, désert, aube)",
+ "theme": "« Ton chemin est trop long ? » : l'histoire vraie de Mohamed Salah (près de 10 h de bus par jour à 14 ans, le banc en Angleterre, prêté en Italie, retour en 2017 : 32 buts, la plus grande coupe d'Europe, le championnat) — clubs nommés à l'oral (El Mokawloon, FC Bâle, Chelsea, Fiorentina, Roma, Liverpool) — style « route » (route de nuit, bus, désert, aube)",
  "style": "route",
  "voice_id": "V8kvppYJoYqSL61Tr8Dn",
- "voice_prompt": "[chuckles] Tu trouves que ton chemin est trop long ?\n\nÉcoute l'histoire de Mohamed Salah.\n\nUn petit village en Égypte. À quatorze ans, il rejoint un club du Caire. Le problème ? Le Caire est loin. Très loin.\n\nAlors il prend la route. Plusieurs bus pour l'aller. Plusieurs bus pour le retour. Près de dix heures de trajet par jour. Il s'entraîne… et le lendemain, il recommence.\n\nDes années plus tard, après la Suisse, un grand club anglais l'achète. Enfin le rêve ? Non. Il joue peu. Il reste sur le banc. Beaucoup disent : c'est un échec.\n\nUn an plus tard, on le prête en Italie.\n\nFatigué. Critiqué. Oublié.\n\nIl aurait pu tout lâcher. [shouting] IL A CONTINUÉ !\n\nEn Italie, il travaille. Il marque. Et en deux mille dix-sept, il revient en Angleterre.\n\nPremière saison : trente-deux buts en championnat. Un record à l'époque.\n\nPuis il gagne la plus grande coupe d'Europe des clubs. Puis le championnat.\n\nAujourd'hui, c'est l'un des plus grands joueurs africains de l'histoire.\n\nEt toi… ton chemin est vraiment trop long ?\n\n[intense] Réponds-moi en commentaire : combien d'heures par jour tu donnes à ton rêve ? Écris le chiffre. Ceux qui l'écrivent… arrêtent de se plaindre de la route.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "voice_prompt": "[chuckles] Tu trouves que ton chemin est trop long ?\n\nÉcoute l'histoire de Mohamed Salah.\n\nUn petit village en Égypte. À quatorze ans, il rejoint El Mokawloon, un club du Caire. Le problème ? Le Caire est loin. Très loin.\n\nAlors il prend la route. Plusieurs bus pour l'aller. Plusieurs bus pour le retour. Près de dix heures de trajet par jour. Il s'entraîne… et le lendemain, il recommence.\n\nDes années plus tard, il part en Suisse, au FC Bâle. Puis Chelsea, un grand club anglais, l'achète. Enfin le rêve ? Non. Il joue peu. Il reste sur le banc. Beaucoup disent : c'est un échec.\n\nUn an plus tard, on le prête à la Fiorentina, en Italie.\n\nFatigué. Critiqué. Oublié.\n\nIl aurait pu tout lâcher. [shouting] IL A CONTINUÉ !\n\nÀ la Fiorentina, puis à la Roma, il travaille. Il marque. Et en deux mille dix-sept, il signe à Liverpool, en Angleterre.\n\nPremière saison : trente-deux buts en championnat. Un record à l'époque.\n\nPuis avec Liverpool, il gagne la plus grande coupe d'Europe des clubs. Puis le championnat.\n\nAujourd'hui, c'est l'un des plus grands joueurs africains de l'histoire.\n\nEt toi… ton chemin est vraiment trop long ?\n\n[intense] Réponds-moi en commentaire : combien d'heures par jour tu donnes à ton rêve ? Écris le chiffre. Ceux qui l'écrivent… arrêtent de se plaindre de la route.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
  "caption": "Près de 10 heures de bus par jour pour aller s'entraîner. Puis le banc, les critiques… et il a continué. 🚌⚽ Et toi, combien d'heures par jour tu donnes à ton rêve ? 👇 #mindset #motivation #discipline #ambition #mindset24 #changetavie",
  "pinned_comment": "Je commence : 2 heures par jour, chaque soir, même fatigué. Et toi, ton chiffre ? 👇",
  "scenes": [
@@ -59,7 +59,7 @@
   {
    "type": "rise",
    "at": [
-    "Italie",
+    "Fiorentina",
     2
    ]
   },

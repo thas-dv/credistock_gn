@@ -14,6 +14,9 @@ Référence : https://www.tiktok.com/community-guidelines (à consulter avec Web
   • pas de politiciens ni de personnes controversées ; pas de mineurs.
   Son NOM peut figurer dans le texte prononcé et la légende, mais JAMAIS en hashtag.
 - Pas de marques, clubs, équipes, logos, œuvres protégées (musique, films, personnages).
+  EXCEPTION validée par l'utilisateur (29/10/2026) : pour une vraie histoire de sportif, les NOMS des clubs réellement fréquentés
+  peuvent être DITS par le narrateur (donc présents dans les sous-titres) — faits vérifiés. Jamais à l'écran en titre/tampon/graphisme,
+  jamais de logo, d'écusson, de maillot officiel ni de couleurs reconnaissables, jamais en hashtag.
 - Santé mentale (anxiété, stress, déprime…) : ton bienveillant, aucune promesse de guérison, aucun conseil médical
   ou thérapeutique ; ne jamais banaliser. Jamais : suicide, automutilation, troubles alimentaires, drogues, alcool.
 - Pas de promesse d'argent facile, revenus garantis, crypto, paris, jeux d'argent.
