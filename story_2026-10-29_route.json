@@ -1,0 +1,452 @@
+{
+ "date": "2026-10-29",
+ "theme": "« Ton chemin est trop long ? » : l'histoire vraie de Mohamed Salah (près de 10 h de bus par jour à 14 ans, le banc en Angleterre, prêté en Italie, retour en 2017 : 32 buts, la plus grande coupe d'Europe, le championnat) — style « route » (route de nuit, bus, désert, aube)",
+ "style": "route",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Tu trouves que ton chemin est trop long ?\n\nÉcoute l'histoire de Mohamed Salah.\n\nUn petit village en Égypte. À quatorze ans, il rejoint un club du Caire. Le problème ? Le Caire est loin. Très loin.\n\nAlors il prend la route. Plusieurs bus pour l'aller. Plusieurs bus pour le retour. Près de dix heures de trajet par jour. Il s'entraîne… et le lendemain, il recommence.\n\nDes années plus tard, après la Suisse, un grand club anglais l'achète. Enfin le rêve ? Non. Il joue peu. Il reste sur le banc. Beaucoup disent : c'est un échec.\n\nUn an plus tard, on le prête en Italie.\n\nFatigué. Critiqué. Oublié.\n\nIl aurait pu tout lâcher. [shouting] IL A CONTINUÉ !\n\nEn Italie, il travaille. Il marque. Et en deux mille dix-sept, il revient en Angleterre.\n\nPremière saison : trente-deux buts en championnat. Un record à l'époque.\n\nPuis il gagne la plus grande coupe d'Europe des clubs. Puis le championnat.\n\nAujourd'hui, c'est l'un des plus grands joueurs africains de l'histoire.\n\nEt toi… ton chemin est vraiment trop long ?\n\n[intense] Réponds-moi en commentaire : combien d'heures par jour tu donnes à ton rêve ? Écris le chiffre. Ceux qui l'écrivent… arrêtent de se plaindre de la route.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Près de 10 heures de bus par jour pour aller s'entraîner. Puis le banc, les critiques… et il a continué. 🚌⚽ Et toi, combien d'heures par jour tu donnes à ton rêve ? 👇 #mindset #motivation #discipline #ambition #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 2 heures par jour, chaque soir, même fatigué. Et toi, ton chiffre ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "village",
+   "at": [
+    "Écoute",
+    1
+   ]
+  },
+  {
+   "type": "bus",
+   "at": [
+    "Alors",
+    1
+   ]
+  },
+  {
+   "type": "bench",
+   "at": [
+    "Des",
+    1
+   ]
+  },
+  {
+   "type": "loan",
+   "at": [
+    "an",
+    1
+   ]
+  },
+  {
+   "type": "stamps",
+   "at": [
+    "Fatigué",
+    1
+   ]
+  },
+  {
+   "type": "slam",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "rise",
+   "at": [
+    "Italie",
+    2
+   ]
+  },
+  {
+   "type": "record",
+   "at": [
+    "Première",
+    1
+   ]
+  },
+  {
+   "type": "trophy",
+   "at": [
+    "gagne",
+    1
+   ]
+  },
+  {
+   "type": "legend",
+   "at": [
+    "Aujourd'hui",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "long",
+   1
+  ],
+  "build_start": [
+   "tout",
+   1
+  ],
+  "build_end": [
+   "lâcher",
+   1
+  ],
+  "boom": [
+   "CONTINUÉ",
+   1
+  ],
+  "gate1": [
+   "travaille",
+   1
+  ],
+  "gate2": [
+   "marque",
+   1
+  ],
+  "sunrise": [
+   "Aujourd'hui",
+   1
+  ],
+  "arms_up": [
+   "long",
+   2
+  ],
+  "q_line1": [
+   "combien",
+   1
+  ],
+  "q_line2": [
+   "rêve",
+   2
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "plaindre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "village": [
+   "village",
+   1
+  ],
+  "egypte": [
+   "Égypte",
+   1
+  ],
+  "quatorze": [
+   "14",
+   1
+  ],
+  "caire": [
+   "Caire",
+   1
+  ],
+  "loin": [
+   "loin",
+   1
+  ],
+  "loin2": [
+   "loin",
+   2
+  ],
+  "aller": [
+   "l'aller",
+   1
+  ],
+  "retour": [
+   "retour",
+   1
+  ],
+  "dix": [
+   "10",
+   1
+  ],
+  "entraine": [
+   "s'entraîne",
+   1
+  ],
+  "lendemain": [
+   "lendemain",
+   1
+  ],
+  "recommence": [
+   "recommence",
+   1
+  ],
+  "suisse": [
+   "Suisse",
+   1
+  ],
+  "anglais": [
+   "anglais",
+   1
+  ],
+  "reve": [
+   "rêve",
+   1
+  ],
+  "non": [
+   "Non",
+   1
+  ],
+  "banc": [
+   "banc",
+   1
+  ],
+  "echec": [
+   "échec",
+   1
+  ],
+  "prete": [
+   "prête",
+   1
+  ],
+  "italie": [
+   "Italie",
+   1
+  ],
+  "d2017": [
+   "2017",
+   1
+  ],
+  "angleterre": [
+   "Angleterre",
+   1
+  ],
+  "d32": [
+   "32",
+   1
+  ],
+  "record": [
+   "record",
+   1
+  ],
+  "coupe": [
+   "coupe",
+   1
+  ],
+  "champ2": [
+   "championnat",
+   2
+  ],
+  "africains": [
+   "africains",
+   1
+  ],
+  "histoire": [
+   "l'histoire",
+   2
+  ]
+ },
+ "words3d": [
+  [
+   "FATIGUÉ",
+   [
+    "Fatigué",
+    1
+   ]
+  ],
+  [
+   "CRITIQUÉ",
+   [
+    "Critiqué",
+    1
+   ]
+  ],
+  [
+   "OUBLIÉ",
+   [
+    "Oublié",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "rêve",
+   2
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "long",
+   1
+  ],
+  [
+   "Égypte",
+   1
+  ],
+  [
+   "14",
+   1
+  ],
+  [
+   "loin",
+   2
+  ],
+  [
+   "route",
+   1
+  ],
+  [
+   "10",
+   1
+  ],
+  [
+   "recommence",
+   1
+  ],
+  [
+   "anglais",
+   1
+  ],
+  [
+   "Non",
+   1
+  ],
+  [
+   "banc",
+   1
+  ],
+  [
+   "échec",
+   1
+  ],
+  [
+   "Italie",
+   1
+  ],
+  [
+   "marque",
+   1
+  ],
+  [
+   "2017",
+   1
+  ],
+  [
+   "32",
+   1
+  ],
+  [
+   "record",
+   1
+  ],
+  [
+   "coupe",
+   1
+  ],
+  [
+   "africains",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "chemin",
+  "long",
+  "Égypte",
+  "14",
+  "Caire",
+  "loin",
+  "route",
+  "bus",
+  "10",
+  "heures",
+  "recommence",
+  "rêve",
+  "Non",
+  "banc",
+  "échec",
+  "Italie",
+  "Fatigué",
+  "Critiqué",
+  "Oublié",
+  "lâcher",
+  "CONTINUÉ",
+  "travaille",
+  "marque",
+  "2017",
+  "32",
+  "buts",
+  "record",
+  "coupe",
+  "championnat",
+  "africains",
+  "commentaire",
+  "combien",
+  "chiffre",
+  "plaindre"
+ ],
+ "question": {
+  "lines": [
+   "COMBIEN D'HEURES",
+   "PAR JOUR POUR"
+  ],
+  "highlight": "TON RÊVE ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}

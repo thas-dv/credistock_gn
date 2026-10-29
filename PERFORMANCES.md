@@ -21,10 +21,14 @@ Priorité actuelle : CROISSANCE (followers + vues). Suivre chaque jour l'évolut
 | 2026-10-22 | Photo + voix — « Le plus dur c'est de commencer » | 145 | 24 | 16,6 % | 2 | ? | 1 | |
 | 2026-10-23 | Photo + voix — « Tu manques de preuves » | 144 | 26 | 18,1 % | 1 | ? | 1 | |
 | 2026-10-24 | Photo + voix — comparaison aux autres | 132 | 20 | 15,2 % | 1 | ? | 1 | Plafond ~140 vues (18→24 : moy. 136 vues) |
-| 2026-10-25 | Hologramme « murs » (thème général) | 51 (Metricool) / ~96 (app) | 4 / 6 | ~6–8 % | 0 / 3 | ? | 0 | Metricool en retard ; question « quel mur » : réponses (anxiété, stagnation) |
-| 2026-10-26 | Style « doc » — échecs de célébrités | ? | ? | ? | ? | ? | ? | Absente de Metricool au 28/10. Hashtags #elonmusk #sadiomane → hashtag supprimé par TikTok |
-| 2026-10-27 | Style « stade » — vraie histoire d'un footballeur | 788 (12 h) | 75 | ~9,5 % | 6 | 7 | ? | MEILLEURE VIDÉO (chiffres utilisateur, absente de Metricool au 28/10). ×5,8 la moyenne 18–25/10 (~126 vues), ×8 à ×15 le 25/10. Hashtag #drogba à éviter |
+| 2026-10-25 | Hologramme « murs » (thème général) | 245 | 13 | 5,3 % | 3 | ? | 2 | Metricool 29/10 (rattrapé : 51 → 245 vues). Question « quel mur » : réponses (anxiété, stagnation) |
+| 2026-10-26 | Style « doc » — échecs de célébrités | 277 | 25 | 9,0 % | 0 | ? | 2 | Metricool 29/10. 0 commentaire (question « quel échec » trop intime ?). Hashtags #elonmusk #sadiomane → hashtag supprimé par TikTok |
+| 2026-10-27 | Style « stade » — vraie histoire d'un footballeur | 808 | 76 | 9,4 % | 6 | 7 | 3 | MEILLEURE VIDÉO (Metricool 29/10). ×2,9 la doc du 26/10, ×3,3 le 25/10, ×5,8 la moyenne 18–24/10. Hashtag #drogba à éviter |
 
+| 2026-10-28 | Style « écrivain » — vraie histoire d'un écrivain (refus) | ? | ? | ? | ? | ? | ? | Absente de Metricool au 29/10 (retard) — à relever le 30/10 |
+
+Relevé du 2026-10-29 : la vidéo du 28/10 n'apparaît pas encore dans Metricool ; TKPO13/15/16 toujours vides. Les vidéos 25–27/10 ont été rattrapées
+(25/10 : 51 → 245 vues ; 27/10 : 788 → 808). Progression vers 100 000 vues/30 j : 8 599 au 28/10 (à re-vérifier dans l'app).
 Relevé du 2026-10-28 : TKPO13 (% vues complètes), TKPO15 (temps moyen) et TKPO16 (% Pour toi) renvoient vide pour toutes les vidéos.
 Le taux de like du 27/10 (9,5 %) est plus bas que les 15–18 % habituels : normal quand une vidéo sort vers un public plus large (plus de vues « froides») ;
 le signal fort est ailleurs : 6 commentaires (record) et 7 enregistrements.
@@ -36,8 +40,11 @@ le signal fort est ailleurs : 6 commentaires (record) et 7 enregistrements.
 4. Les avis contraires en commentaire = débat = bon pour la portée : répondre poliment.
 5. Jamais de nom propre en hashtag (voir CONFORMITE.md).
 6. Thème général + décor abstrait (hologramme du 25/10) = pire score. Phrase sans question (21/10) = 0 commentaire.
+7. (29/10) UN seul personnage raconté du début à la fin (27/10 : 808 vues) bat la compilation de 3 célébrités (26/10 : 277 vues, 0 comm.) : ×2,9.
+8. (29/10) Un FOOTBALLEUR AFRICAIN très connu reste le meilleur pari pour le public guinéen ; la question intime « quel échec t'a fait mal » = 0 comm., la question chiffrée/âge = 6 comm.
 
 ## Contrôle des vidéos suivantes
 | Date | Vraie histoire (faits vérifiés) | Question en un mot/chiffre | Décor concret | Hashtags liste blanche | Remarque |
 |---|---|---|---|---|---|
 | 2026-10-28 | OUI — Stephen King (clou puis pic, caravane 1973, prof + blanchisserie, roman sauvé de la poubelle, 2 500 $ puis 400 000 $) | OUI — « Combien de fois on t'a dit non ? Écris le chiffre. » | OUI — bureau de caravane la nuit, machine à écrire, lettres de refus, poubelle | OUI — #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie | À surveiller : 51 s (cible 38–45 s) ; écrivain moins connu du public guinéen qu'un footballeur africain |
+| 2026-10-29 | OUI — Mohamed Salah (≈10 h de trajet/jour à 14 ans, banc en Angleterre, prêté en Italie, retour 2017, 32 buts record 38 matchs, C1 2019, championnat 2020 — vérifiés) | OUI — « Combien d'heures par jour tu donnes à ton rêve ? Écris le chiffre. » | OUI — route de nuit dans le désert, bus, banc, aube | OUI — #mindset #motivation #discipline #ambition #mindset24 #changetavie | 74,7 s (> 1 min ✅) ; voix Sid via Speko (ElevenLabs à court) ; aucun club nommé |

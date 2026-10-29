@@ -6,7 +6,7 @@ D=${1:?date AAAAMMJJ}
 cd "$(dirname "$0")"
 python3 build_timing.py story.json words.json
 python3 audio.py mix.wav
-R=$(python3 -c "import json;print({'doc':'render_doc.py','stade':'render_stade.py','ecrivain':'render_ecrivain.py'}.get(json.load(open('timing_voix.json')).get('style'),'render.py'))")
+R=$(python3 -c "import json;print({'doc':'render_doc.py','stade':'render_stade.py','ecrivain':'render_ecrivain.py','route':'render_route.py'}.get(json.load(open('timing_voix.json')).get('style'),'render.py'))")
 python3 $R timing_voix.json video_brut.mp4 > render.log 2>&1
 mkdir -p sortie
 ffmpeg -v error -y -i video_brut.mp4 -i mix.wav -map 0:v -map 1:a -c:v libx264 -preset slow -b:v 4.5M -maxrate 6M -bufsize 9M \
