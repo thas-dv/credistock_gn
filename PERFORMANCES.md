@@ -27,6 +27,9 @@ Priorité actuelle : CROISSANCE (followers + vues). Suivre chaque jour l'évolut
 
 | 2026-10-28 | Style « écrivain » — vraie histoire d'un écrivain (refus) | 753 (12 h) | 56 | 7,4 % | 1 | 9 | ? | Capture utilisateur 29/10 (absente de Metricool). Vues ≈ 27/10 à 12 h (788) → les vraies histoires tiennent ; RECORD d'enregistrements (9) mais 1 seul comm. (question « combien de fois on t'a dit non » trop personnelle ?) |
 
+Relevé du 2026-10-30 : les vidéos du 28/10 (écrivain) et du 29/10 (Salah, « route ») n'apparaissent PAS encore dans Metricool (retard) -> pas de bilan chiffré
+du 29/10 possible ; TKPO13/15/16 toujours vides. Petits rattrapages : 22/10 145 -> 146 vues ; 23/10 144 -> 146 vues (27 likes, 2 comm.) ; 24/10 132 -> 134 vues (23 likes) ;
+25–27/10 inchangées (245 / 277 / 808). À vérifier dans l'app TikTok : vues 28/10 et 29/10.
 Relevé du 2026-10-29 : la vidéo du 28/10 n'apparaît pas encore dans Metricool ; TKPO13/15/16 toujours vides. Les vidéos 25–27/10 ont été rattrapées
 (25/10 : 51 → 245 vues ; 27/10 : 788 → 808). Progression vers 100 000 vues/30 j : 8 599 au 28/10 (à re-vérifier dans l'app).
 Relevé du 2026-10-28 : TKPO13 (% vues complètes), TKPO15 (temps moyen) et TKPO16 (% Pour toi) renvoient vide pour toutes les vidéos.
@@ -42,6 +45,7 @@ le signal fort est ailleurs : 6 commentaires (record) et 7 enregistrements.
 6. Thème général + décor abstrait (hologramme du 25/10) = pire score. Phrase sans question (21/10) = 0 commentaire.
 7. (29/10) UN seul personnage raconté du début à la fin (27/10 : 808 vues) bat la compilation de 3 célébrités (26/10 : 277 vues, 0 comm.) : ×2,9.
 9. (29/10) Stephen King (753 vues/12 h) ≈ Drogba (788/12 h) : une vraie histoire marche même hors football. Mais 1 comm. vs 6 : la question doit être FACILE et pas gênante à avouer (âge, heures, un mot) plutôt qu'un aveu d'échec/refus.
+10. (30/10) Données 28–29/10 absentes de Metricool : on garde la recette gagnante du 27/10 (footballeur africain, UN personnage, question chiffrée facile) et on change d'ENVIRONNEMENT (cité/city-stade). Question « sur 10 » = réponse en un chiffre, sans aveu gênant.
 8. (29/10) Un FOOTBALLEUR AFRICAIN très connu reste le meilleur pari pour le public guinéen ; la question intime « quel échec t'a fait mal » = 0 comm., la question chiffrée/âge = 6 comm.
 
 ## Contrôle des vidéos suivantes
@@ -49,3 +53,4 @@ le signal fort est ailleurs : 6 commentaires (record) et 7 enregistrements.
 |---|---|---|---|---|---|
 | 2026-10-28 | OUI — Stephen King (clou puis pic, caravane 1973, prof + blanchisserie, roman sauvé de la poubelle, 2 500 $ puis 400 000 $) | OUI — « Combien de fois on t'a dit non ? Écris le chiffre. » | OUI — bureau de caravane la nuit, machine à écrire, lettres de refus, poubelle | OUI — #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie | À surveiller : 51 s (cible 38–45 s) ; écrivain moins connu du public guinéen qu'un footballeur africain |
 | 2026-10-29 | OUI — Mohamed Salah (≈10 h de trajet/jour à 14 ans, banc en Angleterre, prêté en Italie, retour 2017, 32 buts record 38 matchs, C1 2019, championnat 2020 — vérifiés) | OUI — « Combien d'heures par jour tu donnes à ton rêve ? Écris le chiffre. » | OUI — route de nuit dans le désert, bus, banc, aube | OUI — #mindset #motivation #discipline #ambition #mindset24 #changetavie | 74,7 s (> 1 min ✅) ; voix Sid via Speko (ElevenLabs à court) ; aucun club nommé |
+| 2026-10-30 | OUI — Riyad Mahrez (Sarcelles ; jugé trop frêle ; amateur à 18 ans ; Quimper 4e div. 2009 ; Le Havre réserve puis L2 ; Leicester (2e div.) janv. 2014 ≈ 450 000 £ ; champion 2016 ; 1er Africain élu meilleur joueur par les joueurs (PFA 2016) ; Ligue des champions 2023 — vérifiés) | OUI — « Sur 10, tu crois en toi à combien ? Écris le chiffre. » | OUI — cité la nuit, city-stade en béton, lampadaires, recruteurs | OUI — #mindset #motivation #confianceensoi #ambition #mindset24 #changetavie | 72,4 s (> 1 min ✅) ; voix Sid via Speko (ElevenLabs : crédits épuisés + accès gratuit bloqué) ×1,08 ; clubs dits à l'oral seulement (Quimper, Le Havre, Leicester), aucun à l'écran |

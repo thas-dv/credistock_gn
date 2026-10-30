@@ -1,0 +1,424 @@
+{
+ "date": "2026-10-30",
+ "theme": "« Pas assez fort ? » : l'histoire vraie de Riyad Mahrez (jugé trop frêle par les recruteurs, encore amateur à 18 ans, 4e division à Quimper, réserve puis 2e division au Havre, recruté pour un petit prix par Leicester en 2e division anglaise en 2014, champion d'Angleterre 2016 et premier Africain élu meilleur joueur du championnat par les joueurs, puis la plus grande coupe d'Europe avec un autre géant anglais) — style « cité » (quartier d'immeubles la nuit, city-stade en béton, lampadaires)",
+ "style": "cite",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] On t'a déjà dit que tu n'étais pas assez fort ?\n\nÉcoute l'histoire de Riyad Mahrez.\n\nIl grandit à Sarcelles, près de Paris. Il joue au foot tous les jours, en bas des immeubles. Mais les recruteurs le regardent à peine. Trop frêle. Trop fin. Pas assez costaud.\n\nÀ dix-huit ans, il joue encore chez les amateurs. Il part à Quimper… en quatrième division.\n\nL'année suivante, Le Havre. D'abord avec la réserve. Puis en deuxième division.\n\nFrêle. Ignoré. Écarté.\n\nIl aurait pu tout lâcher. [shouting] IL A CONTINUÉ !\n\nEn deux mille quatorze, à vingt-deux ans, Leicester, un club de deuxième division anglaise, le recrute pour un petit prix. Il travaille. Il dribble. Il marque.\n\nEn deux mille seize, presque personne ne croit en eux. Et pourtant… Leicester est champion d'Angleterre. Et lui est élu meilleur joueur du championnat par les autres joueurs. Le premier Africain à recevoir ce prix.\n\nPuis un autre géant anglais le recrute. Et il gagne la plus grande coupe d'Europe des clubs.\n\nEt toi… tu vas encore écouter ceux qui disent que tu n'es pas assez fort ?\n\n[intense] Réponds-moi en commentaire : sur dix, tu crois en toi à combien aujourd'hui ? Écris le chiffre. Ceux qui l'écrivent… arrêtent d'attendre la permission des autres.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Trop frêle pour les recruteurs. Encore amateur à 18 ans. Puis champion d'Angleterre et élu meilleur joueur du championnat. 💪⚽ Et toi, sur 10, tu crois en toi à combien ? 👇 #mindset #motivation #confianceensoi #ambition #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 6/10 aujourd'hui… et je vise 10. Et toi, ton chiffre ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "On",
+    1
+   ]
+  },
+  {
+   "type": "cite",
+   "at": [
+    "Écoute",
+    1
+   ]
+  },
+  {
+   "type": "frail",
+   "at": [
+    "Mais",
+    1
+   ]
+  },
+  {
+   "type": "quimper",
+   "at": [
+    "18",
+    1
+   ]
+  },
+  {
+   "type": "havre",
+   "at": [
+    "L'année",
+    1
+   ]
+  },
+  {
+   "type": "stamps",
+   "at": [
+    "Frêle",
+    2
+   ]
+  },
+  {
+   "type": "slam",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "england",
+   "at": [
+    "2014",
+    1
+   ]
+  },
+  {
+   "type": "champion",
+   "at": [
+    "2016",
+    1
+   ]
+  },
+  {
+   "type": "award",
+   "at": [
+    "lui",
+    1
+   ]
+  },
+  {
+   "type": "giant",
+   "at": [
+    "Puis",
+    2
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "fort",
+   1
+  ],
+  "build_start": [
+   "tout",
+   1
+  ],
+  "build_end": [
+   "lâcher",
+   1
+  ],
+  "boom": [
+   "CONTINUÉ",
+   1
+  ],
+  "gate1": [
+   "travaille",
+   1
+  ],
+  "gate2": [
+   "marque",
+   1
+  ],
+  "sunrise": [
+   "coupe",
+   1
+  ],
+  "arms_up": [
+   "fort",
+   2
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "aujourd'hui",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "autres",
+   2
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "paris": [
+   "Paris",
+   1
+  ],
+  "jours": [
+   "jours",
+   1
+  ],
+  "immeubles": [
+   "immeubles",
+   1
+  ],
+  "peine": [
+   "peine",
+   1
+  ],
+  "frele": [
+   "frêle",
+   1
+  ],
+  "fin": [
+   "fin",
+   1
+  ],
+  "costaud": [
+   "costaud",
+   1
+  ],
+  "dixhuit": [
+   "18",
+   1
+  ],
+  "amateurs": [
+   "amateurs",
+   1
+  ],
+  "quatrieme": [
+   "4e",
+   1
+  ],
+  "reserve": [
+   "réserve",
+   1
+  ],
+  "deuxieme": [
+   "2e",
+   1
+  ],
+  "d2014": [
+   "2014",
+   1
+  ],
+  "vingtdeux": [
+   "22",
+   1
+  ],
+  "anglaise": [
+   "anglaise",
+   1
+  ],
+  "prix": [
+   "prix",
+   1
+  ],
+  "dribble": [
+   "dribble",
+   1
+  ],
+  "d2016": [
+   "2016",
+   1
+  ],
+  "personne": [
+   "personne",
+   1
+  ],
+  "pourtant": [
+   "pourtant",
+   1
+  ],
+  "champion": [
+   "champion",
+   1
+  ],
+  "africain": [
+   "Africain",
+   1
+  ]
+ },
+ "words3d": [
+  [
+   "FRÊLE",
+   [
+    "Frêle",
+    2
+   ]
+  ],
+  [
+   "IGNORÉ",
+   [
+    "Ignoré",
+    1
+   ]
+  ],
+  [
+   "ÉCARTÉ",
+   [
+    "Écarté",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   1
+  ],
+  [
+   "aujourd'hui",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "fort",
+   1
+  ],
+  [
+   "Paris",
+   1
+  ],
+  [
+   "immeubles",
+   1
+  ],
+  [
+   "costaud",
+   1
+  ],
+  [
+   "18",
+   1
+  ],
+  [
+   "4e",
+   1
+  ],
+  [
+   "réserve",
+   1
+  ],
+  [
+   "2e",
+   1
+  ],
+  [
+   "2014",
+   1
+  ],
+  [
+   "22",
+   1
+  ],
+  [
+   "prix",
+   1
+  ],
+  [
+   "marque",
+   1
+  ],
+  [
+   "2016",
+   1
+  ],
+  [
+   "champion",
+   1
+  ],
+  [
+   "Africain",
+   1
+  ],
+  [
+   "coupe",
+   1
+  ],
+  [
+   "fort",
+   2
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "fort",
+  "immeubles",
+  "recruteurs",
+  "frêle",
+  "fin",
+  "costaud",
+  "18",
+  "amateurs",
+  "4e",
+  "division",
+  "réserve",
+  "2e",
+  "Frêle",
+  "Ignoré",
+  "Écarté",
+  "lâcher",
+  "CONTINUÉ",
+  "2014",
+  "22",
+  "petit",
+  "prix",
+  "travaille",
+  "dribble",
+  "marque",
+  "2016",
+  "personne",
+  "champion",
+  "meilleur",
+  "Africain",
+  "coupe",
+  "commentaire",
+  "combien",
+  "chiffre",
+  "permission"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TU CROIS",
+   "EN TOI À"
+  ],
+  "highlight": "COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}

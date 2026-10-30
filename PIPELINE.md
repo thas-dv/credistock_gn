@@ -65,6 +65,9 @@ et CHANGER DE PERSONNAGE à chaque vidéo (le mannequin hologramme a été jugé
 - "route" (render_route.py, 2D) : route de nuit dans le désert (étoiles, dunes, palmiers) qui passe à l'aube orange, bus, banc, joueur en silhouette
   générique (maillot rouge, sans numéro) — 29/10 (exemple : story_2026-10-29_route.json, histoire de Mohamed Salah ; aucun club nommé, ni à l'écran ni dans le texte).
   Types : hook village bus bench loan stamps slam rise record trophy legend you question logo (scènes propres à cette histoire sauf stamps/slam/you/question/logo).
+- "cite" (render_cite.py, 2D) : quartier d'immeubles la nuit (fenêtres allumées), city-stade en béton grillagé, lampadaires sodium -> projecteurs blancs,
+  accents cyan/or, joueur en silhouette générique (maillot bleu, sans numéro), recruteurs en silhouette, pyramide des divisions — 30/10
+  (exemple : story_2026-10-30_cite.json, histoire de Riyad Mahrez). Types : hook cite frail quimper havre stamps slam england champion award giant you question logo.
 Voix sans crédits ElevenLabs : si le compte ElevenLabs est à court, générer la voix Sid via Speko audio_synthesize
 (voice V8kvppYJoYqSL61Tr8Dn, model eleven_v4, allowedProviders elevenlabs ; le modèle servi peut être eleven_v3_conversational),
 puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) et corriger le texte des mots (chiffres écrits en lettres) dans words.json.
