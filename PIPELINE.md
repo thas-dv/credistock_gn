@@ -33,13 +33,6 @@ prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de ven
     (noms dits à l'oral seulement, jamais à l'écran ni en hashtag).
   • 1er récap : dimanche 01/11/2026 = Drogba (27/10), Stephen King (28/10), Salah (29/10), Mahrez (30/10), Guirassy (31/10).
 
-## Idées de sujets proposées par la communauté (à piocher lundi -> samedi)
-- Antoine Semenyo (Ghana) — suggéré en commentaire le 31/10. Faits vérifiés (Wikipédia + premierleague.com) : né le 7/1/2000 à Londres ; recalé par Arsenal, Tottenham, Fulham, Millwall,
-  puis par Crystal Palace à 15 ans après 8 semaines d'essai -> il arrête le foot environ un an ; reprend dans un programme foot d'un lycée/college à 160 km de chez lui ;
-  académie de Bristol City à 17 ans (2017), pro à 18 ans (janv. 2018) ; prêts Bath City (6e division), Newport (4e div.), Sunderland (3e div., 0 but) ;
-  Bournemouth janv. 2023 (≈ 10 M£, 23 ans) ; 8 puis 11 buts en championnat ; Man City 9/1/2026 (≈ 64 M£) ; international ghanéen depuis 2022.
-  NE PAS évoquer sa blessure au genou d'octobre 2026 (santé = interdit). Accroche possible : « On t'a fermé toutes les portes ? ». Question « sur 10 ».
-
 ## Conformité TikTok
 Lire et appliquer CONFORMITE.md à chaque vidéo (sujet, texte, légende, hashtags) — compte monétisé.
 
