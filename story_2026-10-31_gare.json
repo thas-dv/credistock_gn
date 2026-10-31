@@ -1,0 +1,494 @@
+{
+ "date": "2026-10-31",
+ "theme": "« Tu n'y arriveras jamais ? » : l'histoire vraie de Serhou Guirassy, attaquant de la Guinée (recalé à un essai à Auxerre, pro à 17 ans à Laval en 2e division : 1re saison 4 matchs 0 but, peu utilisé à Lille puis prêté à Auxerre, blessures et opération du genou à Cologne, but raté à 2 mètres, retour en France Amiens puis Rennes, Stuttgart 2022 qui lutte pour ne pas descendre, à 27 ans 28 buts en 28 matchs et record de 13 buts en 7 matchs, Dortmund : meilleur buteur à égalité de la plus grande coupe d'Europe avec 13 buts, 2e Africain de l'histoire) — style « gare » (gare d'hiver la nuit sous la neige, train, quai, matin doré)",
+ "style": "gare",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] On t'a déjà dit que tu n'y arriverais jamais ?\n\nÉcoute l'histoire de Serhou Guirassy. L'attaquant de la Guinée.\n\nAdolescent, il passe un essai à Auxerre. Recalé.\n\nÀ dix-sept ans, il devient pro à Laval, en deuxième division. Première saison : quatre matchs. Zéro but.\n\nÀ Lille, il joue à peine. On le prête… à Auxerre. Le club qui l'avait recalé.\n\nPuis en Allemagne, à Cologne, son genou lâche. Opération. Blessure après blessure. Et un jour, il rate un but… à deux mètres de la cage.\n\nRecalé. Blessé. Prêté.\n\nIl aurait pu tout lâcher. [shouting] IL S'EST RELEVÉ !\n\nRetour en France. Amiens. Puis Rennes. Il travaille. Il revient. Il marque.\n\nEn deux mille vingt-deux, Stuttgart. Un club qui se bat pour ne pas descendre. Et à vingt-sept ans… vingt-huit buts en vingt-huit matchs. Treize buts lors de ses sept premiers matchs : record du championnat d'Allemagne.\n\nPuis Dortmund. Il finit meilleur buteur de la plus grande coupe d'Europe, à égalité, avec treize buts. Le deuxième Africain de l'histoire à réussir ça. Et aujourd'hui, il porte le maillot de la Guinée.\n\nEt toi… tu vas encore croire ceux qui disent que tu n'y arriveras jamais ?\n\n[intense] Réponds-moi en commentaire : ton rêve, tu le réalises à quel âge ? Écris l'âge. Ceux qui l'écrivent… arrêtent de remettre à plus tard.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Recalé à un essai. 0 but lors de sa 1re saison. Blessure après blessure. Puis, à 27 ans : 28 buts en 28 matchs. 🇬🇳🔥 Et toi, ton rêve, tu le réalises à quel âge ? 👇 #mindset #motivation #discipline #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 30 ans. Et toi, ton âge ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "On",
+    1
+   ]
+  },
+  {
+   "type": "gare",
+   "at": [
+    "Écoute",
+    1
+   ]
+  },
+  {
+   "type": "essai",
+   "at": [
+    "Adolescent",
+    1
+   ]
+  },
+  {
+   "type": "laval",
+   "at": [
+    "17",
+    1
+   ]
+  },
+  {
+   "type": "lille",
+   "at": [
+    "Lille",
+    1
+   ]
+  },
+  {
+   "type": "cologne",
+   "at": [
+    "Allemagne",
+    1
+   ]
+  },
+  {
+   "type": "stamps",
+   "at": [
+    "Recalé",
+    3
+   ]
+  },
+  {
+   "type": "slam",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "rennes",
+   "at": [
+    "Retour",
+    1
+   ]
+  },
+  {
+   "type": "stuttgart",
+   "at": [
+    "2022",
+    1
+   ]
+  },
+  {
+   "type": "record",
+   "at": [
+    "13",
+    1
+   ]
+  },
+  {
+   "type": "europe",
+   "at": [
+    "Dortmund",
+    1
+   ]
+  },
+  {
+   "type": "guinee",
+   "at": [
+    "aujourd'hui",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "jamais",
+   1
+  ],
+  "build_start": [
+   "tout",
+   1
+  ],
+  "build_end": [
+   "lâcher",
+   1
+  ],
+  "boom": [
+   "RELEVÉ",
+   1
+  ],
+  "gate1": [
+   "travaille",
+   1
+  ],
+  "gate2": [
+   "marque",
+   1
+  ],
+  "sunrise": [
+   "coupe",
+   1
+  ],
+  "arms_up": [
+   "jamais",
+   2
+  ],
+  "q_line1": [
+   "rêve",
+   1
+  ],
+  "q_line2": [
+   "âge",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "tard",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "guinee1": [
+   "Guinée",
+   1
+  ],
+  "auxerre": [
+   "Auxerre",
+   1
+  ],
+  "recale1": [
+   "recalé",
+   1
+  ],
+  "dixsept": [
+   "17",
+   1
+  ],
+  "pro": [
+   "pro",
+   1
+  ],
+  "deuxieme": [
+   "2e",
+   1
+  ],
+  "saison": [
+   "saison",
+   1
+  ],
+  "quatre": [
+   "4",
+   1
+  ],
+  "zero": [
+   "0",
+   1
+  ],
+  "peine": [
+   "peine",
+   1
+  ],
+  "prete": [
+   "prête",
+   1
+  ],
+  "recale2": [
+   "recalé",
+   2
+  ],
+  "genou": [
+   "genou",
+   1
+  ],
+  "operation": [
+   "Opération",
+   1
+  ],
+  "blessure": [
+   "blessure",
+   1
+  ],
+  "rate": [
+   "rate",
+   1
+  ],
+  "deuxm": [
+   "2",
+   1
+  ],
+  "france": [
+   "France",
+   1
+  ],
+  "revient": [
+   "revient",
+   1
+  ],
+  "d2022": [
+   "2022",
+   1
+  ],
+  "descendre": [
+   "descendre",
+   1
+  ],
+  "vingtsept": [
+   "27",
+   1
+  ],
+  "vingthuit": [
+   "28",
+   1
+  ],
+  "vingthuit2": [
+   "28",
+   2
+  ],
+  "sept": [
+   "7",
+   1
+  ],
+  "record": [
+   "record",
+   1
+  ],
+  "meilleur": [
+   "meilleur",
+   1
+  ],
+  "treize2": [
+   "13",
+   2
+  ],
+  "africain": [
+   "Africain",
+   1
+  ],
+  "maillot": [
+   "maillot",
+   1
+  ],
+  "guinee2": [
+   "Guinée",
+   2
+  ]
+ },
+ "words3d": [
+  [
+   "RECALÉ",
+   [
+    "Recalé",
+    3
+   ]
+  ],
+  [
+   "BLESSÉ",
+   [
+    "blessé",
+    1
+   ]
+  ],
+  [
+   "PRÊTÉ",
+   [
+    "prêté",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "rêve",
+   1
+  ],
+  [
+   "âge",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "jamais",
+   1
+  ],
+  [
+   "Guinée",
+   1
+  ],
+  [
+   "recalé",
+   1
+  ],
+  [
+   "17",
+   1
+  ],
+  [
+   "0",
+   1
+  ],
+  [
+   "peine",
+   1
+  ],
+  [
+   "prête",
+   1
+  ],
+  [
+   "genou",
+   1
+  ],
+  [
+   "Opération",
+   1
+  ],
+  [
+   "2",
+   1
+  ],
+  [
+   "France",
+   1
+  ],
+  [
+   "2022",
+   1
+  ],
+  [
+   "27",
+   1
+  ],
+  [
+   "28",
+   1
+  ],
+  [
+   "13",
+   1
+  ],
+  [
+   "record",
+   1
+  ],
+  [
+   "coupe",
+   1
+  ],
+  [
+   "Africain",
+   1
+  ],
+  [
+   "Guinée",
+   2
+  ],
+  [
+   "jamais",
+   2
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "jamais",
+  "Guinée",
+  "essai",
+  "recalé",
+  "Recalé",
+  "17",
+  "pro",
+  "2e",
+  "division",
+  "4",
+  "0",
+  "peine",
+  "prête",
+  "genou",
+  "lâche",
+  "Opération",
+  "blessure",
+  "rate",
+  "mètres",
+  "blessé",
+  "prêté",
+  "lâcher",
+  "RELEVÉ",
+  "France",
+  "travaille",
+  "revient",
+  "marque",
+  "2022",
+  "descendre",
+  "27",
+  "28",
+  "13",
+  "7",
+  "record",
+  "meilleur",
+  "buteur",
+  "coupe",
+  "Africain",
+  "maillot",
+  "commentaire",
+  "âge",
+  "rêve"
+ ],
+ "question": {
+  "lines": [
+   "TON RÊVE, TU LE",
+   "RÉALISES À"
+  ],
+  "highlight": "QUEL ÂGE ?",
+  "cta": "ÉCRIS TON ÂGE"
+ }
+}
