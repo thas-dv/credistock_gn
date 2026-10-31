@@ -7,7 +7,7 @@ Indicateurs clés : taux de like = likes / vues (> 5 % = bon), commentaires (obj
 enregistrements et partages (signal fort), % vues complètes.
 
 ## Objectif monétisation (Programme de récompenses des créateurs TikTok)
-Conditions (écran TikTok du 28/10/2026) : 18 ans ✅ · 10 000 followers (actuel : 330) · 100 000 vues sur 30 jours (actuel : 8 599).
+Conditions (écran TikTok) : 18 ans ✅ · 10 000 followers (28/10 : 330 -> 31/10 : 376) · 100 000 vues sur 30 jours (28/10 : 8 599 -> 31/10 20 h : 11 097, compteur EN RETARD d environ 1–2 jours : la vidéo Mahrez (≈ 15 000 vues) n y est pas encore comptée en entier).
 Récompenses uniquement pour les vidéos de PLUS d'1 minute -> toutes les vidéos font 61–75 s.
 Priorité actuelle : CROISSANCE (followers + vues). Suivre chaque jour l'évolution vers ces deux seuils dans le bilan.
 
