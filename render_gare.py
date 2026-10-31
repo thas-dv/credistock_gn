@@ -605,7 +605,7 @@ def s_you(img, d, tg, k):
     return dict(hit=hit, bg=0.2)
 
 NUMS = [(np.random.default_rng(i).uniform(140, W - 140), np.random.default_rng(i + 7).uniform(0, 700), s, np.random.default_rng(i + 3).uniform(0.3, 0.7))
-        for i, s in enumerate(["25 ANS", "30 ANS", "22 ANS", "27 ANS", "35 ANS", "20 ANS", "28 ANS", "40 ANS", "24 ANS", "32 ANS"])]
+        for i, s in enumerate(["8/10", "10/10", "6/10", "9/10", "7/10", "5/10", "10/10", "8/10", "9/10", "7/10"])]
 def s_question(img, d, tg, k):
     dim(img, 0.65)
     pulse = 0.0

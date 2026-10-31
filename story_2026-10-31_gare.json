@@ -3,9 +3,9 @@
  "theme": "« Tu n'y arriveras jamais ? » : l'histoire vraie de Serhou Guirassy, attaquant de la Guinée (recalé à un essai à Auxerre, pro à 17 ans à Laval en 2e division : 1re saison 4 matchs 0 but, peu utilisé à Lille puis prêté à Auxerre, blessures et opération du genou à Cologne, but raté à 2 mètres, retour en France Amiens puis Rennes, Stuttgart 2022 qui lutte pour ne pas descendre, à 27 ans 28 buts en 28 matchs et record de 13 buts en 7 matchs, Dortmund : meilleur buteur à égalité de la plus grande coupe d'Europe avec 13 buts, 2e Africain de l'histoire) — style « gare » (gare d'hiver la nuit sous la neige, train, quai, matin doré)",
  "style": "gare",
  "voice_id": "V8kvppYJoYqSL61Tr8Dn",
- "voice_prompt": "[chuckles] On t'a déjà dit que tu n'y arriverais jamais ?\n\nÉcoute l'histoire de Serhou Guirassy. L'attaquant de la Guinée.\n\nAdolescent, il passe un essai à Auxerre. Recalé.\n\nÀ dix-sept ans, il devient pro à Laval, en deuxième division. Première saison : quatre matchs. Zéro but.\n\nÀ Lille, il joue à peine. On le prête… à Auxerre. Le club qui l'avait recalé.\n\nPuis en Allemagne, à Cologne, son genou lâche. Opération. Blessure après blessure. Et un jour, il rate un but… à deux mètres de la cage.\n\nRecalé. Blessé. Prêté.\n\nIl aurait pu tout lâcher. [shouting] IL S'EST RELEVÉ !\n\nRetour en France. Amiens. Puis Rennes. Il travaille. Il revient. Il marque.\n\nEn deux mille vingt-deux, Stuttgart. Un club qui se bat pour ne pas descendre. Et à vingt-sept ans… vingt-huit buts en vingt-huit matchs. Treize buts lors de ses sept premiers matchs : record du championnat d'Allemagne.\n\nPuis Dortmund. Il finit meilleur buteur de la plus grande coupe d'Europe, à égalité, avec treize buts. Le deuxième Africain de l'histoire à réussir ça. Et aujourd'hui, il porte le maillot de la Guinée.\n\nEt toi… tu vas encore croire ceux qui disent que tu n'y arriveras jamais ?\n\n[intense] Réponds-moi en commentaire : ton rêve, tu le réalises à quel âge ? Écris l'âge. Ceux qui l'écrivent… arrêtent de remettre à plus tard.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
- "caption": "Recalé à un essai. 0 but lors de sa 1re saison. Blessure après blessure. Puis, à 27 ans : 28 buts en 28 matchs. 🇬🇳🔥 Et toi, ton rêve, tu le réalises à quel âge ? 👇 #mindset #motivation #discipline #reussite #mindset24 #changetavie",
- "pinned_comment": "Je commence : 30 ans. Et toi, ton âge ? 👇",
+ "voice_prompt": "[chuckles] On t'a déjà dit que tu n'y arriverais jamais ?\n\nÉcoute l'histoire de Serhou Guirassy. L'attaquant de la Guinée.\n\nAdolescent, il passe un essai à Auxerre. Recalé.\n\nÀ dix-sept ans, il devient pro à Laval, en deuxième division. Première saison : quatre matchs. Zéro but.\n\nÀ Lille, il joue à peine. On le prête… à Auxerre. Le club qui l'avait recalé.\n\nPuis en Allemagne, à Cologne, son genou lâche. Opération. Blessure après blessure. Et un jour, il rate un but… à deux mètres de la cage.\n\nRecalé. Blessé. Prêté.\n\nIl aurait pu tout lâcher. [shouting] IL S'EST RELEVÉ !\n\nRetour en France. Amiens. Puis Rennes. Il travaille. Il revient. Il marque.\n\nEn deux mille vingt-deux, Stuttgart. Un club qui se bat pour ne pas descendre. Et à vingt-sept ans… vingt-huit buts en vingt-huit matchs. Treize buts lors de ses sept premiers matchs : record du championnat d'Allemagne.\n\nPuis Dortmund. Il finit meilleur buteur de la plus grande coupe d'Europe, à égalité, avec treize buts. Le deuxième Africain de l'histoire à réussir ça. Et aujourd'hui, il porte le maillot de la Guinée.\n\nEt toi… tu vas encore croire ceux qui disent que tu n'y arriveras jamais ?\n\n[intense] Réponds-moi en commentaire : sur dix, à quel point tu es prêt à continuer malgré les échecs ? Écris le chiffre. Ceux qui l'écrivent… arrêtent d'écouter ceux qui disent « jamais ».\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Recalé à un essai. 0 but lors de sa 1re saison. Blessure après blessure. Puis, à 27 ans : 28 buts en 28 matchs. 🇬🇳🔥 Et toi, sur 10, à quel point tu es prêt à continuer malgré les échecs ? 👇 #mindset #motivation #discipline #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 8/10… même après un échec, je continue. Et toi, ton chiffre ? 👇",
  "scenes": [
   {
    "type": "hook",
@@ -154,11 +154,11 @@
    2
   ],
   "q_line1": [
-   "rêve",
+   "Sur",
    1
   ],
   "q_line2": [
-   "âge",
+   "continuer",
    1
   ],
   "q_cta": [
@@ -166,8 +166,8 @@
    1
   ],
   "q_end": [
-   "tard",
-   1
+   "jamais",
+   3
   ],
   "brand": [
    "Mindset",
@@ -337,11 +337,11 @@
    1
   ],
   [
-   "rêve",
+   "Sur",
    1
   ],
   [
-   "âge",
+   "continuer",
    1
   ],
   [
@@ -480,15 +480,15 @@
   "Africain",
   "maillot",
   "commentaire",
-  "âge",
-  "rêve"
+  "continuer",
+  "échecs",
+  "chiffre"
  ],
  "question": {
   "lines": [
-   "TON RÊVE, TU LE",
-   "RÉALISES À"
+   "SUR 10, PRÊT À"
   ],
-  "highlight": "QUEL ÂGE ?",
-  "cta": "ÉCRIS TON ÂGE"
+  "highlight": "CONTINUER ?",
+  "cta": "ÉCRIS TON CHIFFRE"
  }
 }
