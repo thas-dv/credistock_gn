@@ -21,6 +21,18 @@ Durée visée : 61–75 s (PLUS d'1 minute : seules ces vidéos comptent pour le
 les 3 mots, la question et la légende. Niche : réveiller son potentiel, identifier ce qui bloque,
 prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de vente du PDF.
 
+## Calendrier hebdomadaire (décision utilisateur du 31/10/2026)
+- Lundi -> samedi : une NOUVELLE vraie histoire (format qui marche : un seul personnage, accroche = un jugement qu'on a tous reçu, décor concret, question chiffrée « sur 10 »).
+- DIMANCHE : vidéo RÉCAPITULATIVE de la semaine, ton SÉRIEUX et argumenté : « quelles leçons tirer de ces personnes qui se sont relevées ».
+  • Reprendre UNIQUEMENT les faits déjà vérifiés dans HISTORIQUE.md (aucun fait nouveau non vérifié, aucune citation).
+  • ATTENTION enseignement 7 (compilation du 26/10 = 277 vues, 0 comm.) : ce n'est PAS une liste de célébrités. C'est UN fil : une accroche universelle,
+    puis chaque histoire en 1 flash = 1 LEÇON en un mot (ex. TROP TARD ? / REFUSÉ / TROP LOIN / TROP FRÊLE / RECALÉ), puis la règle commune
+    qui s'adresse au spectateur (« personne ne croyait en eux au départ… ils ont refusé d'arrêter »).
+  • Décor propre au dimanche, différent des histoires (ex. tableau noir de vestiaire / salle tactique où les 5 leçons s'écrivent à la craie).
+  • Question en un chiffre : « Laquelle de ces leçons tu appliques dès demain ? Écris son numéro » ou une note sur 10 ; 61–75 s ; mêmes règles de conformité
+    (noms dits à l'oral seulement, jamais à l'écran ni en hashtag).
+  • 1er récap : dimanche 01/11/2026 = Drogba (27/10), Stephen King (28/10), Salah (29/10), Mahrez (30/10), Guirassy (31/10).
+
 ## Conformité TikTok
 Lire et appliquer CONFORMITE.md à chaque vidéo (sujet, texte, légende, hashtags) — compte monétisé.
 
