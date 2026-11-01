@@ -33,6 +33,10 @@ prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de ven
     (noms dits à l'oral seulement, jamais à l'écran ni en hashtag).
   • 1er récap : dimanche 01/11/2026 = Drogba (27/10), Stephen King (28/10), Salah (29/10), Mahrez (30/10), Guirassy (31/10).
 
+## Commentaire « à épingler » (01/11/2026)
+L'utilisateur n'a PAS l'option « Épingler » sur TikTok (fonction retirée pour beaucoup de comptes depuis 2022). Ne plus dire « épingle-le » :
+proposer un « 1er commentaire à poster juste après la publication » (il apparaît en haut comme commentaire du créateur), et mettre l'appel à l'action important DANS la légende.
+
 ## Vote du public (décision utilisateur du 01/11/2026)
 Le récap du dimanche 01/11 a ouvert un vote : « quelle légende tu veux que je raconte ? » (TOUTES catégories : sport, business, musique, science…).
 Les histoires suivantes reprennent les noms les plus demandés en commentaire (capture de l'utilisateur si fournie ; sinon Claude choisit lui-même la légende la plus connue).
