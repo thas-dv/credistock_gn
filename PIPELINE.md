@@ -80,6 +80,8 @@ et CHANGER DE PERSONNAGE à chaque vidéo (le mannequin hologramme a été jugé
 - "cite" (render_cite.py, 2D) : quartier d'immeubles la nuit (fenêtres allumées), city-stade en béton grillagé, lampadaires sodium -> projecteurs blancs,
   accents cyan/or, joueur en silhouette générique (maillot bleu, sans numéro), recruteurs en silhouette, pyramide des divisions — 30/10
   (exemple : story_2026-10-30_cite.json, histoire de Riyad Mahrez). Types : hook cite frail quimper havre stamps slam england champion award giant you question logo.
+- "vestiaire" (render_vestiaire.py, 2D) : RÉCAP DU DIMANCHE — vestiaire la nuit, grand tableau noir tactique (leçons écrites à la craie), casiers génériques, banc,
+  silhouette générique — 01/11 (exemple : story_2026-11-01_vestiaire.json). Types : hook board l1 l2 l3 l4 l5 recap slam you question logo (l1–l5 = une leçon par histoire de la semaine, à réécrire chaque dimanche).
 Voix sans crédits ElevenLabs : si le compte ElevenLabs est à court, générer la voix Sid via Speko audio_synthesize
 (voice V8kvppYJoYqSL61Tr8Dn, model eleven_v4, allowedProviders elevenlabs ; le modèle servi peut être eleven_v3_conversational),
 puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) et corriger le texte des mots (chiffres écrits en lettres) dans words.json.

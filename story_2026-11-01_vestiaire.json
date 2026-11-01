@@ -1,0 +1,498 @@
+{
+ "date": "2026-11-01",
+ "theme": "Récap du dimanche : « C'est pas pour toi ? » — les 5 leçons de la semaine (Drogba : trop tard ? / Stephen King : refusé / Salah : trop loin / Mahrez : trop frêle / Guirassy : recalé) → ils ont refusé d'arrêter — style « vestiaire » (tableau noir tactique, craie, casiers, banc)",
+ "style": "vestiaire",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] On t'a déjà dit : « C'est pas pour toi » ?\n\nCette semaine, tu as vu cinq histoires. Cinq personnes qu'on avait sous-estimées. Aujourd'hui, on tire les leçons.\n\nLeçon numéro un : trop tard ? Didier Drogba devient pro à vingt et un ans seulement. À trente-quatre ans, il est champion d'Europe. Il n'est jamais trop tard.\n\nLeçon numéro deux : refusé. Stephen King plante ses lettres de refus sur un clou. Il jette un roman à la poubelle… on le récupère. Ce roman lance sa carrière. Un refus, ce n'est pas la fin.\n\nLeçon numéro trois : trop loin. À quatorze ans, Mohamed Salah fait près de dix heures de bus par jour pour s'entraîner. Puis le banc. Puis le prêt. Et il revient plus fort. La distance ne décide pas pour toi.\n\nLeçon numéro quatre : trop frêle. Riyad Mahrez, jugé trop frêle, encore amateur à dix-huit ans. Il devient champion d'Angleterre. Ton gabarit ne décide pas pour toi.\n\nLeçon numéro cinq : recalé. Serhou Guirassy, recalé à un essai. Zéro but lors de sa première saison pro. À vingt-sept ans : vingt-huit buts en vingt-huit matchs.\n\nPersonne ne croyait en eux au départ. Pas de chance. Pas de raccourci. [shouting] ILS ONT REFUSÉ D'ARRÊTER !\n\nEt toi… tu vas encore laisser les autres décider à ta place ?\n\n[intense] Réponds-moi en commentaire : laquelle de ces cinq leçons tu appliques dès demain ? Écris son numéro. Ceux qui l'écrivent… ont déjà commencé.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Trop tard. Refusé. Trop loin. Trop frêle. Recalé. On les avait tous sous-estimés… et ils ont refusé d'arrêter. 🔥 Laquelle de ces 5 leçons tu appliques dès demain ? Écris son numéro 👇 #mindset #motivation #discipline #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : la n°5. Un « non » n'est qu'un début. Et toi, ton numéro ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "On",
+    1
+   ]
+  },
+  {
+   "type": "board",
+   "at": [
+    "Cette",
+    1
+   ]
+  },
+  {
+   "type": "l1",
+   "at": [
+    "Leçon",
+    1
+   ]
+  },
+  {
+   "type": "l2",
+   "at": [
+    "Leçon",
+    2
+   ]
+  },
+  {
+   "type": "l3",
+   "at": [
+    "Leçon",
+    3
+   ]
+  },
+  {
+   "type": "l4",
+   "at": [
+    "Leçon",
+    4
+   ]
+  },
+  {
+   "type": "l5",
+   "at": [
+    "Leçon",
+    5
+   ]
+  },
+  {
+   "type": "recap",
+   "at": [
+    "Personne",
+    1
+   ]
+  },
+  {
+   "type": "slam",
+   "at": [
+    "ILS",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "Et",
+    2
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "toi",
+   1
+  ],
+  "build_start": [
+   "Personne",
+   1
+  ],
+  "build_end": [
+   "raccourci",
+   1
+  ],
+  "boom": [
+   "REFUSÉ",
+   2
+  ],
+  "gate1": [
+   "chance",
+   1
+  ],
+  "gate2": [
+   "raccourci",
+   1
+  ],
+  "sunrise": [
+   "toi",
+   4
+  ],
+  "arms_up": [
+   "place",
+   1
+  ],
+  "q_line1": [
+   "laquelle",
+   1
+  ],
+  "q_line2": [
+   "demain",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "commencé",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "change",
+   1
+  ],
+  "slogan2": [
+   "change",
+   2
+  ]
+ },
+ "marks": {
+  "pour": [
+   "pour",
+   1
+  ],
+  "cinq1": [
+   "cinq",
+   1
+  ],
+  "sous": [
+   "sous-estimées",
+   1
+  ],
+  "lecons": [
+   "leçons",
+   1
+  ],
+  "tard": [
+   "tard",
+   1
+  ],
+  "vingtun": [
+   "21",
+   1
+  ],
+  "trentequatre": [
+   "34",
+   1
+  ],
+  "champion1": [
+   "champion",
+   1
+  ],
+  "jamais1": [
+   "jamais",
+   1
+  ],
+  "refuse1": [
+   "refusé",
+   1
+  ],
+  "clou": [
+   "clou",
+   1
+  ],
+  "poubelle": [
+   "poubelle",
+   1
+  ],
+  "recupere": [
+   "récupère",
+   1
+  ],
+  "carriere": [
+   "carrière",
+   1
+  ],
+  "loin": [
+   "loin",
+   1
+  ],
+  "quatorze": [
+   "14",
+   1
+  ],
+  "dix": [
+   "10",
+   1
+  ],
+  "banc": [
+   "banc",
+   1
+  ],
+  "pret": [
+   "prêt",
+   1
+  ],
+  "fort": [
+   "fort",
+   1
+  ],
+  "distance": [
+   "distance",
+   1
+  ],
+  "frele": [
+   "frêle",
+   1
+  ],
+  "juge": [
+   "jugé",
+   1
+  ],
+  "dixhuit": [
+   "18",
+   1
+  ],
+  "champion2": [
+   "champion",
+   2
+  ],
+  "gabarit": [
+   "gabarit",
+   1
+  ],
+  "recale": [
+   "recalé",
+   1
+  ],
+  "essai": [
+   "essai",
+   1
+  ],
+  "zero": [
+   "Zéro",
+   1
+  ],
+  "vingtsept": [
+   "27",
+   1
+  ],
+  "vingthuit": [
+   "28",
+   1
+  ],
+  "vingthuit2": [
+   "28",
+   2
+  ],
+  "personne": [
+   "Personne",
+   1
+  ],
+  "chance": [
+   "chance",
+   1
+  ],
+  "raccourci": [
+   "raccourci",
+   1
+  ],
+  "laisser": [
+   "laisser",
+   1
+  ],
+  "place": [
+   "place",
+   1
+  ],
+  "recale2": [
+   "recalé",
+   2
+  ]
+ },
+ "words3d": [
+  [
+   "TROP TARD ?",
+   [
+    "tard",
+    1
+   ]
+  ],
+  [
+   "REFUSÉ",
+   [
+    "refusé",
+    1
+   ]
+  ],
+  [
+   "TROP LOIN",
+   [
+    "loin",
+    1
+   ]
+  ],
+  [
+   "TROP FRÊLE",
+   [
+    "frêle",
+    1
+   ]
+  ],
+  [
+   "RECALÉ",
+   [
+    "recalé",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "laquelle",
+   1
+  ],
+  [
+   "demain",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "toi",
+   1
+  ],
+  [
+   "cinq",
+   1
+  ],
+  [
+   "21",
+   1
+  ],
+  [
+   "34",
+   1
+  ],
+  [
+   "jamais",
+   1
+  ],
+  [
+   "clou",
+   1
+  ],
+  [
+   "récupère",
+   1
+  ],
+  [
+   "14",
+   1
+  ],
+  [
+   "10",
+   1
+  ],
+  [
+   "fort",
+   1
+  ],
+  [
+   "18",
+   1
+  ],
+  [
+   "champion",
+   2
+  ],
+  [
+   "Zéro",
+   1
+  ],
+  [
+   "27",
+   1
+  ],
+  [
+   "28",
+   1
+  ],
+  [
+   "chance",
+   1
+  ],
+  [
+   "raccourci",
+   1
+  ],
+  [
+   "place",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "toi",
+  "cinq",
+  "leçons",
+  "tard",
+  "21",
+  "34",
+  "champion",
+  "jamais",
+  "refusé",
+  "refus",
+  "clou",
+  "poubelle",
+  "récupère",
+  "fin",
+  "loin",
+  "14",
+  "10",
+  "heures",
+  "banc",
+  "prêt",
+  "fort",
+  "frêle",
+  "amateur",
+  "18",
+  "gabarit",
+  "recalé",
+  "essai",
+  "Zéro",
+  "27",
+  "28",
+  "buts",
+  "chance",
+  "raccourci",
+  "ILS",
+  "ONT",
+  "REFUSÉ",
+  "D'ARRÊTER",
+  "décider",
+  "commentaire",
+  "demain",
+  "numéro"
+ ],
+ "question": {
+  "lines": [
+   "LAQUELLE TU APPLIQUES"
+  ],
+  "highlight": "DÈS DEMAIN ?",
+  "cta": "ÉCRIS SON NUMÉRO"
+ }
+}
