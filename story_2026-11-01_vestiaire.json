@@ -1,11 +1,11 @@
 {
  "date": "2026-11-01",
- "theme": "Récap du dimanche : « C'est pas pour toi ? » — les 5 leçons de la semaine (Drogba : trop tard ? / Stephen King : refusé / Salah : trop loin / Mahrez : trop frêle / Guirassy : recalé) → ils ont refusé d'arrêter — style « vestiaire » (tableau noir tactique, craie, casiers, banc)",
+ "theme": "Récap du dimanche : « C'est pas pour toi ? » — les 5 leçons de la semaine (Drogba : trop tard ? / Stephen King : refusé / Salah : trop loin / Mahrez : trop frêle / Guirassy : recalé) → ils ont refusé d'arrêter — style « vestiaire » (tableau noir tactique, craie, casiers, banc) — v3 : fin = VOTE toutes catégories (sport, business, musique, science…) (« Quelle légende tu veux que je raconte cette semaine ? Écris son nom ») demandé par l'utilisateur",
  "style": "vestiaire",
  "voice_id": "V8kvppYJoYqSL61Tr8Dn",
- "voice_prompt": "[chuckles] On t'a déjà dit : « C'est pas pour toi » ?\n\nCette semaine, tu as vu cinq histoires. Cinq personnes qu'on avait sous-estimées. Aujourd'hui, on tire les leçons.\n\nLeçon numéro un : trop tard ? Didier Drogba devient pro à vingt et un ans seulement. À trente-quatre ans, il est champion d'Europe. Il n'est jamais trop tard.\n\nLeçon numéro deux : refusé. Stephen King plante ses lettres de refus sur un clou. Il jette un roman à la poubelle… on le récupère. Ce roman lance sa carrière. Un refus, ce n'est pas la fin.\n\nLeçon numéro trois : trop loin. À quatorze ans, Mohamed Salah fait près de dix heures de bus par jour pour s'entraîner. Puis le banc. Puis le prêt. Et il revient plus fort. La distance ne décide pas pour toi.\n\nLeçon numéro quatre : trop frêle. Riyad Mahrez, jugé trop frêle, encore amateur à dix-huit ans. Il devient champion d'Angleterre. Ton gabarit ne décide pas pour toi.\n\nLeçon numéro cinq : recalé. Serhou Guirassy, recalé à un essai. Zéro but lors de sa première saison pro. À vingt-sept ans : vingt-huit buts en vingt-huit matchs.\n\nPersonne ne croyait en eux au départ. Pas de chance. Pas de raccourci. [shouting] ILS ONT REFUSÉ D'ARRÊTER !\n\nEt toi… tu vas encore laisser les autres décider à ta place ?\n\n[intense] Réponds-moi en commentaire : laquelle de ces cinq leçons tu appliques dès demain ? Écris son numéro. Ceux qui l'écrivent… ont déjà commencé.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
- "caption": "Trop tard. Refusé. Trop loin. Trop frêle. Recalé. On les avait tous sous-estimés… et ils ont refusé d'arrêter. 🔥 Laquelle de ces 5 leçons tu appliques dès demain ? Écris son numéro 👇 #mindset #motivation #discipline #reussite #mindset24 #changetavie",
- "pinned_comment": "Je commence : la n°5. Un « non » n'est qu'un début. Et toi, ton numéro ? 👇",
+ "voice_prompt": "[chuckles] On t'a déjà dit : « C'est pas pour toi » ?\n\nCette semaine, tu as vu cinq histoires. Cinq personnes qu'on avait sous-estimées. Aujourd'hui, on tire les leçons.\n\nLeçon numéro un : trop tard ? Didier Drogba devient pro à vingt et un ans seulement. À trente-quatre ans, il est champion d'Europe. Il n'est jamais trop tard.\n\nLeçon numéro deux : refusé. Stephen King plante ses lettres de refus sur un clou. Il jette un roman à la poubelle… on le récupère. Ce roman lance sa carrière. Un refus, ce n'est pas la fin.\n\nLeçon numéro trois : trop loin. À quatorze ans, Mohamed Salah fait près de dix heures de bus par jour pour s'entraîner. Puis le banc. Puis le prêt. Et il revient plus fort. La distance ne décide pas pour toi.\n\nLeçon numéro quatre : trop frêle. Riyad Mahrez, jugé trop frêle, encore amateur à dix-huit ans. Il devient champion d'Angleterre. Ton gabarit ne décide pas pour toi.\n\nLeçon numéro cinq : recalé. Serhou Guirassy, recalé à un essai. Zéro but lors de sa première saison pro. À vingt-sept ans : vingt-huit buts en vingt-huit matchs.\n\nPersonne ne croyait en eux au départ. Pas de chance. Pas de raccourci. [shouting] ILS ONT REFUSÉ D'ARRÊTER !\n\nEt toi… tu vas encore laisser les autres décider à ta place ?\n\n[intense] Cette fois, c'est toi qui choisis. Quelle légende tu veux que je raconte ? Sport, business, musique, science… n'importe quel domaine. Écris son nom en commentaire. Les noms les plus demandés… auront leur vidéo.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Trop tard. Refusé. Trop loin. Trop frêle. Recalé. On les avait tous sous-estimés… et ils ont refusé d'arrêter. 🔥 Cette semaine, c'est TOI qui choisis : quelle légende tu veux que je raconte ? Sport, business, musique, science… n'importe quel domaine. Écris son nom 👇 #mindset #motivation #discipline #reussite #mindset24 #changetavie",
+ "pinned_comment": "🗳️ Le vote est ouvert ! Sport, business, musique, science… écris le nom de la légende que tu veux voir dans une prochaine vidéo 👇 Les noms les plus demandés auront leur histoire.",
  "scenes": [
   {
    "type": "hook",
@@ -80,7 +80,7 @@
   {
    "type": "question",
    "at": [
-    "Réponds-moi",
+    "fois",
     1
    ]
   },
@@ -126,11 +126,11 @@
    1
   ],
   "q_line1": [
-   "laquelle",
+   "légende",
    1
   ],
   "q_line2": [
-   "demain",
+   "raconte",
    1
   ],
   "q_cta": [
@@ -138,7 +138,7 @@
    1
   ],
   "q_end": [
-   "commencé",
+   "vidéo",
    1
   ],
   "brand": [
@@ -306,6 +306,26 @@
   "recale2": [
    "recalé",
    2
+  ],
+  "sport": [
+   "Sport",
+   1
+  ],
+  "business": [
+   "business",
+   1
+  ],
+  "musique": [
+   "musique",
+   1
+  ],
+  "science": [
+   "science",
+   1
+  ],
+  "domaine": [
+   "domaine",
+   1
   ]
  },
  "words3d": [
@@ -347,15 +367,27 @@
  ],
  "q_pulses": [
   [
-   "commentaire",
+   "choisis",
    1
   ],
   [
-   "laquelle",
+   "légende",
    1
   ],
   [
-   "demain",
+   "Sport",
+   1
+  ],
+  [
+   "business",
+   1
+  ],
+  [
+   "musique",
+   1
+  ],
+  [
+   "science",
    1
   ],
   [
@@ -437,11 +469,15 @@
    1
   ],
   [
-   "commentaire",
+   "Mindset",
    1
   ],
   [
-   "Mindset",
+   "choisis",
+   1
+  ],
+  [
+   "commentaire",
    1
   ]
  ],
@@ -485,14 +521,21 @@
   "D'ARRÊTER",
   "décider",
   "commentaire",
-  "demain",
-  "numéro"
+  "choisis",
+  "légende",
+  "nom",
+  "vidéo",
+  "Sport",
+  "business",
+  "musique",
+  "science",
+  "domaine"
  ],
  "question": {
   "lines": [
-   "LAQUELLE TU APPLIQUES"
+   "QUELLE LÉGENDE TU VEUX"
   ],
-  "highlight": "DÈS DEMAIN ?",
-  "cta": "ÉCRIS SON NUMÉRO"
+  "highlight": "QUE JE RACONTE ?",
+  "cta": "ÉCRIS SON NOM"
  }
 }

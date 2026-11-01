@@ -33,6 +33,12 @@ prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de ven
     (noms dits à l'oral seulement, jamais à l'écran ni en hashtag).
   • 1er récap : dimanche 01/11/2026 = Drogba (27/10), Stephen King (28/10), Salah (29/10), Mahrez (30/10), Guirassy (31/10).
 
+## Vote du public (décision utilisateur du 01/11/2026)
+Le récap du dimanche 01/11 a ouvert un vote : « quelle légende tu veux que je raconte ? » (TOUTES catégories : sport, business, musique, science…).
+Les histoires suivantes reprennent les noms les plus demandés en commentaire (capture de l'utilisateur si fournie ; sinon Claude choisit lui-même la légende la plus connue).
+Toujours appliquer CONFORMITE.md : personne non controversée, faits vérifiés par recherche web, pas de politicien ; sinon prendre le nom suivant.
+Dans la vidéo, dire que c'est une demande du public (« Vous l'avez demandé… »).
+
 ## Conformité TikTok
 Lire et appliquer CONFORMITE.md à chaque vidéo (sujet, texte, légende, hashtags) — compte monétisé.
 

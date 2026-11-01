@@ -536,10 +536,18 @@ def s_question(img, d, tg, k):
         if 0 <= dd < 0.5: pulse = max(pulse, math.exp(-dd * 7))
     a = 1.0; de = tg - K["q_end"]
     if de > 0: a = max(0.0, 1 - de / 0.8)
-    for i, (w, _) in enumerate(LESSONS):
-        y = 640 + i * 92
-        text(d, (250, y), str(i + 1), int(72 * (1 + 0.15 * pulse)), mix(BG, CYEL, a), BOLD)
-        text(d, (330, y), w, 58, mix(BG, CHALK, 0.85 * a), BOLD, "lm")
+    kv = tg - SC["question"]
+    text(d, (W / 2, 760), "?", int(210 * (1 + 0.08 * pulse)), mix(BG, CYEL, a), BOLD)
+    chalk(img, (W / 2, 610), "TON IDOLE", 70, mix(BG, CHALK, a), kv * 2, 30)
+    cats = [("SPORT", "sport", 330, 885), ("BUSINESS", "business", 750, 885), ("MUSIQUE", "musique", 330, 960), ("SCIENCE", "science", 750, 960)]
+    for lab, mk, x, y in cats:
+        kc = tg - M(mk, 99) + 0.05
+        if kc > 0:
+            sc = 1 + 0.35 * (1 - eout(kc / 0.15))
+            text(d, (x, y), lab, int(58 * sc), mix(BG, CHALK, a), BOLD)
+    kd = tg - M("domaine", 99) + 0.1
+    if kd > 0:
+        text(d, (W / 2, 1035), "N'IMPORTE QUEL DOMAINE", fit("N'IMPORTE QUEL DOMAINE", 54, 900), mix(BG, CYEL, a), BOLD)
     return dict(hit=0.5 * pulse, bg=0.3)
 
 def s_logo(img, d, tg, k):
