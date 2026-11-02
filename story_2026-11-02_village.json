@@ -1,0 +1,471 @@
+{
+ "date": "2026-11-02",
+ "theme": "« On t'a déjà regardé de haut ? » : l'histoire vraie de Sadio Mané (village de Bambali au sud du Sénégal ; famille qui voulait un autre avenir ; à 15 ans essai à Dakar avec des chaussures déchirées et sans vrai short, un homme pense qu'il s'est trompé d'endroit puis le choisit tout de suite ; à 19 ans Metz : froid, loin des siens, blessure, club relégué en 3e division ; Autriche champion ; Angleterre : triplé en 2 min 56 s, record du championnat anglais ; Liverpool : plus grande coupe d'Europe 2019 + championnat 2020 ; 2022 : tir au but décisif, 1re Coupe d'Afrique du Sénégal ; a financé une école et un hôpital dans son village) — style « village » (village de brousse au crépuscule, terre rouge, baobab, cases, aube dorée)",
+ "style": "village",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] On t'a déjà regardé de haut ?\n\nÉcoute l'histoire de Sadio Mané. Né dans un petit village du sud du Sénégal : Bambali.\n\nEnfant, il joue au ballon dans les rues du village. Mais sa famille veut un autre avenir pour lui.\n\nÀ quinze ans, il part à Dakar pour un essai. Il arrive avec des chaussures déchirées. Pas de vrai short. Un homme le regarde… et pense qu'il s'est trompé d'endroit.\n\nPuis le match commence. Et cet homme le choisit tout de suite.\n\nÀ dix-neuf ans, la France. Metz. Le froid. Loin des siens. Une blessure. Et à la fin de la saison, son club descend en troisième division.\n\nJugé. Seul. Blessé.\n\nIl aurait pu rentrer au village. [shouting] IL A CONTINUÉ !\n\nL'Autriche : champion. L'Angleterre : trois buts en deux minutes cinquante-six secondes. Le triplé le plus rapide de l'histoire du championnat anglais.\n\nPuis Liverpool. La plus grande coupe d'Europe. Le championnat d'Angleterre.\n\nEt en deux mille vingt-deux, c'est lui qui tire le dernier penalty. Le Sénégal gagne sa première Coupe d'Afrique.\n\nAujourd'hui, dans son village, il a financé une école et un hôpital.\n\nEt toi… tu vas encore laisser ceux qui te regardent de haut décider pour toi ?\n\n[intense] Réponds-moi en commentaire : sur dix, tu crois en ton rêve à combien ? Écris le chiffre. Ceux qui l'écrivent… ne baissent plus jamais les yeux.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Chaussures déchirées. Pas de vrai short. On l'a regardé de haut… Puis le triplé le plus rapide de l'histoire du championnat anglais et la 1re Coupe d'Afrique du Sénégal. 🇸🇳🔥 Et toi, sur 10, tu crois en ton rêve à combien ? 👇 #mindset #motivation #confianceensoi #ambition #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 9/10… même quand on me regarde de haut. Et toi, ton chiffre ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "On",
+    1
+   ]
+  },
+  {
+   "type": "village",
+   "at": [
+    "Écoute",
+    1
+   ]
+  },
+  {
+   "type": "essai",
+   "at": [
+    "15",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "homme",
+    1
+   ]
+  },
+  {
+   "type": "choix",
+   "at": [
+    "Puis",
+    1
+   ]
+  },
+  {
+   "type": "metz",
+   "at": [
+    "19",
+    1
+   ]
+  },
+  {
+   "type": "stamps",
+   "at": [
+    "Jugé",
+    1
+   ]
+  },
+  {
+   "type": "slam",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "record",
+   "at": [
+    "L'Autriche",
+    1
+   ]
+  },
+  {
+   "type": "sommet",
+   "at": [
+    "Liverpool",
+    1
+   ]
+  },
+  {
+   "type": "afrique",
+   "at": [
+    "2022",
+    1
+   ]
+  },
+  {
+   "type": "ecole",
+   "at": [
+    "Aujourd'hui",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "haut",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "village",
+   3
+  ],
+  "boom": [
+   "CONTINUÉ",
+   1
+  ],
+  "gate1": [
+   "champion",
+   1
+  ],
+  "gate2": [
+   "triplé",
+   1
+  ],
+  "sunrise": [
+   "coupe",
+   1
+  ],
+  "arms_up": [
+   "haut",
+   2
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "yeux",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "senegal1": [
+   "Sénégal",
+   1
+  ],
+  "enfant": [
+   "Enfant",
+   1
+  ],
+  "famille": [
+   "famille",
+   1
+  ],
+  "avenir": [
+   "avenir",
+   1
+  ],
+  "quinze": [
+   "15",
+   1
+  ],
+  "essai": [
+   "essai",
+   1
+  ],
+  "chaussures": [
+   "chaussures",
+   1
+  ],
+  "dechirees": [
+   "déchirées",
+   1
+  ],
+  "short": [
+   "short",
+   1
+  ],
+  "regarde": [
+   "regarde",
+   1
+  ],
+  "trompe": [
+   "trompé",
+   1
+  ],
+  "choisit": [
+   "choisit",
+   1
+  ],
+  "dixneuf": [
+   "19",
+   1
+  ],
+  "france": [
+   "France",
+   1
+  ],
+  "froid": [
+   "froid",
+   1
+  ],
+  "loin": [
+   "Loin",
+   1
+  ],
+  "blessure": [
+   "blessure",
+   1
+  ],
+  "descend": [
+   "descend",
+   1
+  ],
+  "troisieme": [
+   "3e",
+   1
+  ],
+  "trois": [
+   "3",
+   1
+  ],
+  "deuxmin": [
+   "2",
+   1
+  ],
+  "cinqsix": [
+   "56",
+   1
+  ],
+  "triple": [
+   "triplé",
+   1
+  ],
+  "championnat2": [
+   "championnat",
+   2
+  ],
+  "d2022": [
+   "2022",
+   1
+  ],
+  "penalty": [
+   "penalty",
+   1
+  ],
+  "senegal2": [
+   "Sénégal",
+   2
+  ],
+  "afrique": [
+   "d'Afrique",
+   1
+  ],
+  "ecole": [
+   "école",
+   1
+  ],
+  "hopital": [
+   "hôpital",
+   1
+  ]
+ },
+ "words3d": [
+  [
+   "JUGÉ",
+   [
+    "Jugé",
+    1
+   ]
+  ],
+  [
+   "SEUL",
+   [
+    "Seul",
+    1
+   ]
+  ],
+  [
+   "BLESSÉ",
+   [
+    "Blessé",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   1
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "haut",
+   1
+  ],
+  [
+   "Sénégal",
+   1
+  ],
+  [
+   "15",
+   1
+  ],
+  [
+   "déchirées",
+   1
+  ],
+  [
+   "trompé",
+   1
+  ],
+  [
+   "choisit",
+   1
+  ],
+  [
+   "19",
+   1
+  ],
+  [
+   "blessure",
+   1
+  ],
+  [
+   "3e",
+   1
+  ],
+  [
+   "CONTINUÉ",
+   1
+  ],
+  [
+   "champion",
+   1
+  ],
+  [
+   "56",
+   1
+  ],
+  [
+   "triplé",
+   1
+  ],
+  [
+   "coupe",
+   1
+  ],
+  [
+   "penalty",
+   1
+  ],
+  [
+   "d'Afrique",
+   1
+  ],
+  [
+   "hôpital",
+   1
+  ],
+  [
+   "haut",
+   2
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "haut",
+  "village",
+  "Sénégal",
+  "famille",
+  "avenir",
+  "15",
+  "essai",
+  "chaussures",
+  "déchirées",
+  "short",
+  "trompé",
+  "choisit",
+  "19",
+  "froid",
+  "Loin",
+  "blessure",
+  "descend",
+  "3e",
+  "division",
+  "Jugé",
+  "Seul",
+  "Blessé",
+  "CONTINUÉ",
+  "champion",
+  "3",
+  "56",
+  "secondes",
+  "triplé",
+  "rapide",
+  "coupe",
+  "championnat",
+  "2022",
+  "penalty",
+  "d'Afrique",
+  "école",
+  "hôpital",
+  "commentaire",
+  "rêve",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TU CROIS"
+  ],
+  "highlight": "EN TON RÊVE ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
