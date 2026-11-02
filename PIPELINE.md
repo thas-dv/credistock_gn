@@ -95,3 +95,6 @@ et CHANGER DE PERSONNAGE à chaque vidéo (le mannequin hologramme a été jugé
 Voix sans crédits ElevenLabs : si le compte ElevenLabs est à court, générer la voix Sid via Speko audio_synthesize
 (voice V8kvppYJoYqSL61Tr8Dn, model eleven_v4, allowedProviders elevenlabs ; le modèle servi peut être eleven_v3_conversational),
 puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) et corriger le texte des mots (chiffres écrits en lettres) dans words.json.
+- "village" (render_village.py, 2D) : village de brousse au crépuscule (terre rouge, baobab, cases au toit de paille, buts de fortune) -> aube dorée ; passage nuit froide/neige pour l'Europe ;
+  joueur en silhouette générique (maillot blanc, sans numéro) — 02/11 (exemple : story_2026-11-02_village.json, histoire de Sadio Mané).
+  Types : hook village essai regard choix metz stamps slam record sommet afrique ecole you question logo. Pas d'emblème Croix-Rouge (protégé) : hôpital = « H ».
