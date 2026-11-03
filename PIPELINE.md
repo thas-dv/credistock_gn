@@ -98,3 +98,5 @@ puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) 
 - "village" (render_village.py, 2D) : village de brousse au crépuscule (terre rouge, baobab, cases au toit de paille, buts de fortune) -> aube dorée ; passage nuit froide/neige pour l'Europe ;
   joueur en silhouette générique (maillot blanc, sans numéro) — 02/11 (exemple : story_2026-11-02_village.json, histoire de Sadio Mané).
   Types : hook village essai regard choix metz stamps slam record sommet afrique ecole you question logo. Pas d'emblème Croix-Rouge (protégé) : hôpital = « H ».
+- "port" (render_port.py, 2D) : port de pêche la nuit (phare au faisceau tournant, bateaux, jetée, quai de pierre), toise de mesure, trottinette, joueur en silhouette générique (maillot bleu, sans numéro) -> aube dorée — 03/11 (exemple : story_2026-11-03_port.json, histoire de N'Golo Kanté).
+  Types : hook paris amateur port debut stamps slam montee angleterre monde regard you question logo. Attention : le make_video.sh peut dépasser 10 min -> lancer le rendu en arrière-plan (nohup) et attendre le fichier.

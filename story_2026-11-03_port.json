@@ -1,0 +1,456 @@
+{
+ "date": "2026-11-03",
+ "theme": "« Trop petit ? » : l'histoire vraie de N'Golo Kanté (né à Paris de parents venus du Mali ; 1,68 m ; 10 ans au club amateur de Suresnes ; grands clubs ne le remarquent pas, recalé par un centre de formation ; toujours amateur à 19 ans, équipe réserve de Boulogne-sur-Mer, va à l'entraînement en trottinette ; 1er match pro à 21 ans dans un club déjà relégué -> 3e division ; Caen 38 matchs sur 38 et montée ; Leicester champion d'Angleterre 2016 ; Chelsea champion 2017 + élu meilleur joueur par les joueurs ; Coupe du monde 2018 ; plus grande coupe d'Europe 2021 + homme du match de la finale) — style « port » (port de pêche la nuit, phare, bateaux, quai, toise -> aube)",
+ "style": "port",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] On t'a déjà dit que tu étais trop petit ?\n\nÉcoute l'histoire de N'Golo Kanté. Né à Paris, de parents venus du Mali. Un mètre soixante-huit.\n\nEnfant, il joue dans un petit club amateur : Suresnes. Il y reste dix ans. Les grands clubs ne le remarquent pas. Un grand centre de formation le recale.\n\nÀ dix-neuf ans, il est toujours amateur. Puis Boulogne-sur-Mer lui ouvre une petite porte : l'équipe réserve. Il va à l'entraînement… en trottinette.\n\nÀ vingt et un ans, enfin, son premier match pro. Mais le club est déjà relégué. Direction la troisième division.\n\nTrop petit. Oublié. Recalé.\n\nIl aurait pu abandonner. [shouting] IL A CONTINUÉ !\n\nCaen : trente-huit matchs sur trente-huit, et la montée en première division. Puis l'Angleterre. Leicester : champion d'Angleterre. L'année d'après, Chelsea : encore champion. Et élu meilleur joueur du championnat par les joueurs.\n\nEn deux mille dix-huit, il gagne la Coupe du monde. En deux mille vingt et un, la plus grande coupe d'Europe… et il est élu homme du match de la finale.\n\nLe petit que personne ne remarquait… aujourd'hui, tout le monde le regarde.\n\nEt toi… tu vas encore laisser les autres te mesurer ?\n\n[intense] Réponds-moi en commentaire : sur dix, ton mental mesure combien ? Écris le chiffre. Ceux qui l'écrivent… ne se sentent plus jamais petits.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "1,68 m. Recalé par un centre de formation. Encore amateur à 19 ans, en trottinette pour aller à l'entraînement… Puis champion d'Angleterre 2 fois de suite et champion du monde. 💪⚽ Et toi, sur 10, ton mental mesure combien ? 👇 #mindset #motivation #confianceensoi #ambition #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10… même quand on me dit que je suis trop petit. Et toi, ton chiffre ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "On",
+    1
+   ]
+  },
+  {
+   "type": "paris",
+   "at": [
+    "Écoute",
+    1
+   ]
+  },
+  {
+   "type": "amateur",
+   "at": [
+    "Enfant",
+    1
+   ]
+  },
+  {
+   "type": "port",
+   "at": [
+    "19",
+    1
+   ]
+  },
+  {
+   "type": "debut",
+   "at": [
+    "21",
+    1
+   ]
+  },
+  {
+   "type": "stamps",
+   "at": [
+    "Trop",
+    2
+   ]
+  },
+  {
+   "type": "slam",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "montee",
+   "at": [
+    "Caen",
+    1
+   ]
+  },
+  {
+   "type": "angleterre",
+   "at": [
+    "Puis",
+    2
+   ]
+  },
+  {
+   "type": "monde",
+   "at": [
+    "2018",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "petit",
+    4
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "petit",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "abandonner",
+   1
+  ],
+  "boom": [
+   "continué",
+   1
+  ],
+  "gate1": [
+   "champion",
+   1
+  ],
+  "gate2": [
+   "encore",
+   1
+  ],
+  "sunrise": [
+   "monde",
+   1
+  ],
+  "arms_up": [
+   "mesurer",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   2
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "petits",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "change",
+   1
+  ],
+  "slogan2": [
+   "change",
+   2
+  ]
+ },
+ "marks": {
+  "paris": [
+   "Paris",
+   1
+  ],
+  "mali": [
+   "Mali",
+   1
+  ],
+  "taille": [
+   "1,68 m.",
+   1
+  ],
+  "amateur": [
+   "amateur",
+   1
+  ],
+  "dix": [
+   "10",
+   1
+  ],
+  "remarquent": [
+   "remarquent",
+   1
+  ],
+  "recale": [
+   "recale",
+   1
+  ],
+  "dixneuf": [
+   "19",
+   1
+  ],
+  "toujours": [
+   "toujours",
+   1
+  ],
+  "porte": [
+   "porte",
+   1
+  ],
+  "reserve": [
+   "réserve",
+   1
+  ],
+  "trotti": [
+   "trottinette",
+   1
+  ],
+  "vingtun": [
+   "21",
+   1
+  ],
+  "pro": [
+   "pro",
+   1
+  ],
+  "relegue": [
+   "relégué",
+   1
+  ],
+  "troisieme": [
+   "troisième",
+   1
+  ],
+  "trente": [
+   "38",
+   1
+  ],
+  "trente2": [
+   "38",
+   2
+  ],
+  "montee": [
+   "montée",
+   1
+  ],
+  "angleterre": [
+   "d'Angleterre",
+   1
+  ],
+  "chelsea": [
+   "Chelsea",
+   1
+  ],
+  "elu": [
+   "élu",
+   1
+  ],
+  "d2018": [
+   "2018",
+   1
+  ],
+  "d2021": [
+   "2021",
+   1
+  ],
+  "europe": [
+   "d'Europe",
+   1
+  ],
+  "homme": [
+   "homme",
+   1
+  ],
+  "personne": [
+   "personne",
+   1
+  ],
+  "regarde": [
+   "regarde",
+   1
+  ]
+ },
+ "words3d": [
+  [
+   "TROP PETIT",
+   [
+    "Trop",
+    2
+   ]
+  ],
+  [
+   "OUBLIÉ",
+   [
+    "oublié",
+    1
+   ]
+  ],
+  [
+   "RECALÉ",
+   [
+    "recalé",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   2
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "petit",
+   1
+  ],
+  [
+   "Mali",
+   1
+  ],
+  [
+   "1,68 m.",
+   1
+  ],
+  [
+   "recale",
+   1
+  ],
+  [
+   "19",
+   1
+  ],
+  [
+   "trottinette",
+   1
+  ],
+  [
+   "21",
+   1
+  ],
+  [
+   "relégué",
+   1
+  ],
+  [
+   "continué",
+   1
+  ],
+  [
+   "38",
+   2
+  ],
+  [
+   "montée",
+   1
+  ],
+  [
+   "champion",
+   1
+  ],
+  [
+   "champion",
+   2
+  ],
+  [
+   "monde",
+   1
+  ],
+  [
+   "d'Europe",
+   1
+  ],
+  [
+   "homme",
+   1
+  ],
+  [
+   "regarde",
+   1
+  ],
+  [
+   "mesurer",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "petit",
+  "Paris",
+  "Mali",
+  "1,68",
+  "amateur",
+  "10",
+  "remarquent",
+  "recale",
+  "19",
+  "toujours",
+  "porte",
+  "réserve",
+  "trottinette",
+  "21",
+  "pro",
+  "relégué",
+  "troisième",
+  "division",
+  "Trop",
+  "oublié",
+  "recalé",
+  "continué",
+  "38",
+  "montée",
+  "champion",
+  "d'Angleterre",
+  "encore",
+  "meilleur",
+  "2018",
+  "monde",
+  "2021",
+  "d'Europe",
+  "homme",
+  "finale",
+  "regarde",
+  "mesurer",
+  "commentaire",
+  "mental",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TON MENTAL"
+  ],
+  "highlight": "MESURE COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
