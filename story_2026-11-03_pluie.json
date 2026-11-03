@@ -1,0 +1,450 @@
+{
+ "date": "2026-11-03",
+ "version": 2,
+ "theme": "« Tu as déjà tout raté au pire moment ? » : l'histoire vraie de Kylian Mbappé (Bondy ; club de sa ville à 6 ans, son père parmi ses entraîneurs ; centre de formation ; à 16 ans plus jeune joueur puis plus jeune buteur de l'histoire de Monaco ; à 19 ans but en finale, champion du monde 2018 ; Euro : 8e de finale, dernier tir au but arrêté, France éliminée ; 18 mois plus tard triplé en finale de Coupe du monde, 1er tireur de la séance et il marque, défaite, meilleur buteur du tournoi ; Real Madrid, 31 buts en championnat, meilleur buteur d'Europe) — style « pluie » (terrain la nuit sous la pluie, projecteurs, point de penalty -> aube) — demandé par l'utilisateur (Hakimi refusé : procès en cours)",
+ "style": "pluie",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Tu as déjà tout raté… au pire moment ?\n\nÉcoute l'histoire de Kylian Mbappé. Il grandit à Bondy, en banlieue de Paris. À six ans, il joue dans le club de sa ville. Son père fait partie de ses entraîneurs.\n\nPuis le centre de formation. Et à seize ans, à Monaco, il devient le plus jeune joueur de l'histoire du club. Puis le plus jeune buteur.\n\nÀ dix-neuf ans, il marque en finale de la Coupe du monde. Champion du monde.\n\nPuis l'Euro. Huitième de finale. Tirs au but. Le dernier tir… c'est lui. Arrêté. La France est éliminée.\n\nRaté. Critiqué. Éliminé.\n\nIl aurait pu se cacher. [shouting] IL A CONTINUÉ !\n\nDix-huit mois plus tard, nouvelle finale de Coupe du monde. Trois buts. Un triplé en finale. Aux tirs au but, il tire le premier… et il marque. La France perd quand même. Mais lui finit meilleur buteur du tournoi.\n\nPuis il rejoint le club de ses rêves : le Real Madrid. Trente et un buts en championnat. Meilleur buteur d'Europe.\n\nLe gamin de Bondy qui a raté le tir le plus important… n'a jamais arrêté de tirer.\n\nEt toi… tu vas encore laisser un échec décider pour toi ?\n\n[intense] Réponds-moi en commentaire : sur dix, ton mental est à combien ? Écris le chiffre. Ceux qui l'écrivent… n'ont plus peur de rater.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Champion du monde à 19 ans… puis le tir au but qui élimine la France. Critiqué. Il aurait pu se cacher. 18 mois plus tard : un triplé en finale de Coupe du monde. ⚽🔥 Et toi, sur 10, ton mental est à combien ? 👇 #mindset #motivation #mentalite #confianceensoi #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10… même après un échec. Et toi, ton chiffre ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "bondy",
+   "at": [
+    "Écoute",
+    1
+   ]
+  },
+  {
+   "type": "monaco",
+   "at": [
+    "Puis",
+    1
+   ]
+  },
+  {
+   "type": "mondial",
+   "at": [
+    "19",
+    1
+   ]
+  },
+  {
+   "type": "euro",
+   "at": [
+    "Puis",
+    3
+   ]
+  },
+  {
+   "type": "stamps",
+   "at": [
+    "raté",
+    2
+   ]
+  },
+  {
+   "type": "slam",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "finale",
+   "at": [
+    "18",
+    1
+   ]
+  },
+  {
+   "type": "reve",
+   "at": [
+    "Puis",
+    4
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "gamin",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "raté",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "cacher",
+   1
+  ],
+  "boom": [
+   "continué",
+   1
+  ],
+  "gate1": [
+   "triplé",
+   1
+  ],
+  "gate2": [
+   "marque",
+   2
+  ],
+  "sunrise": [
+   "tournoi",
+   1
+  ],
+  "arms_up": [
+   "décider",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "rater",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "pire": [
+   "pire",
+   1
+  ],
+  "bondy": [
+   "Bondy",
+   1
+  ],
+  "six": [
+   "6",
+   1
+  ],
+  "pere": [
+   "père",
+   1
+  ],
+  "centre": [
+   "centre",
+   1
+  ],
+  "seize": [
+   "16",
+   1
+  ],
+  "joueur": [
+   "joueur",
+   1
+  ],
+  "buteur": [
+   "buteur",
+   1
+  ],
+  "dixneuf": [
+   "19",
+   1
+  ],
+  "champion": [
+   "Champion",
+   1
+  ],
+  "tirs": [
+   "Tirs",
+   1
+  ],
+  "dernier": [
+   "dernier",
+   1
+  ],
+  "lui": [
+   "lui",
+   1
+  ],
+  "arrete": [
+   "Arrêté",
+   1
+  ],
+  "elimine": [
+   "éliminée",
+   1
+  ],
+  "trois": [
+   "Trois",
+   1
+  ],
+  "triple": [
+   "triplé",
+   1
+  ],
+  "tirs2": [
+   "tirs",
+   2
+  ],
+  "premier": [
+   "premier",
+   1
+  ],
+  "marque2": [
+   "marque",
+   2
+  ],
+  "perd": [
+   "perd",
+   1
+  ],
+  "meilleur": [
+   "meilleur",
+   1
+  ],
+  "reves": [
+   "rêves",
+   1
+  ],
+  "trenteun": [
+   "31",
+   1
+  ],
+  "europe": [
+   "d'Europe",
+   1
+  ],
+  "jamais": [
+   "jamais",
+   1
+  ]
+ },
+ "words3d": [
+  [
+   "RATÉ",
+   [
+    "raté",
+    2
+   ]
+  ],
+  [
+   "CRITIQUÉ",
+   [
+    "Critiqué",
+    1
+   ]
+  ],
+  [
+   "ÉLIMINÉ",
+   [
+    "Éliminé",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   1
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "raté",
+   1
+  ],
+  [
+   "moment",
+   1
+  ],
+  [
+   "Bondy",
+   1
+  ],
+  [
+   "6",
+   1
+  ],
+  [
+   "16",
+   1
+  ],
+  [
+   "buteur",
+   1
+  ],
+  [
+   "19",
+   1
+  ],
+  [
+   "Champion",
+   1
+  ],
+  [
+   "Arrêté",
+   1
+  ],
+  [
+   "éliminée",
+   1
+  ],
+  [
+   "continué",
+   1
+  ],
+  [
+   "Trois",
+   1
+  ],
+  [
+   "triplé",
+   1
+  ],
+  [
+   "marque",
+   2
+  ],
+  [
+   "tournoi",
+   1
+  ],
+  [
+   "rêves",
+   1
+  ],
+  [
+   "31",
+   1
+  ],
+  [
+   "d'Europe",
+   1
+  ],
+  [
+   "jamais",
+   1
+  ],
+  [
+   "décider",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "raté",
+  "pire",
+  "moment",
+  "Bondy",
+  "6",
+  "père",
+  "16",
+  "jeune",
+  "joueur",
+  "buteur",
+  "19",
+  "finale",
+  "Champion",
+  "monde",
+  "l'Euro",
+  "8e",
+  "Tirs",
+  "dernier",
+  "Arrêté",
+  "éliminée",
+  "Critiqué",
+  "Éliminé",
+  "continué",
+  "18",
+  "Trois",
+  "triplé",
+  "premier",
+  "marque",
+  "meilleur",
+  "tournoi",
+  "rêves",
+  "31",
+  "d'Europe",
+  "jamais",
+  "tirer",
+  "échec",
+  "commentaire",
+  "mental",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TON MENTAL"
+  ],
+  "highlight": "EST À COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
