@@ -102,3 +102,10 @@ puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) 
   Types : hook paris amateur port debut stamps slam montee angleterre monde regard you question logo. Attention : le make_video.sh peut dépasser 10 min -> lancer le rendu en arrière-plan (nohup) et attendre le fichier.
 - "pluie" (render_pluie.py, 2D) : terrain de foot la nuit sous la pluie (projecteurs, but, point de penalty, flaques, immeubles au loin) -> la pluie s'arrête, aube dorée ; joueur générique maillot vert sans numéro, gardien générique jaune — 03/11 v2 (exemple : story_2026-11-03_pluie.json, histoire de Kylian Mbappé, demandée par l'utilisateur à la place de Hakimi, refusé car procès en cours).
   Types : hook bondy monaco mondial euro stamps slam finale reve regard you question logo.
+
+## Retour utilisateur du 03/11/2026 (IMPORTANT)
+- Le personnage « silhouette bâton » revenait dans toutes les vidéos : NE PLUS L'UTILISER. Utiliser le personnage « athlète » détaillé (athlete_personnage.py,
+  déjà intégré dans render_pluie.py : membres effilés, maillot ombré, short, chaussettes, crampons, cheveux, sans visage) ou un autre personnage bien dessiné, et le faire évoluer.
+- Le moment « mots tamponnés (X / Y / Z) + Il aurait pu… [shouting] IL A CONTINUÉ ! » revenait trop souvent : CHANGER le tournant à chaque vidéo
+  (ex. 03/11 : « Les critiques pleuvent. Ce soir-là, beaucoup pensent qu'il ne s'en relèvera pas. [shouting] ILS SE TROMPENT ! » + éclair, pluie figée dorée).
+  Garder un cri [shouting], mais avec d'autres mots et une autre mise en scène.

@@ -1,11 +1,11 @@
 {
  "date": "2026-11-03",
  "version": 2,
- "theme": "« Tu as déjà tout raté au pire moment ? » : l'histoire vraie de Kylian Mbappé (Bondy ; club de sa ville à 6 ans, son père parmi ses entraîneurs ; centre de formation ; à 16 ans plus jeune joueur puis plus jeune buteur de l'histoire de Monaco ; à 19 ans but en finale, champion du monde 2018 ; Euro : 8e de finale, dernier tir au but arrêté, France éliminée ; 18 mois plus tard triplé en finale de Coupe du monde, 1er tireur de la séance et il marque, défaite, meilleur buteur du tournoi ; Real Madrid, 31 buts en championnat, meilleur buteur d'Europe) — style « pluie » (terrain la nuit sous la pluie, projecteurs, point de penalty -> aube) — demandé par l'utilisateur (Hakimi refusé : procès en cours)",
+ "theme": "« Tu as déjà tout raté au pire moment ? » : l'histoire vraie de Kylian Mbappé (Bondy ; club de sa ville à 6 ans, son père parmi ses entraîneurs ; centre de formation ; à 16 ans plus jeune joueur puis plus jeune buteur de l'histoire de Monaco ; à 19 ans but en finale, champion du monde 2018 ; Euro : 8e de finale, dernier tir au but arrêté, France éliminée ; 18 mois plus tard triplé en finale de Coupe du monde, 1er tireur de la séance et il marque, défaite, meilleur buteur du tournoi ; Real Madrid, 31 buts en championnat, meilleur buteur d'Europe) — v3 : nouveau personnage « athlète » détaillé + nouveau tournant (« Les critiques pleuvent… ILS SE TROMPENT ! ») — style « pluie » (terrain la nuit sous la pluie, projecteurs, point de penalty -> aube) — demandé par l'utilisateur (Hakimi refusé : procès en cours)",
  "style": "pluie",
  "voice_id": "V8kvppYJoYqSL61Tr8Dn",
- "voice_prompt": "[chuckles] Tu as déjà tout raté… au pire moment ?\n\nÉcoute l'histoire de Kylian Mbappé. Il grandit à Bondy, en banlieue de Paris. À six ans, il joue dans le club de sa ville. Son père fait partie de ses entraîneurs.\n\nPuis le centre de formation. Et à seize ans, à Monaco, il devient le plus jeune joueur de l'histoire du club. Puis le plus jeune buteur.\n\nÀ dix-neuf ans, il marque en finale de la Coupe du monde. Champion du monde.\n\nPuis l'Euro. Huitième de finale. Tirs au but. Le dernier tir… c'est lui. Arrêté. La France est éliminée.\n\nRaté. Critiqué. Éliminé.\n\nIl aurait pu se cacher. [shouting] IL A CONTINUÉ !\n\nDix-huit mois plus tard, nouvelle finale de Coupe du monde. Trois buts. Un triplé en finale. Aux tirs au but, il tire le premier… et il marque. La France perd quand même. Mais lui finit meilleur buteur du tournoi.\n\nPuis il rejoint le club de ses rêves : le Real Madrid. Trente et un buts en championnat. Meilleur buteur d'Europe.\n\nLe gamin de Bondy qui a raté le tir le plus important… n'a jamais arrêté de tirer.\n\nEt toi… tu vas encore laisser un échec décider pour toi ?\n\n[intense] Réponds-moi en commentaire : sur dix, ton mental est à combien ? Écris le chiffre. Ceux qui l'écrivent… n'ont plus peur de rater.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
- "caption": "Champion du monde à 19 ans… puis le tir au but qui élimine la France. Critiqué. Il aurait pu se cacher. 18 mois plus tard : un triplé en finale de Coupe du monde. ⚽🔥 Et toi, sur 10, ton mental est à combien ? 👇 #mindset #motivation #mentalite #confianceensoi #mindset24 #changetavie",
+ "voice_prompt": "[chuckles] Tu as déjà tout raté… au pire moment ?\n\nÉcoute l'histoire de Kylian Mbappé. Il grandit à Bondy, en banlieue de Paris. À six ans, il joue dans le club de sa ville. Son père fait partie de ses entraîneurs.\n\nPuis le centre de formation. Et à seize ans, à Monaco, il devient le plus jeune joueur de l'histoire du club. Puis le plus jeune buteur.\n\nÀ dix-neuf ans, il marque en finale de la Coupe du monde. Champion du monde.\n\nPuis l'Euro. Huitième de finale. Tirs au but. Le dernier tir… c'est lui. Arrêté. La France est éliminée.\n\nLes critiques pleuvent. Ce soir-là, beaucoup pensent qu'il ne s'en relèvera pas. [shouting] ILS SE TROMPENT !\n\nDix-huit mois plus tard, nouvelle finale de Coupe du monde. Trois buts. Un triplé en finale. Aux tirs au but, il tire le premier… et il marque. La France perd quand même. Mais lui finit meilleur buteur du tournoi.\n\nPuis il rejoint le club de ses rêves : le Real Madrid. Trente et un buts en championnat. Meilleur buteur d'Europe.\n\nLe gamin de Bondy qui a raté le tir le plus important… n'a jamais arrêté de tirer.\n\nEt toi… tu vas encore laisser un échec décider pour toi ?\n\n[intense] Réponds-moi en commentaire : sur dix, ton mental est à combien ? Écris le chiffre. Ceux qui l'écrivent… n'ont plus peur de rater.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Champion du monde à 19 ans… puis le tir au but qui élimine la France. Les critiques pleuvent. 18 mois plus tard : un triplé en finale de Coupe du monde. ⚽🔥 Et toi, sur 10, ton mental est à combien ? 👇 #mindset #motivation #mentalite #confianceensoi #mindset24 #changetavie",
  "pinned_comment": "Je commence : 10/10… même après un échec. Et toi, ton chiffre ? 👇",
  "scenes": [
   {
@@ -44,16 +44,16 @@
    ]
   },
   {
-   "type": "stamps",
+   "type": "critiques",
    "at": [
-    "raté",
-    2
+    "Les",
+    1
    ]
   },
   {
-   "type": "slam",
+   "type": "pivot",
    "at": [
-    "aurait",
+    "beaucoup",
     1
    ]
   },
@@ -106,15 +106,15 @@
    1
   ],
   "build_start": [
-   "aurait",
+   "beaucoup",
    1
   ],
   "build_end": [
-   "cacher",
+   "relèvera",
    1
   ],
   "boom": [
-   "continué",
+   "TROMPENT",
    1
   ],
   "gate1": [
@@ -266,27 +266,31 @@
   "jamais": [
    "jamais",
    1
+  ],
+  "pleuvent": [
+   "pleuvent",
+   1
   ]
  },
  "words3d": [
   [
-   "RATÉ",
+   "CRITIQUES",
    [
-    "raté",
-    2
-   ]
-  ],
-  [
-   "CRITIQUÉ",
-   [
-    "Critiqué",
+    "critiques",
     1
    ]
   ],
   [
-   "ÉLIMINÉ",
+   "PLEUVENT",
    [
-    "Éliminé",
+    "pleuvent",
+    1
+   ]
+  ],
+  [
+   "SOIR",
+   [
+    "soir-là",
     1
    ]
   ]
@@ -351,10 +355,6 @@
    1
   ],
   [
-   "continué",
-   1
-  ],
-  [
    "Trois",
    1
   ],
@@ -397,6 +397,14 @@
   [
    "Mindset",
    1
+  ],
+  [
+   "TROMPENT",
+   1
+  ],
+  [
+   "pleuvent",
+   1
   ]
  ],
  "keywords": [
@@ -420,9 +428,6 @@
   "dernier",
   "Arrêté",
   "éliminée",
-  "Critiqué",
-  "Éliminé",
-  "continué",
   "18",
   "Trois",
   "triplé",
@@ -438,7 +443,11 @@
   "échec",
   "commentaire",
   "mental",
-  "chiffre"
+  "chiffre",
+  "critiques",
+  "pleuvent",
+  "relèvera",
+  "TROMPENT"
  ],
  "question": {
   "lines": [
