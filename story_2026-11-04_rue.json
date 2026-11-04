@@ -1,0 +1,462 @@
+{
+ "date": "2026-11-04",
+ "version": 2,
+ "theme": "« Tu crois que tu pars avec rien ? » : l'histoire vraie de Giannis Antetokounmpo (né à Athènes, parents venus du Nigeria ; à six dans un appartement de deux chambres ; vend montres et lunettes de soleil dans la rue avec son grand frère ; une paire de baskets pour deux ; repéré à 12 ans ; certains soirs dort sur des tapis à la salle ; à 18 ans dans un petit club grec, 15e choix de la draft ; 1re saison 6,8 points/match ; 2017 joueur qui a le plus progressé ; MVP 2019 et 2020 + défenseur de l'année 2020 ; 2021 : 50 points dans le match du titre, 1er titre de son équipe depuis 1971, MVP des finales) — style « rue » (immeubles blancs la nuit, terrain de basket en plein air -> projecteurs, aube dorée) — v2 : série « ILS ONT FAILLI ABANDONNER — Épisode 1 » + CTA d'abonnement + teasing de demain (épisode 2 : N'Golo Kanté, « trop petit ») — 1er test HORS FOOTBALL avec une star à racines africaines (enseignement 21)",
+ "style": "rue",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Tu crois que tu pars avec rien ?\n\nÉcoute l'histoire de Giannis Antetokounmpo. Il grandit à Athènes. Ses parents sont venus du Nigeria. Ils vivent à six dans un appartement de deux chambres.\n\nPour aider sa famille, il vend dans la rue avec son grand frère. Des montres. Des lunettes de soleil.\n\nUne seule paire de baskets pour deux. Il attend que son frère sorte du terrain… pour jouer.\n\nÀ douze ans, on le repère. Certains soirs, il dort sur des tapis, à la salle.\n\nÀ dix-huit ans, il joue dans un petit club grec. Une équipe américaine le choisit. Quinzième choix.\n\nSa première saison : moins de sept points par match. Presque personne ne connaît son nom. [shouting] LE MONDE VA APPRENDRE SON NOM !\n\nQuatre ans plus tard : joueur qui a le plus progressé. Puis meilleur joueur de la saison. Deux fois de suite. Et défenseur de l'année.\n\nEn deux mille vingt et un, la finale. Cinquante points dans le match du titre. Son équipe est championne pour la première fois depuis cinquante ans. Et lui, élu meilleur joueur de la finale.\n\nLe gamin qui vendait des lunettes dans la rue… est devenu champion.\n\nEt toi… tu vas encore dire que tu pars avec rien ?\n\nAbonne-toi : demain, l'histoire du joueur que les grands clubs trouvaient trop petit.\n\n[intense] Réponds-moi en commentaire : sur dix, ta faim de réussir est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "ILS ONT FAILLI ABANDONNER — Épisode 1 🏀 Il vendait des lunettes dans la rue pour aider sa famille… puis 50 points en finale et champion. 🔥 Sur 10, ta faim de réussir est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #ambition #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, même en partant de zéro. Et toi, ton chiffre ? 👇",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "athenes",
+   "at": [
+    "Écoute",
+    1
+   ]
+  },
+  {
+   "type": "rue",
+   "at": [
+    "Pour",
+    1
+   ]
+  },
+  {
+   "type": "baskets",
+   "at": [
+    "Une",
+    1
+   ]
+  },
+  {
+   "type": "salle",
+   "at": [
+    "12",
+    1
+   ]
+  },
+  {
+   "type": "draft",
+   "at": [
+    "18",
+    1
+   ]
+  },
+  {
+   "type": "pivot",
+   "at": [
+    "Sa",
+    2
+   ]
+  },
+  {
+   "type": "progres",
+   "at": [
+    "Quatre",
+    1
+   ]
+  },
+  {
+   "type": "finale",
+   "at": [
+    "2021",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "gamin",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "rien",
+   1
+  ],
+  "build_start": [
+   "Presque",
+   1
+  ],
+  "build_end": [
+   "nom",
+   1
+  ],
+  "boom": [
+   "MONDE",
+   1
+  ],
+  "gate1": [
+   "progressé",
+   1
+  ],
+  "gate2": [
+   "suite",
+   1
+  ],
+  "sunrise": [
+   "titre",
+   1
+  ],
+  "arms_up": [
+   "rien",
+   2
+  ],
+  "q_line1": [
+   "sur",
+   2
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "six": [
+   "six",
+   1
+  ],
+  "chambres": [
+   "chambres",
+   1
+  ],
+  "montres": [
+   "montres",
+   1
+  ],
+  "lunettes": [
+   "lunettes",
+   1
+  ],
+  "deux2": [
+   "deux",
+   2
+  ],
+  "frere2": [
+   "frère",
+   2
+  ],
+  "jouer": [
+   "jouer",
+   1
+  ],
+  "douze": [
+   "12",
+   1
+  ],
+  "soirs": [
+   "Certains",
+   1
+  ],
+  "tapis": [
+   "tapis",
+   1
+  ],
+  "dixhuit": [
+   "18",
+   1
+  ],
+  "choisit": [
+   "choisit",
+   1
+  ],
+  "quinze": [
+   "15e",
+   1
+  ],
+  "sept": [
+   "7",
+   1
+  ],
+  "pro": [
+   "progressé",
+   1
+  ],
+  "mvp": [
+   "meilleur",
+   1
+  ],
+  "suite": [
+   "Deux",
+   3
+  ],
+  "def": [
+   "défenseur",
+   1
+  ],
+  "cinquante": [
+   "50",
+   1
+  ],
+  "championne": [
+   "championne",
+   1
+  ],
+  "cinquante2": [
+   "50",
+   2
+  ],
+  "elu": [
+   "élu",
+   1
+  ],
+  "champion": [
+   "champion",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "petit2": [
+   "petit",
+   2
+  ]
+ },
+ "words3d": [
+  [
+   "PERSONNE",
+   [
+    "personne",
+    1
+   ]
+  ],
+  [
+   "7",
+   [
+    "7",
+    1
+   ]
+  ],
+  [
+   "NOM",
+   [
+    "nom",
+    1
+   ]
+  ]
+ ],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   2
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "rien",
+   1
+  ],
+  [
+   "six",
+   1
+  ],
+  [
+   "montres",
+   1
+  ],
+  [
+   "lunettes",
+   1
+  ],
+  [
+   "deux",
+   2
+  ],
+  [
+   "jouer",
+   1
+  ],
+  [
+   "12",
+   1
+  ],
+  [
+   "tapis",
+   1
+  ],
+  [
+   "18",
+   1
+  ],
+  [
+   "15e",
+   1
+  ],
+  [
+   "7",
+   1
+  ],
+  [
+   "NOM",
+   2
+  ],
+  [
+   "progressé",
+   1
+  ],
+  [
+   "suite",
+   1
+  ],
+  [
+   "défenseur",
+   1
+  ],
+  [
+   "50",
+   1
+  ],
+  [
+   "championne",
+   1
+  ],
+  [
+   "élu",
+   1
+  ],
+  [
+   "champion",
+   1
+  ],
+  [
+   "rien",
+   2
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ],
+  [
+   "Abonne-toi",
+   1
+  ],
+  [
+   "petit",
+   2
+  ]
+ ],
+ "keywords": [
+  "rien",
+  "six",
+  "chambres",
+  "rue",
+  "montres",
+  "lunettes",
+  "seule",
+  "paire",
+  "deux",
+  "jouer",
+  "12",
+  "tapis",
+  "salle",
+  "18",
+  "15e",
+  "choix",
+  "7",
+  "points",
+  "personne",
+  "MONDE",
+  "APPRENDRE",
+  "NOM",
+  "progressé",
+  "meilleur",
+  "suite",
+  "défenseur",
+  "2021",
+  "finale",
+  "50",
+  "titre",
+  "championne",
+  "champion",
+  "commentaire",
+  "faim",
+  "réussir",
+  "chiffre",
+  "Abonne-toi",
+  "demain",
+  "petit"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TA FAIM DE RÉUSSIR"
+  ],
+  "highlight": "EST À COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 1"
+}

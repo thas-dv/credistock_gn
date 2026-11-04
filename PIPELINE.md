@@ -52,6 +52,7 @@ Dans la vidéo, dire que c'est une demande du public (« Vous l'avez demandé…
 - Accroche des 3 premières secondes : une phrase choc + un fait surprenant (pas de logo ni d'intro lente).
 - Garder la question simple en commentaire (les commentaires poussent la vidéo vers de nouvelles personnes).
 - Légende : 1 phrase choc + « Abonne-toi pour l'épisode de demain » + hashtags de la liste blanche.
+- Compteur de la série : Épisode 1 = Giannis Antetokounmpo (04/11) ; Épisode 2 ANNONCÉ dans la vidéo du 04/11 = « le joueur que les grands clubs trouvaient trop petit » = N'Golo Kanté (story_2026-11-03_port.json déjà vérifiée, à refaire avec le personnage « athlète », un nouveau tournant et le format série) -> à faire le 05/11 si la vidéo du 04/11 est publiée telle quelle.
 - Après la publication, rappeler à l'utilisateur de répondre aux commentaires (idéalement en vidéo-réponse pour les meilleurs).
 
 ## Conformité TikTok
@@ -113,6 +114,9 @@ puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) 
   Types : hook paris amateur port debut stamps slam montee angleterre monde regard you question logo. Attention : le make_video.sh peut dépasser 10 min -> lancer le rendu en arrière-plan (nohup) et attendre le fichier.
 - "pluie" (render_pluie.py, 2D) : terrain de foot la nuit sous la pluie (projecteurs, but, point de penalty, flaques, immeubles au loin) -> la pluie s'arrête, aube dorée ; joueur générique maillot vert sans numéro, gardien générique jaune — 03/11 v2 (exemple : story_2026-11-03_pluie.json, histoire de Kylian Mbappé, demandée par l'utilisateur à la place de Hakimi, refusé car procès en cours).
   Types : hook bondy monaco mondial euro stamps slam finale reve regard you question logo.
+
+- "rue" (render_rue.py, 2D) : rue d'immeubles blancs la nuit (balcons, lampadaires), grillage, terrain de basket en plein air (panier) -> projecteurs de salle, aube dorée ; personnage « athlète » maillot violet sans numéro — 04/11 (exemple : story_2026-11-04_rue.json, histoire de Giannis Antetokounmpo, basket).
+  Types : hook athenes rue baskets salle draft pivot progres finale regard you question logo. Tournant crié : « LE MONDE VA APPRENDRE SON NOM ! » (projecteurs qui s'allument + dunk). Scène « abonne » (bouton ABONNE-TOI + DEMAIN · ÉPISODE N + teasing) et bandeau de série (series_banner, 0–3 s) réutilisables.
 
 ## Retour utilisateur du 03/11/2026 (IMPORTANT)
 - Le personnage « silhouette bâton » revenait dans toutes les vidéos : NE PLUS L'UTILISER. Utiliser le personnage « athlète » détaillé (athlete_personnage.py,
