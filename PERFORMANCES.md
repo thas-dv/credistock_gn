@@ -9,7 +9,10 @@ enregistrements et partages (signal fort), % vues complètes.
 ## Objectif monétisation (Programme de récompenses des créateurs TikTok)
 Conditions (écran TikTok) : 18 ans ✅ · 10 000 followers (28/10 : 330 -> 31/10 : 376 -> 02/11 : 452) · 100 000 vues sur 30 jours (28/10 : 8 599 -> 31/10 20 h : 11 097, compteur EN RETARD d environ 1–2 jours : la vidéo Mahrez (≈ 15 000 vues) n y est pas encore comptée en entier).
 Récompenses uniquement pour les vidéos de PLUS d'1 minute -> toutes les vidéos font 61–75 s.
-Priorité actuelle : CROISSANCE (followers + vues). Suivre chaque jour l'évolution vers ces deux seuils dans le bilan.
+PRIORITÉ N°1 (décision de l'utilisateur, 04/11/2026) : LES FOLLOWERS (~457 le 04/11 ; objectif 10 000).
+Chaque jour, suivre avec Metricool : TKEV07 followers, TKEV08 nouveaux followers nets, TKEV09 vues du profil
+(connecteur evolution) et indiquer dans le bilan : followers d'hier -> aujourd'hui, gain net, vidéo qui a le plus fait abonner.
+Priorité n°2 : les vues (100 000 sur 30 jours). Suivre chaque jour l'évolution vers ces deux seuils dans le bilan.
 
 ## Tableau
 | Date | Style / sujet | Vues | Likes | Taux like | Comm. | Enreg. | Partages | Remarque |

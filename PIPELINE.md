@@ -43,6 +43,17 @@ Les histoires suivantes reprennent les noms les plus demandés en commentaire (c
 Toujours appliquer CONFORMITE.md : personne non controversée, faits vérifiés par recherche web, pas de politicien ; sinon prendre le nom suivant.
 Dans la vidéo, dire que c'est une demande du public (« Vous l'avez demandé… »).
 
+## Objectif n°1 : gagner des FOLLOWERS (chaque vidéo doit donner une raison de s'abonner)
+- SÉRIE RECONNAISSABLE : chaque vraie histoire est un épisode d'une série au nom fixe, ex. « ILS ONT FAILLI ABANDONNER — Épisode N »
+  (titre à l'écran dans les 2 premières secondes + dans la légende). Une série donne envie de suivre la suite.
+- CTA D'ABONNEMENT parlé ET écrit, juste avant la question finale, au moment le plus fort de l'histoire, par exemple :
+  « Abonne-toi : demain, une autre histoire que personne ne te raconte. » (varier la formule, rester naturel, jamais « follow for follow »).
+- ANNONCE DE DEMAIN : finir en teasant l'épisode suivant (« Demain : le joueur que son club a viré à 18 ans… ») -> raison concrète de s'abonner.
+- Accroche des 3 premières secondes : une phrase choc + un fait surprenant (pas de logo ni d'intro lente).
+- Garder la question simple en commentaire (les commentaires poussent la vidéo vers de nouvelles personnes).
+- Légende : 1 phrase choc + « Abonne-toi pour l'épisode de demain » + hashtags de la liste blanche.
+- Après la publication, rappeler à l'utilisateur de répondre aux commentaires (idéalement en vidéo-réponse pour les meilleurs).
+
 ## Conformité TikTok
 Lire et appliquer CONFORMITE.md à chaque vidéo (sujet, texte, légende, hashtags) — compte monétisé.
 
