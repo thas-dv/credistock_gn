@@ -123,6 +123,16 @@ puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) 
   Types : hook paris amateur port debut mesure course montee angleterre monde regard you abonne question logo. Tournant crié « TROP PETIT ? ALORS IL VA COURIR POUR DEUX ! » (scène course : phare + sprint + double).
   Le boom doit tomber dans la 7e scène (audio.py aligne les scènes par position : 6e = build, 7e = explode).
 
+- "ligne" (render_ligne.py, 2D) : LA LIGNE DE CARRIÈRE — ligne dorée façon plan de métro sur plan quadrillé bleu nuit, une carte par étape (âge/année/fait),
+  plongée rouge à la relégation, ligne DÉDOUBLÉE au tournant crié, dézoom final sur tout le parcours — 05/11 v2 (exemple : story_2026-11-05_ligne.json).
+  Étapes définies dans la liste ST (positions monde, temps = marks) : à réécrire pour chaque histoire. AUCUN personnage.
+
+## Retour utilisateur du 05/11/2026 (IMPORTANT)
+- « Toujours la même façon de manipuler le ballon… il faut changer l'animation » : le joueur dessiné qui jongle/court revenait dans toutes les vidéos.
+  -> Changer de PRÉSENTATION (pas seulement de décor) : 05/11 = « ligne de carrière » sans personnage. Prochaines idées à alterner : bande dessinée
+  (cases qui claquent), typographie cinétique pure (mots/chiffres géants), dossier de recruteur / fiche de scouting, carte avec trajet, compteur/tableau de score.
+  Ne pas réutiliser le même format deux jours de suite.
+
 ## Retour utilisateur du 03/11/2026 (IMPORTANT)
 - Le personnage « silhouette bâton » revenait dans toutes les vidéos : NE PLUS L'UTILISER. Utiliser le personnage « athlète » détaillé (athlete_personnage.py,
   déjà intégré dans render_pluie.py : membres effilés, maillot ombré, short, chaussettes, crampons, cheveux, sans visage) ou un autre personnage bien dessiné, et le faire évoluer.
