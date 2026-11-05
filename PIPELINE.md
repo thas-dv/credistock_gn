@@ -53,6 +53,7 @@ Dans la vidéo, dire que c'est une demande du public (« Vous l'avez demandé…
 - Garder la question simple en commentaire (les commentaires poussent la vidéo vers de nouvelles personnes).
 - Légende : 1 phrase choc + « Abonne-toi pour l'épisode de demain » + hashtags de la liste blanche.
 - Compteur de la série : Épisode 1 = Giannis Antetokounmpo (04/11) ; Épisode 2 ANNONCÉ dans la vidéo du 04/11 = « le joueur que les grands clubs trouvaient trop petit » = N'Golo Kanté (story_2026-11-03_port.json déjà vérifiée, à refaire avec le personnage « athlète », un nouveau tournant et le format série) -> à faire le 05/11 si la vidéo du 04/11 est publiée telle quelle.
+- Épisode 2 = N'Golo Kanté (05/11, style « phare »). Épisode 3 ANNONCÉ dans la vidéo du 05/11 = « le gardien qui était au chômage à 22 ans » = Édouard Mendy (faits vérifiés le 05/11 : sans club après Cherbourg en 2014, inscrit au chômage à 22 ans, 4e gardien/réserve à Marseille 2015, Reims 2016 (titre de 2e div. 2018), Rennes 2019, Chelsea 2020, plus grande coupe d'Europe 2021 (clean sheet en finale), meilleur gardien FIFA + UEFA 2021, Coupe d'Afrique 2022 avec le Sénégal + meilleur gardien du tournoi) -> à faire le 06/11 si la vidéo du 05/11 est publiée telle quelle.
 - Après la publication, rappeler à l'utilisateur de répondre aux commentaires (idéalement en vidéo-réponse pour les meilleurs).
 
 ## Conformité TikTok
@@ -117,6 +118,10 @@ puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) 
 
 - "rue" (render_rue.py, 2D) : rue d'immeubles blancs la nuit (balcons, lampadaires), grillage, terrain de basket en plein air (panier) -> projecteurs de salle, aube dorée ; personnage « athlète » maillot violet sans numéro — 04/11 (exemple : story_2026-11-04_rue.json, histoire de Giannis Antetokounmpo, basket).
   Types : hook athenes rue baskets salle draft pivot progres finale regard you question logo. Tournant crié : « LE MONDE VA APPRENDRE SON NOM ! » (projecteurs qui s'allument + dunk). Scène « abonne » (bouton ABONNE-TOI + DEMAIN · ÉPISODE N + teasing) et bandeau de série (series_banner, 0–3 s) réutilisables.
+
+- "phare" (render_phare.py, 2D) : port de pêche la nuit (décor de render_port.py) + personnage « athlète » (maillot sarcelle sans numéro) + bandeau de série + scène abonne — 05/11 (exemple : story_2026-11-05_phare.json, Kanté épisode 2).
+  Types : hook paris amateur port debut mesure course montee angleterre monde regard you abonne question logo. Tournant crié « TROP PETIT ? ALORS IL VA COURIR POUR DEUX ! » (scène course : phare + sprint + double).
+  Le boom doit tomber dans la 7e scène (audio.py aligne les scènes par position : 6e = build, 7e = explode).
 
 ## Retour utilisateur du 03/11/2026 (IMPORTANT)
 - Le personnage « silhouette bâton » revenait dans toutes les vidéos : NE PLUS L'UTILISER. Utiliser le personnage « athlète » détaillé (athlete_personnage.py,

@@ -1,0 +1,493 @@
+{
+ "date": "2026-11-05",
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 2 » — « Trop petit ? » : l'histoire vraie de N'Golo Kanté, de l'amateur au pro (né à Paris, parents venus du Mali ; 1,68 m ; à 8 ans au club amateur de Suresnes, 10 ans ; grands clubs ne le remarquent pas, recalé par un centre de formation ; toujours amateur à 19 ans, réserve de Boulogne-sur-Mer, trottinette ; 1er match pro à 21 ans, club déjà relégué -> 3e division ; Caen 38/38 et montée ; Leicester champion d'Angleterre 2016 ; Chelsea champion 2017 + élu meilleur joueur par les joueurs ; champion du monde 2018 ; plus grande coupe d'Europe 2021 + homme du match de la finale) — style « phare » (port de pêche la nuit, phare, quai, toise -> aube) + personnage « athlète » + tournant crié « TROP PETIT ? ALORS IL VA COURIR POUR DEUX ! » ; teasing épisode 3 : le gardien au chômage à 22 ans (Édouard Mendy)",
+ "style": "phare",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 2",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] On t'a déjà dit que tu étais trop petit ? Ils ont failli abandonner. Épisode deux.\n\nL'histoire vraie d'un footballeur, de l'amateur au pro : N'Golo Kanté. Né à Paris, de parents venus du Mali. Un mètre soixante-huit.\n\nÀ huit ans, il signe dans un petit club amateur : Suresnes. Il y reste dix ans. Les grands clubs ne le remarquent pas. Un grand centre de formation le recale.\n\nÀ dix-neuf ans, il est toujours amateur. Puis Boulogne-sur-Mer lui ouvre une petite porte : l'équipe réserve. Il va à l'entraînement… en trottinette.\n\nÀ vingt et un ans, son premier match pro. Mais le club est déjà relégué. Direction la troisième division.\n\nTout le monde le mesure. Personne ne le regarde. [shouting] TROP PETIT ? ALORS IL VA COURIR POUR DEUX !\n\nCaen : trente-huit matchs sur trente-huit, et la montée. Puis l'Angleterre. Leicester : champion d'Angleterre. L'année d'après, Chelsea : encore champion. Et élu meilleur joueur du championnat par les joueurs.\n\nEn deux mille dix-huit, champion du monde. En deux mille vingt et un, la plus grande coupe d'Europe… et homme du match de la finale.\n\nLe petit que personne ne regardait… aujourd'hui, le monde entier le regarde.\n\nEt toi… tu vas encore laisser les autres te mesurer ?\n\nAbonne-toi : demain, l'histoire du gardien qui était au chômage à vingt-deux ans.\n\n[intense] Réponds-moi en commentaire : sur dix, ton mental mesure combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "ILS ONT FAILLI ABANDONNER — Épisode 2 ⚽ Trop petit pour les grands clubs, encore amateur à 19 ans, en trottinette pour aller à l'entraînement… puis champion du monde. L'histoire vraie d'un footballeur, de l'amateur au pro. 🔥 Sur 10, ton mental mesure combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #confianceensoi #ambition #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, même quand on me dit que je suis trop petit. Et toi, ton chiffre ? 👇 (Demain, épisode 3 : le gardien qui était au chômage à 22 ans.)",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "On",
+    1
+   ]
+  },
+  {
+   "type": "paris",
+   "at": [
+    "l'histoire",
+    1
+   ]
+  },
+  {
+   "type": "amateur",
+   "at": [
+    "8",
+    1
+   ]
+  },
+  {
+   "type": "port",
+   "at": [
+    "19",
+    1
+   ]
+  },
+  {
+   "type": "debut",
+   "at": [
+    "21",
+    1
+   ]
+  },
+  {
+   "type": "mesure",
+   "at": [
+    "Tout",
+    1
+   ]
+  },
+  {
+   "type": "course",
+   "at": [
+    "TROP",
+    2
+   ]
+  },
+  {
+   "type": "montee",
+   "at": [
+    "Caen",
+    1
+   ]
+  },
+  {
+   "type": "angleterre",
+   "at": [
+    "Puis",
+    2
+   ]
+  },
+  {
+   "type": "monde",
+   "at": [
+    "2018",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "petit",
+    4
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "petit",
+   1
+  ],
+  "build_start": [
+   "mesure",
+   1
+  ],
+  "build_end": [
+   "regarde",
+   1
+  ],
+  "boom": [
+   "TROP",
+   2
+  ],
+  "gate1": [
+   "champion",
+   1
+  ],
+  "gate2": [
+   "encore",
+   1
+  ],
+  "sunrise": [
+   "monde",
+   2
+  ],
+  "arms_up": [
+   "mesurer",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   2
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "lamateur": [
+   "l'amateur",
+   1
+  ],
+  "ne": [
+   "Né",
+   1
+  ],
+  "mali": [
+   "Mali",
+   1
+  ],
+  "taille": [
+   "1,68",
+   1
+  ],
+  "dix": [
+   "10",
+   1
+  ],
+  "remarquent": [
+   "remarquent",
+   1
+  ],
+  "recale": [
+   "recale",
+   1
+  ],
+  "dixneuf": [
+   "19",
+   1
+  ],
+  "toujours": [
+   "toujours",
+   1
+  ],
+  "porte": [
+   "porte",
+   1
+  ],
+  "reserve": [
+   "réserve",
+   1
+  ],
+  "trotti": [
+   "trottinette",
+   1
+  ],
+  "vingtun": [
+   "21",
+   1
+  ],
+  "pro": [
+   "pro",
+   2
+  ],
+  "relegue": [
+   "relégué",
+   1
+  ],
+  "troisieme": [
+   "3e",
+   1
+  ],
+  "mesure": [
+   "mesure",
+   1
+  ],
+  "personne": [
+   "Personne",
+   1
+  ],
+  "courir": [
+   "COURIR",
+   1
+  ],
+  "deux": [
+   "DEUX",
+   1
+  ],
+  "trente": [
+   "38",
+   1
+  ],
+  "trente2": [
+   "38",
+   2
+  ],
+  "montee": [
+   "montée",
+   1
+  ],
+  "elu": [
+   "élu",
+   1
+  ],
+  "d2018": [
+   "2018",
+   1
+  ],
+  "d2021": [
+   "2021",
+   1
+  ],
+  "europe": [
+   "d'Europe",
+   1
+  ],
+  "homme": [
+   "homme",
+   1
+  ],
+  "regarde": [
+   "regarde",
+   2
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "chomage": [
+   "chômage",
+   1
+  ],
+  "vingtdeux": [
+   "22",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   2
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "petit",
+   1
+  ],
+  [
+   "Épisode",
+   1
+  ],
+  [
+   "pro",
+   1
+  ],
+  [
+   "Mali",
+   1
+  ],
+  [
+   "1,68",
+   1
+  ],
+  [
+   "recale",
+   1
+  ],
+  [
+   "19",
+   1
+  ],
+  [
+   "trottinette",
+   1
+  ],
+  [
+   "21",
+   1
+  ],
+  [
+   "relégué",
+   1
+  ],
+  [
+   "mesure",
+   1
+  ],
+  [
+   "COURIR",
+   1
+  ],
+  [
+   "DEUX",
+   1
+  ],
+  [
+   "38",
+   2
+  ],
+  [
+   "montée",
+   1
+  ],
+  [
+   "champion",
+   1
+  ],
+  [
+   "champion",
+   2
+  ],
+  [
+   "monde",
+   2
+  ],
+  [
+   "d'Europe",
+   1
+  ],
+  [
+   "homme",
+   1
+  ],
+  [
+   "regarde",
+   2
+  ],
+  [
+   "mesurer",
+   1
+  ],
+  [
+   "Abonne-toi",
+   1
+  ],
+  [
+   "chômage",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "petit",
+  "abandonner",
+  "Épisode",
+  "footballeur",
+  "l'amateur",
+  "pro",
+  "Mali",
+  "1,68",
+  "amateur",
+  "10",
+  "remarquent",
+  "recale",
+  "19",
+  "toujours",
+  "porte",
+  "réserve",
+  "trottinette",
+  "21",
+  "relégué",
+  "3e",
+  "division",
+  "mesure",
+  "Personne",
+  "regarde",
+  "TROP",
+  "PETIT",
+  "COURIR",
+  "DEUX",
+  "38",
+  "montée",
+  "champion",
+  "d'Angleterre",
+  "encore",
+  "meilleur",
+  "2018",
+  "monde",
+  "2021",
+  "d'Europe",
+  "homme",
+  "finale",
+  "entier",
+  "mesurer",
+  "Abonne-toi",
+  "demain",
+  "gardien",
+  "chômage",
+  "22",
+  "commentaire",
+  "mental",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TON MENTAL"
+  ],
+  "highlight": "MESURE COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
