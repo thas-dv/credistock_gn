@@ -9,3 +9,4 @@ timing_voix.json
 __pycache__/
 voix_raw
 mk.log
+voix_raw.bin
