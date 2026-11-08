@@ -1,0 +1,518 @@
+{
+ "date": "2026-11-08",
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 5 » — « Pas assez bon ? » : l'histoire vraie de Naby Keïta, footballeur guinéen, de la rue au sommet (né à Conakry, famille modeste, joue avec tout ce qui est rond ; à 16 ans en France, essai à Lorient : pas assez bon, retour ; Le Mans croit en lui puis fait faillite ; 2 ans plus tard tournoi à Marseille, repéré par Istres, 2e division ; Salzbourg 2× champion + meilleur joueur du championnat ; Leipzig ; Liverpool 2018 : plus grande coupe d'Europe + championnat d'Angleterre ; capitaine de la Guinée) — NOUVEAU style « valise » (côte de Conakry, personnage athlète avec une valise, escalier de carrière) ; tournant crié « IL NE RANGE PAS SA VALISE ! » ; teasing ép. 6 : le gardien que son grand club n'a jamais fait jouer et qui a arrêté l'Espagne en Coupe du monde (Yassine Bounou)",
+ "style": "valise",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 5",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Pas assez bon ? On te l'a déjà dit ? Ils ont failli abandonner. Épisode cinq.\n\nPromis hier : l'histoire vraie d'un Guinéen, de la rue au sommet : Naby Keïta. Né à Conakry.\n\nUne famille modeste. Pas de vrai ballon : il joue avec tout ce qui est rond.\n\nÀ seize ans, il part en France. Un essai à Lorient. La réponse tombe : pas assez bon. Retour à la maison.\n\nPuis Le Mans croit en lui… mais le club fait faillite.\n\nDeux portes fermées. N'importe qui aurait rangé sa valise pour toujours. [shouting] LUI, IL NE RANGE PAS SA VALISE !\n\nDeux ans plus tard, un tournoi à Marseille. Des recruteurs d'Istres le repèrent. Il signe en deuxième division.\n\nPuis Salzbourg : deux fois champion d'Autriche, meilleur joueur du championnat. Leipzig. Et en deux mille dix-huit… Liverpool.\n\nAvec Liverpool, il gagne la plus grande coupe d'Europe, puis le championnat d'Angleterre. Et il devient capitaine de la Guinée.\n\nLe gamin pas assez bon… porte le brassard de tout un pays.\n\nEt toi… combien de non il te faut pour ranger ta valise ?\n\nAbonne-toi : demain, l'histoire du gardien que son grand club n'a jamais fait jouer… et qui a arrêté l'Espagne en Coupe du monde.\n\n[intense] Réponds-moi en commentaire : sur dix, ta détermination est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Pas assez bon pour un club français… puis capitaine de la Guinée et vainqueur de la plus grande coupe d'Europe. 🇬🇳🔥 L'histoire vraie d'un footballeur guinéen, de la rue au sommet — ILS ONT FAILLI ABANDONNER, épisode 5. Sur 10, ta détermination est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, la valise reste prête 💼 Et toi, ton chiffre ? 👇 (Demain, épisode 6 : le gardien que son grand club n'a jamais fait jouer.)",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Pas",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "Promis",
+    1
+   ]
+  },
+  {
+   "type": "conakry",
+   "at": [
+    "Une",
+    1
+   ]
+  },
+  {
+   "type": "lorient",
+   "at": [
+    "16",
+    1
+   ]
+  },
+  {
+   "type": "lemans",
+   "at": [
+    "Puis",
+    1
+   ]
+  },
+  {
+   "type": "portes",
+   "at": [
+    "Deux",
+    1
+   ]
+  },
+  {
+   "type": "valise",
+   "at": [
+    "LUI",
+    2
+   ]
+  },
+  {
+   "type": "istres",
+   "at": [
+    "2",
+    1
+   ]
+  },
+  {
+   "type": "sommet",
+   "at": [
+    "Puis",
+    2
+   ]
+  },
+  {
+   "type": "titres",
+   "at": [
+    "Avec",
+    2
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "gamin",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "bon",
+   1
+  ],
+  "build_start": [
+   "Deux",
+   1
+  ],
+  "build_end": [
+   "toujours",
+   1
+  ],
+  "boom": [
+   "LUI",
+   2
+  ],
+  "gate1": [
+   "Marseille",
+   1
+  ],
+  "gate2": [
+   "division",
+   1
+  ],
+  "sunrise": [
+   "Liverpool",
+   1
+  ],
+  "arms_up": [
+   "valise",
+   3
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   2
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "dit": [
+   "dit",
+   1
+  ],
+  "conakry": [
+   "Conakry",
+   1
+  ],
+  "sommet": [
+   "sommet",
+   1
+  ],
+  "ballon": [
+   "ballon",
+   1
+  ],
+  "rond": [
+   "rond",
+   1
+  ],
+  "france": [
+   "France",
+   1
+  ],
+  "essai": [
+   "essai",
+   1
+  ],
+  "bon2": [
+   "bon",
+   2
+  ],
+  "retour": [
+   "Retour",
+   1
+  ],
+  "croit": [
+   "croit",
+   1
+  ],
+  "faillite": [
+   "faillite",
+   1
+  ],
+  "portes": [
+   "portes",
+   1
+  ],
+  "tournoi": [
+   "tournoi",
+   1
+  ],
+  "recruteurs": [
+   "recruteurs",
+   1
+  ],
+  "signe": [
+   "signe",
+   1
+  ],
+  "champion1": [
+   "champion",
+   1
+  ],
+  "meilleur": [
+   "meilleur",
+   1
+  ],
+  "leipzig": [
+   "Leipzig",
+   1
+  ],
+  "liverpool": [
+   "Liverpool",
+   1
+  ],
+  "coupe": [
+   "coupe",
+   1
+  ],
+  "angleterre": [
+   "d'Angleterre",
+   1
+  ],
+  "capitaine": [
+   "capitaine",
+   1
+  ],
+  "bon3": [
+   "bon",
+   3
+  ],
+  "porte": [
+   "porte",
+   1
+  ],
+  "pays": [
+   "pays",
+   1
+  ],
+  "non": [
+   "non",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "monde": [
+   "monde",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   1
+  ],
+  [
+   "combien",
+   2
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "bon",
+   1
+  ],
+  [
+   "Épisode",
+   1
+  ],
+  [
+   "Guinéen",
+   1
+  ],
+  [
+   "sommet",
+   1
+  ],
+  [
+   "Conakry",
+   1
+  ],
+  [
+   "ballon",
+   1
+  ],
+  [
+   "rond",
+   1
+  ],
+  [
+   "16",
+   1
+  ],
+  [
+   "France",
+   1
+  ],
+  [
+   "Lorient",
+   1
+  ],
+  [
+   "maison",
+   1
+  ],
+  [
+   "croit",
+   1
+  ],
+  [
+   "faillite",
+   1
+  ],
+  [
+   "portes",
+   1
+  ],
+  [
+   "toujours",
+   1
+  ],
+  [
+   "Marseille",
+   1
+  ],
+  [
+   "repèrent",
+   1
+  ],
+  [
+   "division",
+   1
+  ],
+  [
+   "Salzbourg",
+   1
+  ],
+  [
+   "champion",
+   1
+  ],
+  [
+   "meilleur",
+   1
+  ],
+  [
+   "Leipzig",
+   1
+  ],
+  [
+   "Liverpool",
+   1
+  ],
+  [
+   "d'Europe",
+   1
+  ],
+  [
+   "d'Angleterre",
+   1
+  ],
+  [
+   "capitaine",
+   1
+  ],
+  [
+   "brassard",
+   1
+  ],
+  [
+   "pays",
+   1
+  ],
+  [
+   "valise",
+   1
+  ],
+  [
+   "Abonne-toi",
+   1
+  ],
+  [
+   "gardien",
+   1
+  ],
+  [
+   "monde",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "bon",
+  "abandonner",
+  "Épisode",
+  "5",
+  "Guinéen",
+  "rue",
+  "sommet",
+  "Conakry",
+  "modeste",
+  "ballon",
+  "rond",
+  "16",
+  "France",
+  "essai",
+  "Lorient",
+  "maison",
+  "croit",
+  "faillite",
+  "portes",
+  "fermées",
+  "valise",
+  "LUI",
+  "RANGE",
+  "VALISE",
+  "2",
+  "tournoi",
+  "Marseille",
+  "recruteurs",
+  "repèrent",
+  "signe",
+  "2e",
+  "division",
+  "Salzbourg",
+  "champion",
+  "meilleur",
+  "Leipzig",
+  "2018",
+  "Liverpool",
+  "grande",
+  "d'Europe",
+  "championnat",
+  "d'Angleterre",
+  "capitaine",
+  "Guinée",
+  "gamin",
+  "brassard",
+  "pays",
+  "non",
+  "Abonne-toi",
+  "demain",
+  "gardien",
+  "jamais",
+  "l'Espagne",
+  "monde",
+  "commentaire",
+  "détermination",
+  "combien",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TA DÉTERMINATION"
+  ],
+  "highlight": "EST À COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "version": 1
+}
