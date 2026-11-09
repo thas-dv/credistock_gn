@@ -1,0 +1,592 @@
+{
+ "date": "2026-11-09",
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 6 » — « Toujours sur le banc ? » : l'histoire vraie de Yassine Bounou, gardien marocain, du banc au sommet (grandit à Casablanca ; à 17 ans recruté par un club français mais problèmes de papiers, retour au pays ; à 21 ans Atlético de Madrid : 3e gardien, réserve en 3e division, 0 match de championnat, 2 ans ; prêté à Saragosse en 2e div. ; Gérone : montée + titulaire en 1re div. ; Séville : remplaçant en championnat mais joue la coupe d'Europe, penalty arrêté, coupe gagnée (2020) ; Coupe du monde 2022 : 2 tirs au but arrêtés contre l'Espagne, 1re équipe africaine en demi-finale) — NOUVEAU style « banc » (stade de nuit sous la pluie froide, banc de touche, gardien « athlète » gants + maillot violet sans numéro : assis sur le banc, se lève, plonge) ; tournant crié « SON HEURE VA ARRIVER ! » ; teasing ép. 7 : le défenseur renvoyé à 15 ans parce que trop timide, devenu capitaine de son pays (Kalidou Koulibaly)",
+ "style": "banc",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 6",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Toujours sur le banc ? On ne te fait jamais jouer ? Ils ont failli abandonner. Épisode six.\n\nPromis hier : l'histoire vraie d'un gardien, du banc au sommet : Yassine Bounou. Il grandit à Casablanca, au Maroc.\n\nÀ dix-sept ans, un club français le recrute… mais des problèmes de papiers l'empêchent de jouer. Retour au pays.\n\nÀ vingt et un ans, l'Atlético de Madrid le signe. Mais il est troisième gardien. Il joue avec la réserve, en troisième division. En championnat : zéro match.\n\nDeux ans sur le banc. N'importe qui aurait enlevé ses gants. [shouting] SON HEURE VA ARRIVER !\n\nPrêté en deuxième division, à Saragosse. Puis Gérone : il fait monter le club, et devient titulaire en première division.\n\nSéville : encore remplaçant en championnat… mais en coupe d'Europe, c'est lui. Il arrête un penalty, et il gagne la coupe.\n\nCoupe du monde deux mille vingt-deux. Contre l'Espagne. Tirs au but. Il en arrête deux ! Le Maroc devient la première équipe africaine en demi-finale.\n\nLe gardien qu'on laissait sur le banc… a arrêté tout un pays.\n\nEt toi… tu attends ton heure, ou tu la prépares ?\n\nAbonne-toi : demain, l'histoire du défenseur renvoyé à quinze ans parce qu'il était trop timide… et qui est devenu capitaine de son pays.\n\n[intense] Réponds-moi en commentaire : sur dix, ta confiance est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Toujours sur le banc ? Lui, son grand club ne l'a jamais fait jouer en championnat… puis il a arrêté l'Espagne en Coupe du monde. 🧤🔥 L'histoire vraie d'un gardien, du banc au sommet — ILS ONT FAILLI ABANDONNER, épisode 6. Sur 10, ta confiance est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #confianceensoi #discipline #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, mon heure, je la prépare chaque jour 🧤 Et toi, ton chiffre ? 👇 (Demain, épisode 7 : le défenseur renvoyé à 15 ans parce qu'il était « trop timide ».)",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Toujours",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "promis",
+    1
+   ]
+  },
+  {
+   "type": "casa",
+   "at": [
+    "Il",
+    1
+   ]
+  },
+  {
+   "type": "france",
+   "at": [
+    "17",
+    1
+   ]
+  },
+  {
+   "type": "madrid",
+   "at": [
+    "21",
+    1
+   ]
+  },
+  {
+   "type": "banc",
+   "at": [
+    "2",
+    1
+   ]
+  },
+  {
+   "type": "heure",
+   "at": [
+    "SON",
+    1
+   ]
+  },
+  {
+   "type": "pret",
+   "at": [
+    "Prêté",
+    1
+   ]
+  },
+  {
+   "type": "seville",
+   "at": [
+    "Séville",
+    1
+   ]
+  },
+  {
+   "type": "mondial",
+   "at": [
+    "Coupe",
+    3
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "gardien",
+    3
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "banc",
+   1
+  ],
+  "build_start": [
+   "2",
+   1
+  ],
+  "build_end": [
+   "gants",
+   1
+  ],
+  "boom": [
+   "SON",
+   1
+  ],
+  "gate1": [
+   "Saragosse",
+   1
+  ],
+  "gate2": [
+   "titulaire",
+   1
+  ],
+  "sunrise": [
+   "penalty",
+   1
+  ],
+  "arms_up": [
+   "prépares",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   4
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "jouer": [
+   "jouer",
+   1
+  ],
+  "abandonner": [
+   "abandonner",
+   1
+  ],
+  "sommet": [
+   "sommet",
+   1
+  ],
+  "bounou": [
+   "Bounou",
+   1
+  ],
+  "casablanca": [
+   "Casablanca",
+   1
+  ],
+  "maroc": [
+   "Maroc",
+   1
+  ],
+  "recrute": [
+   "recrute",
+   1
+  ],
+  "papiers": [
+   "papiers",
+   1
+  ],
+  "retour": [
+   "Retour",
+   1
+  ],
+  "madrid": [
+   "Madrid",
+   1
+  ],
+  "gardien2": [
+   "gardien",
+   2
+  ],
+  "reserve": [
+   "réserve",
+   1
+  ],
+  "division3": [
+   "division",
+   1
+  ],
+  "zero": [
+   "zéro",
+   1
+  ],
+  "banc2": [
+   "banc",
+   3
+  ],
+  "nimporte": [
+   "N'importe",
+   1
+  ],
+  "gants": [
+   "gants",
+   1
+  ],
+  "saragosse": [
+   "Saragosse",
+   1
+  ],
+  "gerone": [
+   "Gérone",
+   1
+  ],
+  "monter": [
+   "monter",
+   1
+  ],
+  "titulaire": [
+   "titulaire",
+   1
+  ],
+  "remplacant": [
+   "remplaçant",
+   1
+  ],
+  "europe": [
+   "d'Europe",
+   1
+  ],
+  "lui": [
+   "lui",
+   1
+  ],
+  "penalty": [
+   "penalty",
+   1
+  ],
+  "gagne": [
+   "gagne",
+   1
+  ],
+  "espagne": [
+   "l'Espagne",
+   1
+  ],
+  "tirs": [
+   "Tirs",
+   1
+  ],
+  "deux": [
+   "deux",
+   1
+  ],
+  "afrique": [
+   "africaine",
+   1
+  ],
+  "demi": [
+   "demi-finale",
+   1
+  ],
+  "banc4": [
+   "banc",
+   4
+  ],
+  "arrete": [
+   "arrêté",
+   1
+  ],
+  "pays": [
+   "pays",
+   2
+  ],
+  "heure2": [
+   "heure",
+   2
+  ],
+  "prepares": [
+   "prépares",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "timide": [
+   "timide",
+   1
+  ],
+  "capitaine": [
+   "capitaine",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   4
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "banc",
+   1
+  ],
+  [
+   "jouer",
+   1
+  ],
+  [
+   "Épisode",
+   1
+  ],
+  [
+   "gardien",
+   1
+  ],
+  [
+   "sommet",
+   1
+  ],
+  [
+   "Casablanca",
+   1
+  ],
+  [
+   "17",
+   1
+  ],
+  [
+   "français",
+   1
+  ],
+  [
+   "papiers",
+   1
+  ],
+  [
+   "pays",
+   1
+  ],
+  [
+   "21",
+   1
+  ],
+  [
+   "Madrid",
+   1
+  ],
+  [
+   "gardien",
+   2
+  ],
+  [
+   "réserve",
+   1
+  ],
+  [
+   "zéro",
+   1
+  ],
+  [
+   "banc",
+   3
+  ],
+  [
+   "gants",
+   1
+  ],
+  [
+   "Saragosse",
+   1
+  ],
+  [
+   "Gérone",
+   1
+  ],
+  [
+   "monter",
+   1
+  ],
+  [
+   "titulaire",
+   1
+  ],
+  [
+   "Séville",
+   1
+  ],
+  [
+   "remplaçant",
+   1
+  ],
+  [
+   "d'Europe",
+   1
+  ],
+  [
+   "penalty",
+   1
+  ],
+  [
+   "gagne",
+   1
+  ],
+  [
+   "monde",
+   1
+  ],
+  [
+   "l'Espagne",
+   1
+  ],
+  [
+   "deux",
+   1
+  ],
+  [
+   "africaine",
+   1
+  ],
+  [
+   "demi-finale",
+   1
+  ],
+  [
+   "banc",
+   4
+  ],
+  [
+   "pays",
+   2
+  ],
+  [
+   "heure",
+   2
+  ],
+  [
+   "prépares",
+   1
+  ],
+  [
+   "Abonne-toi",
+   1
+  ],
+  [
+   "timide",
+   1
+  ],
+  [
+   "capitaine",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "banc",
+  "jouer",
+  "abandonner",
+  "Épisode",
+  "6",
+  "gardien",
+  "sommet",
+  "Bounou",
+  "Casablanca",
+  "Maroc",
+  "17",
+  "français",
+  "papiers",
+  "Retour",
+  "pays",
+  "21",
+  "l'Atlético",
+  "Madrid",
+  "3e",
+  "réserve",
+  "division",
+  "championnat",
+  "zéro",
+  "2",
+  "gants",
+  "SON",
+  "HEURE",
+  "VA",
+  "ARRIVER",
+  "Prêté",
+  "2e",
+  "Saragosse",
+  "Gérone",
+  "monter",
+  "titulaire",
+  "première",
+  "Séville",
+  "remplaçant",
+  "d'Europe",
+  "lui",
+  "penalty",
+  "gagne",
+  "coupe",
+  "Coupe",
+  "monde",
+  "2022",
+  "l'Espagne",
+  "Tirs",
+  "deux",
+  "africaine",
+  "demi-finale",
+  "arrêté",
+  "heure",
+  "prépares",
+  "Abonne-toi",
+  "demain",
+  "défenseur",
+  "15",
+  "timide",
+  "capitaine",
+  "commentaire",
+  "confiance",
+  "combien",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TA CONFIANCE"
+  ],
+  "highlight": "EST À COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "version": 1
+}
