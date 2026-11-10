@@ -164,6 +164,13 @@ puis transcrire avec Speko audio_transcribe (word_timestamps true, language fr) 
   Types : hook intro ville metz renvoi retour voix pro naples afrique regard you abonne question logo (cri = 7e scène « voix » : SA VOIX, IL VA LA TROUVER SUR LE TERRAIN !). Fonctions réutilisables : bag(), boots(), waves(), door(), armband(), others(), crowd(up_all), goal(), trophy().
   Voix : ElevenLabs direct = 2 984 crédits estimés (compte vide) -> Speko eleven_v4 (87,7 s brut) -> cutmap.py (pauses > 0,4 s -> 0,3 s) ×1,10 = 75,1 s ; transcription Speko (gemini) corrigée à la main (« contre marque » -> « qu'on te remarque », « tir » -> « tirs »). Attention : « SA » apparaît aussi dans « sa ville » -> at = ["SA", 2].
 
+- "neige" (render_fable.py, fait par Fable le 10/11) : ville de montagne enneigée DE JOUR (toits enneigés, sapins, fumée), personnage en tenue d'hiver (bonnet, veste framboise), traces de pas, buée, grille du centre de formation, pelle, pneu tiré, « mur » défensif, onde circulaire neige -> pelouse au cri (reveal()), stades génériques (make_stadium belg/ital/afr).
+- "3d" (render_3d.py = render_fable.py + bloc « MISE EN SCÈNE 3D » à la fin) — STYLE VALIDÉ le 10/11 (retour utilisateur : « il ne se déplace qu'horizontalement, il faut une vraie animation 3D, qu'il se déplace dans tous les sens ») :
+  • héros sur sol en PERSPECTIVE : PATH(type, k) -> profondeur ZF (>1 loin, <1 près), décalage DX, saut JMP, marche auto (WALK) ; P()/shadow()/band_on_arm()/trophy() projetés via Q(x, y) ; fixed=True pour les éléments du décor (gardien adverse) ;
+  • CAMÉRA : CAMF(type, k) -> zoom, pan x/y, yaw (orbite), pitch (plongée / contre-plongée), roulis + caméra à l'épaule, appliquée au MONDE par homographie dans topsh() (les textes restent nets par-dessus).
+  • À FAIRE pour les prochains épisodes : garder ce moteur 3D (copier render_3d.py, réécrire les scènes et PATH/CAMF) ; chaque scène = un déplacement en profondeur ou en diagonale + un mouvement de caméra différent ; jamais de déplacement seulement horizontal.
+- SEO (décision utilisateur du 10/11) : utiliser les mots que les gens TAPENT dans la recherche TikTok (Analytique > Recherches effectuées) dans la légende, la voix et l'écran, et pour choisir les sujets (voir enseignement 31 de PERFORMANCES.md).
+
 ## Instagram (depuis le 09/11/2026)
 Compte mindset_24_officiel connecté à Metricool (même brand 7642566). Chaque vidéo validée part aussi en Reel (instagramData {type REEL, showReelOnFeed true, isAiGenerated false}),
 programmée à 20h30 le LENDEMAIN du dernier Reel déjà programmé (getScheduledPosts), un seul Reel par jour. Métriques : IGEV01 followers, IGEV43/44 gagnés/perdus, IGRE* pour les Reels.
