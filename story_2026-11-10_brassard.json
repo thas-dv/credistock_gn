@@ -1,0 +1,569 @@
+{
+ "date": "2026-11-10",
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 7 » — « Trop timide ? » : l'histoire vraie de Kalidou Koulibaly, défenseur, du rejet au brassard (Saint-Dié, famille venue du Sénégal ; centre de formation de Metz à 12 ans, renvoyé à 15 ans « trop introverti, pas au niveau » ; 3 ans au petit club de sa ville ; Metz revient le chercher, pro à 19 ans ; coupe de Belgique avec Genk ; Naples : 1er meilleur défenseur du championnat d'Italie, porte le brassard ; capitaine du Sénégal, Coupe d'Afrique 2022 : marque son tir au but en finale, 1er capitaine sénégalais à soulever la coupe) — NOUVEAU style « brassard » (petite ville de montagne la nuit, sapins, brume, petit terrain à palissade ; défenseur timide qui trouve sa voix : ondes de voix, tacle glissé, brassard) ; tournant crié « SA VOIX, IL VA LA TROUVER SUR LE TERRAIN ! » ; teasing ép. 8 : le joueur encore gardien de but à 14 ans devenu transfert record d'un grand club anglais (Nicolas Pépé)",
+ "style": "brassard",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 7",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Trop timide ? On t'a dit que tu n'avais pas le caractère ? Ils ont failli abandonner. Épisode sept.\n\nPromis hier : l'histoire vraie d'un défenseur, du rejet au brassard : Kalidou Koulibaly. Il grandit à Saint-Dié, une petite ville des Vosges, dans une famille venue du Sénégal.\n\nÀ douze ans, le centre de formation de Metz le prend. À quinze ans, on le renvoie. Le club le trouve trop introverti… et pas au niveau.\n\nRetour au petit club de sa ville. Trois ans loin des centres de formation. N'importe qui aurait rangé ses crampons. [shouting] SA VOIX, IL VA LA TROUVER SUR LE TERRAIN !\n\nIl travaille, il grandit, il prend confiance. Et c'est Metz qui revient le chercher. À dix-neuf ans, il signe pro.\n\nPuis la Belgique : il gagne la coupe avec Genk. Puis Naples : élu meilleur défenseur du championnat d'Italie. Le garçon trop timide porte même le brassard de capitaine.\n\nDeux mille vingt-deux. Coupe d'Afrique. Il est le capitaine du Sénégal. Finale, tirs au but… il marque. Et il devient le premier capitaine sénégalais à soulever la coupe.\n\nLe garçon qu'on trouvait trop timide… a fait lever tout un pays.\n\nEt toi… tu attends qu'on te remarque, ou tu te fais entendre ?\n\nAbonne-toi : demain, l'histoire du joueur qui était encore gardien de but à quatorze ans… et qui est devenu le transfert record d'un grand club anglais.\n\n[intense] Réponds-moi en commentaire : sur dix, ton caractère est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Trop timide ? Renvoyé de son centre de formation à 15 ans… puis capitaine du Sénégal et vainqueur de la Coupe d'Afrique. 🇸🇳🔥 L'histoire vraie d'un défenseur, du rejet au brassard — ILS ONT FAILLI ABANDONNER, épisode 7. Sur 10, ton caractère est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #confianceensoi #mentalite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, sur le terrain on se fait entendre 💪 Et toi, ton chiffre ? 👇 (Demain, épisode 8 : le joueur qui était encore gardien de but à 14 ans… devenu transfert record.)",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Trop",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "Promis",
+    1
+   ]
+  },
+  {
+   "type": "ville",
+   "at": [
+    "Il",
+    1
+   ]
+  },
+  {
+   "type": "metz",
+   "at": [
+    "12",
+    1
+   ]
+  },
+  {
+   "type": "renvoi",
+   "at": [
+    "15",
+    1
+   ]
+  },
+  {
+   "type": "retour",
+   "at": [
+    "Retour",
+    1
+   ]
+  },
+  {
+   "type": "voix",
+   "at": [
+    "SA",
+    2
+   ]
+  },
+  {
+   "type": "pro",
+   "at": [
+    "Il",
+    3
+   ]
+  },
+  {
+   "type": "naples",
+   "at": [
+    "Puis",
+    1
+   ]
+  },
+  {
+   "type": "afrique",
+   "at": [
+    "2022",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "garçon",
+    2
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "timide",
+   1
+  ],
+  "build_start": [
+   "3",
+   1
+  ],
+  "build_end": [
+   "crampons",
+   1
+  ],
+  "boom": [
+   "SA",
+   2
+  ],
+  "gate1": [
+   "Belgique",
+   1
+  ],
+  "gate2": [
+   "Naples",
+   1
+  ],
+  "sunrise": [
+   "marque",
+   1
+  ],
+  "arms_up": [
+   "entendre",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   2
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "caractere": [
+   "caractère",
+   1
+  ],
+  "rejet": [
+   "rejet",
+   1
+  ],
+  "brassard": [
+   "brassard",
+   1
+  ],
+  "vosges": [
+   "Vosges",
+   1
+  ],
+  "senegal": [
+   "Sénégal",
+   1
+  ],
+  "centre": [
+   "centre",
+   1
+  ],
+  "prend": [
+   "prend",
+   1
+  ],
+  "renvoie": [
+   "renvoie",
+   1
+  ],
+  "introverti": [
+   "introverti",
+   1
+  ],
+  "niveau": [
+   "niveau",
+   1
+  ],
+  "loin": [
+   "loin",
+   1
+  ],
+  "nimporte": [
+   "N'importe",
+   1
+  ],
+  "crampons": [
+   "crampons",
+   1
+  ],
+  "terrain": [
+   "TERRAIN",
+   1
+  ],
+  "travaille": [
+   "travaille",
+   1
+  ],
+  "confiance": [
+   "confiance",
+   1
+  ],
+  "metz2": [
+   "Metz",
+   2
+  ],
+  "signe": [
+   "signe",
+   1
+  ],
+  "genk": [
+   "Genk",
+   1
+  ],
+  "naples": [
+   "Naples",
+   1
+  ],
+  "defenseur2": [
+   "défenseur",
+   2
+  ],
+  "brassard2": [
+   "brassard",
+   2
+  ],
+  "afrique": [
+   "d'Afrique",
+   1
+  ],
+  "capitaine2": [
+   "capitaine",
+   2
+  ],
+  "finale": [
+   "Finale",
+   1
+  ],
+  "marque": [
+   "marque",
+   1
+  ],
+  "premier": [
+   "premier",
+   1
+  ],
+  "soulever": [
+   "soulever",
+   1
+  ],
+  "timide3": [
+   "timide",
+   3
+  ],
+  "lever": [
+   "lever",
+   1
+  ],
+  "pays": [
+   "pays",
+   1
+  ],
+  "remarque": [
+   "remarque",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "record": [
+   "record",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   2
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "timide",
+   1
+  ],
+  [
+   "caractère",
+   1
+  ],
+  [
+   "Épisode",
+   1
+  ],
+  [
+   "défenseur",
+   1
+  ],
+  [
+   "brassard",
+   1
+  ],
+  [
+   "Sénégal",
+   1
+  ],
+  [
+   "12",
+   1
+  ],
+  [
+   "Metz",
+   1
+  ],
+  [
+   "15",
+   1
+  ],
+  [
+   "renvoie",
+   1
+  ],
+  [
+   "introverti",
+   1
+  ],
+  [
+   "niveau",
+   1
+  ],
+  [
+   "3",
+   1
+  ],
+  [
+   "crampons",
+   1
+  ],
+  [
+   "travaille",
+   1
+  ],
+  [
+   "confiance",
+   1
+  ],
+  [
+   "Metz",
+   2
+  ],
+  [
+   "19",
+   1
+  ],
+  [
+   "pro",
+   1
+  ],
+  [
+   "Belgique",
+   1
+  ],
+  [
+   "Genk",
+   1
+  ],
+  [
+   "Naples",
+   1
+  ],
+  [
+   "défenseur",
+   2
+  ],
+  [
+   "brassard",
+   2
+  ],
+  [
+   "2022",
+   1
+  ],
+  [
+   "d'Afrique",
+   1
+  ],
+  [
+   "capitaine",
+   2
+  ],
+  [
+   "Finale",
+   1
+  ],
+  [
+   "marque",
+   1
+  ],
+  [
+   "premier",
+   1
+  ],
+  [
+   "coupe",
+   2
+  ],
+  [
+   "lever",
+   1
+  ],
+  [
+   "pays",
+   1
+  ],
+  [
+   "remarque",
+   1
+  ],
+  [
+   "entendre",
+   1
+  ],
+  [
+   "Abonne-toi",
+   1
+  ],
+  [
+   "14",
+   1
+  ],
+  [
+   "record",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "TIMIDE",
+  "timide",
+  "caractère",
+  "abandonner",
+  "Épisode",
+  "7",
+  "défenseur",
+  "rejet",
+  "brassard",
+  "Koulibaly",
+  "Saint-Dié",
+  "Vosges",
+  "Sénégal",
+  "12",
+  "centre",
+  "formation",
+  "Metz",
+  "15",
+  "renvoie",
+  "introverti",
+  "niveau",
+  "Retour",
+  "3",
+  "crampons",
+  "VOIX",
+  "TROUVER",
+  "TERRAIN",
+  "travaille",
+  "confiance",
+  "chercher",
+  "19",
+  "pro",
+  "Belgique",
+  "coupe",
+  "Genk",
+  "Naples",
+  "meilleur",
+  "d'Italie",
+  "capitaine",
+  "2022",
+  "Coupe",
+  "d'Afrique",
+  "Finale",
+  "tirs",
+  "marque",
+  "premier",
+  "sénégalais",
+  "soulever",
+  "lever",
+  "pays",
+  "remarque",
+  "entendre",
+  "Abonne-toi",
+  "demain",
+  "gardien",
+  "14",
+  "transfert",
+  "record",
+  "commentaire",
+  "combien",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TON CARACTÈRE"
+  ],
+  "highlight": "EST À COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "version": 1
+}
