@@ -1,0 +1,610 @@
+{
+ "date": "2026-11-11",
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 8 » — « Tu as commencé trop tard ? » : l'histoire vraie de Nicolas Pépé, des cages du quartier au transfert record (Paris, famille venue de Côte d'Ivoire ; gardien de but au petit club de son quartier jusqu'à 14 ans puis attaquant ; à 17 ans Poitiers en 5e division chez les amateurs ; Angers à 18 ans ; prêté à Orléans en 3e div. : buts, montée, meilleur joueur du championnat ; Lille : 22 buts en une saison, 2e meilleur buteur de France ; 2019 Arsenal paie 80 M€, record du club à l'époque ; Coupe d'Afrique 2023 (jouée début 2024) à domicile : penalty obtenu en fin de 8e de finale, Côte d'Ivoire championne) — NOUVEAU style « cage » (moteur 3D : terrain synthétique de quartier à Paris sous le métro aérien, crépuscule/nuit/aube ; héros gardien qui plonge, retire ses gants, sort de la cage et sprinte en profondeur) ; tournant crié « LUI, IL VA RATTRAPER SON RETARD ! » ; teasing ép. 9 : le joueur recalé à 4 essais qui a fini dans l'un des plus grands clubs d'Angleterre (Antoine Semenyo)",
+ "style": "cage",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 8",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Tu as commencé trop tard ? On t'a dit que c'était fini pour toi ? Ils ont failli abandonner. Épisode huit.\n\nPromis hier : l'histoire vraie du joueur qui était encore gardien de but à quatorze ans : Nicolas Pépé. Il grandit à Paris, dans une famille venue de Côte d'Ivoire.\n\nJusqu'à quatorze ans, il joue dans les cages, au petit club de son quartier. Puis il change de poste : il devient attaquant.\n\nMais il a du retard. À dix-sept ans, il joue à Poitiers, en cinquième division, chez les amateurs.\n\nBeaucoup de jeunes de son âge sont déjà en centre de formation. N'importe qui aurait pensé : trop tard. [shouting] LUI, IL VA RATTRAPER SON RETARD !\n\nÀ dix-huit ans, Angers le prend. Prêté à Orléans, en troisième division : il marque, son équipe monte, et il est élu meilleur joueur du championnat.\n\nPuis Lille : vingt-deux buts en une saison. Deuxième meilleur buteur de France. Deux mille dix-neuf : Arsenal paie quatre-vingts millions d'euros. Le transfert record du club, à l'époque.\n\nDeux mille vingt-quatre. Coupe d'Afrique, à la maison, avec la Côte d'Ivoire. En huitième de finale, à quelques minutes de la fin, il obtient le penalty qui sauve son équipe. Et à la fin… la Côte d'Ivoire soulève la coupe.\n\nLe gardien de quartier qui avait du retard… est devenu champion d'Afrique.\n\nEt toi… tu crois vraiment qu'il est trop tard pour toi ?\n\nAbonne-toi : demain, l'histoire du joueur recalé à quatre essais… qui a fini dans l'un des plus grands clubs d'Angleterre.\n\n[intense] Réponds-moi en commentaire : sur dix, ta motivation est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Tu as commencé trop tard ? Encore gardien de but à 14 ans, amateur en 5e division à 17 ans… puis transfert record et champion d'Afrique. ⚽🔥 Commencer le foot tard et réussir : l'histoire vraie d'un footballeur, de l'amateur au pro — ILS ONT FAILLI ABANDONNER, épisode 8. Sur 10, ta motivation est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #ambition #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, il n'est jamais trop tard 💪 Et toi, ton chiffre ? 👇 Tu as commencé le foot à quel âge ? (Demain, épisode 9 : recalé à 4 essais… jusqu'à un des plus grands clubs d'Angleterre.)",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "Promis",
+    1
+   ]
+  },
+  {
+   "type": "quartier",
+   "at": [
+    "Il",
+    1
+   ]
+  },
+  {
+   "type": "cages",
+   "at": [
+    "Jusqu'à",
+    1
+   ]
+  },
+  {
+   "type": "poitiers",
+   "at": [
+    "Mais",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "Beaucoup",
+    1
+   ]
+  },
+  {
+   "type": "retard",
+   "at": [
+    "LUI",
+    1
+   ]
+  },
+  {
+   "type": "angers",
+   "at": [
+    "18",
+    1
+   ]
+  },
+  {
+   "type": "lille",
+   "at": [
+    "Puis",
+    2
+   ]
+  },
+  {
+   "type": "afrique",
+   "at": [
+    "2024",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "Le",
+    4
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "Et",
+    3
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "tard",
+   1
+  ],
+  "build_start": [
+   "Beaucoup",
+   1
+  ],
+  "build_end": [
+   "tard",
+   2
+  ],
+  "boom": [
+   "LUI",
+   1
+  ],
+  "gate1": [
+   "Orléans",
+   1
+  ],
+  "gate2": [
+   "Lille",
+   1
+  ],
+  "sunrise": [
+   "soulève",
+   1
+  ],
+  "arms_up": [
+   "vraiment",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   2
+  ],
+  "slogan2": [
+   "Change",
+   3
+  ]
+ },
+ "marks": {
+  "fini": [
+   "fini",
+   1
+  ],
+  "hier": [
+   "hier",
+   1
+  ],
+  "gardien": [
+   "gardien",
+   1
+  ],
+  "pepe": [
+   "Pépé",
+   1
+  ],
+  "paris": [
+   "Paris",
+   1
+  ],
+  "ivoire": [
+   "d'Ivoire",
+   1
+  ],
+  "cages": [
+   "cages",
+   1
+  ],
+  "quartier": [
+   "quartier",
+   1
+  ],
+  "poste": [
+   "poste",
+   1
+  ],
+  "attaquant": [
+   "attaquant",
+   1
+  ],
+  "ans17": [
+   "17",
+   1
+  ],
+  "cinq": [
+   "5e",
+   1
+  ],
+  "amateurs": [
+   "amateurs",
+   1
+  ],
+  "centre": [
+   "centre",
+   1
+  ],
+  "nimporte": [
+   "N'importe",
+   1
+  ],
+  "tard2": [
+   "tard",
+   2
+  ],
+  "rattraper": [
+   "RATTRAPER",
+   1
+  ],
+  "retard2": [
+   "RETARD",
+   2
+  ],
+  "prend": [
+   "prend",
+   1
+  ],
+  "prete": [
+   "Prêté",
+   1
+  ],
+  "troisieme": [
+   "3e",
+   1
+  ],
+  "marque": [
+   "marque",
+   1
+  ],
+  "monte": [
+   "monte",
+   1
+  ],
+  "meilleur1": [
+   "meilleur",
+   1
+  ],
+  "lille": [
+   "Lille",
+   1
+  ],
+  "b22": [
+   "22",
+   1
+  ],
+  "deuxieme": [
+   "2e",
+   1
+  ],
+  "y2019": [
+   "2019",
+   1
+  ],
+  "m80": [
+   "80",
+   1
+  ],
+  "record": [
+   "record",
+   1
+  ],
+  "y2024": [
+   "2024",
+   1
+  ],
+  "maison": [
+   "maison",
+   1
+  ],
+  "huitieme": [
+   "8e",
+   1
+  ],
+  "penalty": [
+   "penalty",
+   1
+  ],
+  "sauve": [
+   "sauve",
+   1
+  ],
+  "soulev": [
+   "soulève",
+   1
+  ],
+  "retard3": [
+   "retard",
+   3
+  ],
+  "champion": [
+   "champion",
+   1
+  ],
+  "vraiment": [
+   "vraiment",
+   1
+  ],
+  "tard3": [
+   "tard",
+   3
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "essais": [
+   "essais",
+   1
+  ],
+  "angleterre": [
+   "d'Angleterre",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   1
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "tard",
+   1
+  ],
+  [
+   "fini",
+   1
+  ],
+  [
+   "Épisode",
+   1
+  ],
+  [
+   "gardien",
+   1
+  ],
+  [
+   "14",
+   1
+  ],
+  [
+   "Pépé",
+   1
+  ],
+  [
+   "Paris",
+   1
+  ],
+  [
+   "cages",
+   1
+  ],
+  [
+   "attaquant",
+   1
+  ],
+  [
+   "retard",
+   1
+  ],
+  [
+   "17",
+   1
+  ],
+  [
+   "Poitiers",
+   1
+  ],
+  [
+   "5e",
+   1
+  ],
+  [
+   "amateurs",
+   1
+  ],
+  [
+   "centre",
+   1
+  ],
+  [
+   "tard",
+   2
+  ],
+  [
+   "18",
+   1
+  ],
+  [
+   "Angers",
+   1
+  ],
+  [
+   "Orléans",
+   1
+  ],
+  [
+   "marque",
+   1
+  ],
+  [
+   "monte",
+   1
+  ],
+  [
+   "meilleur",
+   1
+  ],
+  [
+   "Lille",
+   1
+  ],
+  [
+   "22",
+   1
+  ],
+  [
+   "2019",
+   1
+  ],
+  [
+   "Arsenal",
+   1
+  ],
+  [
+   "80",
+   1
+  ],
+  [
+   "record",
+   1
+  ],
+  [
+   "2024",
+   1
+  ],
+  [
+   "d'Afrique",
+   1
+  ],
+  [
+   "8e",
+   1
+  ],
+  [
+   "penalty",
+   1
+  ],
+  [
+   "sauve",
+   1
+  ],
+  [
+   "soulève",
+   1
+  ],
+  [
+   "champion",
+   1
+  ],
+  [
+   "vraiment",
+   1
+  ],
+  [
+   "Abonne-toi",
+   1
+  ],
+  [
+   "4",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "tard",
+  "TARD",
+  "fini",
+  "abandonner",
+  "Épisode",
+  "8",
+  "gardien",
+  "but",
+  "14",
+  "Pépé",
+  "Paris",
+  "Côte",
+  "d'Ivoire",
+  "cages",
+  "quartier",
+  "poste",
+  "attaquant",
+  "retard",
+  "RETARD",
+  "17",
+  "Poitiers",
+  "5e",
+  "division",
+  "amateurs",
+  "centre",
+  "formation",
+  "LUI",
+  "RATTRAPER",
+  "18",
+  "Angers",
+  "Orléans",
+  "3e",
+  "marque",
+  "monte",
+  "meilleur",
+  "championnat",
+  "Lille",
+  "22",
+  "buts",
+  "2e",
+  "buteur",
+  "2019",
+  "Arsenal",
+  "80",
+  "millions",
+  "record",
+  "2024",
+  "Coupe",
+  "d'Afrique",
+  "maison",
+  "8e",
+  "penalty",
+  "sauve",
+  "soulève",
+  "champion",
+  "vraiment",
+  "Abonne-toi",
+  "demain",
+  "recalé",
+  "4",
+  "essais",
+  "d'Angleterre",
+  "commentaire",
+  "motivation",
+  "combien",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TA MOTIVATION"
+  ],
+  "highlight": "EST À COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "version": 1
+}
