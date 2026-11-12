@@ -30,7 +30,9 @@ prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de ven
   Prototype : film/film_style.py + film/film_base.py (planches de test style_1..4 envoyées le 12/11).
 - Toujours écrire « Histoire imaginaire » à l'écran et dans la légende (honnêteté : ce n'est pas une vraie histoire). Mêmes règles CONFORMITE.md (aucun nom réel, club, marque).
 - Structure : « KAÏ — ÉPISODE N » + « Précédemment… » (2–3 s) + histoire + cri + « Abonne-toi : la suite dimanche prochain » + question sur 10 + slogan.
-- Pitch / plan de saison : en attente de validation de l'utilisateur (voir FILM.md quand validé).
+- Validé par l'utilisateur (12/11) : nom KAÏ, pays imaginaire Kalonia. Rendu voulu = vrai dessin animé / anime (comme sa vidéo d'exemple) -> clips générés par l'UTILISATEUR sur Vidu (gratuit, 540p ; je ne peux pas piloter Vidu depuis une session cloud), puis montage par Claude (voix Sid, sous-titres, musique, titres, CTA, question, logo) et case « Contenu généré par IA » COCHÉE pour le film.
+- Kit Vidu de l'épisode 1 (réglages, prompts personnages, 10 plans, voix brouillon) : Claude Docs https://claude.ai/artifact/Gr7uaU6QDS5booXaXDa7zL
+- Design de Kaï (12/11) : peau brun foncé, cheveux noirs en petites twists, BANDEAU ORANGE, maillot blanc à col et bandes orange, short bleu marine, crampons noir/orange. (1re version cheveux orange en pointes abandonnée : trop proche d'un héros d'anime connu « petit aux cheveux orange ».) Images de référence Canva : MAHavrWZ_BY (face), MAHavj2Dzsw (profil/dos), MAHavhD8fk8 (visage).
 
 ## Calendrier hebdomadaire (décision utilisateur du 31/10/2026)
 - Lundi -> samedi : une NOUVELLE vraie histoire (format qui marche : un seul personnage, accroche = un jugement qu'on a tous reçu, décor concret, question chiffrée « sur 10 »).
