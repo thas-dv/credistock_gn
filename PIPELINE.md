@@ -21,6 +21,17 @@ Durée visée : 61–75 s (PLUS d'1 minute : seules ces vidéos comptent pour le
 les 3 mots, la question et la légende. Niche : réveiller son potentiel, identifier ce qui bloque,
 prendre ses responsabilités, confiance, discipline. Ne jamais mentionner de vente du PDF.
 
+## FILM DU DIMANCHE (décision utilisateur du 12/11/2026) — remplace le récap / l'histoire vraie du dimanche
+- Chaque DIMANCHE = un épisode d'un FILM DE FOOT IMAGINAIRE en série (61–75 s), même heure 20h30, TikTok + Instagram (file chronologique).
+- Héros ORIGINAL « KAÏ » (nom provisoire, à valider) d'un PAYS IMAGINAIRE (« Kalonia », provisoire) pour que chaque spectateur s'y reconnaisse ;
+  il vit tout ce que racontent nos vraies histoires (trop petit, recalé à un essai, commence tard, banc, blessure, exil, chômage, penalty raté…).
+- Style demandé d'après une vidéo d'exemple de l'utilisateur (compte fitness, NE PAS copier son personnage aux cheveux verts) : fond bleu nuit uni,
+  personnage dessiné au trait (peau blanc cassé, contour sombre), cartes arrondies grises, icônes (chrono, vignettes numérotées, VS). Couleur signature : ORANGE/OR.
+  Prototype : film/film_style.py + film/film_base.py (planches de test style_1..4 envoyées le 12/11).
+- Toujours écrire « Histoire imaginaire » à l'écran et dans la légende (honnêteté : ce n'est pas une vraie histoire). Mêmes règles CONFORMITE.md (aucun nom réel, club, marque).
+- Structure : « KAÏ — ÉPISODE N » + « Précédemment… » (2–3 s) + histoire + cri + « Abonne-toi : la suite dimanche prochain » + question sur 10 + slogan.
+- Pitch / plan de saison : en attente de validation de l'utilisateur (voir FILM.md quand validé).
+
 ## Calendrier hebdomadaire (décision utilisateur du 31/10/2026)
 - Lundi -> samedi : une NOUVELLE vraie histoire (format qui marche : un seul personnage, accroche = un jugement qu'on a tous reçu, décor concret, question chiffrée « sur 10 »).
 - DIMANCHE : vidéo RÉCAPITULATIVE de la semaine, ton SÉRIEUX et argumenté : « quelles leçons tirer de ces personnes qui se sont relevées ».
