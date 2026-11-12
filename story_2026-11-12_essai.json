@@ -1,0 +1,621 @@
+{
+ "date": "2026-11-12",
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 9 » — « Tu as raté un essai ? » : l'histoire vraie d'Antoine Semenyo, recalé au moins 4 fois (Londres, famille venue du Ghana ; essais ratés à Arsenal, Tottenham, Millwall ; 8 semaines d'essai à Crystal Palace puis recalé à 15 ans ; pleure dans la voiture de son père et arrête le foot ~1 an ; à 16 ans académie de lycée loin de Londres ; à 17 ans Bristol City le prend après un essai ; prêts en 6e, 4e puis 3e division (0 but) ; Bournemouth 2023, 11 buts en 2024-25 ; Manchester City 01/2026 ; seul but de la finale de la Coupe d'Angleterre 2026) — NOUVEAU style « essai » (moteur 3D : parking de centre d'entraînement sous la pluie, portails qui se ferment, voiture du père, calendrier qui perd ses pages, crampons qui volent jusqu'à lui, campagne dans la brume, route des prêts) ; tournant crié « MAIS UN AN PLUS TARD, IL REMET LES CRAMPONS ! » ; teasing ép. 10 : le joueur en 3e division à 21 ans devenu meilleur buteur de l'histoire de son pays (Olivier Giroud, à re-vérifier)",
+ "style": "essai",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 9",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Tu as raté un essai ? On t'a dit non ? Lui, on lui a dit non au moins quatre fois. Ils ont failli abandonner. Épisode neuf.\n\nPromis hier : l'histoire vraie d'Antoine Semenyo. Il grandit à Londres, dans une famille venue du Ghana.\n\nArsenal, Tottenham, Millwall : essais ratés.\n\nPuis Crystal Palace. Huit semaines d'essai… et à quinze ans, encore recalé.\n\nCe soir-là, il pleure dans la voiture de son père. Et il arrête le football.\n\nUn an sans ballon. N'importe qui aurait tourné la page. [shouting] MAIS UN AN PLUS TARD, IL REMET LES CRAMPONS !\n\nÀ seize ans, il part dans une académie de lycée, loin de Londres. À dix-sept ans, Bristol le prend à l'essai : signé.\n\nPuis les prêts : sixième division, quatrième division… et en troisième division, zéro but.\n\nIl ne lâche rien. Deux mille vingt-trois : Bournemouth. Onze buts en une saison.\n\nDeux mille vingt-six : Manchester City. Et en finale de la Coupe d'Angleterre… c'est lui qui marque le seul but du match.\n\nLe gamin recalé à quinze ans… a soulevé la coupe.\n\nEt toi… tu vas vraiment abandonner après un seul non ?\n\nAbonne-toi : demain, l'histoire du joueur qui jouait encore en troisième division à vingt et un ans… et qui est devenu le meilleur buteur de l'histoire de son pays.\n\n[intense] Réponds-moi en commentaire : sur dix, ta persévérance est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Tu as raté un essai ? Lui, on lui a dit non au moins 4 fois… il a même arrêté le foot pendant un an. Puis le seul but d'une finale de coupe en Angleterre. ⚽🔥 Réussir un essai foot après un échec : l'histoire vraie d'un footballeur, de l'amateur au pro — ILS ONT FAILLI ABANDONNER, épisode 9. Sur 10, ta persévérance est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, un « non » ne m'arrête pas 💪 Et toi, ton chiffre ? 👇 On t'a déjà recalé à un essai ? (Demain, épisode 10 : en 3e division à 21 ans… meilleur buteur de l'histoire de son pays.)",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "Promis",
+    1
+   ]
+  },
+  {
+   "type": "essais",
+   "at": [
+    "Arsenal",
+    1
+   ]
+  },
+  {
+   "type": "palace",
+   "at": [
+    "Puis",
+    1
+   ]
+  },
+  {
+   "type": "voiture",
+   "at": [
+    "Ce",
+    1
+   ]
+  },
+  {
+   "type": "pause",
+   "at": [
+    "1",
+    1
+   ]
+  },
+  {
+   "type": "crampons",
+   "at": [
+    "MAIS",
+    1
+   ]
+  },
+  {
+   "type": "college",
+   "at": [
+    "16",
+    1
+   ]
+  },
+  {
+   "type": "prets",
+   "at": [
+    "Puis",
+    2
+   ]
+  },
+  {
+   "type": "bournemouth",
+   "at": [
+    "lâche",
+    1
+   ]
+  },
+  {
+   "type": "finale",
+   "at": [
+    "2026",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "gamin",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "essai",
+   1
+  ],
+  "build_start": [
+   "ballon",
+   1
+  ],
+  "build_end": [
+   "page",
+   1
+  ],
+  "boom": [
+   "MAIS",
+   1
+  ],
+  "gate1": [
+   "Bristol",
+   1
+  ],
+  "gate2": [
+   "Bournemouth",
+   1
+  ],
+  "sunrise": [
+   "soulevé",
+   1
+  ],
+  "arms_up": [
+   "vraiment",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "quatre": [
+   "quatre",
+   1
+  ],
+  "londres": [
+   "Londres",
+   1
+  ],
+  "ghana": [
+   "Ghana",
+   1
+  ],
+  "arsenal": [
+   "Arsenal",
+   1
+  ],
+  "tott": [
+   "Tottenham",
+   1
+  ],
+  "mill": [
+   "Millwall",
+   1
+  ],
+  "rates": [
+   "ratés",
+   1
+  ],
+  "semaines": [
+   "semaines",
+   1
+  ],
+  "ans15": [
+   "15",
+   1
+  ],
+  "recale": [
+   "recalé",
+   1
+  ],
+  "pleure": [
+   "pleure",
+   1
+  ],
+  "pere": [
+   "père",
+   1
+  ],
+  "arrete": [
+   "arrête",
+   1
+  ],
+  "ballon": [
+   "ballon",
+   1
+  ],
+  "nimporte": [
+   "N'importe",
+   1
+  ],
+  "page": [
+   "page",
+   1
+  ],
+  "tard": [
+   "TARD",
+   1
+  ],
+  "remet": [
+   "REMET",
+   1
+  ],
+  "crampons": [
+   "CRAMPONS",
+   1
+  ],
+  "ans16": [
+   "16",
+   1
+  ],
+  "academie": [
+   "académie",
+   1
+  ],
+  "loin": [
+   "loin",
+   1
+  ],
+  "ans17": [
+   "17",
+   1
+  ],
+  "bristol": [
+   "Bristol",
+   1
+  ],
+  "signe": [
+   "signé",
+   1
+  ],
+  "prets": [
+   "prêts",
+   1
+  ],
+  "d6": [
+   "6e",
+   1
+  ],
+  "d4": [
+   "4e",
+   1
+  ],
+  "d3": [
+   "3e",
+   1
+  ],
+  "zero": [
+   "zéro",
+   1
+  ],
+  "y2023": [
+   "2023",
+   1
+  ],
+  "b11": [
+   "11",
+   1
+  ],
+  "saison": [
+   "saison",
+   1
+  ],
+  "y2026": [
+   "2026",
+   1
+  ],
+  "finale": [
+   "finale",
+   1
+  ],
+  "marque": [
+   "marque",
+   1
+  ],
+  "seul": [
+   "seul",
+   1
+  ],
+  "gamin": [
+   "gamin",
+   1
+  ],
+  "souleve": [
+   "soulevé",
+   1
+  ],
+  "vraiment": [
+   "vraiment",
+   1
+  ],
+  "seulnon": [
+   "seul",
+   2
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "buteur": [
+   "buteur",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   1
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "essai",
+   1
+  ],
+  [
+   "quatre",
+   1
+  ],
+  [
+   "Épisode",
+   1
+  ],
+  [
+   "Londres",
+   1
+  ],
+  [
+   "Ghana",
+   1
+  ],
+  [
+   "Arsenal",
+   1
+  ],
+  [
+   "Tottenham",
+   1
+  ],
+  [
+   "Millwall",
+   1
+  ],
+  [
+   "ratés",
+   1
+  ],
+  [
+   "Palace",
+   1
+  ],
+  [
+   "semaines",
+   1
+  ],
+  [
+   "15",
+   1
+  ],
+  [
+   "recalé",
+   1
+  ],
+  [
+   "pleure",
+   1
+  ],
+  [
+   "arrête",
+   1
+  ],
+  [
+   "ballon",
+   1
+  ],
+  [
+   "page",
+   1
+  ],
+  [
+   "16",
+   1
+  ],
+  [
+   "académie",
+   1
+  ],
+  [
+   "17",
+   1
+  ],
+  [
+   "Bristol",
+   1
+  ],
+  [
+   "signé",
+   1
+  ],
+  [
+   "prêts",
+   1
+  ],
+  [
+   "6e",
+   1
+  ],
+  [
+   "4e",
+   1
+  ],
+  [
+   "3e",
+   1
+  ],
+  [
+   "zéro",
+   1
+  ],
+  [
+   "2023",
+   1
+  ],
+  [
+   "11",
+   1
+  ],
+  [
+   "2026",
+   1
+  ],
+  [
+   "finale",
+   1
+  ],
+  [
+   "marque",
+   1
+  ],
+  [
+   "seul",
+   1
+  ],
+  [
+   "gamin",
+   1
+  ],
+  [
+   "soulevé",
+   1
+  ],
+  [
+   "vraiment",
+   1
+  ],
+  [
+   "Abonne-toi",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "essai",
+  "essais",
+  "non",
+  "quatre",
+  "abandonner",
+  "Épisode",
+  "9",
+  "Londres",
+  "Ghana",
+  "Arsenal",
+  "Tottenham",
+  "Millwall",
+  "ratés",
+  "Crystal",
+  "Palace",
+  "8",
+  "semaines",
+  "15",
+  "recalé",
+  "pleure",
+  "voiture",
+  "père",
+  "arrête",
+  "football",
+  "1",
+  "an",
+  "ballon",
+  "page",
+  "MAIS",
+  "AN",
+  "PLUS",
+  "TARD",
+  "REMET",
+  "CRAMPONS",
+  "16",
+  "académie",
+  "lycée",
+  "17",
+  "Bristol",
+  "signé",
+  "prêts",
+  "6e",
+  "4e",
+  "3e",
+  "division",
+  "zéro",
+  "but",
+  "lâche",
+  "2023",
+  "Bournemouth",
+  "11",
+  "buts",
+  "saison",
+  "2026",
+  "Manchester",
+  "City",
+  "finale",
+  "Coupe",
+  "d'Angleterre",
+  "marque",
+  "seul",
+  "gamin",
+  "soulevé",
+  "vraiment",
+  "Abonne-toi",
+  "demain",
+  "21",
+  "meilleur",
+  "buteur",
+  "pays",
+  "commentaire",
+  "persévérance",
+  "combien",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TA PERSÉVÉRANCE"
+  ],
+  "highlight": "EST À COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "version": 1
+}

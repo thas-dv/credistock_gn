@@ -6,7 +6,7 @@ D=${1:?date AAAAMMJJ}
 cd "$(dirname "$0")"
 python3 build_timing.py story.json words.json
 python3 audio.py mix.wav
-R=$(python3 -c "import json;print({'doc':'render_doc.py','stade':'render_stade.py','ecrivain':'render_ecrivain.py','route':'render_route.py','cite':'render_cite.py','gare':'render_gare.py','vestiaire':'render_vestiaire.py','village':'render_village.py','port':'render_port.py','pluie':'render_pluie.py','rue':'render_rue.py','phare':'render_phare.py','ligne':'render_ligne.py','bd':'render_bd.py','score':'render_score.py','valise':'render_valise.py','banc':'render_banc.py','brassard':'render_brassard.py','3d':'render_3d.py','neige':'render_fable.py','cage':'render_cage.py'}.get(json.load(open('timing_voix.json')).get('style'),'render.py'))")
+R=$(python3 -c "import json;print({'doc':'render_doc.py','stade':'render_stade.py','ecrivain':'render_ecrivain.py','route':'render_route.py','cite':'render_cite.py','gare':'render_gare.py','vestiaire':'render_vestiaire.py','village':'render_village.py','port':'render_port.py','pluie':'render_pluie.py','rue':'render_rue.py','phare':'render_phare.py','ligne':'render_ligne.py','bd':'render_bd.py','score':'render_score.py','valise':'render_valise.py','banc':'render_banc.py','brassard':'render_brassard.py','3d':'render_3d.py','neige':'render_fable.py','cage':'render_cage.py','essai':'render_essai.py'}.get(json.load(open('timing_voix.json')).get('style'),'render.py'))")
 python3 $R timing_voix.json video_brut.mp4 > render.log 2>&1
 mkdir -p sortie
 ffmpeg -v error -y -i video_brut.mp4 -i mix.wav -map 0:v -map 1:a -c:v libx264 -preset slow -b:v 4.5M -maxrate 6M -bufsize 9M \
