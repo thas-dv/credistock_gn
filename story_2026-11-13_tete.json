@@ -1,0 +1,546 @@
+{
+ "date": "2026-11-13",
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 10 » — « Pas le niveau ? » : l'histoire vraie d'Olivier Giroud, de la 3e division au sommet (village au pied des Alpes près de Grenoble ; centre de formation de Grenoble à 13 ans ; son entraîneur le juge pas au niveau de l'élite ; prêté à Istres en 3e division à 21 ans : 14 buts ; Tours en 2e division : 21 buts, meilleur buteur ; Montpellier à 23 ans, champion de France + meilleur buteur 2012 ; Arsenal ; champion du monde 2018 ; meilleur buteur de l'histoire de l'équipe de France en décembre 2022, record gardé plus de 3 ans) — NOUVEAU style « tete » (moteur 3D : petit stade du Sud au bord d'un étang, pins parasols, mistral, tribune vide qui se remplit et tourne la tête vers lui au cri, JEU DE TÊTE, village de montagne, mur de 57 ballons) ; tournant crié « LUI ? IL VA MARQUER JUSQU'À CE QU'ON LE REGARDE ! » ; teasing ép. 11 : le joueur reparti sans contrat après un essai dans un grand club anglais, devenu 4 fois meilleur joueur d'Afrique (Yaya Touré, à re-vérifier)",
+ "style": "tete",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 10",
+ "voice_id": "V8kvppYJoYqSL61Tr8Dn",
+ "voice_prompt": "[chuckles] Pas le niveau ? On t'a dit que tu ne jouerais jamais en haut ? Lui, à vingt et un ans, il jouait encore en troisième division. Ils ont failli abandonner. Épisode dix.\n\nPromis hier : l'histoire vraie d'Olivier Giroud. Il grandit dans un village au pied des Alpes, près de Grenoble.\n\nÀ treize ans, il entre au centre de formation de Grenoble. Mais son entraîneur juge qu'il n'a pas le niveau pour l'élite.\n\nAlors on l'envoie en prêt à Istres, en troisième division. Vingt et un ans. Loin des grands stades.\n\nN'importe qui se serait dit : c'est trop tard pour moi. [shouting] LUI, IL VA MARQUER JUSQU'À CE QU'ON LE REGARDE !\n\nQuatorze buts à Istres. Puis Tours, en deuxième division : vingt et un buts, meilleur buteur du championnat.\n\nÀ vingt-trois ans, Montpellier. Deux ans plus tard : champion de France et meilleur buteur.\n\nPuis Arsenal. Deux mille dix-huit : champion du monde.\n\nEt en décembre deux mille vingt-deux, il devient le meilleur buteur de l'histoire de l'équipe de France. Un record qu'il a gardé plus de trois ans.\n\nLe joueur qui n'avait pas le niveau… est entré dans l'histoire.\n\nEt toi… tu vas laisser quelqu'un d'autre décider de ton niveau ?\n\nAbonne-toi : demain, l'histoire du joueur reparti sans contrat après un essai dans un grand club anglais… et qui est devenu quatre fois meilleur joueur d'Afrique.\n\n[intense] Réponds-moi en commentaire : sur dix, ton niveau est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Pas le niveau ? À 21 ans, il jouait encore en 3e division… puis champion du monde et meilleur buteur de l'histoire de son pays pendant plus de 3 ans. ⚽🔥 Réussir au football tard : l'histoire vraie d'un footballeur, de la 3e division au sommet — ILS ONT FAILLI ABANDONNER, épisode 10. Sur 10, ton niveau est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #confianceensoi #mentalite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, personne ne décide de mon niveau à ma place 💪 Et toi, ton chiffre ? 👇 Tu joues en quelle division ? (Demain, épisode 11 : reparti sans contrat après un essai en Angleterre… 4 fois meilleur joueur d'Afrique.)",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Pas",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "Promis",
+    1
+   ]
+  },
+  {
+   "type": "village",
+   "at": [
+    "grandit",
+    1
+   ]
+  },
+  {
+   "type": "formation",
+   "at": [
+    "13",
+    1
+   ]
+  },
+  {
+   "type": "pret",
+   "at": [
+    "Alors",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "N'importe",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "LUI",
+    2
+   ]
+  },
+  {
+   "type": "buts",
+   "at": [
+    "14",
+    1
+   ]
+  },
+  {
+   "type": "montpellier",
+   "at": [
+    "23",
+    1
+   ]
+  },
+  {
+   "type": "monde",
+   "at": [
+    "Puis",
+    2
+   ]
+  },
+  {
+   "type": "record",
+   "at": [
+    "décembre",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "joueur",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "niveau",
+   1
+  ],
+  "build_start": [
+   "stades",
+   1
+  ],
+  "build_end": [
+   "moi",
+   1
+  ],
+  "boom": [
+   "LUI",
+   2
+  ],
+  "gate1": [
+   "Tours",
+   1
+  ],
+  "gate2": [
+   "Montpellier",
+   1
+  ],
+  "sunrise": [
+   "entré",
+   1
+  ],
+  "arms_up": [
+   "laisser",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "d21": [
+   "21",
+   1
+  ],
+  "d3": [
+   "troisième",
+   1
+  ],
+  "village": [
+   "village",
+   1
+  ],
+  "alpes": [
+   "Alpes",
+   1
+  ],
+  "a13": [
+   "13",
+   1
+  ],
+  "formation": [
+   "formation",
+   1
+  ],
+  "entraineur": [
+   "entraîneur",
+   1
+  ],
+  "niveau2": [
+   "niveau",
+   2
+  ],
+  "pret": [
+   "prêt",
+   1
+  ],
+  "troisieme2": [
+   "troisième",
+   2
+  ],
+  "a21b": [
+   "21",
+   2
+  ],
+  "loin": [
+   "Loin",
+   1
+  ],
+  "nimporte": [
+   "N'importe",
+   1
+  ],
+  "tard": [
+   "tard",
+   1
+  ],
+  "marquer": [
+   "MARQUER",
+   1
+  ],
+  "regarde": [
+   "REGARDE",
+   1
+  ],
+  "b14": [
+   "14",
+   1
+  ],
+  "tours": [
+   "Tours",
+   1
+  ],
+  "b21": [
+   "21",
+   3
+  ],
+  "meilleur1": [
+   "meilleur",
+   1
+  ],
+  "a23": [
+   "23",
+   1
+  ],
+  "plustard": [
+   "plus",
+   1
+  ],
+  "champion": [
+   "champion",
+   1
+  ],
+  "meilleur2": [
+   "meilleur",
+   2
+  ],
+  "arsenal": [
+   "Arsenal",
+   1
+  ],
+  "y2018": [
+   "2018",
+   1
+  ],
+  "monde": [
+   "monde",
+   1
+  ],
+  "decembre": [
+   "décembre",
+   1
+  ],
+  "meilleur3": [
+   "meilleur",
+   3
+  ],
+  "record": [
+   "record",
+   1
+  ],
+  "trois": [
+   "3",
+   1
+  ],
+  "pasniv": [
+   "niveau",
+   3
+  ],
+  "entre": [
+   "entré",
+   1
+  ],
+  "laisser": [
+   "laisser",
+   1
+  ],
+  "tonniv": [
+   "niveau",
+   4
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "afrique": [
+   "d'Afrique",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "sur",
+   1
+  ],
+  [
+   "combien",
+   1
+  ],
+  [
+   "Écris",
+   1
+  ]
+ ],
+ "punches": [
+  [
+   "niveau",
+   1
+  ],
+  [
+   "21",
+   1
+  ],
+  [
+   "troisième",
+   1
+  ],
+  [
+   "Épisode",
+   1
+  ],
+  [
+   "Alpes",
+   1
+  ],
+  [
+   "13",
+   1
+  ],
+  [
+   "formation",
+   1
+  ],
+  [
+   "niveau",
+   2
+  ],
+  [
+   "prêt",
+   1
+  ],
+  [
+   "21",
+   2
+  ],
+  [
+   "tard",
+   1
+  ],
+  [
+   "MARQUER",
+   1
+  ],
+  [
+   "REGARDE",
+   1
+  ],
+  [
+   "14",
+   1
+  ],
+  [
+   "Tours",
+   1
+  ],
+  [
+   "21",
+   3
+  ],
+  [
+   "meilleur",
+   1
+  ],
+  [
+   "23",
+   1
+  ],
+  [
+   "champion",
+   1
+  ],
+  [
+   "meilleur",
+   2
+  ],
+  [
+   "Arsenal",
+   1
+  ],
+  [
+   "2018",
+   1
+  ],
+  [
+   "décembre",
+   1
+  ],
+  [
+   "meilleur",
+   3
+  ],
+  [
+   "record",
+   1
+  ],
+  [
+   "entré",
+   1
+  ],
+  [
+   "laisser",
+   1
+  ],
+  [
+   "Abonne-toi",
+   1
+  ],
+  [
+   "d'Afrique",
+   1
+  ],
+  [
+   "commentaire",
+   1
+  ],
+  [
+   "Mindset",
+   1
+  ]
+ ],
+ "keywords": [
+  "niveau",
+  "21",
+  "troisième",
+  "division",
+  "abandonner",
+  "Épisode",
+  "10",
+  "Alpes",
+  "13",
+  "centre",
+  "formation",
+  "l'élite",
+  "prêt",
+  "stades",
+  "tard",
+  "LUI",
+  "IL",
+  "VA",
+  "MARQUER",
+  "JUSQU'À",
+  "CE",
+  "QU'ON",
+  "LE",
+  "REGARDE",
+  "14",
+  "buts",
+  "deuxième",
+  "meilleur",
+  "buteur",
+  "championnat",
+  "23",
+  "champion",
+  "France",
+  "monde",
+  "2018",
+  "décembre",
+  "2022",
+  "l'histoire",
+  "record",
+  "3",
+  "ans",
+  "entré",
+  "laisser",
+  "décider",
+  "Abonne-toi",
+  "demain",
+  "contrat",
+  "essai",
+  "4",
+  "fois",
+  "d'Afrique",
+  "commentaire",
+  "combien",
+  "chiffre"
+ ],
+ "question": {
+  "lines": [
+   "SUR 10, TON NIVEAU"
+  ],
+  "highlight": "EST À COMBIEN ?",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "version": 1,
+ "voice_note": "Voix de secours : Cartesia sonic-3.5 « Etienne » via Speko (ElevenLabs : 52 crédits ; Speko exige une recharge pour ElevenLabs) — cutmap ×1,03"
+}
