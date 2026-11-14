@@ -237,3 +237,8 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - Animation (pas de simples images fixes, demande utilisateur) : détourage des personnages par clé de couleur sur le fond bleu nuit -> personnages qui bougent
   SUR les décors (entrée, course, saut, tremblement, rebond), parallaxe décor/personnage, mouvements de caméra (travelling, zoom, orbite simulée), particules
   (sable, poussière, lumière), traits de vitesse, flash au cri, ralenti sur les buts, transitions façon manga (cases, volets). « Histoire imaginaire » à l'écran et en légende.
+- 14/11 : film/ep1/ = 3 décors + 14 personnages Gemini (doublons retirés ; manquent la vue du quartier, la chambre et la ruelle), détourage rembg « isnet-anime »
+  (pip install rembg onnxruntime) -> film/ep1/cut/*.png ; render_film.py (19 plans calés sur les mots : titre, Kalonia, matin, course vers la caméra, les grands
+  qui rient, TROP PETIT, entraînement seul aller-retour, tournoi + recruteur qui marche, Zed, banc, Coach Baba + chrono, cri, BUT !, LUCARNE !, le recruteur pointe,
+  le petit, abonne-toi, question, logo). Bande son : audio.py avec un timing_voix.json adapté (coach = « explode » pour la montée). Rendu ≈ 6 min.
+  Voix PROVISOIRE Soniox « Adrian » : l'utilisateur veut SID pour tout le film -> dès la recharge Speko (5 $), régénérer la voix Sid, retranscrire, refaire words.json et relancer.
