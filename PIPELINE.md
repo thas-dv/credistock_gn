@@ -204,3 +204,20 @@ programmée à 20h30 le LENDEMAIN du dernier Reel déjà programmé (getSchedule
 - Les formats SANS PERSONNAGE (ligne 05/11, bd 06/11, score 07/11) ont fait ×3 moins de vues (≈ 270 / 264 / 106) que le plancher (~800–920). NE PLUS LES UTILISER.
 - Toujours : décor de vie réel illustré + personnage « athlète » avec une animation NOUVELLE à chaque fois (pas de jonglage : valise, marche, escalier, porte, objets du quotidien…).
 - Accroche = jugement universel dès 0 s (avant/avec le bandeau de série). Légende : commencer par la phrase choc, la série vient après.
+
+## NOUVEAU VISUEL — décision utilisateur du 14/11/2026 : format HYBRIDE
+Retour : « presque toutes nos vidéos portent cette animation-là » -> améliorer le visuel en continu.
+- HYBRIDE retenu : 5–6 images/clips IA par vidéo pour les MOMENTS FORTS (accroche 0–3 s, situation de départ, chute/doute, CRI, sommet, regard final),
+  générés GRATUITEMENT par l'utilisateur (Vidu, Dreamina/CapCut, Canva) et envoyés en pièce jointe ; Claude monte le reste avec le moteur amélioré.
+  (Depuis la session cloud : quota Canva gratuit épuisé après 2 images/jour et téléchargement des médias Canva bloqué -> l'utilisateur fournit les fichiers.)
+- Règles des images IA : personnage GÉNÉRIQUE (jamais la ressemblance du joueur réel), maillot sans numéro ni logo, aucun drapeau/écusson/marque/texte,
+  format vertical 9:16. Si les images sont RÉALISTES : cocher « Contenu généré par IA » (isAigc true / isAiGenerated true) — À CONFIRMER avec l'utilisateur à la 1re vidéo hybride.
+- Gabarit de prompt : « Cinematic digital painting, vertical 9:16: a young Black footballer (generic, not a real person), [couleur] jersey without number or logo, [ACTION + LIEU],
+  [LUMIÈRE : night floodlight / golden hour / rain], volumetric light, dramatic, film still, no text, no logos. »
+- Montage des images IA : mouvement de caméra (zoom lent, panoramique, parallaxe), coupe toutes les 1,5–2 s, flash/whoosh entre les plans.
+- MOTEUR AMÉLIORÉ (render_tete_k.py = prototype du 14/11, à généraliser à tous les styles) : sous-titres KARAOKÉ (1–3 mots, gros, centre-bas, mot actif en jaune + pop),
+  coupes rapides (plan large / plan serré qui alternent toutes les 1,8 s), étalonnage ciné (ombres sarcelle / hautes lumières orangées, contraste), flou de profondeur en plan serré,
+  fuite de lumière chaude, grain + vignette. À ajouter : effets sonores (whoosh aux coupes, impact au cri, montée avant le cri). Attention : le zoom serré coupe le bandeau de série (le garder hors zoom).
+- VOIX (14/11) : Sid indisponible (connecteur ElevenLabs à reconnecter + Speko exige une recharge de 5 $). Voix gratuite choisie par l'utilisateur : Soniox « Adrian »
+  (Speko audio_synthesize voice "Adrian", model "tts-rt-v1", allowedProviders tts ["soniox"]) : grave, posée, pauses longues -> cutmap.py (pauses > 0,4 s -> 0,3 s) puis atempo ≈ 1,18.
+  Écrire « Mindset vingt-quatre » en toutes lettres (sinon mal prononcé). Pas de balises [shouting] : le cri passe par le texte et l'image.
