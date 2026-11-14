@@ -221,3 +221,12 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - VOIX (14/11) : Sid indisponible (connecteur ElevenLabs à reconnecter + Speko exige une recharge de 5 $). Voix gratuite choisie par l'utilisateur : Soniox « Adrian »
   (Speko audio_synthesize voice "Adrian", model "tts-rt-v1", allowedProviders tts ["soniox"]) : grave, posée, pauses longues -> cutmap.py (pauses > 0,4 s -> 0,3 s) puis atempo ≈ 1,18.
   Écrire « Mindset vingt-quatre » en toutes lettres (sinon mal prononcé). Pas de balises [shouting] : le cri passe par le texte et l'image.
+
+## STYLE « MANGA CARTES » (14/11/2026) — nouveau style principal, d'après la vidéo d'exemple de l'utilisateur
+- Bibliothèque de poses du héros (générée par l'utilisateur sur Gemini, prompt unique « 12 images ») : manga/*.jpg
+  (trophee, bras, courir, sac, visage, banc, pointe, genoux, frappe, tete, assis, croise) — manga au trait, gris, bandeau ORANGE, fond bleu nuit, 1152x2048.
+  Héros générique (jamais la ressemblance du vrai joueur) ; dessins stylisés -> « Contenu IA » non coché.
+- render_manga.py timing_voix.json sortie.mp4 : fond bleu nuit, cartes arrondies à bord lumineux qui rebondissent, pastilles, tampon rouge, loupe ronde,
+  duel « VS » avec compteurs, plans plein écran pour l'accroche / le doute / le cri / le visage / « ET TOI ? », jauge ronde x/10 pour la question, karaoké.
+  Les scènes s_* sont propres à l'histoire (marks) : les réécrire pour chaque épisode en réutilisant les poses. Rendu ≈ 3 min. Puis mux avec mix.wav.
+- Pour varier : demander de nouvelles poses à l'utilisateur (même prompt, autres actions : gardien qui plonge, blessé au sol, valise, bus, signature de contrat…).
