@@ -230,3 +230,10 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
   duel « VS » avec compteurs, plans plein écran pour l'accroche / le doute / le cri / le visage / « ET TOI ? », jauge ronde x/10 pour la question, karaoké.
   Les scènes s_* sont propres à l'histoire (marks) : les réécrire pour chaque épisode en réutilisant les poses. Rendu ≈ 3 min. Puis mux avec mix.wav.
 - Pour varier : demander de nouvelles poses à l'utilisateur (même prompt, autres actions : gardien qui plonge, blessé au sol, valise, bus, signature de contrat…).
+
+## FILM « KAÏ » — Épisode 1 en style manga animé (décision utilisateur du 14/11/2026)
+- Même style que les 12 poses manga (Kaï = notre héros au bandeau orange, 14 ans). Histoire : kit Claude Docs https://claude.ai/artifact/Gr7uaU6QDS5booXaXDa7zL (10 plans, voix brouillon).
+- Images : prompt unique film/prompt_gemini_film_kai_ep1.txt (20 images Gemini) = 6 DÉCORS sans personnage + 14 PERSONNAGES sur fond bleu nuit uni #181C28.
+- Animation (pas de simples images fixes, demande utilisateur) : détourage des personnages par clé de couleur sur le fond bleu nuit -> personnages qui bougent
+  SUR les décors (entrée, course, saut, tremblement, rebond), parallaxe décor/personnage, mouvements de caméra (travelling, zoom, orbite simulée), particules
+  (sable, poussière, lumière), traits de vitesse, flash au cri, ralenti sur les buts, transitions façon manga (cases, volets). « Histoire imaginaire » à l'écran et en légende.

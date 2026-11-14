@@ -1,0 +1,22 @@
+Create 12 SEPARATE images, one after the other (one image per pose, not a grid, not a collage).
+
+RULES FOR ALL 12 IMAGES (exactly the same character and style in every image):
+- Format: vertical 9:16 portrait (1080x1920 or larger).
+- Style: manga line-art illustration, clean black ink outlines, monochrome grey shading on off-white. The ONLY color accent is a bright ORANGE headband.
+- Character (always the same person): a young Black African footballer, athletic, short black twist hair, orange headband, white jersey with thin orange trim (no number, no logo), dark navy shorts, black football boots.
+- Background: plain dark navy (#181C28), nothing else.
+- Full body, centered (except image 11).
+- NO text, NO logo, NO number, NO flag, NO watermark.
+
+Image 1: sitting alone on a football, head down, sad.
+Image 2: standing, arms crossed, determined look.
+Image 3: running fast, side view, a football at his feet.
+Image 4: jumping high in the air, heading a football.
+Image 5: shooting a powerful kick, dynamic action.
+Image 6: kneeling on the grass, fists clenched, shouting.
+Image 7: both arms raised, celebrating, shouting with joy.
+Image 8: walking away with a sports bag on his shoulder, seen from behind.
+Image 9: sitting on a bench, waiting, elbows on his knees.
+Image 10: holding a plain golden trophy cup above his head (generic cup, no logo).
+Image 11: close-up portrait of his face, intense eyes, sweat (not full body).
+Image 12: pointing at the viewer, serious face.
