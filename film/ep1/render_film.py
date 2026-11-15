@@ -32,6 +32,7 @@ def T(word, n=1):
     raise KeyError(word)
 
 BG = {n: Image.open(f"bg_{n}.jpg").convert("RGB") for n in ("aube", "soir", "tournoi")}
+BG["aube"] = BG["aube"].crop((6, 95, 1146, 2042)); BG["soir"] = BG["soir"].crop((50, 55, 1102, 2010))  # bords blancs des images Gemini
 FULL = {n: Image.open(f"{n}.jpg").convert("RGB") for n in ("k_banc", "k_visage", "k_matelas")}
 CUT = {}
 for n in "k_matelas k_court_face k_poings z_pointe k_dribble r_pointe k_volee k_tir k_elan r_marche b_coach z_fete".split():
@@ -266,13 +267,21 @@ def p_lepetit(img, tg, k):
 
 def p_abonne(img, tg, k):
     img.paste(cover(BG["aube"], 1.2, 0.5, 0.6)); shade(img, 150)
-    put(img, "k_poings", W / 2, 1900, 1100, glow=(255, 140, 40))
+    put(img, "k_poings", W / 2, 1920, 1020, glow=(255, 140, 40))
     sc = back(k / 0.35) + 0.03 * math.sin(tg * 8)
     L = Image.new("RGBA", (720, 190), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     d.rounded_rectangle((0, 0, 719, 189), 50, fill=RED + (255,)); d.text((360, 95), "+  ABONNE-TOI", font=F(84), fill=WHITE, anchor="mm")
     L = L.resize((max(4, int(720 * sc)), max(4, int(190 * sc)))); img.alpha_composite(L, (int(W / 2 - L.width / 2), int(300 - L.height / 2)))
     text(img, "ÉPISODE 2 · DIMANCHE PROCHAIN", W / 2, 500, 58, OR, k - (T("suite") - SC["abonne"]), stroke=6)
     text(img, "L'ESSAI À LA CAPITALE", W / 2, 600, 64, WHITE, k - (T("lessai") - SC["abonne"]), stroke=6)
+    kd = k - (T("demain") - SC["abonne"])
+    if kd > 0:
+        L2 = Image.new("RGBA", (900, 150), (0, 0, 0, 0)); d2 = ImageDraw.Draw(L2)
+        d2.rounded_rectangle((0, 0, 899, 149), 34, fill=(10, 12, 20, 220), outline=OR + (255,), width=6)
+        d2.text((450, 48), "DEMAIN", font=F(46), fill=OR + (255,), anchor="mm")
+        d2.text((450, 106), "ILS ONT FAILLI ABANDONNER · ÉP. 11", font=F(44), fill=WHITE + (255,), anchor="mm")
+        a2 = ease(kd / 0.25); L2.putalpha(Image.eval(L2.getchannel("A"), lambda v: int(v * a2)))
+        img.alpha_composite(L2, (int(W / 2 - 450), 665))
 
 def ring(img, cx, cy, r, u):
     d = ImageDraw.Draw(img); d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=(60, 66, 90), width=22)

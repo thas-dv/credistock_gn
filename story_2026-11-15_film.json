@@ -1,0 +1,15 @@
+{
+ "style": "film",
+ "scenes": [
+  {"type": "titre"}, {"type": "kalonia", "at": "À"}, {"type": "matin", "at": ["un", 2]}, {"type": "grands", "at": ["sur", 1]},
+  {"type": "soir", "at": ["alors", 1]}, {"type": "tournoi", "at": ["le", 5]}, {"type": "coach", "at": ["à", 2]},
+  {"type": "buts", "at": "premier"}, {"type": "recruteur", "at": ["recruteur", 2]}, {"type": "question", "at": "répondsmoi"}, {"type": "logo", "at": "mindset"}
+ ],
+ "roles": {"boom": ["alors", 2], "build_start": "tournoi", "build_end": "choisi", "gate1": "but", "gate2": "lucarne",
+           "sunrise": ["recruteur", 2], "arms_up": "pointe", "q_end": "valais", "brand": "mindset"},
+ "words3d": [["TROP PETIT", ["trop", 1]], ["SEUL", ["seul", 1]], ["BANC", ["banc", 1]]],
+ "punches": ["vasy", "pointe", "abonnetoi", "écris"],
+ "q_pulses": [],
+ "keywords": [],
+ "question": {"lines": ["SUR 10, TA CONFIANCE", "QUAND ON TE DIT « TROP PETIT » ?"], "highlight": "TROP PETIT", "cta": "ÉCRIS TON CHIFFRE"}
+}
