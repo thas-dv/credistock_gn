@@ -1,0 +1,10 @@
+{"style": "film",
+ "scenes": [{"type": "cold"}, {"type": "titre", "at": "kaï"}, {"type": "match", "at": "premier"}, {"type": "aube", "at": "lendemain"},
+  {"type": "train", "at": "dribble"}, {"type": "tournoi", "at": "tournoi"}, {"type": "coach2", "at": "cinq"},
+  {"type": "buts", "at": ["premier", 2]}, {"type": "recruteur", "at": ["recruteur", 2]}, {"type": "question", "at": ["sur", 3]}, {"type": "logo", "at": "mindset"}],
+ "roles": {"boom": "montreleur", "build_start": "tournoi", "build_end": "choisi", "gate1": "but", "gate2": "lucarne",
+           "sunrise": ["recruteur", 2], "arms_up": "pointe", "q_end": "chiffre", "brand": "mindset"},
+ "words3d": [["TOMBE", ["tombe", 1]], ["TOMBE", ["tombe", 2]], ["RATE", ["rate", 1]]],
+ "punches": ["relève", "tire", "recommence", "vitesse", "sprints", "passes", "maintenant", "dribble"],
+ "q_pulses": [], "keywords": [],
+ "question": {"lines": ["SUR 10, TA CONFIANCE", "QUAND ON TE DIT « TROP PETIT » ?"], "highlight": "TROP PETIT", "cta": "ÉCRIS TON CHIFFRE"}}
