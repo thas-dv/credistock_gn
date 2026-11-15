@@ -242,3 +242,13 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
   qui rient, TROP PETIT, entraînement seul aller-retour, tournoi + recruteur qui marche, Zed, banc, Coach Baba + chrono, cri, BUT !, LUCARNE !, le recruteur pointe,
   le petit, abonne-toi, question, logo). Bande son : audio.py avec un timing_voix.json adapté (coach = « explode » pour la montée). Rendu ≈ 6 min.
   Voix PROVISOIRE Soniox « Adrian » : l'utilisateur veut SID pour tout le film -> dès la recharge Speko (5 $), régénérer la voix Sid, retranscrire, refaire words.json et relancer.
+
+## Retour utilisateur du 15/11/2026 sur KAÏ ép. 1 (v1 Soniox NON publiée)
+- Animation jugée BONNE, mais l'histoire va TROP VITE : on ne voit pas COMMENT il devient fort. Refaire l'épisode avec un vrai ARC D'ENTRAÎNEMENT
+  (il s'entraîne, échoue, recommence, progresse… plusieurs séquences) puis les entraînements PAIENT à la fin.
+- Modèle narratif voulu (comme les animes de sport : héros presque nul au départ, tout le monde se moque, il progresse au fil des épisodes, passe à l'étape suivante) :
+  ouverture très forte dès la 1re seconde (« cold open »), puis progression lente. S'inspirer de la STRUCTURE seulement (jamais de personnages, designs, noms, musiques ou plans copiés d'une œuvre existante).
+- NE PLUS afficher « Histoire imaginaire » à l'écran : présenter KAÏ comme un vrai FILM D'ANIMATION produit par Mindset 24. Honnêteté conservée : ne jamais dire « histoire vraie » pour Kaï ; légende du type « Film d'animation Mindset 24 ».
+- VOIX : l'utilisateur n'a pas aimé la voix Soniox « Adrian ». PRIORITÉ : notre propre générateur de voix (voix open source utilisables sans limite).
+  Prototype du 15/11 : Piper (piper-tts, open source) dans la session cloud, voix françaises « tom » (licence AGPLv3) et « upmc/pierre » (CC BY-SA 4.0), modèles téléchargés depuis les releases GitHub de k2-fsa/sherpa-onnx (tts-models) ; HuggingFace est BLOQUÉ depuis la session cloud.
+  Clonage de voix : uniquement avec une voix dont la licence l'autorise ou une personne consentante (jamais la voix Sid d'ElevenLabs ni une voix de comédien sans accord).
