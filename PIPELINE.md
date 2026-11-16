@@ -252,3 +252,8 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - VOIX : l'utilisateur n'a pas aimé la voix Soniox « Adrian ». PRIORITÉ : notre propre générateur de voix (voix open source utilisables sans limite).
   Prototype du 15/11 : Piper (piper-tts, open source) dans la session cloud, voix françaises « tom » (licence AGPLv3) et « upmc/pierre » (CC BY-SA 4.0), modèles téléchargés depuis les releases GitHub de k2-fsa/sherpa-onnx (tts-models) ; HuggingFace est BLOQUÉ depuis la session cloud.
   Clonage de voix : uniquement avec une voix dont la licence l'autorise ou une personne consentante (jamais la voix Sid d'ElevenLabs ni une voix de comédien sans accord).
+
+## LIMITE METRICOOL (forfait GRATUIT) — 16/11/2026
+- 20 publications par MOIS maximum (mail Metricool « limite mensuelle » : 16 le 13/11, 19 le 15/11). Au-delà, plus rien ne se publie avant le mois suivant.
+- Décision utilisateur du 16/11 : PRIORITÉ TikTok. Le TikTok du 16/11 passe à 20h30, le Reel Mendy décalé à 21h30 (sans garantie). Du 17/11 au 30/11 : NE PLUS programmer via Metricool ; envoyer la vidéo + la légende + le 1er commentaire à l'utilisateur pour qu'il publie lui-même dans l'app TikTok (et Instagram), sauf s'il passe à un forfait payant. Les Reels déjà programmés (17/11 -> 25/11) risquent d'être bloqués : vérifier leur statut et prévenir l'utilisateur. Reprise normale le 01/12.
+- NOUVEAU PERSONNAGE (16/11) : l'utilisateur ne veut plus du héros manga au bandeau orange (« déjà venu pour notre fond », c'est Kaï). Utiliser le personnage cartoon perso2/ (perso_nadi.py) ou en créer un autre ; render_manga2.py lit perso2/.
