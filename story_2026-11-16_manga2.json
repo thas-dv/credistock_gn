@@ -1,0 +1,346 @@
+{
+ "date": "2026-11-16",
+ "style": "manga2",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 11",
+ "episode": 11,
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 11 » — « Trop frêle ? » : l'histoire vraie d'Iliman Ndiaye, des amateurs anglais à la Coupe du monde",
+ "voice_id": "c6ccfe32-6bee-484a-a8a2-7a51bee93f99 (Cartesia Etienne, secours)",
+ "voice_prompt": "[chuckles] Trop frêle ? Pas de club ? Pas de place pour toi ? Lui, à seize ans, il jouait chez les amateurs. Ils ont failli abandonner. Épisode onze.\n\nL'histoire vraie d'Iliman Ndiaye. Né à Rouen, père sénégalais. Enfant, il passe par Marseille, puis par une académie à Dakar.\n\nAdolescent, il suit son père en Angleterre. Il arrive sans club. Un petit club de cinquième division l'accepte, un mois après la fin des recrutements.\n\nÀ seize ans, il est tout maigre. On se demande s'il tiendra physiquement. Essais à Southampton et à Chelsea : recalé.\n\nÀ dix-neuf ans, Sheffield le prend après six semaines d'essai. Mais l'entraîneur ne le fait pas jouer. On le prête… en septième division.\n\nIl attend sa chance. Elle ne vient pas. [shouting] PERSONNE NE LA LUI DONNE ? ALORS IL VA LA PRENDRE !\n\nÀ vingt et un ans, il débute enfin. Et deux saisons plus tard : la Coupe du monde avec le Sénégal, quatorze buts, le but de la victoire contre Tottenham en coupe, la montée dans l'élite anglaise. Élu meilleur joueur du club par ses coéquipiers.\n\nPuis Marseille, le club de son enfance, le recrute. Puis Everton. Et en juin deux mille vingt-six, il marque en Coupe du monde.\n\nLe gamin trop frêle des amateurs… joue maintenant contre les plus grands.\n\nEt toi… tu attends encore qu'on te donne ta chance ?\n\nAbonne-toi : demain, l'épisode douze. Une autre histoire vraie que personne ne te raconte.\n\n[intense] Réponds-moi en commentaire : sur dix, ton envie de réussir est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Trop frêle ? À 16 ans, il jouait chez les amateurs en Angleterre, recalé à ses essais, prêté en 7e division… puis la Coupe du monde avec le Sénégal. ⚽🔥 De l'amateur au pro : l'histoire vraie d'un footballeur recalé — ILS ONT FAILLI ABANDONNER, épisode 11. Sur 10, ton envie de réussir est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #confianceensoi #ambition #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, personne ne me donnera ma chance, je vais la prendre 💪 Et toi, ton chiffre ? 👇 Tu joues en quelle division ?",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Trop",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "angleterre",
+   "at": [
+    "Adolescent",
+    1
+   ]
+  },
+  {
+   "type": "maigre",
+   "at": [
+    "16",
+    2
+   ]
+  },
+  {
+   "type": "sheffield",
+   "at": [
+    "19",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "attend",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "PERSONNE",
+    1
+   ]
+  },
+  {
+   "type": "debut",
+   "at": [
+    "21",
+    1
+   ]
+  },
+  {
+   "type": "sommet",
+   "at": [
+    "Élu",
+    1
+   ]
+  },
+  {
+   "type": "marseille",
+   "at": [
+    "Puis",
+    2
+   ]
+  },
+  {
+   "type": "mondial",
+   "at": [
+    "juin",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "gamin",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    2
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "frêle",
+   1
+  ],
+  "build_start": [
+   "attend",
+   1
+  ],
+  "build_end": [
+   "pas",
+   4
+  ],
+  "boom": [
+   "PERSONNE",
+   1
+  ],
+  "gate1": [
+   "Coupe",
+   1
+  ],
+  "gate2": [
+   "Élu",
+   1
+  ],
+  "sunrise": [
+   "gamin",
+   1
+  ],
+  "arms_up": [
+   "attends",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "a16": [
+   "16",
+   1
+  ],
+  "amateurs": [
+   "amateurs",
+   1
+  ],
+  "rouen": [
+   "Rouen",
+   1
+  ],
+  "marseille1": [
+   "Marseille",
+   1
+  ],
+  "dakar": [
+   "Dakar",
+   1
+  ],
+  "angleterre": [
+   "Angleterre",
+   1
+  ],
+  "sansclub": [
+   "sans",
+   1
+  ],
+  "d5": [
+   "5e",
+   1
+  ],
+  "mois": [
+   "mois",
+   1
+  ],
+  "maigre": [
+   "maigre",
+   1
+  ],
+  "physique": [
+   "physiquement",
+   1
+  ],
+  "southampton": [
+   "Southampton",
+   1
+  ],
+  "chelsea": [
+   "Chelsea",
+   1
+  ],
+  "recale": [
+   "recalé",
+   1
+  ],
+  "sheffield": [
+   "Sheffield",
+   1
+  ],
+  "semaines": [
+   "semaines",
+   1
+  ],
+  "entraineur": [
+   "l'entraîneur",
+   1
+  ],
+  "prete": [
+   "prête",
+   1
+  ],
+  "d7": [
+   "7e",
+   1
+  ],
+  "vient": [
+   "vient",
+   1
+  ],
+  "prendre": [
+   "PRENDRE",
+   1
+  ],
+  "donne": [
+   "DONNE",
+   1
+  ],
+  "debute": [
+   "débute",
+   1
+  ],
+  "saisons": [
+   "saisons",
+   1
+  ],
+  "coupe": [
+   "Coupe",
+   1
+  ],
+  "b14": [
+   "14",
+   1
+  ],
+  "victoire": [
+   "victoire",
+   1
+  ],
+  "montee": [
+   "montée",
+   1
+  ],
+  "elu": [
+   "Élu",
+   1
+  ],
+  "marseille2": [
+   "Marseille",
+   2
+  ],
+  "everton": [
+   "Everton",
+   1
+  ],
+  "juin": [
+   "juin",
+   1
+  ],
+  "marque": [
+   "marque",
+   1
+  ],
+  "grands": [
+   "grands",
+   1
+  ],
+  "attends": [
+   "attends",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TON ENVIE DE RÉUSSIR",
+   "EST À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
