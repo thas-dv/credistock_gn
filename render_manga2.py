@@ -27,7 +27,7 @@ def M(name): return MK.get(name, K.get(name, 1e9))
 
 POSE = {}
 for n in "trophee bras courir sac visage banc pointe genoux frappe tete assis croise".split():
-    POSE[n] = Image.open(f"manga/{n}.jpg").convert("RGB")
+    POSE[n] = Image.open(f"perso2/{n}.jpg").convert("RGB")
 
 # fond : bleu nuit + léger dégradé + texture de papier fixe
 yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
