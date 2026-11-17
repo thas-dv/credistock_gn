@@ -1,0 +1,350 @@
+{
+ "date": "2026-11-17",
+ "style": "manga3",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 12",
+ "episode": 12,
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 12 » — « Encore chez les amateurs à 18 ans ? » : l'histoire vraie de Yoane Wissa, de la 5e division au premier but de la RD Congo en Coupe du monde",
+ "voice_id": "c6ccfe32-6bee-484a-a8a2-7a51bee93f99 (Cartesia Etienne, secours)",
+ "voice_prompt": "[chuckles] Encore chez les amateurs à dix-huit ans ? Tu crois que c'est trop tard pour toi ? Ils ont failli abandonner. Épisode douze.\n\nL'histoire vraie de Yoane Wissa. Né en région parisienne, parents congolais. À sept ans, il commence… gardien de but. Et jusqu'à quinze ans, il joue aussi au rugby.\n\nIl choisit le foot. Mais à dix-huit ans, il est en cinquième division, avec l'équipe réserve de Châteauroux. Chez les amateurs.\n\nIl monte en troisième division. Un club de l'élite le recrute… et le laisse sur le banc. Quelques bouts de match, puis on le prête.\n\nLaval, deuxième division : deux buts seulement. Il a vingt ans. Toujours loin des projecteurs. [shouting] ALORS IL VA FAIRE PARLER SES BUTS !\n\nAjaccio : dix buts. Lorient : champion de deuxième division, puis l'élite française.\n\nEn deux mille vingt et un, l'Angleterre. Dix buts dès sa première saison. Puis vingt buts en une saison. Le meilleur buteur de l'histoire de son club en première division anglaise.\n\nNewcastle paie environ cinquante millions de livres. Et en juin deux mille vingt-six, avec la RD Congo, il marque le tout premier but de l'histoire de son pays en Coupe du monde. Puis deux buts pour sa première victoire.\n\nLe gamin des amateurs… est entré dans l'histoire.\n\nEt toi… tu crois encore qu'il est trop tard ?\n\nAbonne-toi : demain, l'épisode treize. Le joueur qui jouait chez les amateurs à vingt et un ans… et qui est devenu une légende de son pays.\n\n[intense] Réponds-moi en commentaire : sur dix, ta rage de réussir est à combien ? Écris le chiffre.\n\n[serious] Mindset 24. Change ton mental. Change ta vie.",
+ "caption": "Encore chez les amateurs à 18 ans ? Lui jouait en 5e division, laissé sur le banc, prêté… puis il a marqué le tout premier but de la RD Congo en Coupe du monde. ⚽🔥 Réussir au football tard, de l'amateur au pro : l'histoire vraie d'un footballeur — ILS ONT FAILLI ABANDONNER, épisode 12. Sur 10, ta rage de réussir est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #ambition #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, il n'est jamais trop tard 💪 Et toi, ton chiffre ? 👇 Tu joues en quelle division ?",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Encore",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "amateurs",
+   "at": [
+    "Mais",
+    1
+   ]
+  },
+  {
+   "type": "banc",
+   "at": [
+    "Un",
+    1
+   ]
+  },
+  {
+   "type": "laval",
+   "at": [
+    "Laval",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "Toujours",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    1
+   ]
+  },
+  {
+   "type": "montee",
+   "at": [
+    "Ajaccio",
+    1
+   ]
+  },
+  {
+   "type": "angleterre",
+   "at": [
+    "2021",
+    1
+   ]
+  },
+  {
+   "type": "transfert",
+   "at": [
+    "Newcastle",
+    1
+   ]
+  },
+  {
+   "type": "mondial",
+   "at": [
+    "juin",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "gamin",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    2
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "amateurs",
+   1
+  ],
+  "build_start": [
+   "Toujours",
+   1
+  ],
+  "build_end": [
+   "projecteurs",
+   1
+  ],
+  "boom": [
+   "ALORS",
+   1
+  ],
+  "gate1": [
+   "Ajaccio",
+   1
+  ],
+  "gate2": [
+   "2021",
+   1
+  ],
+  "sunrise": [
+   "gamin",
+   1
+  ],
+  "arms_up": [
+   "encore",
+   2
+  ],
+  "q_line1": [
+   "sur",
+   2
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "a18": [
+   "18",
+   1
+  ],
+  "tard": [
+   "tard",
+   1
+  ],
+  "a7": [
+   "7",
+   1
+  ],
+  "gardien": [
+   "gardien",
+   1
+  ],
+  "a15": [
+   "15",
+   1
+  ],
+  "rugby": [
+   "rugby",
+   1
+  ],
+  "choisit": [
+   "choisit",
+   1
+  ],
+  "d5": [
+   "5e",
+   1
+  ],
+  "reserve": [
+   "réserve",
+   1
+  ],
+  "amateurs2": [
+   "amateurs",
+   2
+  ],
+  "d3": [
+   "3e",
+   1
+  ],
+  "elite1": [
+   "l'élite",
+   1
+  ],
+  "banc": [
+   "banc",
+   1
+  ],
+  "bouts": [
+   "bouts",
+   1
+  ],
+  "prete": [
+   "prête",
+   1
+  ],
+  "d2": [
+   "2e",
+   1
+  ],
+  "deux": [
+   "deux",
+   1
+  ],
+  "a20": [
+   "20",
+   1
+  ],
+  "parler": [
+   "PARLER",
+   1
+  ],
+  "buts_cri": [
+   "buts",
+   2
+  ],
+  "b10": [
+   "10",
+   1
+  ],
+  "champion": [
+   "champion",
+   1
+  ],
+  "elite2": [
+   "l'élite",
+   2
+  ],
+  "angl": [
+   "l'Angleterre",
+   1
+  ],
+  "b10b": [
+   "10",
+   2
+  ],
+  "b20": [
+   "20",
+   2
+  ],
+  "meilleur": [
+   "meilleur",
+   1
+  ],
+  "m50": [
+   "50",
+   1
+  ],
+  "livres": [
+   "livres",
+   1
+  ],
+  "juin": [
+   "juin",
+   1
+  ],
+  "rdc": [
+   "RD",
+   1
+  ],
+  "premier": [
+   "premier",
+   1
+  ],
+  "victoire": [
+   "victoire",
+   1
+  ],
+  "histoire_g": [
+   "l'histoire",
+   4
+  ],
+  "trop2": [
+   "trop",
+   2
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "legende": [
+   "légende",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TA RAGE DE RÉUSSIR",
+   "EST À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
