@@ -11,6 +11,7 @@ from PIL import Image, ImageDraw, ImageFilter
 SS = 2
 W, H = 1152, 2048
 OUT = "perso2"
+WSC = 1.0   # épaisseur des membres / du torse (1 = normal)
 LINE = (16, 18, 28); SKIN = (122, 78, 52); SKIN_D = (98, 60, 40); HAIR = (22, 20, 24); HAIR_F = (58, 54, 60)
 JER = (18, 178, 170); JER_D = (12, 128, 124); YEL = (255, 206, 40); SHO = (30, 32, 40); SOCK = (255, 206, 40); BOOT = (226, 52, 48)
 BGT = (10, 22, 52); BGB = (30, 46, 96)
@@ -117,7 +118,7 @@ def figure(P, hip, s, pose, expr="neutral", look=0.0, back=False, prop=None, swe
     sh = add(hip, 180 + t, 0.9 * s)
     shL = (sh[0] - perp[0] * 0.3 * s, sh[1] - perp[1] * 0.3 * s); shR = (sh[0] + perp[0] * 0.3 * s, sh[1] + perp[1] * 0.3 * s)
     hpL = (hip[0] - perp[0] * 0.16 * s, hip[1] - perp[1] * 0.16 * s); hpR = (hip[0] + perp[0] * 0.16 * s, hip[1] + perp[1] * 0.16 * s)
-    aw, lw = 0.2 * s, 0.27 * s
+    aw, lw = 0.2 * s * WSC, 0.27 * s * WSC
     def arm(root, ang, front):
         e = add(root, ang[0], 0.62 * s); h = add(e, ang[1], 0.58 * s)
         P.cap(root, e, aw, SKIN if front else SKIN_D); P.cap(e, h, aw * 0.9, SKIN if front else SKIN_D)
@@ -129,7 +130,7 @@ def figure(P, hip, s, pose, expr="neutral", look=0.0, back=False, prop=None, swe
         k = add(root, ang[0], 0.78 * s); f = add(k, ang[1], 0.76 * s)
         P.cap(root, k, lw, SKIN if front else SKIN_D); P.cap(k, f, lw * 0.85, SKIN if front else SKIN_D)
         P.cap(add(k, ang[1], 0.3 * s), f, lw * 0.98, SOCK if front else tuple(int(v * 0.8) for v in SOCK))
-        P.cap(root, add(root, ang[0], 0.32 * s), lw * 1.22, SHO if front else (22, 24, 30))   # jambe du short
+        P.cap(root, add(root, ang[0], 0.32 * s), lw * 1.22, SHO if front else tuple(int(v * 0.8) for v in SHO))   # jambe du short
         toe = add(f, ang[1] - 90 * foot, 0.3 * s)
         P.cap(f, toe, lw * 0.95, BOOT if front else tuple(int(v * 0.8) for v in BOOT), 9)
         return f, toe
@@ -138,8 +139,8 @@ def figure(P, hip, s, pose, expr="neutral", look=0.0, back=False, prop=None, swe
     hR = arm(shR, pose["ra"], back); fR = leg(hpR, pose["rl"], back, pose.get("fr", 1))
     if not back: hL0 = None
     # torse
-    A = (hip[0] + perp[0] * 0.28 * s, hip[1] + perp[1] * 0.28 * s); B = (hip[0] - perp[0] * 0.28 * s, hip[1] - perp[1] * 0.28 * s)
-    C = (shL[0] - perp[0] * 0.06 * s, shL[1] - perp[1] * 0.06 * s); D = (shR[0] + perp[0] * 0.06 * s, shR[1] + perp[1] * 0.06 * s)
+    A = (hip[0] + perp[0] * 0.28 * s * WSC, hip[1] + perp[1] * 0.28 * s * WSC); B = (hip[0] - perp[0] * 0.28 * s * WSC, hip[1] - perp[1] * 0.28 * s * WSC)
+    C = (shL[0] + perp[0] * 0.3 * s * (1 - WSC), shL[1] + perp[1] * 0.3 * s * (1 - WSC)); D = (shR[0] - perp[0] * 0.3 * s * (1 - WSC), shR[1] - perp[1] * 0.3 * s * (1 - WSC))
     P.cap(neck, add(neck, 180 + t, 0.25 * s), 0.18 * s, SKIN_D, 9)
     P.poly([A, B, C, D], JER, 10)
     # bande jaune latérale + col
@@ -149,7 +150,7 @@ def figure(P, hip, s, pose, expr="neutral", look=0.0, back=False, prop=None, swe
         P.d.polygon([add(cv, t + 90, 0.17 * s), add(cv, t - 90, 0.17 * s), add(cv, t, 0.24 * s)], fill=LINE)
         P.d.polygon([add(cv, t + 90, 0.13 * s), add(cv, t - 90, 0.13 * s), add(cv, t, 0.19 * s)], fill=YEL)
         P.d.polygon([add(cv, t + 90, 0.07 * s), add(cv, t - 90, 0.07 * s), add(cv, t, 0.11 * s)], fill=SKIN_D)
-    P.ell(hip, 0.3 * s, 0.16 * s, SHO, 10)
+    P.ell(hip, 0.3 * s * WSC, 0.16 * s, SHO, 10)
     fL = leg(hpL, pose["ll"], not back, pose.get("fl", 1))
     if prop == "bag":
         P.cap(shL, add(hip, 90, 0.3 * s), 0.07 * s, (40, 40, 48), 7)
