@@ -267,3 +267,11 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - File Buffer au 17/11 : TikTok ép. 11 Ndiaye 17/11 20h30 ; Reels 17/11 Mendy ép.3, 18/11 Lookman ép.4, 19/11 Keïta ép.5, 20/11 Bounou ép.6, 21/11 Koulibaly ép.7, 22/11 Pépé ép.8, 23/11 Semenyo ép.9, 24/11 Giroud ép.10, 25/11 LIBRE (Kaï ép.1 à publier à la main avec l'étiquette IA), 26/11 Ndiaye ép.11 -> le prochain Reel ira au 27/11. Instagram = 9/10 places utilisées : une place se libère chaque soir.
 - Les posts Metricool encore « en attente » (17/11 -> 25/11) échoueront (limite) : ce n'est pas grave, Buffer les remplace. Le commentaire épinglé / réponses aux commentaires : impossible via Zapier, l'utilisateur répond lui-même (boîte de réception Buffer ou apps).
 
+## RETOUR UTILISATEUR 17/11/2026 (IMPORTANT) — affichage
+- L'utilisateur N'AIME PAS le système « cartes / images recadrées » (manga cartes, depuis le film du 14–15/11). Revenir au système des anciennes vidéos : MOTEUR 3D PLEIN ÉCRAN
+  (render_3d / cage / essai : décor illustré en plein écran, héros qui se déplace en profondeur, caméra qui bouge, textes en haut, sous-titres en bas).
+- Ép. 12 (Ounahi) refait avec render_ounahi3d.py = moteur de render_essai.py + scènes nouvelles + personnage SILHOUETTE LUMINEUSE (player() recoloré crème + halo chaud),
+  décors : stade amateur sous la neige, stade au couchant (Maroc), campagne dorée, route des divisions, stades générique/grand stade.
+- Personnages : jamais le héros du film (Kaï) dans la série ; l'utilisateur aime les silhouettes lumineuses minimalistes (vidéo TikTok de référence du 17/11). Les personnages manga/cartoon en cartes sont abandonnés.
+- Voix : l'utilisateur veut une voix « pas trop IA » ; choisie le 17/11 : Azure « Marc » (fr-FR-Marc:MAI-Voice-2.1, servie en DragonHD) via Speko audio_synthesize (constraints.allowedProviders.tts ["azure"]), texte sans balises ; cutmap pauses > 0,4 s -> 0,3 s, atempo ≈ 1,05.
+

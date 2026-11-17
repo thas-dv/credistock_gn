@@ -1,9 +1,9 @@
 {
  "date": "2026-11-17",
- "style": "ep12",
+ "style": "ounahi3d",
  "series": "ILS ONT FAILLI ABANDONNER — Épisode 12",
  "episode": 12,
- "perso": "perso4",
+ "perso": "silhouette lumineuse (moteur 3D)",
  "bg": [
   8,
   14,
@@ -294,6 +294,10 @@
   ],
   "demain": [
    "demain",
+   1
+  ],
+  "a18": [
+   "18",
    1
   ]
  },
