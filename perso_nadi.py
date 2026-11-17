@@ -128,10 +128,10 @@ def figure(P, hip, s, pose, expr="neutral", look=0.0, back=False, prop=None, swe
     def leg(root, ang, front, foot=1):
         k = add(root, ang[0], 0.78 * s); f = add(k, ang[1], 0.76 * s)
         P.cap(root, k, lw, SKIN if front else SKIN_D); P.cap(k, f, lw * 0.85, SKIN if front else SKIN_D)
-        P.cap(add(k, ang[1], 0.3 * s), f, lw * 0.98, SOCK if front else (220, 176, 30))
+        P.cap(add(k, ang[1], 0.3 * s), f, lw * 0.98, SOCK if front else tuple(int(v * 0.8) for v in SOCK))
         P.cap(root, add(root, ang[0], 0.32 * s), lw * 1.22, SHO if front else (22, 24, 30))   # jambe du short
         toe = add(f, ang[1] - 90 * foot, 0.3 * s)
-        P.cap(f, toe, lw * 0.95, BOOT if front else (180, 40, 38), 9)
+        P.cap(f, toe, lw * 0.95, BOOT if front else tuple(int(v * 0.8) for v in BOOT), 9)
         return f, toe
     face_dir = -1 if back else 1
     # ordre : bras/jambe du fond, torse, short, jambe avant, tête, bras avant
