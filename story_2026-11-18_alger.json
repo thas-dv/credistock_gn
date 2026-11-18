@@ -1,0 +1,328 @@
+{
+ "date": "2026-11-18",
+ "style": "alger3d",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 12",
+ "episode": 12,
+ "perso": "silhouette lumineuse (moteur 3D)",
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 12 » — « Trop vieux pour l'Europe ? » : l'histoire vraie d'Islam Slimani, des amateurs de 3e division à 18 ans au record de buts de l'Algérie",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko — ElevenLabs Sid bloqué (« Free Tier access disabled »)",
+ "voice_prompt": "[chuckles] Trop vieux pour l'Europe ? Tu crois que si tu n'es pas parti à dix-huit ans, c'est fini pour toi ? Lui, à vingt-cinq ans, il n'avait encore jamais joué hors de son pays. Ils ont failli abandonner. Épisode douze.\n\nL'histoire vraie d'Islam Slimani. Il grandit à Aïn Benian, au bord de la mer, près d'Alger. À dix-huit ans, il joue chez les amateurs, en troisième division, à Chéraga.\n\nÀ vingt ans, un club d'Alger le recrute : le CR Belouizdad. Il reste au pays. Il marque, saison après saison.\n\nLes années passent. L'Europe semble loin. Pour beaucoup, à son âge, c'est déjà trop tard.\n\n[shouting] LUI, IL N'A PAS DIT SON DERNIER MOT !\n\nÀ vingt-trois ans, première sélection avec l'Algérie. À vingt-cinq ans, il part enfin : le Sporting, au Portugal. Première saison : dix buts.\n\nCoupe du monde deux mille quatorze : il marque contre la Russie, et l'Algérie passe en huitièmes de finale pour la première fois de son histoire.\n\nÀ vingt-huit ans, Leicester paie vingt-huit millions de livres : record du club. Coupe d'Afrique en deux mille dix-neuf. Et en octobre deux mille vingt et un, il devient le meilleur buteur de l'histoire de l'Algérie.\n\nCelui qu'on croyait trop vieux… est devenu une légende.\n\nEt toi… tu vas abandonner parce qu'on te dit que c'est trop tard ?\n\nAbonne-toi : demain, l'épisode treize. Une autre histoire vraie que personne ne te raconte.\n\n[intense] Réponds-moi en commentaire : sur dix, ta rage de réussir est à combien ? Écris le chiffre.\n\n[serious] Mindset vingt-quatre. Change ton mental. Change ta vie.",
+ "caption": "Trop vieux pour l'Europe ? À 25 ans, il n'avait encore jamais joué hors de son pays… puis la Coupe du monde, un transfert record en Angleterre et le record de buts de l'Algérie. ⚽🔥 Réussir au football tard : l'histoire vraie d'un footballeur, des amateurs au sommet — ILS ONT FAILLI ABANDONNER, épisode 12. Sur 10, ta rage de réussir est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #ambition #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, il n'est jamais trop tard 💪 Et toi, ton chiffre ? 👇 Tu joues en quelle division ?",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Trop",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "cheraga",
+   "at": [
+    "18",
+    2
+   ]
+  },
+  {
+   "type": "belou",
+   "at": [
+    "20",
+    1
+   ]
+  },
+  {
+   "type": "annees",
+   "at": [
+    "années",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "Pour",
+    3
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "LUI",
+    2
+   ]
+  },
+  {
+   "type": "depart",
+   "at": [
+    "23",
+    1
+   ]
+  },
+  {
+   "type": "mondial",
+   "at": [
+    "Coupe",
+    1
+   ]
+  },
+  {
+   "type": "record",
+   "at": [
+    "28",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "Celui",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    2
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "vieux",
+   1
+  ],
+  "build_start": [
+   "années",
+   1
+  ],
+  "build_end": [
+   "tard",
+   1
+  ],
+  "boom": [
+   "LUI",
+   2
+  ],
+  "gate1": [
+   "Sporting",
+   1
+  ],
+  "gate2": [
+   "Russie",
+   1
+  ],
+  "sunrise": [
+   "Celui",
+   1
+  ],
+  "arms_up": [
+   "légende",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "a18": [
+   "18",
+   1
+  ],
+  "a25": [
+   "25",
+   1
+  ],
+  "pays": [
+   "pays",
+   1
+  ],
+  "ain": [
+   "Aïn",
+   1
+  ],
+  "mer": [
+   "mer",
+   1
+  ],
+  "a18b": [
+   "18",
+   2
+  ],
+  "amateurs": [
+   "amateurs",
+   1
+  ],
+  "d3": [
+   "3e",
+   1
+  ],
+  "a20": [
+   "20",
+   1
+  ],
+  "recrute": [
+   "recrute",
+   1
+  ],
+  "reste": [
+   "reste",
+   1
+  ],
+  "marque1": [
+   "marque",
+   1
+  ],
+  "europe2": [
+   "L'Europe",
+   2
+  ],
+  "tard": [
+   "tard",
+   1
+  ],
+  "dernier": [
+   "DERNIER",
+   1
+  ],
+  "a23": [
+   "23",
+   1
+  ],
+  "selection": [
+   "sélection",
+   1
+  ],
+  "a25b": [
+   "25",
+   2
+  ],
+  "sporting": [
+   "Sporting",
+   1
+  ],
+  "b10": [
+   "buts",
+   1
+  ],
+  "russie": [
+   "Russie",
+   1
+  ],
+  "huitiemes": [
+   "8e",
+   1
+  ],
+  "a28": [
+   "28",
+   1
+  ],
+  "m28": [
+   "28",
+   2
+  ],
+  "record": [
+   "record",
+   1
+  ],
+  "afrique": [
+   "d'Afrique",
+   1
+  ],
+  "octobre": [
+   "octobre",
+   1
+  ],
+  "buteur": [
+   "buteur",
+   1
+  ],
+  "vieux2": [
+   "vieux",
+   2
+  ],
+  "legende": [
+   "légende",
+   1
+  ],
+  "abandonner": [
+   "abandonner",
+   2
+  ],
+  "tard2": [
+   "tard",
+   2
+  ],
+  "demain": [
+   "demain",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TA RAGE DE RÉUSSIR",
+   "EST À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
