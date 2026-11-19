@@ -275,3 +275,11 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - Personnages : jamais le héros du film (Kaï) dans la série ; l'utilisateur aime les silhouettes lumineuses minimalistes (vidéo TikTok de référence du 17/11). Les personnages manga/cartoon en cartes sont abandonnés.
 - Voix : l'utilisateur veut une voix « pas trop IA » ; choisie le 17/11 : Azure « Marc » (fr-FR-Marc:MAI-Voice-2.1, servie en DragonHD) via Speko audio_synthesize (constraints.allowedProviders.tts ["azure"]), texte sans balises ; cutmap pauses > 0,4 s -> 0,3 s, atempo ≈ 1,05.
 
+
+## RETOUR UTILISATEUR 19/11/2026 — « changer de scénario, de paysage »
+- Trop de STADES d'une vidéo à l'autre. Ép. 13 v2 (render_ounahi13v2.py) : 7 paysages différents, un par moment de l'histoire
+  (canal d'hiver aux maisons à colombages la nuit, ville blanche de Casablanca au bord de l'océan, plage au lever du soleil,
+  baie à marée basse avec un rocher-village (gris, nuit, doré pour la révélation au cri), désert de nuit avec un stade lumineux à l'horizon,
+  port au coucher du soleil, toits de la ville blanche la nuit avec guirlandes et feux d'artifice). Un seul plan de stade (le but).
+- RÈGLE : chaque épisode = des PAYSAGES liés aux vrais lieux de l'histoire (ville natale, pays d'arrivée, mer/montagne/désert…), le stade seulement pour le moment du match.
+  Fonctions réutilisables : make_canal, make_medina, make_beach, make_bay, make_desert, make_harbor, fireworks(), train().
