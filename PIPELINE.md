@@ -297,3 +297,6 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - PUBLICATION D'UNE VIDÉO À IMAGES IA RÉALISTES : Buffer/Zapier n'a pas de case IA -> programmer en scheduling_type "reminder" (notification) :
   l'utilisateur reçoit la notification à l'heure et publie depuis l'app TikTok/Instagram en cochant « Contenu généré par IA ».
 - VOIX à tester si l'utilisateur veut changer : xAI « leo » (constraints tts ["xai"], voix forte/autoritaire), Inworld « Mathieu » (["inworld"]) — échantillons envoyés le 19/11, Marc gardé.
+- RÈGLE UTILISATEUR (19/11, après l'échec du mode notification) : « je ne dois pas intervenir lors de la publication ». -> JAMAIS de mode reminder/notification,
+  JAMAIS d'images photo-réalistes : les images IA doivent être des ILLUSTRATIONS (prompt « painterly cinematic digital illustration / concept art, visible brush strokes, not a photo »)
+  ou stylisées après coup (stylisation cv2 + xphoto.oilPainting + contours, voir ia13s/) -> publication 100 % automatique via Buffer direct, case IA non cochée (conforme CONFORMITE.md : animation stylisée).
