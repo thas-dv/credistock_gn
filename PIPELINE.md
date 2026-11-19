@@ -283,3 +283,7 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
   port au coucher du soleil, toits de la ville blanche la nuit avec guirlandes et feux d'artifice). Un seul plan de stade (le but).
 - RÈGLE : chaque épisode = des PAYSAGES liés aux vrais lieux de l'histoire (ville natale, pays d'arrivée, mer/montagne/désert…), le stade seulement pour le moment du match.
   Fonctions réutilisables : make_canal, make_medina, make_beach, make_bay, make_desert, make_harbor, fireworks(), train().
+- 19/11 (suite) : demande « un très bon visuel qui attire l'attention ». Canva : generate-image ET create-design refusés (« quota_exceeded », crédits IA épuisés) ;
+  générateurs d'images externes bloqués par le proxy (pollinations 403). -> v3 render_ounahi13v3.py = v2 + moteur ciné de render_tete_k.py
+  (sous-titres KARAOKÉ gros, mot actif en jaune ; étalonnage sarcelle/orange ; fuite de lumière ; flou de profondeur ; plans serrés/larges alternés toutes les 1,8 s, zoom serré limité à ×1,08 pour ne pas couper les titres).
+  À faire dès que les crédits Canva reviennent : images IA cinématiques (format hybride, voir plus haut).
