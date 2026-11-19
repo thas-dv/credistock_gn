@@ -294,3 +294,6 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
   mettre « plain blank unbranded cotton t-shirt, no logo, no number » + vérifier chaque image et effacer les marques (cv2.inpaint) ; flouter les panneaux publicitaires.
   render_ounahi13ia.py = moteur v3 (karaoké, étalonnage) + 1 image IA plein écran par scène avec Ken Burns (kb()), particules, textes par-dessus.
   Images RÉALISTES = cocher « Contenu généré par IA » (TikTok + Instagram) -> Buffer/Zapier ne sait pas le cocher -> publication MANUELLE par l'utilisateur.
+- PUBLICATION D'UNE VIDÉO À IMAGES IA RÉALISTES : Buffer/Zapier n'a pas de case IA -> programmer en scheduling_type "reminder" (notification) :
+  l'utilisateur reçoit la notification à l'heure et publie depuis l'app TikTok/Instagram en cochant « Contenu généré par IA ».
+- VOIX à tester si l'utilisateur veut changer : xAI « leo » (constraints tts ["xai"], voix forte/autoritaire), Inworld « Mathieu » (["inworld"]) — échantillons envoyés le 19/11, Marc gardé.
