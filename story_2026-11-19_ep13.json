@@ -1,0 +1,317 @@
+{
+ "date": "2026-11-19",
+ "style": "ounahi3d13",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 13",
+ "episode": 13,
+ "perso": "silhouette lumineuse (moteur 3D)",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 13 » — « Bloqué en réserve ? » : l'histoire vraie d'Azzedine Ounahi, de la réserve en 5e division à la Coupe du monde",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "Bloqué en réserve ? On ne te donne jamais ta chance en équipe première ? Lui, à vingt ans, il jouait encore en cinquième division. Ils ont failli abandonner. Épisode treize.\n\nL'histoire vraie d'Azzedine Ounahi. Il grandit à Casablanca, au Maroc. À quinze ans, il entre dans la grande académie du pays.\n\nÀ dix-huit ans, il part en France, à Strasbourg. Mais il ne joue qu'avec l'équipe réserve, en cinquième division. Deux saisons. Un seul but. Aucun match chez les pros.\n\nAlors, pour jouer, il part à Avranches, un petit club de troisième division. Beaucoup y verraient un pas en arrière.\n\nLui, il descend… pour mieux remonter !\n\nUne saison pleine : vingt-sept matchs, cinq buts. Angers l'appelle. À vingt et un ans, premier match chez les pros… et il marque.\n\nQuelques mois plus tard, il joue la Coupe du monde avec le Maroc. Face à l'Espagne, le monde entier découvre ce milieu que personne ne connaissait. Le Maroc devient la première équipe africaine en demi-finale.\n\nMarseille le recrute. Et en juillet deux mille vingt-six, il marque deux buts en Coupe du monde, et envoie le Maroc en quart de finale.\n\nLe joueur de la réserve… est devenu la fierté de tout un pays.\n\nEt toi… tu vas rester bloqué sur le banc en attendant qu'on t'appelle ?\n\nAbonne-toi : demain, l'épisode quatorze. Une autre histoire vraie que personne ne te raconte.\n\nRéponds-moi en commentaire : sur dix, ton courage est à combien ? Écris le chiffre.\n\nMindset vingt-quatre. Change ton mental. Change ta vie.",
+ "caption": "Bloqué en réserve ? À 20 ans, il jouait encore en 5e division, sans un seul match chez les pros… puis la Coupe du monde avec le Maroc. ⚽🔥 De la réserve au pro : l'histoire vraie d'un footballeur — ILS ONT FAILLI ABANDONNER, épisode 13. Sur 10, ton courage est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, je ne reste pas sur le banc 💪 Et toi, ton chiffre ? 👇 Tu joues en équipe première ou en réserve ?",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Bloqué",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "academie",
+   "at": [
+    "15",
+    1
+   ]
+  },
+  {
+   "type": "strasbourg",
+   "at": [
+    "18",
+    1
+   ]
+  },
+  {
+   "type": "avranches",
+   "at": [
+    "Alors",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "Beaucoup",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "LUI",
+    2
+   ]
+  },
+  {
+   "type": "angers",
+   "at": [
+    "saison",
+    1
+   ]
+  },
+  {
+   "type": "mondial",
+   "at": [
+    "Quelques",
+    1
+   ]
+  },
+  {
+   "type": "marseille",
+   "at": [
+    "Marseille",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "joueur",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "réserve",
+   1
+  ],
+  "build_start": [
+   "Beaucoup",
+   1
+  ],
+  "build_end": [
+   "arrière",
+   1
+  ],
+  "boom": [
+   "LUI",
+   2
+  ],
+  "gate1": [
+   "Angers",
+   1
+  ],
+  "gate2": [
+   "Quelques",
+   1
+  ],
+  "sunrise": [
+   "joueur",
+   1
+  ],
+  "arms_up": [
+   "attendant",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   2
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "a20": [
+   "20",
+   1
+  ],
+  "d5": [
+   "5e",
+   1
+  ],
+  "casa": [
+   "Casablanca",
+   1
+  ],
+  "a15": [
+   "15",
+   1
+  ],
+  "academie": [
+   "académie",
+   1
+  ],
+  "strasbourg": [
+   "Strasbourg",
+   1
+  ],
+  "reserve2": [
+   "réserve",
+   2
+  ],
+  "saisons": [
+   "saisons",
+   1
+  ],
+  "seul": [
+   "seul",
+   1
+  ],
+  "aucun": [
+   "Aucun",
+   1
+  ],
+  "avranches": [
+   "Avranches",
+   1
+  ],
+  "d3": [
+   "3e",
+   1
+  ],
+  "arriere": [
+   "arrière",
+   1
+  ],
+  "descend": [
+   "DESCEND",
+   1
+  ],
+  "remonter": [
+   "REMONTER",
+   1
+  ],
+  "m27": [
+   "27",
+   1
+  ],
+  "b5": [
+   "5",
+   1
+  ],
+  "angers": [
+   "Angers",
+   1
+  ],
+  "a21": [
+   "21",
+   1
+  ],
+  "marque": [
+   "marque",
+   1
+  ],
+  "coupe": [
+   "Coupe",
+   1
+  ],
+  "espagne": [
+   "l'Espagne",
+   1
+  ],
+  "demi": [
+   "demi-finale",
+   1
+  ],
+  "juin": [
+   "juillet",
+   1
+  ],
+  "deuxbuts": [
+   "deux",
+   2
+  ],
+  "fierte": [
+   "fierté",
+   1
+  ],
+  "attendant": [
+   "attendant",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "a18": [
+   "18",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TON COURAGE",
+   "EST À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
