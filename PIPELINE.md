@@ -287,3 +287,10 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
   générateurs d'images externes bloqués par le proxy (pollinations 403). -> v3 render_ounahi13v3.py = v2 + moteur ciné de render_tete_k.py
   (sous-titres KARAOKÉ gros, mot actif en jaune ; étalonnage sarcelle/orange ; fuite de lumière ; flou de profondeur ; plans serrés/larges alternés toutes les 1,8 s, zoom serré limité à ×1,08 pour ne pas couper les titres).
   À faire dès que les crédits Canva reviennent : images IA cinématiques (format hybride, voir plus haut).
+- 19/11 (v4) : IMAGES IA ENFIN POSSIBLES via le connecteur personnalisé « HF Images » (URL https://huggingface.co/mcp?login, ajouté par l'utilisateur ;
+  le connecteur Hugging Face officiel impose gradio=none). Outils : mcp__HF_Images__gr1_flux_1_krea_dev_infer (FLUX.1 Krea, 768x1344, très réaliste)
+  et gr2_z_image_turbo_generate. L'image revient dans la réponse et est enregistrée dans tool-results (.webp) -> copier dans ia13/.
+  QUOTA ZeroGPU GRATUIT : ~6 images par jour (épuisé à la 7e). Les images contiennent souvent des LOGOS (virgule de marque, écusson, numéro, texte sur sac) :
+  mettre « plain blank unbranded cotton t-shirt, no logo, no number » + vérifier chaque image et effacer les marques (cv2.inpaint) ; flouter les panneaux publicitaires.
+  render_ounahi13ia.py = moteur v3 (karaoké, étalonnage) + 1 image IA plein écran par scène avec Ken Burns (kb()), particules, textes par-dessus.
+  Images RÉALISTES = cocher « Contenu généré par IA » (TikTok + Instagram) -> Buffer/Zapier ne sait pas le cocher -> publication MANUELLE par l'utilisateur.
