@@ -1,0 +1,326 @@
+{
+ "date": "2026-11-20",
+ "style": "mbeumo14",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 14",
+ "episode": 14,
+ "perso": "silhouette lumineuse (moteur 3D)",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 14 » — « Tu touches toujours le poteau ? » : l'histoire vraie de Bryan Mbeumo, de la petite ville au géant anglais",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "Tu touches toujours le poteau ? Tu y es presque… mais ça ne rentre jamais ? Lui, il a touché le poteau sept fois en une seule saison. Ils ont failli abandonner. Épisode quatorze.\n\nL'histoire vraie de Bryan Mbeumo. Il grandit à Avallon, une petite ville de Bourgogne, en France. Il joue au foot dans la rue.\n\nÀ quatorze ans, il quitte sa petite ville pour le centre de formation de Troyes. À dix-huit ans, premier match chez les pros… mais à la fin de la saison, son club descend en deuxième division.\n\nIl part en Angleterre, encore en deuxième division. Il marque quinze buts. Mais en finale pour la montée, son équipe perd. Si près du but…\n\nUn an plus tard, ils montent enfin. Première saison dans l'élite : sept fois le poteau. Le ballon refuse de rentrer. Beaucoup se seraient découragés.\n\nLui, il continue de frapper !\n\nEt un jour, tout rentre : vingt buts en une saison dans le championnat anglais.\n\nEn deux mille vingt-cinq, l'un des plus grands clubs d'Angleterre le recrute pour soixante et onze millions de livres. Face au champion en titre, il marque dès la première minute. Il est élu joueur du mois.\n\nEt avec le Cameroun, le pays de son père, il joue la Coupe du monde.\n\nLe gamin des poteaux… est devenu un buteur que plus personne n'arrête.\n\nEt toi… tu vas arrêter de tirer parce que ça a touché le poteau ?\n\nAbonne-toi : demain, l'épisode quinze. Une autre histoire vraie que personne ne te raconte.\n\nRéponds-moi en commentaire : sur dix, ta résilience est à combien ? Écris le chiffre.\n\nMindset vingt-quatre. Change ton mental. Change ta vie.",
+ "caption": "Tu touches toujours le poteau ? Lui, 7 fois en une seule saison… puis 20 buts dans le championnat anglais et un transfert à 71 millions. ⚽🔥 De la petite ville au géant anglais : l'histoire vraie d'un footballeur — ILS ONT FAILLI ABANDONNER, épisode 14. Sur 10, ta résilience est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #mentalite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, je continue de frapper 💪 Et toi, ton chiffre ? 👇 Tu as déjà touché le poteau dans un match important ?",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "formation",
+   "at": [
+    "14",
+    2
+   ]
+  },
+  {
+   "type": "angleterre",
+   "at": [
+    "part",
+    1
+   ]
+  },
+  {
+   "type": "poteaux",
+   "at": [
+    "Un",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "LUI",
+    2
+   ]
+  },
+  {
+   "type": "vingt",
+   "at": [
+    "Et",
+    1
+   ]
+  },
+  {
+   "type": "sommet",
+   "at": [
+    "2025",
+    1
+   ]
+  },
+  {
+   "type": "cameroun",
+   "at": [
+    "Cameroun",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "gamin",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "poteau",
+   1
+  ],
+  "build_start": [
+   "Beaucoup",
+   1
+  ],
+  "build_end": [
+   "découragés",
+   1
+  ],
+  "boom": [
+   "LUI",
+   2
+  ],
+  "gate1": [
+   "20",
+   1
+  ],
+  "gate2": [
+   "2025",
+   1
+  ],
+  "sunrise": [
+   "gamin",
+   1
+  ],
+  "arms_up": [
+   "tirer",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "presque": [
+   "presque",
+   1
+  ],
+  "sept": [
+   "sept",
+   1
+  ],
+  "bourgogne": [
+   "Bourgogne",
+   1
+  ],
+  "rue": [
+   "rue",
+   1
+  ],
+  "a14": [
+   "14",
+   2
+  ],
+  "quitte": [
+   "quitte",
+   1
+  ],
+  "formation": [
+   "formation",
+   1
+  ],
+  "troyes": [
+   "Troyes",
+   1
+  ],
+  "a18": [
+   "18",
+   1
+  ],
+  "pros": [
+   "pros",
+   1
+  ],
+  "descend": [
+   "descend",
+   1
+  ],
+  "d2": [
+   "2e",
+   1
+  ],
+  "angl": [
+   "Angleterre",
+   1
+  ],
+  "d2b": [
+   "2e",
+   2
+  ],
+  "b15": [
+   "15",
+   1
+  ],
+  "perd": [
+   "perd",
+   1
+  ],
+  "pres": [
+   "près",
+   1
+  ],
+  "montent": [
+   "montent",
+   1
+  ],
+  "elite": [
+   "l'élite",
+   1
+  ],
+  "refuse": [
+   "refuse",
+   1
+  ],
+  "beaucoup": [
+   "Beaucoup",
+   1
+  ],
+  "frapper": [
+   "FRAPPER",
+   1
+  ],
+  "tout": [
+   "tout",
+   1
+  ],
+  "b20": [
+   "20",
+   1
+  ],
+  "m71": [
+   "71",
+   1
+  ],
+  "minute": [
+   "minute",
+   1
+  ],
+  "mois": [
+   "mois",
+   1
+  ],
+  "pere": [
+   "père",
+   1
+  ],
+  "coupe": [
+   "Coupe",
+   1
+  ],
+  "buteur": [
+   "buteur",
+   1
+  ],
+  "arrete": [
+   "n'arrête",
+   1
+  ],
+  "tirer": [
+   "tirer",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TA RÉSILIENCE",
+   "EST À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ }
+}
