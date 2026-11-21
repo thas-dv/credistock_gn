@@ -300,3 +300,8 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - RÈGLE UTILISATEUR (19/11, après l'échec du mode notification) : « je ne dois pas intervenir lors de la publication ». -> JAMAIS de mode reminder/notification,
   JAMAIS d'images photo-réalistes : les images IA doivent être des ILLUSTRATIONS (prompt « painterly cinematic digital illustration / concept art, visible brush strokes, not a photo »)
   ou stylisées après coup (stylisation cv2 + xphoto.oilPainting + contours, voir ia13s/) -> publication 100 % automatique via Buffer direct, case IA non cochée (conforme CONFORMITE.md : animation stylisée).
+
+## 21/11/2026 — ép. 15 « nesyri15 » (images IA stylisées n°2)
+- render_nesyri15.py = render_ounahi13ias.py (moteur karaoké + étalonnage + Ken Burns) + bloc final propre à l'épisode (IA = ia15s/, scènes réécrites, SCENES redéfini, toise gauge(), strike(), s_abonne avec le teasing du lendemain).
+- Images : 6 FLUX.1 Krea + 1 Z-Image Turbo (le 2e outil HF a son propre quota : utile quand FLUX est épuisé). Retouche systématique : cv2.inpaint des numéros/virgules/écussons + flou des panneaux, puis stylisation (cv2.stylization + xphoto.oilPainting + contours) -> ia15s/.
+- ElevenLabs : connecteur « requires additional permissions » (à reconnecter par l'utilisateur) -> Azure Marc via Speko. Transcription Speko : « En-Nesyri » sort « en Assyrie » -> corriger dans w2.

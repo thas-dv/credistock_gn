@@ -1,0 +1,367 @@
+{
+ "date": "2026-11-21",
+ "style": "nesyri15",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 15",
+ "episode": 15,
+ "perso": "6 illustrations IA stylisées (FLUX.1 Krea + stylisation), héros générique",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 15 » — « Faible techniquement ? » : l'histoire vraie de Youssef En-Nesyri, de Fès au saut de 2,78 m",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "Faible techniquement ? On se moque de ta façon de jouer ? Lui, tout un pays disait qu'il était faible techniquement. Et un soir, il a sauté à 2,78 m. Ils ont failli abandonner. Épisode 15. L'histoire vraie de Youssef En-Nesyri. Il grandit à Fès, au Maroc, dans un quartier populaire. À 10 ans, on le repère dans l'équipe de son quartier. Adolescent, il entre dans une grande académie, loin de sa famille. Un jour, il veut tout arrêter et rentrer chez lui. Son grand frère le convainc de rester. À 18 ans, il part en Espagne. Équipe réserve, 4e division. Puis l'élite : un seul but lors de sa première saison. La saison suivante, son club descend. Au pays, dans les cafés, à la radio, la même phrase revient : faible techniquement. Il aurait pu baisser les bras. ALORS IL VA SAUTER PLUS HAUT QUE TOUT LE MONDE ! Il change de club. Il devient le premier joueur de l'histoire de son équipe à réussir un triplé dans le championnat d'Espagne. Puis un grand club espagnol le recrute pour environ 20 millions d'euros. 18 buts en une saison : un record pour un Marocain. Et deux coupes d'Europe. En Coupe du monde, contre le Portugal, il s'envole à 2,78 m. But de la tête. Le Maroc devient la première équipe africaine en demi-finale. Le joueur faible techniquement… est devenu le meilleur buteur marocain de l'histoire du championnat d'Espagne. Et toi… tu vas laisser une seule phrase décider de ton avenir ? Abonne-toi : demain, c'est dimanche. Le retour de Kaï, épisode 2. Réponds-moi en commentaire : sur 10, tu crois en toi à combien ? Écris le chiffre. Mindset 24. Change ton mental. Change ta vie.",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Faible",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "academie",
+   "at": [
+    "Adolescent",
+    1
+   ]
+  },
+  {
+   "type": "espagne",
+   "at": [
+    "18",
+    1
+   ]
+  },
+  {
+   "type": "descente",
+   "at": [
+    "La",
+    1
+   ]
+  },
+  {
+   "type": "critique",
+   "at": [
+    "Au",
+    2
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    1
+   ]
+  },
+  {
+   "type": "club",
+   "at": [
+    "change",
+    1
+   ]
+  },
+  {
+   "type": "mondial",
+   "at": [
+    "Coupe",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "joueur",
+    2
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "techniquement",
+   1
+  ],
+  "build_start": [
+   "cafés",
+   1
+  ],
+  "build_end": [
+   "bras",
+   1
+  ],
+  "boom": [
+   "ALORS",
+   1
+  ],
+  "gate1": [
+   "triplé",
+   1
+  ],
+  "gate2": [
+   "Portugal",
+   1
+  ],
+  "sunrise": [
+   "joueur",
+   2
+  ],
+  "arms_up": [
+   "avenir",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "moque": [
+   "moque",
+   1
+  ],
+  "pays": [
+   "pays",
+   1
+  ],
+  "saute": [
+   "sauté",
+   1
+  ],
+  "h1": [
+   "2,78",
+   1
+  ],
+  "fes": [
+   "Fès",
+   1
+  ],
+  "maroc": [
+   "Maroc",
+   1
+  ],
+  "a10": [
+   "10",
+   1
+  ],
+  "quartier2": [
+   "quartier",
+   2
+  ],
+  "academie": [
+   "académie",
+   1
+  ],
+  "famille": [
+   "famille",
+   1
+  ],
+  "arreter": [
+   "arrêter",
+   1
+  ],
+  "frere": [
+   "frère",
+   1
+  ],
+  "rester": [
+   "rester",
+   1
+  ],
+  "a18": [
+   "18",
+   1
+  ],
+  "espagne": [
+   "Espagne",
+   1
+  ],
+  "reserve": [
+   "réserve",
+   1
+  ],
+  "d4": [
+   "4e",
+   1
+  ],
+  "elite": [
+   "l'élite",
+   1
+  ],
+  "seul": [
+   "seul",
+   1
+  ],
+  "descend": [
+   "descend",
+   1
+  ],
+  "cafes": [
+   "cafés",
+   1
+  ],
+  "radio": [
+   "radio",
+   1
+  ],
+  "faible3": [
+   "faible",
+   3
+  ],
+  "bras": [
+   "bras",
+   1
+  ],
+  "monde1": [
+   "MONDE",
+   1
+  ],
+  "club2": [
+   "club",
+   2
+  ],
+  "triple": [
+   "triplé",
+   1
+  ],
+  "grand": [
+   "grand",
+   2
+  ],
+  "m20": [
+   "20",
+   1
+  ],
+  "b18": [
+   "18",
+   2
+  ],
+  "record": [
+   "record",
+   1
+  ],
+  "coupes": [
+   "coupes",
+   1
+  ],
+  "portugal": [
+   "Portugal",
+   1
+  ],
+  "h2": [
+   "2,78",
+   2
+  ],
+  "tete": [
+   "tête",
+   1
+  ],
+  "demi": [
+   "demi-finale",
+   1
+  ],
+  "meilleur": [
+   "meilleur",
+   1
+  ],
+  "decider": [
+   "décider",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "kai": [
+   "Kaï",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [
+  [
+   "ALORS",
+   1
+  ],
+  [
+   "triplé",
+   1
+  ],
+  [
+   "tête",
+   1
+  ]
+ ],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TU CROIS EN TOI",
+   "À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "caption": "Faible techniquement ? Tout un pays le disait… puis il a sauté à 2,78 m pour envoyer le Maroc en demi-finale de Coupe du monde. ⚽🔥 Comment réussir au football quand on te critique : l'histoire vraie d'un footballeur, de Fès au sommet — ILS ONT FAILLI ABANDONNER, épisode 15. Sur 10, tu crois en toi à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #confianceensoi #mentalite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, une seule phrase ne décidera pas de mon avenir 💪 Et toi, ton chiffre ? 👇 On t'a déjà dit que tu étais « faible techniquement » ?"
+}
