@@ -1,0 +1,12 @@
+{"style": "film2",
+ "scenes": [{"type": "cold"}, {"type": "titre", "at": "mindset"}, {"type": "capitale", "at": "aujourdhui"}, {"type": "duels", "at": "premier"},
+  {"type": "vestiaire", "at": ["dans", 2]}, {"type": "nuit", "at": "cette"}, {"type": "match", "at": "dernier"},
+  {"type": "cri", "at": ["pas", 2]}, {"type": "liste", "at": "coach"}, {"type": "question", "at": ["sur", 3]}, {"type": "logo", "at": ["mindset", 2]}],
+ "roles": {"boom": ["pas", 2], "build_start": "sous", "build_end": "lattrape", "gate1": "crochet", "gate2": "but",
+           "sunrise": "coach", "arms_up": "abonnetoi", "q_end": "lécrivent", "brand": ["mindset", 2]},
+ "words3d": [["DUELS", "duels"], ["40/40", "quarantième"], ["ENCORE", ["encore", 3]]],
+ "punches": ["contrôle", "demitour", "accélération"],
+ "q_pulses": [], "keywords": [],
+ "question": {"lines": ["SUR 10, TON MENTAL", "QUAND TU ES LE DERNIER ?"], "highlight": "DERNIER", "cta": "ÉCRIS TON CHIFFRE"},
+ "caption": "Trop petit pour l'académie ? 40 joueurs, 3 places… et lui, le dernier de la liste. 🎬 KAÏ — Épisode 2, le film d'animation Mindset 24. Abonne-toi pour l'épisode de demain (Ils ont failli abandonner, ép. 16) et la suite de Kaï dimanche prochain ! Sur 10, ton mental quand tu es le dernier ? 👇 #mindset #motivation #confianceensoi #discipline #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, le dernier de la liste peut finir premier 💪 Et toi, ton chiffre ? 👇 On t'a déjà mis tout en bas d'une liste ?"}
