@@ -526,6 +526,160 @@ def p_logo(img, tg, k):
     gl = L.filter(ImageFilter.GaussianBlur(26)); img.alpha_composite(gl); img.alpha_composite(gl); img.alpha_composite(L)
     text(img, "Change ton mental.", W / 2, 1180, 64, WHITE, k - (T("change", 1) - SC["logo"]), pop=False, alpha=fade, stroke=0)
     text(img, "Change ta vie.", W / 2, 1270, 64, WHITE, k - (T("change", 2) - SC["logo"]), pop=False, alpha=fade, stroke=0)
+
+# ------------------------------------------------------------------ v2 (22/11) : 7 illustrations IA (FLUX) — nouveau look de Kaï (tresses, bandeau orange)
+IA = {n: Image.open(f"ia/{n}.png").convert("RGB") for n in ("01_ville", "02_vestiaire", "03_portrait", "04_duel", "05_ruelle", "06_tir", "07_coach")}
+
+def kb(img, name, k, dur, z0=1.0, z1=1.12, fx0=0.5, fy0=0.5, fx1=0.5, fy1=0.5, flip=False):
+    u = ease(min(1, max(0, k / max(0.1, dur))))
+    src = IA[name].transpose(Image.FLIP_LEFT_RIGHT) if flip else IA[name]
+    img.paste(cover(src, lerp(z0, z1, u), lerp(fx0, fx1, u), lerp(fy0, fy1, u)))
+
+def dur(n):
+    i = [x for x, _ in S].index(n); return (S[i + 1][1] if i + 1 < len(S) else END) - S[i][1]
+
+def p_cold(img, tg, k):
+    kb(img, "03_portrait", k, dur("cold"), 1.35, 1.05, 0.5, 0.35, 0.5, 0.42)
+    shade(img, 40); stamp(img, "TROP PETIT ?", W / 2, 1150, k - 0.05, 120)
+    text(img, "POUR L'ACADÉMIE", W / 2, 1330, 70, WHITE, k - 0.35, stroke=7)
+    series_band(img, tg)
+
+def p_titre(img, tg, k):
+    img.paste(Image.new("RGBA", (W, H), NAVY + (255,)))
+    bg = cover(IA["01_ville"], 1.1 + 0.03 * k, 0.5, 0.45); bg.putalpha(90); img.alpha_composite(bg)
+    text(img, "MINDSET 24 PRÉSENTE", W / 2, 520, 50, (240, 190, 70), k - 0.05, stroke=5, pop=False)
+    text(img, "KAÏ", W / 2, 840, 320, OR, k - (T("kaï") - SC["titre"]), stroke=12)
+    text(img, "ÉPISODE 2", W / 2, 1070, 96, WHITE, k - (T("épisode") - SC["titre"]), stroke=7)
+    text(img, "L'ACADÉMIE", W / 2, 1200, 60, (220, 220, 230), k - (T("épisode") - SC["titre"]) - 0.3, stroke=5, pop=False)
+
+def p_capitale(img, tg, k):
+    kb(img, "01_ville", k, dur("capitale"), 1.0, 1.25, 0.5, 0.35, 0.5, 0.75)
+    tint(img, (255, 140, 40), 30); tag(img, "LA CAPITALE · L'ACADÉMIE", k - 0.1)
+    k40 = k - (t_40 - SC["capitale"])
+    if k40 > 0:
+        n = min(40, int(1 + 39 * ease(k40 / 0.7))); text(img, f"{n} JOUEURS", W / 2, 420, 110, WHITE, k40, stroke=9, pop=False)
+    text(img, "3 PLACES", W / 2, 560, 120, OR, k - (T("trois") - SC["capitale"]), stroke=10)
+
+def p_toise(img, tg, k):
+    kb(img, "02_vestiaire", k, dur("toise"), 1.25, 1.1, 0.5, 0.3, 0.5, 0.55)
+    stamp(img, "LE PLUS PETIT", W / 2, 330, k - (T("plus") - SC["toise"]), 100)
+
+def p_duels(img, tg, k):
+    cyc = 1.15; n = int(k / cyc); kk = k % cyc
+    sh = 30 * math.exp(-kk * 6) if kk > 0.5 else 0
+    kb(img, "04_duel", k, dur("duels"), 1.15 + 0.06 * (kk > 0.5), 1.25, 0.5, 0.5, 0.45, 0.55)
+    tint(img, (200, 30, 30), 40 + 60 * (kk > 0.5))
+    text(img, "DUELS PERDUS", W / 2, 330, 84, WHITE, k - (T("perd") - SC["duels"]), stroke=8)
+    for i in range(min(5, n + (1 if kk > 0.55 else 0))): xmark(img, 230 + i * 155, 500, 1, 50)
+
+def p_vestiaire(img, tg, k):
+    kb(img, "02_vestiaire", k, dur("vestiaire"), 1.05, 1.2, 0.5, 0.6, 0.5, 0.45)
+    for i, x in enumerate((230, 850)):
+        text(img, "HA HA !", x, 470 + 18 * math.sin(tg * 9 + i), 80, OR, k - 0.1 - 0.2 * i, stroke=7, rot=[-10, 10][i])
+    stamp(img, "RENTRE AU VILLAGE", W / 2, 300, k - (t_rentre - SC["vestiaire"]), 70)
+
+def p_nuit(img, tg, k):
+    kb(img, "05_ruelle", k, dur("nuit"), 1.3, 1.1, 0.5, 0.2, 0.5, 0.4)
+    tag(img, "LA MÊME NUIT", k - 0.1)
+    text(img, "IL NE DORT PAS.", W / 2, 560, 92, WHITE, k - (T("dort") - SC["nuit"]), stroke=8)
+
+def p_drill(img, tg, k):
+    kc, kd, ka, ke = (x - SC["drill"] for x in (t_ctrl, t_demi, t_acc, t_enc))
+    if k < kc:
+        kb(img, "05_ruelle", k, kc, 1.1, 1.2, 0.5, 0.4, 0.5, 0.5); text(img, "SOUS LE LAMPADAIRE", W / 2, 380, 72, OR, k - 0.05, stroke=7)
+    elif k < kd:
+        kk = k - kc; kb(img, "05_ruelle", kk, kd - kc, 1.6, 1.75, 0.35, 0.85, 0.35, 0.85)
+        text(img, "CONTRÔLE.", W / 2, 380, 110, WHITE, kk, stroke=9)
+    elif k < ka:
+        kk = k - kd; kb(img, "05_ruelle", kk, ka - kd, 1.25, 1.3, 0.5, 0.55, 0.5, 0.55, flip=kk > 0.3)
+        if 0.2 < kk < 0.5: speed_radial(img, tg, 0.6)
+        text(img, "DEMI-TOUR.", W / 2, 380, 110, WHITE, kk, stroke=9)
+    elif k < ke:
+        kk = k - ka; kb(img, "05_ruelle", kk, ke - ka, 1.1, 1.6, 0.5, 0.5, 0.5, 0.4); speed_radial(img, tg, 0.8)
+        text(img, "ACCÉLÉRATION.", W / 2, 380, 104, OR, kk, stroke=9)
+    else:
+        kk = k - ke; ph = (kk * 1.3) % 1
+        kb(img, "05_ruelle", ph, 1, 1.15, 1.35, 0.5, 0.5, 0.5, 0.45, flip=int(kk * 1.3) % 2 == 1); speed_h(img, tg, 0.7, 1250, 1700)
+        n = sum(1 for w in WORDS if norm(w["text"]) == "encore" and w["start"] <= tg)
+        text(img, "ENCORE.", W / 2, 380, 120, YEL, kk, stroke=10)
+        text(img, f"× {min(3, max(1, n))}", W / 2, 520, 100, WHITE, 1, stroke=8, pop=False)
+
+def p_jours(img, tg, k):
+    k20 = t_j20 - SC["jours"]
+    if k < k20:
+        kb(img, "04_duel", k, k20, 1.4, 1.2, 0.6, 0.62, 0.55, 0.6); cyc = 0.5 + 0.5 * math.sin(k * 10)
+        night(img, 0.15 + 0.4 * cyc * (1 - ease((k - 0.9) / 0.4)))
+        day = min(10, int(1 + 9 * ease(k / 0.8)))
+        kw = k - (T("gagne") - SC["jours"])
+        if kw > 0: flash(img, kw, 0.2); text(img, "1er DUEL GAGNÉ", W / 2, 520, 80, OR, kw, stroke=8)
+    else:
+        kk = k - k20; kb(img, "05_ruelle", kk, dur("jours") - k20, 1.2, 1.5, 0.5, 0.5, 0.5, 0.45); tint(img, (255, 160, 60), 50)
+        speed_h(img, tg, 0.9, 900, 1750); day = min(20, int(10 + 10 * ease(kk / 0.6)))
+        text(img, "INTOUCHABLE.", W / 2, 520, 96, OR, k - (T("personne") - SC["jours"]), stroke=8)
+    text(img, f"JOUR {day}", W / 2, 360, 130, YEL, 1, stroke=9, pop=False)
+
+def p_match(img, tg, k):
+    kb(img, "04_duel", k, dur("match"), 1.0, 1.08, 0.5, 0.4, 0.5, 0.45); tag(img, "DERNIER MATCH", k - 0.05)
+    km = k - (T("reste") - SC["match"]); secs = 120 - int(max(0, km) * 2.2)
+    if km > 0: text(img, f"{secs // 60}:{secs % 60:02d}", W / 2, 1450, 140, OR, km, stroke=9)
+
+def p_charge(img, tg, k):
+    kb(img, "04_duel", k, dur("charge"), 1.1, 1.55, 0.5, 0.45, 0.45, 0.3)
+    text(img, "LE PLUS GRAND", W / 2, 1400, 90, WHITE, k - 0.05, stroke=8)
+    text(img, "TOUT LE STADE ATTEND…", W / 2, 1530, 64, (230, 230, 235), k - (t_tout - SC["charge"]), stroke=6)
+
+def p_cri(img, tg, k):
+    kb(img, "03_portrait", k, dur("cri"), 1.5, 1.25, 0.5, 0.33, 0.5, 0.33); tint(img, (255, 140, 30), 70)
+    flash(img, k, 0.3); speed_radial(img, tg, max(0, 1 - k / 2))
+    text(img, "PAS CETTE", W / 2, 1250, 130, WHITE, k, stroke=10)
+    text(img, "FOIS !", W / 2, 1410, 170, OR, k - 0.12, stroke=11)
+
+def p_crochet(img, tg, k):
+    ks = t_kai3 - SC["crochet"]; kg = T("glisse") - SC["crochet"]
+    if k < ks:
+        kb(img, "04_duel", k, ks, 1.3, 1.6, 0.55, 0.65, 0.65, 0.7); speed_h(img, tg, 0.6, 900, 1700)
+        text(img, "CROCHET !", W / 2, 360, 120, YEL, k - 0.1, stroke=9)
+        text(img, "IL GLISSE.", W / 2, 520, 84, WHITE, k - kg, stroke=8)
+    else:
+        kk = k - ks; kb(img, "06_tir", kk, dur("crochet") - ks, 1.4, 1.15, 0.5, 0.35, 0.5, 0.45); speed_radial(img, tg, 0.8)
+        text(img, "SEUL.", W / 2, 400, 140, WHITE, kk, stroke=10)
+
+def p_goal(img, tg, k):
+    kb(img, "06_tir", k, dur("goal"), 1.1, 1.3, 0.5, 0.6, 0.6, 0.55); kb_ = t_but - SC["goal"]
+    if k > kb_: flash(img, k - kb_, 0.3); confetti(img, tg, k - kb_)
+    text(img, "BUT !", W / 2, 420, 240, OR, k - kb_, stroke=12)
+
+def p_liste(img, tg, k):
+    kb(img, "07_coach", k, dur("liste"), 1.05, 1.3, 0.5, 0.4, 0.4, 0.5)
+    kp = k - (t_lit - SC["liste"])
+    if kp > 0:
+        u = back(min(1, kp / 0.5)); P = Image.new("RGBA", (620, 520), (0, 0, 0, 0)); d = ImageDraw.Draw(P)
+        d.rounded_rectangle((0, 0, 619, 519), 16, fill=(245, 242, 230, 245), outline=(0, 0, 0, 255), width=8)
+        d.text((310, 70), "LES 3 CHOISIS", font=F(48), fill=(20, 20, 30), anchor="mm")
+        for i in range(3):
+            y = 190 + i * 115; d.text((50, y), f"{i + 1}.", font=F(60), fill=OR if i == 0 else (60, 60, 70), anchor="lm")
+            if i == 0: d.text((150, y), "?" * (int((tg * 12) % 3) + 1), font=F(70), fill=RED, anchor="lm")
+            else: d.rectangle((150, y - 30, 560, y + 30), fill=(30, 30, 40, 255))
+        P = P.resize((max(4, int(620 * u)), max(4, int(520 * u)))).rotate(-3, expand=True, resample=Image.BICUBIC)
+        img.alpha_composite(P, (int(W / 2 - P.width / 2), int(1180 - P.height / 2)))
+    text(img, "IL LIT LE PREMIER…", W / 2, 330, 80, WHITE, k - (t_lit - SC["liste"]), stroke=8)
+
+def p_abonne(img, tg, k):
+    kb(img, "03_portrait", k, dur("abonne"), 1.05, 1.15, 0.5, 0.45, 0.5, 0.4); shade(img, 110)
+    sc = back(k / 0.35) + 0.03 * math.sin(tg * 8)
+    L = Image.new("RGBA", (720, 190), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    d.rounded_rectangle((0, 0, 719, 189), 50, fill=RED + (255,)); d.text((360, 95), "+  ABONNE-TOI", font=F(84), fill=WHITE, anchor="mm")
+    L = L.resize((max(4, int(720 * sc)), max(4, int(190 * sc)))); img.alpha_composite(L, (int(W / 2 - L.width / 2), int(300 - L.height / 2)))
+    text(img, "KAÏ · ÉPISODE 3", W / 2, 500, 64, OR, k - (T("suite") - SC["abonne"]), stroke=6)
+    text(img, "DIMANCHE PROCHAIN", W / 2, 600, 58, WHITE, k - (T("dimanche") - SC["abonne"]), stroke=6)
+    kd = k - (t_dem - SC["abonne"])
+    if kd > 0:
+        L2 = Image.new("RGBA", (920, 150), (0, 0, 0, 0)); d2 = ImageDraw.Draw(L2)
+        d2.rounded_rectangle((0, 0, 919, 149), 34, fill=(10, 12, 20, 220), outline=OR + (255,), width=6)
+        d2.text((460, 48), "DEMAIN", font=F(46), fill=OR + (255,), anchor="mm")
+        d2.text((460, 106), "ILS ONT FAILLI ABANDONNER · ÉP. 16", font=F(44), fill=WHITE + (255,), anchor="mm")
+        a2 = ease(kd / 0.25); L2.putalpha(Image.eval(L2.getchannel("A"), lambda v: int(v * a2)))
+        img.alpha_composite(L2, (int(W / 2 - 460), 665))
 def ring(img, cx, cy, r, u):
     d = ImageDraw.Draw(img); d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=(60, 66, 90), width=22)
     d.arc((cx - r, cy - r, cx + r, cy + r), -90, -90 + 360 * u, fill=OR, width=22)
