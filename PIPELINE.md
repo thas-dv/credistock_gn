@@ -311,3 +311,16 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - Look de Kaï adopté le 22/11 : tresses collées (cornrows) + bandeau orange, t-shirt blanc uni (match) / sweat à capuche gris-blanc (entraînement), short marine. Prompt type : « Manga ink illustration, black and white pen linework with screentone shading and orange accents, vertical: a 14-year-old Black African boy footballer, dark brown skin, black hair in neat cornrow braids, bright orange headband, plain white t-shirt, navy shorts, … No text, no logos. »
 - Quota FLUX ≈ 7 images/jour : prévoir 6–7 plans clés (portrait, décor d'arrivée, rivaux, entraînement, adversaire, frappe, coach) + Ken Burns (render film/ep2/render_kai2.py, partie « v2 »). Vérifier et effacer numéros/écussons/marques/panneaux (cv2.inpaint/flou).
 - Le connecteur ElevenLabs génère Sid mais l'audio (elevenlabsusercontent.com) est BLOQUÉ par le proxy : ne pas générer via ce connecteur (crédits perdus) ; voix Azure Marc via Speko.
+
+## DÉCISION UTILISATEUR 23/11/2026 — FIN DES FOOTBALLEURS (IMPORTANT)
+- « On a assez fait les footballeurs. Le projet, c'est le mindset, le réveil du mental : on n'est pas obligé de rester sur le football. »
+- Choix de l'utilisateur : VRAIES HISTOIRES HORS FOOTBALL. À partir de l'ép. 17 (24/11), plus aucun footballeur.
+  Domaines : entrepreneurs, artistes/musiciens, écrivains, scientifiques, inventeurs, cuisiniers, athlètes d'AUTRES sports…
+- On garde la série « ILS ONT FAILLI ABANDONNER » (le nom convient à tous les domaines) et sa numérotation (ép. 17 = 1re histoire hors foot, promise dans l'ép. 16).
+- On garde la recette : jugement reçu dès 0 s -> refus d'abandonner -> réussite, faits vérifiés par recherche web, question « sur 10 » courte, 1er commentaire qui invite à raconter.
+- Accroche universelle (pas « footballeur ») : un jugement ou une situation que TOUT LE MONDE a vécu (« trop vieux pour commencer ? », « tout le monde t'a dit non ? », « fauché ? », « viré ? »).
+  SEO : remplacer les recherches foot par des mots mindset (« comment ne pas abandonner », « réussir en partant de rien », « motivation », « confiance en soi »).
+- CONFORMITE.md s'applique toujours : pas de politiciens, pas de personnes controversées, rien de santé/argent facile/crypto/paris. Un entrepreneur : ne jamais promettre de revenus, ne pas montrer d'argent comme objectif.
+  Les marques ne sont jamais à l'écran ni en hashtag (dire le nom de l'entreprise à l'oral seulement si c'est indispensable et vérifié).
+- Décors : toujours liés aux vrais lieux de l'histoire (atelier, cuisine, garage, studio, salle de classe, rue…), plus de stades.
+- Film Kaï du dimanche : à rediscuter avec l'utilisateur (ép. 1 = 244 vues, ép. 2 = 138 vues à 12 h).
