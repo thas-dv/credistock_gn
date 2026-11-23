@@ -1,0 +1,386 @@
+{
+ "date": "2026-11-23",
+ "style": "awoniyi16",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 16",
+ "episode": 16,
+ "perso": "silhouette lumineuse (moteur 3D plein écran) ; images IA impossibles (quota ZeroGPU épuisé)",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 16 » — « On ne te garde jamais ? » : l'histoire vraie de Taiwo Awoniyi, 7 prêts et 0 match avec son grand club… puis le but contre ce même club",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "On ne te garde jamais ? On t'envoie toujours ailleurs ? Lui, un grand club anglais l'a gardé six ans sous contrat… sans lui faire jouer un seul match. Ils ont failli abandonner. Épisode 16. L'histoire vraie de Taiwo Awoniyi. Il grandit à Ilorin, au Nigeria. Adolescent, il entre dans une académie de son pays. À 16 ans, il est champion du monde des moins de 17 ans. À 18 ans, Liverpool le recrute. Mais sans permis de travail, impossible de jouer en Angleterre. Alors on le prête. En Allemagne : son club descend. Aux Pays-Bas : son club descend encore. Puis trois fois la Belgique. Puis deux fois l'Allemagne. Sept prêts. Six ans. Zéro match avec Liverpool. Sa valise n'est jamais défaite. Il aurait pu se dire : je ne suis pas assez bon. ALORS IL VA SE FAIRE UNE PLACE TOUT SEUL ! À 23 ans, il signe pour de bon à Berlin. 15 buts dans le championnat d'Allemagne en une saison. Puis l'Angleterre lui ouvre enfin la porte : Nottingham Forest paie environ 17 millions de livres, le record du club à l'époque. En octobre 2022, son équipe reçoit Liverpool. Le club qui ne l'a jamais fait jouer. Il marque. Un à zéro. Le seul but du match. Et en fin de saison, c'est encore lui qui marque le but du maintien. Le joueur qu'on prêtait partout… est devenu celui que personne ne peut ignorer. Et toi… tu vas attendre qu'on te donne ta place ? Abonne-toi : demain, l'épisode 17, une autre histoire vraie. Réponds-moi en commentaire : sur 10, ta patience est à combien ? Écris le chiffre. Mindset 24. Change ton mental. Change ta vie.",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "On",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "academie",
+   "at": [
+    "Adolescent",
+    1
+   ]
+  },
+  {
+   "type": "recrue",
+   "at": [
+    "18",
+    1
+   ]
+  },
+  {
+   "type": "prets",
+   "at": [
+    "Alors",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "Sa",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    2
+   ]
+  },
+  {
+   "type": "berlin",
+   "at": [
+    "23",
+    1
+   ]
+  },
+  {
+   "type": "angleterre",
+   "at": [
+    "Puis",
+    3
+   ]
+  },
+  {
+   "type": "liverpool",
+   "at": [
+    "octobre",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "joueur",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "jamais",
+   1
+  ],
+  "build_start": [
+   "valise",
+   1
+  ],
+  "build_end": [
+   "bon",
+   1
+  ],
+  "boom": [
+   "ALORS",
+   2
+  ],
+  "gate1": [
+   "Berlin",
+   1
+  ],
+  "gate2": [
+   "octobre",
+   1
+  ],
+  "sunrise": [
+   "joueur",
+   1
+  ],
+  "arms_up": [
+   "ignorer",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "jamais": [
+   "jamais",
+   1
+  ],
+  "six1": [
+   "six",
+   1
+  ],
+  "seul1": [
+   "seul",
+   1
+  ],
+  "ilorin": [
+   "Ilorin",
+   1
+  ],
+  "nigeria": [
+   "Nigeria",
+   1
+  ],
+  "academie": [
+   "académie",
+   1
+  ],
+  "a16": [
+   "16",
+   2
+  ],
+  "champion": [
+   "champion",
+   1
+  ],
+  "a18": [
+   "18",
+   1
+  ],
+  "recrute": [
+   "recrute",
+   1
+  ],
+  "permis": [
+   "permis",
+   1
+  ],
+  "impossible": [
+   "impossible",
+   1
+  ],
+  "prete": [
+   "prête",
+   1
+  ],
+  "all1": [
+   "Allemagne",
+   1
+  ],
+  "desc1": [
+   "descend",
+   1
+  ],
+  "pays": [
+   "Pays-Bas",
+   1
+  ],
+  "desc2": [
+   "descend",
+   2
+  ],
+  "belg": [
+   "Belgique",
+   1
+  ],
+  "all2": [
+   "l'Allemagne",
+   1
+  ],
+  "sept": [
+   "Sept",
+   1
+  ],
+  "six2": [
+   "Six",
+   2
+  ],
+  "zero1": [
+   "Zéro",
+   1
+  ],
+  "valise": [
+   "valise",
+   1
+  ],
+  "bon1": [
+   "bon",
+   1
+  ],
+  "place1": [
+   "PLACE",
+   1
+  ],
+  "a23": [
+   "23",
+   1
+  ],
+  "signe": [
+   "signe",
+   1
+  ],
+  "berlin": [
+   "Berlin",
+   1
+  ],
+  "b15": [
+   "15",
+   1
+  ],
+  "porte": [
+   "porte",
+   1
+  ],
+  "m17": [
+   "17",
+   2
+  ],
+  "record": [
+   "record",
+   1
+  ],
+  "octobre": [
+   "octobre",
+   1
+  ],
+  "liv3": [
+   "Liverpool",
+   3
+  ],
+  "marque1": [
+   "marque",
+   1
+  ],
+  "zero2": [
+   "zéro",
+   2
+  ],
+  "seul3": [
+   "seul",
+   3
+  ],
+  "maintien": [
+   "maintien",
+   1
+  ],
+  "joueur": [
+   "joueur",
+   1
+  ],
+  "ignorer": [
+   "ignorer",
+   1
+  ],
+  "toi": [
+   "toi",
+   1
+  ],
+  "attendre": [
+   "attendre",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [
+  [
+   "ALORS",
+   2
+  ],
+  [
+   "marque",
+   1
+  ],
+  [
+   "maintien",
+   1
+  ]
+ ],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TA PATIENCE",
+   "EST À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "caption": "On ne te garde jamais ? Lui, un grand club anglais l'a gardé 6 ans… sans lui faire jouer un seul match. 7 prêts. Puis il a marqué le seul but du match contre ce même club. ⚽🔥 Comment réussir au football quand on ne te donne pas ta chance : l'histoire vraie d'un footballeur nigérian que personne ne voulait garder — ILS ONT FAILLI ABANDONNER, épisode 16. Sur 10, ta patience est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, ma place, je vais la prendre 💪 Et toi, ton chiffre ? 👇 On t'a déjà laissé sur le banc ou envoyé ailleurs ?"
+}
