@@ -324,3 +324,9 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
   Les marques ne sont jamais à l'écran ni en hashtag (dire le nom de l'entreprise à l'oral seulement si c'est indispensable et vérifié).
 - Décors : toujours liés aux vrais lieux de l'histoire (atelier, cuisine, garage, studio, salle de classe, rue…), plus de stades.
 - Film Kaï du dimanche : à rediscuter avec l'utilisateur (ép. 1 = 244 vues, ép. 2 = 138 vues à 12 h).
+
+## DÉCISION UTILISATEUR 24/11/2026 — PRIORITÉ AU MONDE PROFESSIONNEL / BUSINESS
+- Réponse à l'ép. 17 (Olajuwon, basket) : « certes dans le monde professionnel, business, ainsi de suite. Donc, tu réfléchis comme ça. »
+- -> Les prochains épisodes de « ILS ONT FAILLI ABANDONNER » privilégient des VRAIES histoires du monde PROFESSIONNEL : entrepreneurs, créateurs d'entreprise, carrières (licencié, refusé, faillite, parti de rien…), plutôt que le sport.
+- CONFORMITE.md toujours : pas de politiciens ni de personnes controversées, jamais de promesse d'argent facile ni de montants mis en avant comme objectif, marques dites à l'oral seulement si indispensable (jamais à l'écran ni en hashtag), faits vérifiés par recherche web.
+- Accroche = jugement/situation de travail que tout le monde vit (« Viré ? », « Tout le monde t'a dit non ? », « Fauché ? », « Trop vieux pour lancer ton projet ? »). Décors : bureau, atelier, garage, cuisine, boutique, rue… SEO : « réussir en partant de rien », « entrepreneur », « motivation business ».
