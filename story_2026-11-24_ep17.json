@@ -1,0 +1,402 @@
+{
+ "date": "2026-11-24",
+ "style": "olajuwon17",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 17",
+ "episode": 17,
+ "perso": "silhouette lumineuse (moteur 3D plein écran)",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 17 » — « Tu as commencé trop tard ? » : l'histoire vraie de Hakeem Olajuwon (basket), jamais joué avant 15 ans… devenu une légende",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "Tu as commencé trop tard ? Tu crois que c'est fini pour toi ? Lui, à 15 ans, il n'avait jamais joué au basket. Ils ont failli abandonner. Épisode 17. L'histoire vraie de Hakeem Olajuwon. Il grandit à Lagos, au Nigeria. Son sport, c'est le football : il est gardien de but. Le basket ? Il ne connaît pas. À 15 ans, au lycée, un camarade le pousse dans un tournoi de basket. Il est immense… mais on lui demande de dunker, et il ne sait pas faire. À 17 ans, il traverse l'océan. Aucune grande université ne se bat pour lui : à Houston, on l'invite juste à s'entraîner devant les coachs. À l'aéroport, personne ne l'attend. On lui dit : prends un taxi. Sa première année, il n'a même pas le droit de jouer. La deuxième, il commence sur le banc. Il aurait pu se dire : j'ai commencé trop tard. ALORS IL VA APPRENDRE PLUS VITE QUE TOUT LE MONDE ! Ses pieds de gardien de but deviennent son arme. En 1984, il est choisi en premier. Avant même Michael Jordan. En 1994, il est champion. Et la même saison : meilleur joueur, meilleur défenseur, meilleur joueur de la finale. Le seul de l'histoire. Un an plus tard, encore champion. Aujourd'hui, le trophée du meilleur défenseur porte son nom. Le garçon qui n'avait jamais touché un ballon de basket… est devenu une légende. Et toi… tu vas encore dire que c'est trop tard ? Abonne-toi : demain, l'épisode 18, le coureur que son pays n'a pas sélectionné pour les Jeux olympiques. Réponds-moi en commentaire : sur 10, tu crois en toi à combien ? Écris le chiffre. Mindset 24. Change ton mental. Change ta vie.",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "tournoi",
+   "at": [
+    "lycée",
+    1
+   ]
+  },
+  {
+   "type": "ocean",
+   "at": [
+    "17",
+    2
+   ]
+  },
+  {
+   "type": "banc",
+   "at": [
+    "Sa",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    1
+   ]
+  },
+  {
+   "type": "pieds",
+   "at": [
+    "Ses",
+    1
+   ]
+  },
+  {
+   "type": "draft",
+   "at": [
+    "1984",
+    1
+   ]
+  },
+  {
+   "type": "titre",
+   "at": [
+    "1994",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "Aujourd'hui",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    2
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "tard",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "tard",
+   2
+  ],
+  "boom": [
+   "ALORS",
+   1
+  ],
+  "gate1": [
+   "1984",
+   1
+  ],
+  "gate2": [
+   "1994",
+   1
+  ],
+  "sunrise": [
+   "garçon",
+   1
+  ],
+  "arms_up": [
+   "légende",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   2
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "tard1": [
+   "tard",
+   1
+  ],
+  "a15": [
+   "15",
+   1
+  ],
+  "basket1": [
+   "basket",
+   1
+  ],
+  "lagos": [
+   "Lagos",
+   1
+  ],
+  "gardien": [
+   "gardien",
+   1
+  ],
+  "connait": [
+   "connaît",
+   1
+  ],
+  "a15b": [
+   "15",
+   2
+  ],
+  "tournoi": [
+   "tournoi",
+   1
+  ],
+  "immense": [
+   "immense",
+   1
+  ],
+  "dunker": [
+   "dunker",
+   1
+  ],
+  "faire1": [
+   "faire",
+   1
+  ],
+  "a17": [
+   "17",
+   2
+  ],
+  "ocean": [
+   "l'océan",
+   1
+  ],
+  "aucune": [
+   "Aucune",
+   1
+  ],
+  "houston": [
+   "Houston",
+   1
+  ],
+  "aeroport": [
+   "l'aéroport",
+   1
+  ],
+  "personne": [
+   "personne",
+   1
+  ],
+  "taxi": [
+   "taxi",
+   1
+  ],
+  "premiere": [
+   "première",
+   1
+  ],
+  "droit": [
+   "droit",
+   1
+  ],
+  "deuxieme": [
+   "deuxième",
+   1
+  ],
+  "banc": [
+   "banc",
+   1
+  ],
+  "aurait": [
+   "aurait",
+   1
+  ],
+  "tard2": [
+   "tard",
+   2
+  ],
+  "vite": [
+   "VITE",
+   1
+  ],
+  "pieds": [
+   "pieds",
+   1
+  ],
+  "arme": [
+   "arme",
+   1
+  ],
+  "y1984": [
+   "1984",
+   1
+  ],
+  "premier": [
+   "premier",
+   1
+  ],
+  "jordan": [
+   "Jordan",
+   1
+  ],
+  "y1994": [
+   "1994",
+   1
+  ],
+  "champion1": [
+   "champion",
+   1
+  ],
+  "saison": [
+   "saison",
+   1
+  ],
+  "joueur1": [
+   "joueur",
+   1
+  ],
+  "defenseur1": [
+   "défenseur",
+   1
+  ],
+  "finale": [
+   "finale",
+   1
+  ],
+  "seulh": [
+   "seul",
+   1
+  ],
+  "plustard": [
+   "plus",
+   2
+  ],
+  "champion2": [
+   "champion",
+   2
+  ],
+  "aujourdhui": [
+   "Aujourd'hui",
+   1
+  ],
+  "trophee": [
+   "trophée",
+   1
+  ],
+  "nom": [
+   "nom",
+   1
+  ],
+  "garcon": [
+   "garçon",
+   1
+  ],
+  "legende": [
+   "légende",
+   1
+  ],
+  "encore2": [
+   "encore",
+   2
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "coureur": [
+   "coureur",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [
+  [
+   "ALORS",
+   1
+  ],
+  [
+   "premier",
+   1
+  ],
+  [
+   "légende",
+   1
+  ]
+ ],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TU CROIS EN TOI",
+   "À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "caption": "Tu as commencé trop tard ? Lui, à 15 ans, il n'avait jamais joué au basket… et il est devenu une légende. 🏀🔥 Il n'est jamais trop tard pour commencer : l'histoire vraie d'un ancien gardien de but de Lagos (Nigeria) devenu champion et meilleur joueur de sa ligue — ILS ONT FAILLI ABANDONNER, épisode 17. Sur 10, tu crois en toi à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #confianceensoi #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, il n'est jamais trop tard 💪 Et toi, ton chiffre ? 👇 Tu as commencé ton sport (ou ton projet) à quel âge ?"
+}
