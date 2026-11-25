@@ -330,3 +330,8 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - -> Les prochains épisodes de « ILS ONT FAILLI ABANDONNER » privilégient des VRAIES histoires du monde PROFESSIONNEL : entrepreneurs, créateurs d'entreprise, carrières (licencié, refusé, faillite, parti de rien…), plutôt que le sport.
 - CONFORMITE.md toujours : pas de politiciens ni de personnes controversées, jamais de promesse d'argent facile ni de montants mis en avant comme objectif, marques dites à l'oral seulement si indispensable (jamais à l'écran ni en hashtag), faits vérifiés par recherche web.
 - Accroche = jugement/situation de travail que tout le monde vit (« Viré ? », « Tout le monde t'a dit non ? », « Fauché ? », « Trop vieux pour lancer ton projet ? »). Décors : bureau, atelier, garage, cuisine, boutique, rue… SEO : « réussir en partant de rien », « entrepreneur », « motivation business ».
+
+## DÉCISION UTILISATEUR 25/11/2026 — 1 ÉPISODE FOOTBALL PAR SEMAINE
+- Contexte : message privé d'un jeune footballeur abonné (« je suis dans une phase très difficile dans le foot… tes vidéos m'aident vraiment ») -> le football reste le cœur du public (recherches « réussir un essai foot », « commencer le foot tard »).
+- Planning : la priorité reste aux histoires BUSINESS / monde professionnel (décision du 24/11), MAIS garder UN épisode FOOTBALL par semaine (vraie histoire d'un footballeur, toujours à racines africaines si possible, faits vérifiés, CONFORMITE.md) pour ne pas perdre ces abonnés.
+- Idée validée à proposer : vidéo-réponse « Tu traverses une phase difficile dans le foot ? » (sans nommer l'abonné, ou avec son accord).
