@@ -1,0 +1,398 @@
+{
+ "date": "2026-11-25",
+ "style": "kipchoge18",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 18",
+ "episode": 18,
+ "perso": "silhouette lumineuse (moteur 3D plein écran)",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 18 » — « Pas sélectionné ? » : l'histoire vraie d'Eliud Kipchoge (athlétisme), non sélectionné pour les Jeux de 2012… devenu une légende du marathon",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "Pas sélectionné ? On ne t'a pas choisi… et tu crois que c'est fini ? Lui, à 27 ans, son pays ne l'a pas sélectionné pour les Jeux olympiques. Ils ont failli abandonner. Épisode 18. L'histoire vraie d'Eliud Kipchoge. Il grandit au Kenya, dans un petit village. Chaque jour, il court trois kilomètres pour aller à l'école. À 16 ans, il rencontre son entraîneur, un ancien médaillé olympique. À 18 ans, il est champion du monde du 5000 mètres. Puis deux médailles aux Jeux olympiques. Mais en 2012, aux sélections du Kenya, il finit septième. Sur 10 000 mètres. Puis sur 5000 mètres. Pas de Jeux de Londres. Il aurait pu se dire : c'est fini pour moi. ALORS IL VA CHANGER DE COURSE ! Il passe au marathon : 42 kilomètres. En 2013, il court son tout premier marathon… et il le gagne. En 2016, il est champion olympique du marathon. Cinq ans plus tard, encore champion olympique. En 2018, record du monde. Et en 2019, lors d'une course spéciale, il devient le premier humain à courir un marathon en moins de deux heures. L'homme qu'on n'avait pas sélectionné… est devenu une légende. Et toi… un seul non va t'arrêter ? Abonne-toi : demain, l'épisode 19, la vendeuse au porte-à-porte à qui on claquait la porte au nez… et qui a créé sa propre entreprise. Réponds-moi en commentaire : sur 10, ta persévérance est à combien ? Écris le chiffre. Mindset 24. Change ton mental. Change ta vie.",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Pas",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "coach",
+   "at": [
+    "16",
+    1
+   ]
+  },
+  {
+   "type": "monde",
+   "at": [
+    "18",
+    2
+   ]
+  },
+  {
+   "type": "selection",
+   "at": [
+    "Mais",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    1
+   ]
+  },
+  {
+   "type": "marathon",
+   "at": [
+    "42",
+    1
+   ]
+  },
+  {
+   "type": "jo",
+   "at": [
+    "2016",
+    1
+   ]
+  },
+  {
+   "type": "record",
+   "at": [
+    "2018",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "L'homme",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "sélectionné",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "moi",
+   1
+  ],
+  "boom": [
+   "ALORS",
+   1
+  ],
+  "gate1": [
+   "2016",
+   1
+  ],
+  "gate2": [
+   "2018",
+   1
+  ],
+  "sunrise": [
+   "L'homme",
+   1
+  ],
+  "arms_up": [
+   "légende",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   3
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "sel1": [
+   "sélectionné",
+   1
+  ],
+  "a27": [
+   "27",
+   1
+  ],
+  "jeux1": [
+   "olympiques",
+   1
+  ],
+  "kenya": [
+   "Kenya",
+   1
+  ],
+  "village": [
+   "village",
+   1
+  ],
+  "ecole": [
+   "l'école",
+   1
+  ],
+  "trois": [
+   "trois",
+   1
+  ],
+  "a16": [
+   "16",
+   1
+  ],
+  "entraineur": [
+   "entraîneur",
+   1
+  ],
+  "medaille": [
+   "médaillé",
+   1
+  ],
+  "a18": [
+   "18",
+   2
+  ],
+  "champion1": [
+   "champion",
+   1
+  ],
+  "metres1": [
+   "mètres",
+   1
+  ],
+  "deux": [
+   "deux",
+   1
+  ],
+  "medailles": [
+   "médailles",
+   1
+  ],
+  "y2012": [
+   "2012",
+   1
+  ],
+  "selections": [
+   "sélections",
+   1
+  ],
+  "septieme": [
+   "septième",
+   1
+  ],
+  "dixk": [
+   "10000",
+   1
+  ],
+  "cinqk": [
+   "mètres",
+   3
+  ],
+  "londres": [
+   "Londres",
+   1
+  ],
+  "aurait": [
+   "aurait",
+   1
+  ],
+  "fini2": [
+   "fini",
+   2
+  ],
+  "course": [
+   "COURSE",
+   1
+  ],
+  "marathon1": [
+   "marathon",
+   1
+  ],
+  "k42": [
+   "42",
+   1
+  ],
+  "y2013": [
+   "2013",
+   1
+  ],
+  "premier1": [
+   "premier",
+   1
+  ],
+  "gagne": [
+   "gagne",
+   1
+  ],
+  "y2016": [
+   "2016",
+   1
+  ],
+  "olymp2": [
+   "olympique",
+   1
+  ],
+  "cinq": [
+   "Cinq",
+   1
+  ],
+  "encore": [
+   "encore",
+   1
+  ],
+  "y2018": [
+   "2018",
+   1
+  ],
+  "record": [
+   "record",
+   1
+  ],
+  "y2019": [
+   "2019",
+   1
+  ],
+  "speciale": [
+   "spéciale",
+   1
+  ],
+  "humain": [
+   "humain",
+   1
+  ],
+  "heures": [
+   "heures",
+   1
+  ],
+  "homme": [
+   "L'homme",
+   1
+  ],
+  "legende": [
+   "légende",
+   1
+  ],
+  "non": [
+   "non",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "vendeuse": [
+   "vendeuse",
+   1
+  ],
+  "porte": [
+   "porte",
+   1
+  ],
+  "entreprise": [
+   "entreprise",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [
+  [
+   "ALORS",
+   1
+  ],
+  [
+   "gagne",
+   1
+  ],
+  [
+   "légende",
+   1
+  ]
+ ],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TA PERSÉVÉRANCE",
+   "EST À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "caption": "Pas sélectionné ? Lui, son pays ne l'a pas pris pour les Jeux olympiques… alors il a changé de course et il est devenu une légende du marathon. 🏃🏾‍♂️🔥 Comment ne pas abandonner après un refus : l'histoire vraie d'Eliud Kipchoge (Kenya) — ILS ONT FAILLI ABANDONNER, épisode 18. Sur 10, ta persévérance est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, un « non » ne m'arrête pas 💪 Et toi, ton chiffre ? 👇 On t'a déjà dit non pour un poste, une équipe ou un projet ?"
+}
