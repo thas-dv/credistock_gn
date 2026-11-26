@@ -335,3 +335,10 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - Contexte : message privé d'un jeune footballeur abonné (« je suis dans une phase très difficile dans le foot… tes vidéos m'aident vraiment ») -> le football reste le cœur du public (recherches « réussir un essai foot », « commencer le foot tard »).
 - Planning : la priorité reste aux histoires BUSINESS / monde professionnel (décision du 24/11), MAIS garder UN épisode FOOTBALL par semaine (vraie histoire d'un footballeur, toujours à racines africaines si possible, faits vérifiés, CONFORMITE.md) pour ne pas perdre ces abonnés.
 - Idée validée à proposer : vidéo-réponse « Tu traverses une phase difficile dans le foot ? » (sans nommer l'abonné, ou avec son accord).
+
+## 26/11/2026 — ép. 19 « blakely19 » (1re histoire business, 1re HÉROÏNE)
+- render_blakely19.py = render_kipchoge18.py + bloc final : silhouette lumineuse féminine (queue de cheval dessinée depuis JT["head"] dans _PLAYER0), décors make_corridor (portes door_swing qui claquent, DOORZ), make_exam, make_flat, make_factory (rain/gold), make_store ; objets card_tear, scissors, tights, jar, phone, heart, globe, light_door.
+- Voix : elevenlabsusercontent.com toujours bloqué (403) -> Azure Marc via Speko. La transcription Speko s'arrête avant « Mindset 24… » : temps du slogan ajoutés à la main dans w2 (énergie du signal).
+- Clone de la branche mindset24-videos : utiliser --filter=blob:none --no-checkout + sparse-checkout (le clone complet dépasse 2 min) puis git add --sparse.
+- Buffer Instagram limité à 10 posts programmés : si la file est pleine au moment du « publie », programmer un rappel de session (send_later) juste après la publication du Reel du soir pour ajouter le nouveau Reel.
+
