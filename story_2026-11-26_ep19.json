@@ -1,0 +1,382 @@
+{
+ "date": "2026-11-26",
+ "style": "blakely19",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 19",
+ "episode": 19,
+ "perso": "silhouette lumineuse féminine (queue de cheval) — moteur 3D plein écran",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 19 » (1re histoire BUSINESS) — « On t'a claqué la porte au nez ? » : l'histoire vraie de Sara Blakely, vendeuse de fax au porte-à-porte pendant 7 ans, refusée par toutes les usines… qui a créé sa propre entreprise",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "On t'a claqué la porte au nez ? Tout le monde te dit non ? Elle, pendant sept ans, on lui a fermé les portes au nez. Ils ont failli abandonner. Épisode 19. L'histoire vraie de Sara Blakely. Elle veut devenir avocate. Elle rate l'examen d'entrée. Elle le repasse… encore pire. Alors elle vend des fax, au porte-à-porte. Sept ans. Les portes claquent. On déchire sa carte de visite devant elle. On la fait sortir des immeubles. À 27 ans, un soir, elle coupe les pieds d'un collant avec des ciseaux. Une idée de vêtement qui n'existe pas encore. Elle y met toutes ses économies. Elle va voir les usines. Toutes lui disent non. Elle aurait pu se dire : ce n'est pas pour moi. ALORS ELLE VA OUVRIR SA PROPRE PORTE ! Deux semaines plus tard, un patron d'usine la rappelle : ses trois filles l'ont convaincu. Un grand magasin lui donne rendez-vous. Elle file aux toilettes enfiler son produit pour le montrer. Vendu dans sept magasins. En 2000, une célèbre présentatrice américaine le met dans ses coups de cœur. Son entreprise devient connue dans le monde entier. La femme à qui on fermait toutes les portes… a ouvert la sienne. Et toi… tu vas laisser une porte fermée décider de ta vie ? Abonne-toi : demain, l'épisode 20, le mécanicien dont l'usine a été détruite… et qui a créé une marque mondiale. Réponds-moi en commentaire : sur 10, tu crois en toi à combien ? Écris le chiffre. Mindset 24. Change ton mental. Change ta vie.",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "On",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "droit",
+   "at": [
+    "veut",
+    1
+   ]
+  },
+  {
+   "type": "fax",
+   "at": [
+    "Alors",
+    1
+   ]
+  },
+  {
+   "type": "idee",
+   "at": [
+    "27",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    2
+   ]
+  },
+  {
+   "type": "usine",
+   "at": [
+    "Deux",
+    1
+   ]
+  },
+  {
+   "type": "magasin",
+   "at": [
+    "magasin",
+    1
+   ]
+  },
+  {
+   "type": "succes",
+   "at": [
+    "2000",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "femme",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "nez",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "moi",
+   1
+  ],
+  "boom": [
+   "ALORS",
+   2
+  ],
+  "gate1": [
+   "Deux",
+   1
+  ],
+  "gate2": [
+   "2000",
+   1
+  ],
+  "sunrise": [
+   "femme",
+   1
+  ],
+  "arms_up": [
+   "sienne",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "porte1": [
+   "porte",
+   1
+  ],
+  "non1": [
+   "non",
+   1
+  ],
+  "sept1": [
+   "sept",
+   1
+  ],
+  "fermes": [
+   "fermé",
+   1
+  ],
+  "avocate": [
+   "avocate",
+   1
+  ],
+  "rate": [
+   "rate",
+   1
+  ],
+  "repasse": [
+   "repasse",
+   1
+  ],
+  "pire": [
+   "pire",
+   1
+  ],
+  "fax": [
+   "fax",
+   1
+  ],
+  "pap": [
+   "porte-à-porte",
+   1
+  ],
+  "sept2": [
+   "Sept",
+   2
+  ],
+  "claquent": [
+   "claquent",
+   1
+  ],
+  "dechire": [
+   "déchire",
+   1
+  ],
+  "sortir": [
+   "sortir",
+   1
+  ],
+  "a27": [
+   "27",
+   1
+  ],
+  "coupe": [
+   "coupe",
+   1
+  ],
+  "idee": [
+   "idée",
+   1
+  ],
+  "economies": [
+   "économies",
+   1
+  ],
+  "usines": [
+   "usines",
+   1
+  ],
+  "toutes": [
+   "Toutes",
+   2
+  ],
+  "aurait": [
+   "aurait",
+   1
+  ],
+  "pour_moi": [
+   "moi",
+   1
+  ],
+  "porte_cri": [
+   "PORTE",
+   2
+  ],
+  "rappelle": [
+   "rappelle",
+   1
+  ],
+  "trois": [
+   "trois",
+   1
+  ],
+  "convaincu": [
+   "convaincu",
+   1
+  ],
+  "magasin": [
+   "magasin",
+   1
+  ],
+  "toilettes": [
+   "toilettes",
+   1
+  ],
+  "vendu": [
+   "Vendu",
+   1
+  ],
+  "sept3": [
+   "sept",
+   3
+  ],
+  "y2000": [
+   "2000",
+   1
+  ],
+  "coeur": [
+   "cœur",
+   1
+  ],
+  "entreprise": [
+   "entreprise",
+   1
+  ],
+  "monde": [
+   "monde",
+   2
+  ],
+  "femme": [
+   "femme",
+   1
+  ],
+  "portes": [
+   "portes",
+   3
+  ],
+  "sienne": [
+   "sienne",
+   1
+  ],
+  "toi": [
+   "toi",
+   1
+  ],
+  "fermee": [
+   "fermée",
+   1
+  ],
+  "vie": [
+   "vie",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "mecanicien": [
+   "mécanicien",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [
+  [
+   "ALORS",
+   2
+  ],
+  [
+   "Vendu",
+   1
+  ],
+  [
+   "sienne",
+   1
+  ]
+ ],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TU CROIS EN TOI",
+   "À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "caption": "On t'a claqué la porte au nez ? Elle, pendant 7 ans, on lui a fermé toutes les portes… puis toutes les usines lui ont dit non. Alors elle a créé sa propre entreprise. 🚪🔥 Réussir en partant de rien : l'histoire vraie de Sara Blakely, entrepreneuse — ILS ONT FAILLI ABANDONNER, épisode 19. Sur 10, tu crois en toi à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #confianceensoi #ambition #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, une porte fermée ne décide pas de ma vie 💪 Et toi, ton chiffre ? 👇 On t'a déjà dit non pour un travail ou un projet ?"
+}
