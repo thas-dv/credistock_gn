@@ -342,3 +342,10 @@ Retour : « presque toutes nos vidéos portent cette animation-là » -> amélio
 - Clone de la branche mindset24-videos : utiliser --filter=blob:none --no-checkout + sparse-checkout (le clone complet dépasse 2 min) puis git add --sparse.
 - Buffer Instagram limité à 10 posts programmés : si la file est pleine au moment du « publie », programmer un rappel de session (send_later) juste après la publication du Reel du soir pour ajouter le nouveau Reel.
 
+
+## DÉCISION UTILISATEUR 27/11/2026 — UNIQUEMENT DES PERSONNES TRÈS CONNUES DU GRAND PUBLIC
+- « Prends des personnes qui sont connues… pas seulement des personnes célèbres que les gens ne connaissent pas. Des grandes célébrités qui ont mené une vie difficile, qui ont failli abandonner. »
+- -> Pour « ILS ONT FAILLI ABANDONNER », choisir des NOMS que tout le monde reconnaît (public francophone / africain) : grandes stars mondiales du business, du cinéma, de la musique, du sport…
+  Plus de personnes « célèbres dans leur milieu » mais peu connues du grand public (ex. un fondateur dont on connaît la marque mais pas le visage, un footballeur de second plan).
+- Toujours : vraie vie difficile / échec réel -> refus d'abandonner -> réussite, faits vérifiés par recherche web, CONFORMITE.md (pas de controverse, pas de politicien, rien de privé ou de santé).
+- Test avant de choisir : « est-ce que mon public reconnaîtrait ce nom ou ce visage sans explication ? » Si non, prendre quelqu'un d'autre.
