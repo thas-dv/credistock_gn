@@ -1,0 +1,437 @@
+{
+ "date": "2026-11-27",
+ "style": "honda20",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 20",
+ "episode": 20,
+ "perso": "silhouette lumineuse — moteur 3D plein écran",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 20 » (2e histoire BUSINESS) — « Tu as tout perdu ? » : l'histoire vraie de Soichiro Honda, fils de forgeron, 47 pièces sur 50 refusées, usine effondrée (séisme de janvier 1945), qui a tout reconstruit",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "Tu as tout perdu ? Tout ce que tu as construit… par terre ? Lui, à 38 ans, il voit son usine s'effondrer. Ils ont failli abandonner. Épisode 20. L'histoire vraie de Soichiro Honda. Fils d'un forgeron, dans un village du Japon. À 15 ans, il part seul à Tokyo, apprenti dans un garage. Quelques années plus tard, il ouvre son propre atelier. Puis il fabrique des pièces de moteur, des segments de piston, pour un grand constructeur automobile. Il en présente cinquante. Trois seulement passent le contrôle. Alors il retourne à l'école, en plus du travail, pendant deux ans, pour comprendre le métal. Ses pièces sont enfin livrées. Et en janvier 1945, un tremblement de terre. Son usine s'effondre. Il vend ce qui reste. Il aurait pu se dire : c'est fini pour moi. ALORS IL VA TOUT RECONSTRUIRE ! Sur les ruines de son usine, il ouvre un petit atelier : il fixe des petits moteurs sur des vélos. En 1948, à 42 ans, il crée sa propre entreprise de motos. Il annonce qu'il va gagner l'une des courses de motos les plus célèbres du monde. Sa première course à l'étranger : 13e. Il continue. En 1961, ses motos gagnent cette course. Aujourd'hui, son nom est connu dans le monde entier. L'homme qui avait tout perdu… a tout reconstruit. Et toi… tu vas laisser une chute décider de ta vie ? Abonne-toi : demain, l'épisode 21, le confiseur qui a fait faillite… avant de créer une marque connue dans le monde entier. Réponds-moi en commentaire : sur 10, ta force pour te relever est à combien ? Écris le chiffre. Mindset 24. Change ton mental. Change ta vie.",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Tu",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "jeune",
+   "at": [
+    "Fils",
+    1
+   ]
+  },
+  {
+   "type": "pistons",
+   "at": [
+    "Puis",
+    1
+   ]
+  },
+  {
+   "type": "ecole",
+   "at": [
+    "Alors",
+    1
+   ]
+  },
+  {
+   "type": "seisme",
+   "at": [
+    "Et",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    2
+   ]
+  },
+  {
+   "type": "velo",
+   "at": [
+    "Sur",
+    1
+   ]
+  },
+  {
+   "type": "entreprise",
+   "at": [
+    "1948",
+    1
+   ]
+  },
+  {
+   "type": "course",
+   "at": [
+    "annonce",
+    1
+   ]
+  },
+  {
+   "type": "succes",
+   "at": [
+    "Aujourd'hui",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "L'homme",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "perdu",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "moi",
+   1
+  ],
+  "boom": [
+   "ALORS",
+   2
+  ],
+  "gate1": [
+   "Sur",
+   1
+  ],
+  "gate2": [
+   "1961",
+   1
+  ],
+  "sunrise": [
+   "L'homme",
+   1
+  ],
+  "arms_up": [
+   "reconstruit",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   3
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "perdu": [
+   "perdu",
+   1
+  ],
+  "construit": [
+   "construit",
+   1
+  ],
+  "terre": [
+   "terre",
+   1
+  ],
+  "a38": [
+   "38",
+   1
+  ],
+  "effondrer": [
+   "s'effondrer",
+   1
+  ],
+  "forgeron": [
+   "forgeron",
+   1
+  ],
+  "japon": [
+   "Japon",
+   1
+  ],
+  "a15": [
+   "15",
+   1
+  ],
+  "tokyo": [
+   "Tokyo",
+   1
+  ],
+  "apprenti": [
+   "apprenti",
+   1
+  ],
+  "quelques": [
+   "Quelques",
+   1
+  ],
+  "atelier1": [
+   "atelier",
+   1
+  ],
+  "pieces": [
+   "pièces",
+   1
+  ],
+  "segments": [
+   "segments",
+   1
+  ],
+  "constructeur": [
+   "constructeur",
+   1
+  ],
+  "cinquante": [
+   "cinquante",
+   1
+  ],
+  "trois": [
+   "Trois",
+   1
+  ],
+  "controle": [
+   "contrôle",
+   1
+  ],
+  "ecole": [
+   "l'école",
+   1
+  ],
+  "deux": [
+   "deux",
+   1
+  ],
+  "metal": [
+   "métal",
+   1
+  ],
+  "livrees": [
+   "livrées",
+   1
+  ],
+  "janvier": [
+   "janvier",
+   1
+  ],
+  "tremblement": [
+   "tremblement",
+   1
+  ],
+  "effondre": [
+   "s'effondre",
+   1
+  ],
+  "vend": [
+   "vend",
+   1
+  ],
+  "aurait": [
+   "aurait",
+   1
+  ],
+  "moi": [
+   "moi",
+   1
+  ],
+  "reconstruire": [
+   "RECONSTRUIRE",
+   1
+  ],
+  "ruines": [
+   "ruines",
+   1
+  ],
+  "atelier2": [
+   "atelier",
+   2
+  ],
+  "moteurs": [
+   "moteurs",
+   1
+  ],
+  "velos": [
+   "vélos",
+   1
+  ],
+  "a1948": [
+   "1948",
+   1
+  ],
+  "a42": [
+   "42",
+   1
+  ],
+  "entreprise": [
+   "entreprise",
+   1
+  ],
+  "motos1": [
+   "motos",
+   1
+  ],
+  "annonce": [
+   "annonce",
+   1
+  ],
+  "celebres": [
+   "célèbres",
+   1
+  ],
+  "etranger": [
+   "l'étranger",
+   1
+  ],
+  "treize": [
+   "13e",
+   1
+  ],
+  "continue": [
+   "continue",
+   1
+  ],
+  "a1961": [
+   "1961",
+   1
+  ],
+  "gagnent": [
+   "gagnent",
+   1
+  ],
+  "aujourdhui": [
+   "Aujourd'hui",
+   1
+  ],
+  "nom": [
+   "nom",
+   1
+  ],
+  "monde": [
+   "monde",
+   2
+  ],
+  "homme": [
+   "L'homme",
+   1
+  ],
+  "reconstruit": [
+   "reconstruit",
+   1
+  ],
+  "toi": [
+   "toi",
+   1
+  ],
+  "chute": [
+   "chute",
+   1
+  ],
+  "vie": [
+   "vie",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "confiseur": [
+   "confiseur",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [
+  [
+   "ALORS",
+   2
+  ],
+  [
+   "gagnent",
+   1
+  ],
+  [
+   "reconstruit",
+   1
+  ]
+ ],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TA FORCE POUR TE RELEVER",
+   "À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "caption": "Tu as tout perdu ? Lui, à 38 ans, il a vu son usine s'effondrer… et il a tout reconstruit, jusqu'à un nom connu dans le monde entier. 🔧🔥 Ne jamais abandonner, même quand tout s'écroule : l'histoire vraie de Soichiro Honda, entrepreneur — ILS ONT FAILLI ABANDONNER, épisode 20. Sur 10, ta force pour te relever est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, une chute ne décide pas de ma vie 💪 Et toi, ton chiffre ? 👇 Tu as déjà dû tout recommencer à zéro ?"
+}
