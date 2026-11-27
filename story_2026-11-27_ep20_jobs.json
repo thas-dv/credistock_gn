@@ -1,0 +1,414 @@
+{
+ "date": "2026-11-27",
+ "style": "jobs20",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 20",
+ "episode": 20,
+ "perso": "silhouette lumineuse — moteur 3D plein écran",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 20 » (v2, demande utilisateur : personnes TRÈS connues) — « Viré de ta propre entreprise ? » : l'histoire vraie de Steve Jobs, adopté, études arrêtées, mis à la porte de son entreprise à 30 ans, repart de zéro et revient",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "Viré de ta propre entreprise ? Lui, à 30 ans, on l'a mis à la porte… de l'entreprise qu'il avait créée. Ils ont failli abandonner. Épisode 20. L'histoire vraie de Steve Jobs. À sa naissance, il est adopté. Il quitte l'université au bout de six mois. Il dort par terre, chez des amis. Il rapporte des bouteilles vides pour quelques centimes, pour pouvoir manger. Le dimanche, il marche 11 km à travers la ville… pour un bon repas gratuit. En 1976, avec un ami, il lance une entreprise d'ordinateurs dans le garage de ses parents. Elle grandit. Elle devient énorme. Et puis, à 30 ans, le conseil d'administration se retourne contre lui. Il est mis à la porte. Devant le monde entier. Il aurait pu se dire : c'est fini pour moi. ALORS IL VA REPARTIR DE ZÉRO ! Il crée une nouvelle entreprise. Il rachète un petit studio d'animation. En 1995, ce studio sort le premier long métrage entièrement fait par ordinateur. Et en 1997, l'entreprise qui l'avait viré est au bord de la faillite. Elle rachète sa nouvelle société… et le rappelle. Il revient. Et en 2007, il présente un téléphone qui va changer le monde. L'homme qu'on avait mis à la porte… a changé le monde. Et toi… tu vas laisser une porte fermée décider de ta vie ? Abonne-toi : demain, l'épisode 21, le joueur que son lycée n'a pas pris dans son équipe… et qui est devenu une légende. Réponds-moi en commentaire : sur 10, ta force pour te relever est à combien ? Écris le chiffre. Mindset 24. Change ton mental. Change ta vie.",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Viré",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "jeunesse",
+   "at": [
+    "sa",
+    1
+   ]
+  },
+  {
+   "type": "garage",
+   "at": [
+    "1976",
+    1
+   ]
+  },
+  {
+   "type": "board",
+   "at": [
+    "Et",
+    1
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    1
+   ]
+  },
+  {
+   "type": "studio",
+   "at": [
+    "crée",
+    1
+   ]
+  },
+  {
+   "type": "retour",
+   "at": [
+    "1997",
+    1
+   ]
+  },
+  {
+   "type": "phone",
+   "at": [
+    "2007",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "L'homme",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "entreprise",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "moi",
+   1
+  ],
+  "boom": [
+   "ALORS",
+   1
+  ],
+  "gate1": [
+   "crée",
+   1
+  ],
+  "gate2": [
+   "2007",
+   1
+  ],
+  "sunrise": [
+   "L'homme",
+   1
+  ],
+  "arms_up": [
+   "changé",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "entreprise1": [
+   "entreprise",
+   1
+  ],
+  "a30": [
+   "30",
+   1
+  ],
+  "porte1": [
+   "porte",
+   1
+  ],
+  "creee": [
+   "créée",
+   1
+  ],
+  "naissance": [
+   "naissance",
+   1
+  ],
+  "adopte": [
+   "adopté",
+   1
+  ],
+  "universite": [
+   "l'université",
+   1
+  ],
+  "six": [
+   "six",
+   1
+  ],
+  "terre": [
+   "terre",
+   1
+  ],
+  "bouteilles": [
+   "bouteilles",
+   1
+  ],
+  "manger": [
+   "manger",
+   1
+  ],
+  "dimanche": [
+   "dimanche",
+   1
+  ],
+  "km": [
+   "km",
+   1
+  ],
+  "repas": [
+   "repas",
+   1
+  ],
+  "y1976": [
+   "1976",
+   1
+  ],
+  "ami": [
+   "ami",
+   1
+  ],
+  "ordinateurs": [
+   "d'ordinateurs",
+   1
+  ],
+  "garage": [
+   "garage",
+   1
+  ],
+  "grandit": [
+   "grandit",
+   1
+  ],
+  "enorme": [
+   "énorme",
+   1
+  ],
+  "a30b": [
+   "30",
+   2
+  ],
+  "conseil": [
+   "conseil",
+   1
+  ],
+  "contre": [
+   "contre",
+   1
+  ],
+  "porte2": [
+   "porte",
+   2
+  ],
+  "monde1": [
+   "monde",
+   1
+  ],
+  "aurait": [
+   "aurait",
+   1
+  ],
+  "moi": [
+   "moi",
+   1
+  ],
+  "zero": [
+   "ZÉRO",
+   1
+  ],
+  "nouvelle": [
+   "nouvelle",
+   1
+  ],
+  "studio": [
+   "studio",
+   1
+  ],
+  "y1995": [
+   "1995",
+   1
+  ],
+  "premier": [
+   "premier",
+   1
+  ],
+  "ordinateur": [
+   "ordinateur",
+   1
+  ],
+  "y1997": [
+   "1997",
+   1
+  ],
+  "faillite": [
+   "faillite",
+   1
+  ],
+  "rachete2": [
+   "rachète",
+   2
+  ],
+  "rappelle": [
+   "rappelle",
+   1
+  ],
+  "revient": [
+   "revient",
+   1
+  ],
+  "y2007": [
+   "2007",
+   1
+  ],
+  "telephone": [
+   "téléphone",
+   1
+  ],
+  "monde2": [
+   "monde",
+   2
+  ],
+  "homme": [
+   "L'homme",
+   1
+  ],
+  "porte3": [
+   "porte",
+   3
+  ],
+  "change": [
+   "changé",
+   1
+  ],
+  "toi": [
+   "toi",
+   1
+  ],
+  "fermee": [
+   "fermée",
+   1
+  ],
+  "vie": [
+   "vie",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "joueur": [
+   "joueur",
+   1
+  ],
+  "legende": [
+   "légende",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [
+  [
+   "ALORS",
+   1
+  ],
+  [
+   "revient",
+   1
+  ],
+  [
+   "changé",
+   1
+  ]
+ ],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TA FORCE POUR TE RELEVER",
+   "À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "caption": "Viré de ta propre entreprise ? Lui, à 30 ans, on l'a mis à la porte de l'entreprise qu'il avait créée… 12 ans plus tard, il présentait un téléphone qui allait changer le monde. 📱🔥 Comment rebondir après un échec : l'histoire vraie de Steve Jobs — ILS ONT FAILLI ABANDONNER, épisode 20. Sur 10, ta force pour te relever est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #reussite #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, un échec n'est pas la fin 💪 Et toi, ton chiffre ? 👇 Tu as déjà dû repartir de zéro ?"
+}
