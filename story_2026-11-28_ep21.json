@@ -1,0 +1,397 @@
+{
+ "date": "2026-11-28",
+ "style": "jordan21",
+ "series": "ILS ONT FAILLI ABANDONNER — Épisode 21",
+ "episode": 21,
+ "perso": "silhouette lumineuse — moteur 3D plein écran",
+ "bg": [
+  8,
+  14,
+  44
+ ],
+ "theme": "SÉRIE « ILS ONT FAILLI ABANDONNER — Épisode 21 » — « Pas pris dans l'équipe ? » : l'histoire vraie de Michael Jordan, pas retenu dans l'équipe première de son lycée à 15 ans (1978), envoyé en réserve, devient une légende",
+ "voice_id": "Azure « Marc » (MAI-Voice-2.1 / DragonHD) via Speko",
+ "voice_prompt": "Pas pris dans l'équipe ? Lui, à 15 ans, on ne l'a pas retenu… dans l'équipe première de son lycée. Ils ont failli abandonner. Épisode 21. L'histoire vraie de Michael Jordan. Automne 1978, en Caroline du Nord. Il a 15 ans. Il mesure 1 mètre 75. Il se présente aux sélections de l'équipe première. La liste est affichée. Son nom n'y est pas. On lui préfère un ami, beaucoup plus grand : 2 mètres. Lui, on l'envoie en équipe réserve. Il aurait pu se dire : le basket, ce n'est pas pour moi. ALORS SON NOM, IL VA L'ÉCRIRE LUI-MÊME ! Il s'entraîne. Chaque jour. Il grandit. Il progresse. L'année suivante, il entre dans l'équipe première… et il en devient le meilleur joueur. En 1982, à l'université, il marque le tir de la victoire en finale du championnat… à 15 secondes de la fin. En 1984, il est choisi en troisième position par les pros. Puis il gagne six titres de champion. Six fois meilleur joueur des finales. Deux médailles d'or olympiques. Aujourd'hui, le trophée du meilleur joueur de la saison porte son nom. Le garçon qu'on n'avait pas pris… est devenu une légende. Et toi… tu vas laisser une liste décider de ton avenir ? Abonne-toi : demain, l'épisode 22, le dessinateur dont le premier studio a fait faillite… et qui a construit un empire. Réponds-moi en commentaire : sur 10, ta détermination est à combien ? Écris le chiffre. Mindset 24. Change ton mental. Change ta vie.",
+ "scenes": [
+  {
+   "type": "hook",
+   "at": [
+    "Pas",
+    1
+   ]
+  },
+  {
+   "type": "intro",
+   "at": [
+    "L'histoire",
+    1
+   ]
+  },
+  {
+   "type": "ville",
+   "at": [
+    "Automne",
+    1
+   ]
+  },
+  {
+   "type": "selection",
+   "at": [
+    "présente",
+    1
+   ]
+  },
+  {
+   "type": "liste",
+   "at": [
+    "Son",
+    2
+   ]
+  },
+  {
+   "type": "doute",
+   "at": [
+    "aurait",
+    1
+   ]
+  },
+  {
+   "type": "cri",
+   "at": [
+    "ALORS",
+    1
+   ]
+  },
+  {
+   "type": "train",
+   "at": [
+    "s'entraîne",
+    1
+   ]
+  },
+  {
+   "type": "varsity",
+   "at": [
+    "L'année",
+    1
+   ]
+  },
+  {
+   "type": "finale",
+   "at": [
+    "1982",
+    1
+   ]
+  },
+  {
+   "type": "pro",
+   "at": [
+    "1984",
+    1
+   ]
+  },
+  {
+   "type": "regard",
+   "at": [
+    "garçon",
+    1
+   ]
+  },
+  {
+   "type": "you",
+   "at": [
+    "toi",
+    1
+   ]
+  },
+  {
+   "type": "abonne",
+   "at": [
+    "Abonne-toi",
+    1
+   ]
+  },
+  {
+   "type": "question",
+   "at": [
+    "Réponds-moi",
+    1
+   ]
+  },
+  {
+   "type": "logo",
+   "at": [
+    "Mindset",
+    1
+   ]
+  }
+ ],
+ "roles": {
+  "hook": [
+   "l'équipe",
+   1
+  ],
+  "build_start": [
+   "aurait",
+   1
+  ],
+  "build_end": [
+   "moi",
+   1
+  ],
+  "boom": [
+   "ALORS",
+   1
+  ],
+  "gate1": [
+   "s'entraîne",
+   1
+  ],
+  "gate2": [
+   "1984",
+   1
+  ],
+  "sunrise": [
+   "garçon",
+   1
+  ],
+  "arms_up": [
+   "légende",
+   1
+  ],
+  "q_line1": [
+   "sur",
+   1
+  ],
+  "q_line2": [
+   "combien",
+   1
+  ],
+  "q_cta": [
+   "Écris",
+   1
+  ],
+  "q_end": [
+   "chiffre",
+   1
+  ],
+  "brand": [
+   "Mindset",
+   1
+  ],
+  "slogan1": [
+   "Change",
+   1
+  ],
+  "slogan2": [
+   "Change",
+   2
+  ]
+ },
+ "marks": {
+  "equipe0": [
+   "l'équipe",
+   1
+  ],
+  "a15": [
+   "15",
+   1
+  ],
+  "retenu": [
+   "retenu",
+   1
+  ],
+  "lycee": [
+   "lycée",
+   1
+  ],
+  "automne": [
+   "Automne",
+   1
+  ],
+  "caroline": [
+   "Caroline",
+   1
+  ],
+  "a15b": [
+   "15",
+   2
+  ],
+  "mesure": [
+   "mesure",
+   1
+  ],
+  "selections": [
+   "sélections",
+   1
+  ],
+  "premiere2": [
+   "première",
+   2
+  ],
+  "liste": [
+   "liste",
+   1
+  ],
+  "pas1": [
+   "pas",
+   3
+  ],
+  "prefere": [
+   "préfère",
+   1
+  ],
+  "grand": [
+   "grand",
+   1
+  ],
+  "m2": [
+   "mètres",
+   1
+  ],
+  "reserve": [
+   "réserve",
+   1
+  ],
+  "aurait": [
+   "aurait",
+   1
+  ],
+  "basket": [
+   "basket",
+   1
+  ],
+  "moi": [
+   "moi",
+   1
+  ],
+  "ecrire": [
+   "L'ÉCRIRE",
+   1
+  ],
+  "grandit": [
+   "grandit",
+   1
+  ],
+  "progresse": [
+   "progresse",
+   1
+  ],
+  "chaque": [
+   "Chaque",
+   1
+  ],
+  "premiere3": [
+   "première",
+   3
+  ],
+  "meilleur1": [
+   "meilleur",
+   1
+  ],
+  "y1982": [
+   "1982",
+   1
+  ],
+  "tir": [
+   "tir",
+   1
+  ],
+  "secondes": [
+   "secondes",
+   1
+  ],
+  "fin": [
+   "fin",
+   1
+  ],
+  "y1984": [
+   "1984",
+   1
+  ],
+  "troisieme": [
+   "troisième",
+   1
+  ],
+  "pros": [
+   "pros",
+   1
+  ],
+  "six1": [
+   "six",
+   1
+  ],
+  "six2": [
+   "six",
+   2
+  ],
+  "medailles": [
+   "médailles",
+   1
+  ],
+  "aujourdhui": [
+   "Aujourd'hui",
+   1
+  ],
+  "trophee": [
+   "trophée",
+   1
+  ],
+  "garcon": [
+   "garçon",
+   1
+  ],
+  "legende": [
+   "légende",
+   1
+  ],
+  "liste2": [
+   "liste",
+   2
+  ],
+  "avenir": [
+   "avenir",
+   1
+  ],
+  "demain": [
+   "demain",
+   1
+  ],
+  "dessinateur": [
+   "dessinateur",
+   1
+  ],
+  "empire": [
+   "empire",
+   1
+  ]
+ },
+ "words3d": [],
+ "q_pulses": [],
+ "punches": [
+  [
+   "ALORS",
+   1
+  ],
+  [
+   "progresse",
+   1
+  ],
+  [
+   "légende",
+   1
+  ]
+ ],
+ "keywords": [],
+ "question": {
+  "lines": [
+   "SUR 10,",
+   "TA DÉTERMINATION",
+   "À COMBIEN ?"
+  ],
+  "highlight": "COMBIEN",
+  "cta": "ÉCRIS TON CHIFFRE"
+ },
+ "caption": "Pas pris dans l'équipe ? Lui, à 15 ans, son nom n'était pas sur la liste de l'équipe première de son lycée… Il est devenu la plus grande légende du basket. 🏀🔥 Comment ne pas abandonner après un refus : l'histoire vraie de Michael Jordan — ILS ONT FAILLI ABANDONNER, épisode 21. Sur 10, ta détermination est à combien ? 👇 Abonne-toi pour l'épisode de demain. #mindset #motivation #discipline #confianceensoi #mindset24 #changetavie",
+ "pinned_comment": "Je commence : 10/10, une liste ne décide pas de mon avenir 💪 Et toi, ton chiffre ? 👇 On t'a déjà laissé de côté pour une équipe, un poste ou un projet ?"
+}
